@@ -41,9 +41,9 @@ header section span {
 }
 
 header menu {
+    width: 100%;
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
+    flex-flow: row-reverse nowrap;
     align-items: center;
     cursor: pointer;
     background-color: black;
@@ -55,7 +55,7 @@ header nav {
     opacity: 0;
     visibility: hidden;
     overflow: hidden;
-    transform: translateX(-3px);
+    transform: translateX(3px);
     transition: all .5s ease-out;
 }
 
