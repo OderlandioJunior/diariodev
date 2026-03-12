@@ -3,20 +3,21 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
+    min-height: 100vh;
     background-color: black;
     color: white;
-    height: 100%;
-    width: 100%;
 }
-
+/* Configuração para o cabeçalho */
 header {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+
     position: sticky;
     top: 0;
     z-index: 1;
@@ -24,87 +25,88 @@ header {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
     padding: 10px;
-    max-height: 500px;
 
     background-color: black;
     border-bottom: 1px solid blueviolet;
-    box-shadow: 0px 0px 20px 5px blueviolet;
+    box-shadow: 0px 0px 20px blueviolet;
 }
+
+header section h1 {
+    font-size: 1.9em;
+}
+
 
 header section span {
     padding-left: 5px;
-
-    border-left: 5px solid blueviolet;
+    border-left: 3px solid blueviolet;
 }
 
-menu {
+header menu {
+    width: 100%;
     display: flex;
     flex-flow: row-reverse nowrap;
-    justify-content: center;
-    align-items: center;
+    align-items: baseline;
+    background-color: black;
+}
 
+header menu i {
     cursor: pointer;
 }
 
-menu > i {
-    font-size: 1.5em;
-
+header nav {
     padding: 5px;
-
-    border: 1px solid blueviolet;
-    border-radius: 5px;
-}
-
-nav {
-    max-width: 0;
-    padding: 10px;
-    overflow: hidden;
-
     white-space: nowrap;
-
-    background-color: black;
-    border: 1px solid blueviolet;
-    border-radius: 15px;
-
     opacity: 0;
     visibility: hidden;
-    transform: translateX(10px);
+    overflow: hidden;
+    transform: translateX(3px);
     transition: all .5s ease-out;
 }
 
-nav.mostrar {
-    max-width: max-content;
+header nav.mostrar {
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
 }
 
-ul {
+header nav ul {
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 15px;
     list-style-type: none;
 }
 
-a {
-    color: white;
-    font-size: 1em;
-    font-weight: normal;
+header nav a {
     text-decoration: none;
+    font-size: 1em;
+    color: white;
 }
 
-a:hover {
+header nav a:hover {
     color: blueviolet;
 }
+/* Fim da configuração para o cabeçalho */
+/* Configuração para o conteúdo */
 
+/* Fim da configuração para o conteúdo */
+/* Configuração para o rodapé */
 footer {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
-
     padding: 5px;
-
     border-top: 1px solid blueviolet;
-
-    box-shadow: 0px 0px 20px 5px blueviolet;
+    box-shadow: 0px 0px 20px blueviolet;
 }
 
-footer nav {
-    display: inline-block;
+footer a {
+    text-decoration: none;
+    font-size: 1em;
+    color: white;
 }
+
+footer a:hover {
+    color: blueviolet;
+}
+/* Fim da configuração para o rodapé */

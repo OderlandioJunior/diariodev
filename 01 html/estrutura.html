@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=".html-style.css">
+    <link rel="stylesheet" href="html-style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <script src="https://kit.fontawesome.com/1cf26eb200.js" crossorigin="anonymous"></script>
     <title>Estrutura HTML</title>
@@ -19,9 +19,8 @@
         <i class="fa-solid fa-bars" onclick="clickMenu()"></i>
         <nav id="itens">
             <ul>
-                <li><a href="#aprendiz"><i class="fa-solid fa-book"></i> Aprendizado</a></li>
-                <li><a href="#projetos"><i class="fa-solid fa-code"></i> Projetos</a></li>
-                <li><a href="#sobre"><i class="fa-solid fa-circle-user"></i> Sobre mim</a></li>
+                <li><a href="../index.html" target="_parent" rel="follow"><i class="fa-regular fa-circle-left"></i> Aprendizado</a></li>
+                <li><a href="#">Próximo artigo <i class="fa-regular fa-circle-right"></i></a></li>
             </ul>
         </menu>
     </header>
@@ -29,47 +28,42 @@
         <!--Transformar os h2 em li-->
         <section>
             <article>
-                <h2>I. Tipologias de Arquivos e a Anatomia Digital na Programação</h2>
-                <p>Para um desenvolvedor, compreender a natureza dos arquivos com os quais interage é o primeiro passo para o domínio do ambiente de desenvolvimento. Uma extensão de arquivo não é apenas um rótulo; ela sinaliza ao sistema operacional e às aplicações o formato interno dos dados e o interpretador necessário para processá-los. Mudar a extensão de um arquivo manualmente (por exemplo, de .jpg para .js) não altera a organização interna dos seus bits, o que resultará em erro de execução. No contexto do Diário DEV, é essencial diferenciar entre formatos binários, formatos de marcação e scripts.</p>
-
-                <h3>O Paradigma da Transição:.doc vs.docx</h3>
-                <p>A evolução dos formatos de processamento de texto exemplifica a mudança da indústria em direção a padrões abertos e extensíveis. O formato .doc, utilizado pelo Microsoft Word até 2003, é um formato binário proprietário. Ele armazena informações de formatação de maneira compacta, porém opaca, dificultando a interoperabilidade entre diferentes softwares e aumentando o risco de corrupção de dados.</p>
-                <p>Com o lançamento do Office 2007, surgiu o .docx, fundamentado no padrão Office Open XML (OOXML). Tecnicamente, um arquivo .docx é um contêiner comprimido (baseado em ZIP) que abriga uma estrutura de arquivos XML. Para um desenvolvedor, o .docx é superior porque seu conteúdo pode ser lido e manipulado programaticamente sem a necessidade do Microsoft Word, além de oferecer maior segurança e eficiência de armazenamento devido à compressão nativa.</p>
-
-                <h3>O Ecossistema de Ativos Visuais:.jpg,.jpeg e.png</h3>
-                <p>A gestão de imagens é um dos pilares da performance web. O formato .jpg (ou .jpeg, que são tecnicamente idênticos em termos de compressão) utiliza um algoritmo de compressão "lossy" (com perda). Ele reduz o tamanho do arquivo descartando informações visuais que o olho humano tem dificuldade em perceber, sendo ideal para fotografias complexas onde o equilíbrio entre peso e qualidade é vital.</p>
-                <p>Em contrapartida, o .png (Portable Network Graphics) utiliza compressão "lossless" (sem perda). Sua principal vantagem na web é o suporte a canais de transparência (alfa), o que o torna indispensável para logotipos, ícones e elementos de interface que precisam ser sobrepostos a fundos variáveis sem apresentar bordas serrilhadas ou fundos brancos opacos.</p>
-
-                <h3>A Web Moderna e o Formato.webp</h3>
-                <p>Embora não tenha sido o foco de documentos legados, o formato .webp é o padrão de ouro no roadmap de 2025. Desenvolvido pelo Google, o WebP oferece compressão superior tanto para imagens com perda quanto sem perda. Frequentemente, uma imagem WebP é 25% a 34% menor que um JPEG equivalente, mantendo a mesma qualidade visual e suportando transparência e animações. O uso de WebP impacta diretamente o Core Web Vital conhecido como Largest Contentful Paint (LCP), uma métrica de velocidade de carregamento essencial para SEO.</p>
-
-                <h3>Arquivos de Lógica e Intercâmbio de Dados:.js e.json</h3>
-                <p>No desenvolvimento web, o arquivo .js contém o código-fonte em JavaScript, que é interpretado pelo motor (engine) do navegador para adicionar comportamento dinâmico às páginas estáticas. Complementarmente, o formato .json (JavaScript Object Notation) consolidou-se como o padrão universal para a troca de dados entre front-end e back-end. Sua sintaxe baseada em texto é leve, legível por humanos e facilmente processada por quase todas as linguagens de programação modernas.</p>
-
-                <h2>II. Anatomia e Estrutura de um Documento HTML5</h2>
-                <p>A construção de um site resiliente e acessível começa pela compreensão minuciosa do esqueleto HTML. Um documento HTML5 não é apenas uma sequência de tags; é uma hierarquia de objetos que formam o Document Object Model (DOM). A omissão ou o uso incorreto de tags fundamentais pode levar ao "Quirks Mode", onde o navegador renderiza a página de forma imprevisível para manter compatibilidade com tecnologias obsoletas da década de 90.</p>
-
-                <h3>O Preâmbulo Obrigatório: <pre style="display: inline;">!DOCTYPE html</pre></h3>
-                <p>A primeira linha de qualquer documento moderno deve ser obrigatoriamente <pre style="display: inline;">!DOCTYPE html</pre>. Tecnicamente, esta instrução não é uma tag HTML, mas uma declaração de tipo de documento (DTD). Ela informa ao navegador que o arquivo segue os padrões vigentes do HTML5, garantindo que o motor de renderização utilize o "Standards Mode" para interpretar o layout e os estilos CSS com precisão.</p>
-
-                <h3>A Raiz e a Internacionalização: <pre style="display: inline;">HTML</pre> e <pre style="display: inline;">html lang</pre></h3>
-                <p>A tag <pre style="display: inline;">html</pre> envolve todo o conteúdo do documento, exceto o doctype. Um dos atributos mais críticos desta tag é o lang (ex: <pre style="display: inline;">html lang="pt-br"</pre>). Esta declaração de idioma é fundamental para a acessibilidade, pois informa aos leitores de tela qual sintetizador de voz e qual dicionário de pronúncia utilizar para usuários com deficiência visual. Além disso, motores de busca e ferramentas de tradução automática utilizam este atributo para indexar e processar o conteúdo de acordo com a região geográfica e a língua do usuário.</p>
-
-                <h3>O Cérebro da Página: <pre style="display: inline;">head</pre> e os <pre style="display: inline;">Metadados</pre></h3>
-                <p>O elemento <pre style="display: inline;">head</pre> atua como o cabeçalho de metadados do documento. As informações contidas aqui não são visíveis diretamente para o visitante comum (exceto o título e o favicon), mas são vitais para o funcionamento e a otimização da página.</p>
+                
                 <ol>
-                    <li>Codificação de Caracteres:</li>
-                    <p> A tag <pre style="display: inline;">meta charset="utf-8"</pre> deve ser a primeira dentro do <pre style="display: inline;">head</pre>. Ela garante que o navegador consiga exibir corretamente acentos, caracteres especiais de diversos idiomas e emojis. Sem ela, o texto pode ser corrompido, exibindo símbolos ilegíveis.</p>
-                    <li>Responsividade</li>
-                    <p>A metatag de viewport, tipicamente escrita como <pre style="display: inline;">meta name="viewport" content="width=device-width, initial-scale=1.0"</pre>, é o que torna o site "mobile-friendly". Ela instrui o navegador a ajustar a escala do conteúdo de acordo com a largura real da tela do dispositivo, evitando que o site apareça minúsculo em smartphones.</p>
-                    <li>Identidade e SEO:</li>
-                    <p>A tag <pre style="display: inline;">title</pre> define o nome que aparecerá na aba do navegador e no título principal dos resultados de busca do Google. É um dos fatores de SEO mais pesados para o ranqueamento orgânico.</p>
+                    <li><h2>I. Tipologias de Arquivos e a Anatomia Digital na Programação</h2></li>
+                    <p>Para um desenvolvedor, compreender a natureza dos arquivos com os quais interage é o primeiro passo para o domínio do ambiente de desenvolvimento. Uma extensão de arquivo não é apenas um rótulo; ela sinaliza ao sistema operacional e às aplicações o formato interno dos dados e o interpretador necessário para processá-los. Mudar a extensão de um arquivo manualmente (por exemplo, de .jpg para .js) não altera a organização interna dos seus bits, o que resultará em erro de execução. No contexto do Diário DEV, é essencial diferenciar entre formatos binários, formatos de marcação e scripts.</p>
+                    <h3>O Paradigma da Transição:.doc vs.docx</h3>
+                    <p>A evolução dos formatos de processamento de texto exemplifica a mudança da indústria em direção a padrões abertos e extensíveis. O formato .doc, utilizado pelo Microsoft Word até 2003, é um formato binário proprietário. Ele armazena informações de formatação de maneira compacta, porém opaca, dificultando a interoperabilidade entre diferentes softwares e aumentando o risco de corrupção de dados.</p>
+                    <p>Com o lançamento do Office 2007, surgiu o .docx, fundamentado no padrão Office Open XML (OOXML). Tecnicamente, um arquivo .docx é um contêiner comprimido (baseado em ZIP) que abriga uma estrutura de arquivos XML. Para um desenvolvedor, o .docx é superior porque seu conteúdo pode ser lido e manipulado programaticamente sem a necessidade do Microsoft Word, além de oferecer maior segurança e eficiência de armazenamento devido à compressão nativa.</p>
+                    <h3>O Ecossistema de Ativos Visuais:.jpg,.jpeg e.png</h3>
+                    <p>A gestão de imagens é um dos pilares da performance web. O formato .jpg (ou .jpeg, que são tecnicamente idênticos em termos de compressão) utiliza um algoritmo de compressão "lossy" (com perda). Ele reduz o tamanho do arquivo descartando informações visuais que o olho humano tem dificuldade em perceber, sendo ideal para fotografias complexas onde o equilíbrio entre peso e qualidade é vital.</p>
+                    <p>Em contrapartida, o .png (Portable Network Graphics) utiliza compressão "lossless" (sem perda). Sua principal vantagem na web é o suporte a canais de transparência (alfa), o que o torna indispensável para logotipos, ícones e elementos de interface que precisam ser sobrepostos a fundos variáveis sem apresentar bordas serrilhadas ou fundos brancos opacos.</p>
+                    <h3>A Web Moderna e o Formato.webp</h3>
+                    <p>Embora não tenha sido o foco de documentos legados, o formato .webp é o padrão de ouro no roadmap de 2025. Desenvolvido pelo Google, o WebP oferece compressão superior tanto para imagens com perda quanto sem perda. Frequentemente, uma imagem WebP é 25% a 34% menor que um JPEG equivalente, mantendo a mesma qualidade visual e suportando transparência e animações. O uso de WebP impacta diretamente o Core Web Vital conhecido como Largest Contentful Paint (LCP), uma métrica de velocidade de carregamento essencial para SEO.</p>
+                    <h3>Arquivos de Lógica e Intercâmbio de Dados:.js e.json</h3>
+                    <p>No desenvolvimento web, o arquivo .js contém o código-fonte em JavaScript, que é interpretado pelo motor (engine) do navegador para adicionar comportamento dinâmico às páginas estáticas. Complementarmente, o formato .json (JavaScript Object Notation) consolidou-se como o padrão universal para a troca de dados entre front-end e back-end. Sua sintaxe baseada em texto é leve, legível por humanos e facilmente processada por quase todas as linguagens de programação modernas.</p>
+
+                    <li><h2>II. Anatomia e Estrutura de um Documento HTML5</h2></li>
+                    <p>A construção de um site resiliente e acessível começa pela compreensão minuciosa do esqueleto HTML. Um documento HTML5 não é apenas uma sequência de tags; é uma hierarquia de objetos que formam o Document Object Model (DOM). A omissão ou o uso incorreto de tags fundamentais pode levar ao "Quirks Mode", onde o navegador renderiza a página de forma imprevisível para manter compatibilidade com tecnologias obsoletas da década de 90.</p>
+                    <h3>O Preâmbulo Obrigatório: <pre style="display: inline;">!DOCTYPE html</pre></h3>
+                    <p>A primeira linha de qualquer documento moderno deve ser obrigatoriamente <pre style="display: inline;">!DOCTYPE html</pre>. Tecnicamente, esta instrução não é uma tag HTML, mas uma declaração de tipo de documento (DTD). Ela informa ao navegador que o arquivo segue os padrões vigentes do HTML5, garantindo que o motor de renderização utilize o "Standards Mode" para interpretar o layout e os estilos CSS com precisão.</p>
+                    <h3>A Raiz e a Internacionalização: <pre style="display: inline;">HTML</pre> e <pre style="display: inline;">html lang</pre></h3>
+                    <p>A tag <pre style="display: inline;">html</pre> envolve todo o conteúdo do documento, exceto o doctype. Um dos atributos mais críticos desta tag é o lang (ex: <pre style="display: inline;">html lang="pt-br"</pre>). Esta declaração de idioma é fundamental para a acessibilidade, pois informa aos leitores de tela qual sintetizador de voz e qual dicionário de pronúncia utilizar para usuários com deficiência visual. Além disso, motores de busca e ferramentas de tradução automática utilizam este atributo para indexar e processar o conteúdo de acordo com a região geográfica e a língua do usuário.</p>
+                    <h3>O Cérebro da Página: <pre style="display: inline;">head</pre> e os <pre style="display: inline;">Metadados</pre></h3>
+                    <p>O elemento <pre style="display: inline;">head</pre> atua como o cabeçalho de metadados do documento. As informações contidas aqui não são visíveis diretamente para o visitante comum (exceto o título e o favicon), mas são vitais para o funcionamento e a otimização da página.</p>
+                    <ol>
+                        <li>Codificação de Caracteres:</li>
+                        <p> A tag <pre style="display: inline;">meta charset="utf-8"</pre> deve ser a primeira dentro do <pre style="display: inline;">head</pre>. Ela garante que o navegador consiga exibir corretamente acentos, caracteres especiais de diversos idiomas e emojis. Sem ela, o texto pode ser corrompido, exibindo símbolos ilegíveis.</p>
+                        <li>Responsividade</li>
+                        <p>A metatag de viewport, tipicamente escrita como <pre style="display: inline;">meta name="viewport" content="width=device-width, initial-scale=1.0"</pre>, é o que torna o site "mobile-friendly". Ela instrui o navegador a ajustar a escala do conteúdo de acordo com a largura real da tela do dispositivo, evitando que o site apareça minúsculo em smartphones.</p>
+                        <li>Identidade e SEO:</li>
+                        <p>A tag <pre style="display: inline;">title</pre> define o nome que aparecerá na aba do navegador e no título principal dos resultados de busca do Google. É um dos fatores de SEO mais pesados para o ranqueamento orgânico.</p>
+                    </ol>
+                    <h3>O Corpo e a Experiência do Usuário: <pre style="display: inline;">body</pre></h3>
+                    <p>O elemento <pre style="display: inline;">body</pre> contém toda a parte visível do site: textos, imagens, botões, formulários e links. Enquanto o <pre style="display: inline;">head</pre> lida com as instruções para o navegador, o <pre style="display: inline;">body</pre> é o palco onde o conteúdo é estruturado e apresentado ao usuário final. É dentro do corpo que o desenvolvedor aplica a semântica e organiza o layout através do modelo de caixas.</p>
+
+                    <li><h2>III. O Modelo de Caixas (Box Model) e o Fluxo de Documentos</h2></li>
                 </ol>
-
-                <h3>O Corpo e a Experiência do Usuário: <pre style="display: inline;">body</pre></h3>
-                <p>O elemento <pre style="display: inline;">body</pre> contém toda a parte visível do site: textos, imagens, botões, formulários e links. Enquanto o <pre style="display: inline;">head</pre> lida com as instruções para o navegador, o <pre style="display: inline;">body</pre> é o palco onde o conteúdo é estruturado e apresentado ao usuário final. É dentro do corpo que o desenvolvedor aplica a semântica e organiza o layout através do modelo de caixas.</p>
-
-                <h2>III. O Modelo de Caixas (Box Model) e o Fluxo de Documentos</h2>
             </article>
         </section>
     </main>
