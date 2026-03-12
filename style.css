@@ -13,9 +13,9 @@ body {
 /* Configuração para o cabeçalho */
 header {
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
 
     position: sticky;
     top: 0;
@@ -42,41 +42,35 @@ header section span {
 
 header menu {
     display: flex;
-    flex-flow: row-reverse wrap;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-
     cursor: pointer;
     background-color: black;
 }
 
-header menu > i {
-    font-size: 1.5em;
-    padding: 5px;
-    border: 1px solid blueviolet;
-    border-radius: 5px;
-}
-
 header nav {
-    padding: 8px;
+    padding: 5px;
     white-space: nowrap;
-    border: 1px solid blueviolet;
-    border-radius: 15px;
     opacity: 0;
     visibility: hidden;
     overflow: hidden;
-    transform: translateX(3px);
+    transform: translateX(-3px);
     transition: all .5s ease-out;
 }
 
 header nav.mostrar {
-    max-width: max-content;
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
 }
 
 header nav ul {
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 15px;
     list-style-type: none;
 }
 
