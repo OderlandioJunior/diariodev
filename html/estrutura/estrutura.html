@@ -43,6 +43,7 @@
             <h2>Anatomia e Estrutura de um Documento HTML5</h2>
             <p>A construção de um site resiliente e acessível começa pela compreensão minuciosa do esqueleto HTML. Um documento HTML5 não é apenas uma sequência de tags; é uma hierarquia de objetos que formam o Document Object Model (DOM). A omissão ou o uso incorreto de tags fundamentais pode levar ao "Quirks Mode", onde o navegador renderiza a página de forma imprevisível para manter compatibilidade com tecnologias obsoletas da década de 90.</p>
             <div class="estrutura">
+                <img src="image/htmltag1.PNG" alt="">
             </div>
             <h3>O Preâmbulo Obrigatório: <code>!DOCTYPE html</code></h3>
             <p>A primeira linha de qualquer documento moderno deve ser obrigatoriamente <code>!DOCTYPE html</code>. Tecnicamente, esta instrução não é uma tag HTML, mas uma declaração de tipo de documento (DTD). Ela informa ao navegador que o arquivo segue os padrões vigentes do HTML5, garantindo que o motor de renderização utilize o "Standards Mode" para interpretar o layout e os estilos CSS com precisão.</p>
@@ -52,25 +53,64 @@
             <p>O elemento <code>head</code> atua como o cabeçalho de metadados do documento. As informações contidas aqui não são visíveis diretamente para o visitante comum (exceto o título e o favicon), mas são vitais para o funcionamento e a otimização da página.</p>
             <ol>
                 <li>
-                    Codificação de Caracteres:
+                    <strong>Codificação de Caracteres:</strong>
                     <p> A tag <code>meta charset="utf-8"</code> deve ser a primeira dentro do <code>head</code>. Ela garante que o navegador consiga exibir corretamente acentos, caracteres especiais de diversos idiomas e emojis. Sem ela, o texto pode ser corrompido, exibindo símbolos ilegíveis.</p>
                 </li>
                 <li>
-                    Responsividade
+                    <strong>Responsividade</strong>
                     <p>A metatag de viewport, tipicamente escrita como <code>meta name="viewport" content="width=device-width, initial-scale=1.0"</code>, é o que torna o site "mobile-friendly". Ela instrui o navegador a ajustar a escala do conteúdo de acordo com a largura real da tela do dispositivo, evitando que o site apareça minúsculo em smartphones.</p>
                 </li>
                 <li>
-                    Identidade e SEO:
+                    <strong>Identidade e SEO:</strong>
                     <p>A tag <code>title</code> define o nome que aparecerá na aba do navegador e no título principal dos resultados de busca do Google. É um dos fatores de SEO mais pesados para o ranqueamento orgânico.</p>
                 </li>
             </ol>
             <h3>O Corpo e a Experiência do Usuário: <code>body</code></h3>
             <p>O elemento <code>body</code> contém toda a parte visível do site: textos, imagens, botões, formulários e links. Enquanto o <code>head</code> lida com as instruções para o navegador, o <code>body</code> é o palco onde o conteúdo é estruturado e apresentado ao usuário final. É dentro do corpo que o desenvolvedor aplica a semântica e organiza o layout através do modelo de caixas.</p>
         </article>
-        
 
         <article>
-            <h2>O Modelo de Caixas (Box Model) e o Fluxo de Documentos</h2>
+            <h2>III. O Modelo de Caixas (Box Model) e o Fluxo de Documentos</h2>
+            <p>No desenvolvimento frontend, entender que "tudo é uma caixa" é a chave para o domínio do layout. Mesmo que um elemento pareça circular no navegador, ele reside dentro de uma fronteira retangular definida pelo CSS Box Model. No entanto, antes de aplicar estilos complexos, é preciso compreender como o HTML organiza essas caixas por padrão através do "Normal Flow" (Fluxo Normal).</p>
+            <h3>Componentes da Caixa no Contexto HTML</h3>
+            <p>Cada elemento gera uma caixa que consiste em quatro áreas distintas:</p>
+            <ol>
+                <li>Content (Conteúdo): Onde o texto ou imagem reside.</li>
+                <li>Padding (Preenchimento): Espaço interno entre o conteúdo e a borda.</li>
+                <li>Border (Borda): A linha que delimita a caixa.</li>
+                <li>Margin (Margem): Espaço externo que separa a caixa de seus vizinhos.</li>
+            </ol>
+            <h3>Comportamento de Bloco vs. Em Linha</h3>
+            <p>O HTML categoriza os elementos com base em como eles se comportam no fluxo da página:</p>
+            <ul>
+                <li><strong>Block-level (Nível de Bloco)</strong>: Elementos como <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code> e <code>&lt;header&gt;</code> ocupam toda a largura disponível de seu container pai. Eles sempre começam em uma nova linha, criando uma estrutura de empilhamento vertical. Caixas de bloco respeitam todas as dimensões de largura, altura e margens verticais/horizontais.</li>
+                <li><strong>Inline (Em Linha)</strong>: Elementos como <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code> e <code>&lt;em&gt;</code> ocupam apenas a largura necessária para envolver seu conteúdo. Eles não quebram a linha e fluem horizontalmente junto com o texto vizinho. Um detalhe técnico fundamental: elementos inline puros não aceitam propriedades de largura ou altura e possuem limitações na aplicação de margens verticais.</li>
+                <li><strong>Inline-Block</strong>: Este é um estado híbrido. O elemento flui horizontalmente como se fosse texto, mas aceita dimensões de largura e altura como se fosse um bloco. É ideal para botões e itens de menu</li>
+            </ul>
+        </article>
+
+        <article>
+            <h2>IV. Arquitetura Semântica e Regras de Aninhamento</h2>
+            <p>A semântica no HTML5 representa a evolução da web de um conjunto de documentos visuais para uma teia de dados compreensíveis por máquinas. Utilizar tags semânticas não é uma questão estética, mas funcional: elas permitem que tecnologias assistivas (leitores de tela) e algoritmos de busca (Googlebot) entendam a hierarquia e a importância de cada parte do conteúdo.</p>
+            <h3>A Pirâmide Semântica: Marcos de Navegação</h3>
+            <p>O HTML moderno define "Marcos" (Landmarks) que facilitam a navegação rápida. O uso correto desses marcos substitui a antiga prática de usar <code>&lt;div&gt;</code> para tudo (o chamado "Divitis").</p>
+            <ul>
+                <li><code>&lt;header&gt;</code>: Define o cabeçalho de uma página ou seção. Se estiver diretamente no body, é o banner principal do site. Se estiver dentro de um article, é o topo daquela postagem.</li>
+                <li><code>&lt;main&gt;</code>: Deve ser único por página. Ele encapsula o conteúdo central e exclusivo daquele documento.</li>
+                <li><code>&lt;nav&gt;</code>: Agrupa links de navegação principal. Não deve ser usado para todos os links, apenas para os blocos de navegação mais significativos.</li>
+                <li><code>&lt;article&gt;</code> vs <code>&lt;section&gt;</code>: Um <code>&lt;article&gt;</code> é um conteúdo independente que faria sentido se fosse lido sozinho (como uma notícia ou post de blog). Já uma <code>&lt;section&gt;</code> é um agrupamento temático que faz parte de um todo maior. Geralmente, uma section deve conter um título próprio (h2 a h6).</li>
+                <li><code>&lt;footer&gt;</code>: Define o rodapé, contendo informações de copyright, links institucionais ou dados de contato.</li>
+                </ul>
+
+                <!--Criar uma área para hierarquia de titulos-->
+                <h3>Regras de Ouro para o Aninhamento</h3>
+                <p>O aninhamento de elementos segue regras de gramática estrutural que, se violadas, podem invalidar o código e prejudicar o SEO:</p>
+                <ol>
+                    <li>Parágrafos e Blocos: A tag <code>&lt;p&gt;</code> é destinada apenas a "phrasing content" (conteúdo de frase). É semanticamente incorreto e tecnicamente problemático aninhar elementos de bloco (como uma div, um ul ou outro p) dentro de um parágrafo. Se o navegador detectar um elemento de bloco dentro de um parágrafo aberto, ele forçará o fechamento automático da tag <code>&lt;p&gt;</code>, quebrando seu layout.</li>
+                    <li>O Caso Especial do Anchor (<code>&lt;a&gt;</code>): Historicamente, links eram puramente inline. No HTML5, a tag <code>&lt;a&gt;</code> pode envolver blocos inteiros, como um article ou uma div, permitindo que toda uma área (com título, imagem e texto) se torne clicável. Contudo, é proibido aninhar um link dentro de outro link.</li>
+                    <li>Listas: Os itens de lista (<code>&lt;li&gt;</code>) só podem ser filhos diretos de uma lista ordenada (<code>&lt;ol&gt;</code>) ou desordenada (<code>&lt;ul&gt;</code>). Aninhar uma <code>&lt;div&gt;</code> diretamente como filha de um <code>&lt;ul&gt;</code> é uma violação estrutural grave.</li>
+                </ol>
+            </ul>
         </article>
     </main>
     <footer>
