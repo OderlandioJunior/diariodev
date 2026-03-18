@@ -25,9 +25,9 @@
     </header>
     <main>
         <article>
-            <h2>I. Tipologias de Arquivos e a Anatomia Digital na Programação</h2>
+            <h2>Tipologias de Arquivos e a Anatomia Digital na Programação</h2>
             <p>Para um desenvolvedor, compreender a natureza dos arquivos com os quais interage é o primeiro passo para o domínio do ambiente de desenvolvimento. Uma extensão de arquivo não é apenas um rótulo; ela sinaliza ao sistema operacional e às aplicações o formato interno dos dados e o interpretador necessário para processá-los. Mudar a extensão de um arquivo manualmente (por exemplo, de .jpg para .js) não altera a organização interna dos seus bits, o que resultará em erro de execução. No contexto do Diário DEV, é essencial diferenciar entre formatos binários, formatos de marcação e scripts.</p>
-            <h3>O Paradigma da Transição:.doc vs.docx</h3>
+            <h3>O Paradigma da Transição: .doc vs.docx</h3>
             <p>A evolução dos formatos de processamento de texto exemplifica a mudança da indústria em direção a padrões abertos e extensíveis. O formato .doc, utilizado pelo Microsoft Word até 2003, é um formato binário proprietário. Ele armazena informações de formatação de maneira compacta, porém opaca, dificultando a interoperabilidade entre diferentes softwares e aumentando o risco de corrupção de dados.</p>
             <p>Com o lançamento do Office 2007, surgiu o .docx, fundamentado no padrão Office Open XML (OOXML). Tecnicamente, um arquivo .docx é um contêiner comprimido (baseado em ZIP) que abriga uma estrutura de arquivos XML. Para um desenvolvedor, o .docx é superior porque seu conteúdo pode ser lido e manipulado programaticamente sem a necessidade do Microsoft Word, além de oferecer maior segurança e eficiência de armazenamento devido à compressão nativa.</p>
             <h3>O Ecossistema de Ativos Visuais:.jpg,.jpeg e.png</h3>
@@ -40,34 +40,37 @@
         </article>
 
         <article>
-            <h2>II. Anatomia e Estrutura de um Documento HTML5</h2>
+            <h2>Anatomia e Estrutura de um Documento HTML5</h2>
             <p>A construção de um site resiliente e acessível começa pela compreensão minuciosa do esqueleto HTML. Um documento HTML5 não é apenas uma sequência de tags; é uma hierarquia de objetos que formam o Document Object Model (DOM). A omissão ou o uso incorreto de tags fundamentais pode levar ao "Quirks Mode", onde o navegador renderiza a página de forma imprevisível para manter compatibilidade com tecnologias obsoletas da década de 90.</p>
-            <h3>O Preâmbulo Obrigatório: <pre style="display: inline;">!DOCTYPE html</pre></h3>
-            <p>A primeira linha de qualquer documento moderno deve ser obrigatoriamente <pre style="display: inline;">!DOCTYPE html</pre>. Tecnicamente, esta instrução não é uma tag HTML, mas uma declaração de tipo de documento (DTD). Ela informa ao navegador que o arquivo segue os padrões vigentes do HTML5, garantindo que o motor de renderização utilize o "Standards Mode" para interpretar o layout e os estilos CSS com precisão.</p>
-            <h3>A Raiz e a Internacionalização: <pre style="display: inline;">HTML</pre> e <pre style="display: inline;">html lang</pre></h3>
-            <p>A tag <pre style="display: inline;">html</pre> envolve todo o conteúdo do documento, exceto o doctype. Um dos atributos mais críticos desta tag é o lang (ex: <pre style="display: inline;">html lang="pt-br"</pre>). Esta declaração de idioma é fundamental para a acessibilidade, pois informa aos leitores de tela qual sintetizador de voz e qual dicionário de pronúncia utilizar para usuários com deficiência visual. Além disso, motores de busca e ferramentas de tradução automática utilizam este atributo para indexar e processar o conteúdo de acordo com a região geográfica e a língua do usuário.</p>
-            <h3>O Cérebro da Página: <pre style="display: inline;">head</pre> e os <pre style="display: inline;">Metadados</pre></h3>
-            <p>O elemento <pre style="display: inline;">head</pre> atua como o cabeçalho de metadados do documento. As informações contidas aqui não são visíveis diretamente para o visitante comum (exceto o título e o favicon), mas são vitais para o funcionamento e a otimização da página.</p>
+            <div class="estrutura">
+            </div>
+            <h3>O Preâmbulo Obrigatório: <code>!DOCTYPE html</code></h3>
+            <p>A primeira linha de qualquer documento moderno deve ser obrigatoriamente <code>!DOCTYPE html</code>. Tecnicamente, esta instrução não é uma tag HTML, mas uma declaração de tipo de documento (DTD). Ela informa ao navegador que o arquivo segue os padrões vigentes do HTML5, garantindo que o motor de renderização utilize o "Standards Mode" para interpretar o layout e os estilos CSS com precisão.</p>
+            <h3>A Raiz e a Internacionalização: <code>html</code> e <code>html lang</code></h3>
+            <p>A tag <code>html</code> envolve todo o conteúdo do documento, exceto o doctype. Um dos atributos mais críticos desta tag é o lang (ex: <code>html lang="pt-br"</code>). Esta declaração de idioma é fundamental para a acessibilidade, pois informa aos leitores de tela qual sintetizador de voz e qual dicionário de pronúncia utilizar para usuários com deficiência visual. Além disso, motores de busca e ferramentas de tradução automática utilizam este atributo para indexar e processar o conteúdo de acordo com a região geográfica e a língua do usuário.</p>
+            <h3>O Cérebro da Página: <code>head</code> e os <code">Metadados</code></h3>
+            <p>O elemento <code>head</code> atua como o cabeçalho de metadados do documento. As informações contidas aqui não são visíveis diretamente para o visitante comum (exceto o título e o favicon), mas são vitais para o funcionamento e a otimização da página.</p>
             <ol>
                 <li>
                     Codificação de Caracteres:
-                    <p> A tag <pre style="display: inline;">meta charset="utf-8"</pre> deve ser a primeira dentro do <pre style="display: inline;">head</pre>. Ela garante que o navegador consiga exibir corretamente acentos, caracteres especiais de diversos idiomas e emojis. Sem ela, o texto pode ser corrompido, exibindo símbolos ilegíveis.</p>
+                    <p> A tag <code>meta charset="utf-8"</code> deve ser a primeira dentro do <code>head</code>. Ela garante que o navegador consiga exibir corretamente acentos, caracteres especiais de diversos idiomas e emojis. Sem ela, o texto pode ser corrompido, exibindo símbolos ilegíveis.</p>
                 </li>
                 <li>
                     Responsividade
-                    <p>A metatag de viewport, tipicamente escrita como <pre style="display: inline;">meta name="viewport" content="width=device-width, initial-scale=1.0"</pre>, é o que torna o site "mobile-friendly". Ela instrui o navegador a ajustar a escala do conteúdo de acordo com a largura real da tela do dispositivo, evitando que o site apareça minúsculo em smartphones.</p>
+                    <p>A metatag de viewport, tipicamente escrita como <code>meta name="viewport" content="width=device-width, initial-scale=1.0"</code>, é o que torna o site "mobile-friendly". Ela instrui o navegador a ajustar a escala do conteúdo de acordo com a largura real da tela do dispositivo, evitando que o site apareça minúsculo em smartphones.</p>
                 </li>
                 <li>
                     Identidade e SEO:
-                    <p>A tag <pre style="display: inline;">title</pre> define o nome que aparecerá na aba do navegador e no título principal dos resultados de busca do Google. É um dos fatores de SEO mais pesados para o ranqueamento orgânico.</p>
+                    <p>A tag <code>title</code> define o nome que aparecerá na aba do navegador e no título principal dos resultados de busca do Google. É um dos fatores de SEO mais pesados para o ranqueamento orgânico.</p>
                 </li>
             </ol>
-            <h3>O Corpo e a Experiência do Usuário: <pre style="display: inline;">body</pre></h3>
-            <p>O elemento <pre style="display: inline;">body</pre> contém toda a parte visível do site: textos, imagens, botões, formulários e links. Enquanto o <pre style="display: inline;">head</pre> lida com as instruções para o navegador, o <pre style="display: inline;">body</pre> é o palco onde o conteúdo é estruturado e apresentado ao usuário final. É dentro do corpo que o desenvolvedor aplica a semântica e organiza o layout através do modelo de caixas.</p>
+            <h3>O Corpo e a Experiência do Usuário: <code>body</code></h3>
+            <p>O elemento <code>body</code> contém toda a parte visível do site: textos, imagens, botões, formulários e links. Enquanto o <code>head</code> lida com as instruções para o navegador, o <code>body</code> é o palco onde o conteúdo é estruturado e apresentado ao usuário final. É dentro do corpo que o desenvolvedor aplica a semântica e organiza o layout através do modelo de caixas.</p>
         </article>
+        
 
         <article>
-            <h2>III. O Modelo de Caixas (Box Model) e o Fluxo de Documentos</h2>
+            <h2>O Modelo de Caixas (Box Model) e o Fluxo de Documentos</h2>
         </article>
     </main>
     <footer>
