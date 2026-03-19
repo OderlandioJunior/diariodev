@@ -90,7 +90,40 @@
         </article>
 
         <article>
-            <h2>IV. Arquitetura Semântica e Regras de Aninhamento</h2>
+            <h2>IV. Títulos como Elementos Block-level</h2>
+            <p>Tecnicamente, todos os elementos de cabeçalho (<code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>) são, por padrão, block-level elements. Isso significa que, no contexto do Box Model, eles possuem comportamentos específicos:</p>
+            <ul>
+                <li>Ocupação de Espaço: Cada título cria uma "caixa" que ocupa automaticamente 100% da largura disponível do container pai, forçando qualquer conteúdo seguinte a começar em uma nova linha.</li>
+                <li>Manipulação de Espaçamento: Como são blocos, eles aceitam perfeitamente todas as propriedades do Box Model, como width, height, padding e, principalmente, margin (essencial para separar seções de texto).</li>
+                <li>Quebra de Fluxo: Eles definem o "esqueleto" vertical da página. Sem títulos, o conteúdo seria uma massa única de texto; com eles, você cria divisões claras que o navegador e os motores de busca utilizam para entender o "outline" (esboço) do seu documento.</li>
+            </ul>
+            <h3>A Hierarquia de Títulos (H1 a H6)</h3>
+            <p>A hierarquia não deve ser escolhida pelo tamanho da fonte (isso você ajusta com CSS), mas sim pelo nível de importância e especificidade do assunto. Pense nela como a estrutura de um livro:</p>
+            <ol>
+                <li>
+                    <code>&lt;h1&gt;</code>(O Título do Livro): Representa o tema central da página. É o nível mais alto e deve ser único por documento para garantir uma boa indexação no Google e facilitar a navegação por leitores de tela. No seu blog, o <code>&lt;h1&gt;</code> seria o título do post (ex: "Entendendo o Box Model").
+                </li>
+                <li>
+                    <code>&lt;h2&gt;</code>(Os Capítulos): São os títulos das seções principais dentro do seu tema. Eles dividem o assunto global em grandes blocos lógicos. Se o post é sobre Box Model, um <code>&lt;h2&gt;</code> poderia ser "Componentes da Caixa".
+                </li>
+                <li>
+                    <code>&lt;h3&gt;</code>(Os Subcapítulos): Detalham subtópicos dentro de um <code>&lt;h2&gt;</code>. Dentro de "Componentes da Caixa", você usaria <code>&lt;h3&gt;</code> para explicar individualmente o "Padding", "Border" ou "Margin".
+                </li>
+                <li>
+                    <code>&lt;h4&gt;</code> a <code>&lt;h6&gt;</code> (Subdivisões Detalhadas): São usados para organizar informações ainda mais específicas dentro de um <code>&lt;h3&gt;</code>. Na prática, raramente se chega ao <code>&lt;h6&gt;</code>, a menos que o conteúdo seja extremamente técnico e ramificado.
+                </li>
+            </ol>
+            <h3>Regras de Ouro e Boas Práticas</h3>
+            <ul>
+                <li>Não Pule Níveis: Nunca salte de um <code>&lt;h1&gt;</code> direto para um <code>&lt;h3&gt;</code>. A sequência deve ser lógica (<code>&lt;h1&gt;</code> > <code>&lt;h2&gt;</code> > <code>&lt;h3&gt;</code>) para que robôs de busca e tecnologias assistivas compreendam a árvore de conteúdo.</li>
+                <li>Semântica vs. Estética: Não use um <code>&lt;h4&gt;</code> apenas porque você quer uma fonte menor. Use CSS (font-size) para controlar a aparência e mantenha a tag correta para a estrutura.</li>
+                <li>Foco em Acessibilidade: Leitores de tela permitem que usuários "saltem" entre cabeçalhos. Se a hierarquia estiver correta, uma pessoa com deficiência visual consegue navegar pelo seu blog tão rápido quanto alguém que escaneia a página visualmente.</li>
+                <li>SEO: O Google dá mais peso às palavras-chave que aparecem no <code>&lt;h1&gt;</code> e <code>&lt;h2&gt;</code>, pois elas indicam do que o conteúdo realmente trata.</li>
+            </ul>
+        </article>
+
+        <article>
+            <h2>V. Arquitetura Semântica e Regras de Aninhamento</h2>
             <p>A semântica no HTML5 representa a evolução da web de um conjunto de documentos visuais para uma teia de dados compreensíveis por máquinas. Utilizar tags semânticas não é uma questão estética, mas funcional: elas permitem que tecnologias assistivas (leitores de tela) e algoritmos de busca (Googlebot) entendam a hierarquia e a importância de cada parte do conteúdo.</p>
             <h3>A Pirâmide Semântica: Marcos de Navegação</h3>
             <p>O HTML moderno define "Marcos" (Landmarks) que facilitam a navegação rápida. O uso correto desses marcos substitui a antiga prática de usar <code>&lt;div&gt;</code> para tudo (o chamado "Divitis").</p>
@@ -100,17 +133,20 @@
                 <li><code>&lt;nav&gt;</code>: Agrupa links de navegação principal. Não deve ser usado para todos os links, apenas para os blocos de navegação mais significativos.</li>
                 <li><code>&lt;article&gt;</code> vs <code>&lt;section&gt;</code>: Um <code>&lt;article&gt;</code> é um conteúdo independente que faria sentido se fosse lido sozinho (como uma notícia ou post de blog). Já uma <code>&lt;section&gt;</code> é um agrupamento temático que faz parte de um todo maior. Geralmente, uma section deve conter um título próprio (h2 a h6).</li>
                 <li><code>&lt;footer&gt;</code>: Define o rodapé, contendo informações de copyright, links institucionais ou dados de contato.</li>
-                </ul>
-
-                <!--Criar uma área para hierarquia de titulos-->
-                <h3>Regras de Ouro para o Aninhamento</h3>
-                <p>O aninhamento de elementos segue regras de gramática estrutural que, se violadas, podem invalidar o código e prejudicar o SEO:</p>
-                <ol>
-                    <li>Parágrafos e Blocos: A tag <code>&lt;p&gt;</code> é destinada apenas a "phrasing content" (conteúdo de frase). É semanticamente incorreto e tecnicamente problemático aninhar elementos de bloco (como uma div, um ul ou outro p) dentro de um parágrafo. Se o navegador detectar um elemento de bloco dentro de um parágrafo aberto, ele forçará o fechamento automático da tag <code>&lt;p&gt;</code>, quebrando seu layout.</li>
-                    <li>O Caso Especial do Anchor (<code>&lt;a&gt;</code>): Historicamente, links eram puramente inline. No HTML5, a tag <code>&lt;a&gt;</code> pode envolver blocos inteiros, como um article ou uma div, permitindo que toda uma área (com título, imagem e texto) se torne clicável. Contudo, é proibido aninhar um link dentro de outro link.</li>
-                    <li>Listas: Os itens de lista (<code>&lt;li&gt;</code>) só podem ser filhos diretos de uma lista ordenada (<code>&lt;ol&gt;</code>) ou desordenada (<code>&lt;ul&gt;</code>). Aninhar uma <code>&lt;div&gt;</code> diretamente como filha de um <code>&lt;ul&gt;</code> é uma violação estrutural grave.</li>
-                </ol>
             </ul>
+            <h3>Regras de Ouro para o Aninhamento</h3>
+            <p>O aninhamento de elementos segue regras de gramática estrutural que, se violadas, podem invalidar o código e prejudicar o SEO:</p>
+            <ol>
+                <li>Parágrafos e Blocos: A tag <code>&lt;p&gt;</code> é destinada apenas a "phrasing content" (conteúdo de frase). É semanticamente incorreto e tecnicamente problemático aninhar elementos de bloco (como uma div, um ul ou outro p) dentro de um parágrafo. Se o navegador detectar um elemento de bloco dentro de um parágrafo aberto, ele forçará o fechamento automático da tag <code>&lt;p&gt;</code>, quebrando seu layout.</li>
+                <li>O Caso Especial do Anchor (<code>&lt;a&gt;</code>): Historicamente, links eram puramente inline. No HTML5, a tag <code>&lt;a&gt;</code> pode envolver blocos inteiros, como um article ou uma div, permitindo que toda uma área (com título, imagem e texto) se torne clicável. Contudo, é proibido aninhar um link dentro de outro link.</li>
+                <li>Listas: Os itens de lista (<code>&lt;li&gt;</code>) só podem ser filhos diretos de uma lista ordenada (<code>&lt;ol&gt;</code>) ou desordenada (<code>&lt;ul&gt;</code>). Aninhar uma <code>&lt;div&gt;</code> diretamente como filha de um <code>&lt;ul&gt;</code> é uma violação estrutural grave.</li>
+            </ol>
+        </article>
+
+        <article>
+            <h2>VI. A Transição para o CSS e JS</h2>
+            <p>No roadmap do blog, após documentar a estrutura HTML, o próximo passo natural é a introdução do CSS para dar vida às "caixas" criadas. Isso inclui o estudo de Flexbox e Grid para o posicionamento avançado de blocos, além de variáveis CSS para manter o código limpo. Em seguida, o JavaScript entra para manipular esses elementos do DOM em tempo real, utilizando APIs modernas para buscar dados dinâmicos e atualizar a interface sem recarregar a página.</p>
+            <p>A documentação desses processos no Diário DEV serve como um registro da evolução da lógica de programação. Ao explicar por que escolheu um <code>&lt;article&gt;</code> em vez de uma <code>&lt;div&gt;</code>, ou como um <code>.webp</code> otimizou a velocidade do site, o desenvolvedor demonstra um pensamento crítico.</p>
         </article>
     </main>
     <footer>
