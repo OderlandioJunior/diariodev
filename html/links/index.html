@@ -23,55 +23,7 @@
             </ul>
         </menu>
     </header>
-    <main>
-        <section>
-            <article>
-                <h2>I. Arquitetura Sistêmica da Hiperligação: Uma Investigação sobre os Atributos href e rel em Ecossistemas de Aprendizado Digital</h2>
-                <p>A gênese da World Wide Web fundamenta-se na capacidade de interconectar documentos de forma não linear, uma revolução paradigmática que transformou a informação estática em um grafo dinâmico de conhecimento. No epicentro dessa transformação reside o elemento HTML <code>&lt;a&gt;</code>, ou elemento de ancoragem, que atua como o vetor fundamental para a navegação e a transferência de autoridade entre nós de uma rede. Para um desenvolvedor que constrói um diário de aprendizagem digital, a compreensão exaustiva das propriedades técnicas deste elemento, particularmente os atributos <code>href</code> e <code>rel</code>, é imperativa não apenas para a funcionalidade básica, mas para a garantia da segurança, da acessibilidade e da otimização para motores de busca. Esta análise investiga as dimensões ontológicas, técnicas e pragmáticas da ancoragem em HTML5, contextualizando-a na evolução das especificações da W3C e do WHATWG.</p>
-                <h3>Evolução e Ontologia do Elemento de Ancoragem</h3>
-                <p>O elemento de ancoragem evoluiu de uma simples marcação de hipertexto para um componente de interface complexo, cujas propriedades são definidas por uma colaboração histórica e, por vezes, divergente, entre organismos de padronização. Em 2011, a divergência entre a W3C, que buscava publicar uma versão "finalizada" do HTML5, e o WHATWG, que defendia um "Living Standard" (padrão vivo) em constante evolução, moldou a forma como as tags de ancoragem são interpretadas hoje. Esta dualidade resultou em uma especificação que equilibra a estabilidade necessária para navegadores legados com a flexibilidade exigida pelas aplicações web modernas.</p>
-                <p>Tecnicamente, o elemento <code>&lt;a&gt;</code> define uma âncora de hipertexto que possui dois fins — referidos como âncoras de origem e de destino — e uma direção definida pelo fluxo do usuário. A âncora de origem é a instância do elemento no documento atual, enquanto a âncora de destino pode ser qualquer recurso da web, incluindo imagens, vídeos, documentos HTML ou fragmentos específicos dentro de um arquivo.</p>
-                <!--Abrir tabela relativa à componentes da ancora-->
-                <p>Diferente de elementos como <code>&lt;img&gt;</code>, que utilizam o atributo <code>src</code> para incorporar conteúdo diretamente, a tag <code>&lt;a&gt;</code> utiliza o <code>href</code> para criar uma ponte referencial. Se o atributo <code>href</code> estiver ausente, o elemento é tecnicamente classificado como um "placeholder" para um link que poderia existir se fosse relevante. Neste estado de placeholder, atributos como <code>target</code>, <code>rel</code>, <code>media</code> e <code>hreflang</code> devem ser omitidos, pois perdem sua função operacional na ausência de um destino definido.</p>
-                <h2>O Atributo <code>href</code>: Mecanismos de Endereçamento e Resolução de Recursos</h2>
-                <p>O atributo <code>href</code> é o motor de busca de destinos do elemento de ancoragem, suportando uma vasta gama de esquemas de Uniform Resource Identifier (URI). Em um diário de aprendizagem, a escolha entre URLs absolutas, relativas e fragmentos de documento determina a resiliência da estrutura de anotações ao longo do tempo.</p>
-            </article>
-
-            <h2>II. Tipologias de URLs e Resolução de Caminhos</h2>
-            <p>A infraestrutura de endereçamento no HTML permite que o desenvolvedor referencie recursos de forma global ou contextual. URLs absolutas incluem o protocolo (como <code>https://</code>) e o nome de domínio, sendo indispensáveis para referenciar fontes externas de pesquisa e garantir que o link funcione independentemente da localização do documento de origem. Por outro lado, URLs relativas são resolvidas com base na localização do arquivo atual ou na raiz do site.</p>
-            <p>Para um sistema de notas digital, a compreensão dos caminhos relativos é vital para manter a integridade dos links durante migrações de servidor ou alterações na hierarquia de pastas.</p>
-            <!--Abrir tabela relativa à tipos de referências-->
-            <p>O uso de URLs relativas ao esquema (<code>//</code>) é uma prática que visa evitar problemas de conteúdo misto, garantindo que o recurso vinculado seja solicitado através do mesmo protocolo de segurança da página principal. Contudo, em ambientes modernos onde o HTTPS é onipresente, a tendência é a especificação explícita do protocolo para evitar latências de redirecionamento.</p>
-
-            <h2>III. Fragmentos e Identificadores de Destino</h2>
-            <p>A navegação interna em documentos extensos é facilitada pelos identificadores de fragmento. Segundo a especificação HTML, qualquer elemento que possua um atributo <code>id</code> único pode servir como uma âncora de destino. Historicamente, utilizava-se o atributo <code>name</code> em tags <code>&lt;a&gt;</code> para este fim, mas a prática moderna padronizou o uso de IDs globais para maior flexibilidade semântica.</p>
-            <p>A precisão dos links de fragmento é sensível a maiúsculas e minúsculas (case-sensitive) no que diz respeito à correspondência entre o valor do <code>href</code> e o ID do destino. Além disso, a especificação permite o uso de <code>href="#top"</code> ou um fragmento vazio <code>href="#"</code> para retornar ao topo do documento, um comportamento padronizado que os navegadores interpretam nativamente sem a necessidade de scripts adicionais.</p>
-
-            <h2>IV. Integração com Protocolos de Sistema: mailto e tel</h2>
-            <p>A tag de ancoragem estende-se além da navegação web, permitindo a interação com aplicações nativas do sistema operacional através de esquemas como <code>mailto:</code> e <code>tel:</code>.</p>
-
-            <p>No contexto de um blog de aprendizado, o esquema <code>mailto:</code> pode ser configurado para facilitar a comunicação estruturada. Além do endereço de destino, o atributo <code>href</code> aceita parâmetros de consulta para pré-preencher campos do e-mail: <code>href="mailto:suporte@exemplo.com</code></p>
-            <p>É fundamental observar que caracteres especiais, como espaços e quebras de linha, devem ser codificados em formato de URL (URL-encoded) para garantir que o cliente de e-mail interprete a string corretamente. Da mesma forma, o esquema <code>tel:</code> deve preferencialmente utilizar o formato internacional de numeração, iniciando com <code>+</code> e o código do país, para garantir que o link funcione em qualquer localização geográfica e dispositivo móvel.</p>
-
-            <article>
-            <h2>V. O Atributo rel: Semântica, Segurança e Performance</h2>
-            <p>O atributo <code>rel</code> (relationship) é o componente que define a natureza do vínculo entre o documento atual e o recurso referenciado. Sua aplicação correta é o diferencial entre um link comum e um nó de informação enriquecido com metadados para navegadores e algoritmos de busca.</p>
-
-            <h3>Segurança e Isolamento de Processos: noopener e noreferrer</h3>
-            </article>
-            <p>O uso de <code>target="_blank"</code> para abrir links em novas abas introduz uma vulnerabilidade de segurança significativa conhecida como manipulação de janela de origem. Sem proteção, a página de destino pode acessar a propriedade <code>window.opener</code> da página original, permitindo que scripts maliciosos redirecionem a aba de origem para URLs fraudulentas.</p>
-            <!--Abrir tabela relativa à tipos de rel-->
-            <p>Além da segurança, o <code>rel="noopener"</code> é um fator determinante para a performance do navegador. Em navegadores baseados em Chromium, quando uma nova aba é aberta sem <code>noopener</code>, ela frequentemente compartilha o mesmo processo de renderização que a aba original para permitir o acesso síncrono ao DOM. Isso significa que, se o site de destino executar JavaScript pesado ou travar, a aba de origem também sofrerá lentidão ou ficará sem resposta. O uso de <code>rel="noopener"</code> sinaliza ao navegador que as páginas são independentes, permitindo que elas sejam isoladas em processos separados, aproveitando melhor a arquitetura multi-core dos processadores modernos.</p>
-
-            <h3>Otimização para Motores de Busca (SEO): O Sistema de Dicas do Google</h3>
-            <p>A partir de 2019, o ecossistema de busca do Google evoluiu na interpretação dos atributos de relacionamento, passando a tratá-los como "dicas" (hints) em vez de comandos mandatórios. Esta mudança permite que os algoritmos considerem a existência do link para entender o grafo de conhecimento, mesmo que a autoridade de ranking não seja transferida diretamente.</p>
-            <ol>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ol>
-        </section>
-    </main>
+    
     <footer>
         <a href="#" target="_blank" rel="follow"><i class="fa-brands fa-github"></i> Github</a>
         <a href="#" target="_blank" rel="follow"><i class="fa-regular fa-envelope"></i> E-mail</a>
