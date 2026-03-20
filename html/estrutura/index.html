@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="html-style.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/1cf26eb200.js" crossorigin="anonymous"></script>
     <title>Estrutura HTML</title>
 </head>
@@ -18,8 +17,8 @@
         <i class="fa-solid fa-bars" onclick="clickMenu()"></i>
         <nav id="itens">
             <ul>
-                <li><a href="../../index.html" target="_parent" rel="prev"><i class="fa-regular fa-circle-left"></i> Aprendizado</a></li>
-                <li><a href="#" target="_self" rel="next">Próximo artigo <i class="fa-regular fa-circle-right"></i></a></li>
+                <li><a href="../../index.html" target="_parent" rel="prev"><i class="fa-regular fa-house"></i> Página principal</a></li>
+                <li><a href="../links/index.html" target="_self" rel="next">Próximo artigo <i class="fa-regular fa-circle-right"></i></a></li>
             </ul>
         </menu>
     </header>
@@ -43,7 +42,7 @@
             <h2>Anatomia e Estrutura de um Documento HTML5</h2>
             <p>A construção de um site resiliente e acessível começa pela compreensão minuciosa do esqueleto HTML. Um documento HTML5 não é apenas uma sequência de tags; é uma hierarquia de objetos que formam o Document Object Model (DOM). A omissão ou o uso incorreto de tags fundamentais pode levar ao "Quirks Mode", onde o navegador renderiza a página de forma imprevisível para manter compatibilidade com tecnologias obsoletas da década de 90.</p>
             <div class="estrutura">
-                <img src="image/htmltag1.PNG" alt="">
+                <img src="image/estrutura-html.PNG" alt="">
             </div>
             <h3>O Preâmbulo Obrigatório: <code>!DOCTYPE html</code></h3>
             <p>A primeira linha de qualquer documento moderno deve ser obrigatoriamente <code>!DOCTYPE html</code>. Tecnicamente, esta instrução não é uma tag HTML, mas uma declaração de tipo de documento (DTD). Ela informa ao navegador que o arquivo segue os padrões vigentes do HTML5, garantindo que o motor de renderização utilize o "Standards Mode" para interpretar o layout e os estilos CSS com precisão.</p>
@@ -160,13 +159,6 @@
             const menuItens = document.getElementById('itens');
             menuItens.classList.toggle('mostrar');
         }
-        const conteudos = document.querySelectorAll('.conteudo');
-            conteudos.forEach(item => {
-            item.addEventListener('click', function() {
-            const artigo = this.nextElementSibling;
-                artigo.classList.toggle('mostrar');
-            });
-        });
     </script>
 </body>
 </html>
