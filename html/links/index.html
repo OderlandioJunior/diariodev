@@ -26,7 +26,7 @@
     <main>
         <section>
             <article>
-                <h2>Arquitetura Sistêmica da Hiperligação: Uma Investigação sobre os Atributos href e rel em Ecossistemas de Aprendizado Digital</h2>
+                <h2>I. Arquitetura Sistêmica da Hiperligação: Uma Investigação sobre os Atributos href e rel em Ecossistemas de Aprendizado Digital</h2>
                 <p>A gênese da World Wide Web fundamenta-se na capacidade de interconectar documentos de forma não linear, uma revolução paradigmática que transformou a informação estática em um grafo dinâmico de conhecimento. No epicentro dessa transformação reside o elemento HTML <code>&lt;a&gt;</code>, ou elemento de ancoragem, que atua como o vetor fundamental para a navegação e a transferência de autoridade entre nós de uma rede. Para um desenvolvedor que constrói um diário de aprendizagem digital, a compreensão exaustiva das propriedades técnicas deste elemento, particularmente os atributos <code>href</code> e <code>rel</code>, é imperativa não apenas para a funcionalidade básica, mas para a garantia da segurança, da acessibilidade e da otimização para motores de busca. Esta análise investiga as dimensões ontológicas, técnicas e pragmáticas da ancoragem em HTML5, contextualizando-a na evolução das especificações da W3C e do WHATWG.</p>
                 <h3>Evolução e Ontologia do Elemento de Ancoragem</h3>
                 <p>O elemento de ancoragem evoluiu de uma simples marcação de hipertexto para um componente de interface complexo, cujas propriedades são definidas por uma colaboração histórica e, por vezes, divergente, entre organismos de padronização. Em 2011, a divergência entre a W3C, que buscava publicar uma versão "finalizada" do HTML5, e o WHATWG, que defendia um "Living Standard" (padrão vivo) em constante evolução, moldou a forma como as tags de ancoragem são interpretadas hoje. Esta dualidade resultou em uma especificação que equilibra a estabilidade necessária para navegadores legados com a flexibilidade exigida pelas aplicações web modernas.</p>
@@ -37,24 +37,24 @@
                 <p>O atributo <code>href</code> é o motor de busca de destinos do elemento de ancoragem, suportando uma vasta gama de esquemas de Uniform Resource Identifier (URI). Em um diário de aprendizagem, a escolha entre URLs absolutas, relativas e fragmentos de documento determina a resiliência da estrutura de anotações ao longo do tempo.</p>
             </article>
 
-            <h2>Tipologias de URLs e Resolução de Caminhos</h2>
+            <h2>II. Tipologias de URLs e Resolução de Caminhos</h2>
             <p>A infraestrutura de endereçamento no HTML permite que o desenvolvedor referencie recursos de forma global ou contextual. URLs absolutas incluem o protocolo (como <code>https://</code>) e o nome de domínio, sendo indispensáveis para referenciar fontes externas de pesquisa e garantir que o link funcione independentemente da localização do documento de origem. Por outro lado, URLs relativas são resolvidas com base na localização do arquivo atual ou na raiz do site.</p>
             <p>Para um sistema de notas digital, a compreensão dos caminhos relativos é vital para manter a integridade dos links durante migrações de servidor ou alterações na hierarquia de pastas.</p>
             <!--Abrir tabela relativa à tipos de referências-->
             <p>O uso de URLs relativas ao esquema (<code>//</code>) é uma prática que visa evitar problemas de conteúdo misto, garantindo que o recurso vinculado seja solicitado através do mesmo protocolo de segurança da página principal. Contudo, em ambientes modernos onde o HTTPS é onipresente, a tendência é a especificação explícita do protocolo para evitar latências de redirecionamento.</p>
 
-            <h2>Fragmentos e Identificadores de Destino</h2>
+            <h2>III. Fragmentos e Identificadores de Destino</h2>
             <p>A navegação interna em documentos extensos é facilitada pelos identificadores de fragmento. Segundo a especificação HTML, qualquer elemento que possua um atributo <code>id</code> único pode servir como uma âncora de destino. Historicamente, utilizava-se o atributo <code>name</code> em tags <code>&lt;a&gt;</code> para este fim, mas a prática moderna padronizou o uso de IDs globais para maior flexibilidade semântica.</p>
             <p>A precisão dos links de fragmento é sensível a maiúsculas e minúsculas (case-sensitive) no que diz respeito à correspondência entre o valor do <code>href</code> e o ID do destino. Além disso, a especificação permite o uso de <code>href="#top"</code> ou um fragmento vazio <code>href="#"</code> para retornar ao topo do documento, um comportamento padronizado que os navegadores interpretam nativamente sem a necessidade de scripts adicionais.</p>
 
-            <h2>Integração com Protocolos de Sistema: mailto e tel</h2>
+            <h2>IV. Integração com Protocolos de Sistema: mailto e tel</h2>
             <p>A tag de ancoragem estende-se além da navegação web, permitindo a interação com aplicações nativas do sistema operacional através de esquemas como <code>mailto:</code> e <code>tel:</code>.</p>
 
             <p>No contexto de um blog de aprendizado, o esquema <code>mailto:</code> pode ser configurado para facilitar a comunicação estruturada. Além do endereço de destino, o atributo <code>href</code> aceita parâmetros de consulta para pré-preencher campos do e-mail: <code>href="mailto:suporte@exemplo.com</code></p>
             <p>É fundamental observar que caracteres especiais, como espaços e quebras de linha, devem ser codificados em formato de URL (URL-encoded) para garantir que o cliente de e-mail interprete a string corretamente. Da mesma forma, o esquema <code>tel:</code> deve preferencialmente utilizar o formato internacional de numeração, iniciando com <code>+</code> e o código do país, para garantir que o link funcione em qualquer localização geográfica e dispositivo móvel.</p>
 
             <article>
-            <h2>O Atributo rel: Semântica, Segurança e Performance</h2>
+            <h2>V. O Atributo rel: Semântica, Segurança e Performance</h2>
             <p>O atributo <code>rel</code> (relationship) é o componente que define a natureza do vínculo entre o documento atual e o recurso referenciado. Sua aplicação correta é o diferencial entre um link comum e um nó de informação enriquecido com metadados para navegadores e algoritmos de busca.</p>
 
             <h3>Segurança e Isolamento de Processos: noopener e noreferrer</h3>
