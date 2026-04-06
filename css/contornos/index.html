@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contornos</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html" target="" rel="">Página principal</a></li>
+                <!-- i > bars -->
+                <li><a href="../contornos/index.html" target="" rel="">Próximo artigo</a></li>
+            </ul>
+        </nav>
+        <h1>Diário DEV</h1>
+        <span>Por Oderlândio Júnior</span>
+    </header>
+    <main>
+        <article>
+            <h2>Contornos e Relevo: Borda, Outline e Sombra</h2>
+            <p>Se a estilização de textos cuida da mensagem, os contornos cuidam da forma. No CSS, temos três ferramentas principais para definir os limites e a profundidade de um elemento. Entender a diferença entre elas é o que separa um layout "chapado" de uma interface moderna e profissional.</p>
+        </article>
+        <article>
+            <h2>Molduras</h2>
+            <p>Embora pareçam iguais, essas duas propriedades se comportam de <strong>formas</strong> completamente diferentes no espaço do seu site.</p>
+            <ol>
+                <li>
+                    <strong>Border (A Borda Real)</strong>
+                    <p>A <code>border</code> é a moldura clássica.</p>
+                    <ul>
+                        <li>
+                            <strong>Impacto no Espaço</strong>: Lembra do Box Model? A borda <strong>ocupa espaço</strong>. Se você adicionar uma borda de 5px em um botão, ele vai "empurrar" os elementos vizinhos para caber.
+                        </li>
+                        <li>
+                            <strong>Sintaxe</strong>: Ela precisa de três valores: largura, estilo e cor.
+                        </li>
+                        <li>
+                            <strong>Estilos comuns</strong>: <code>solid</code> (linha contínua), <code>dashed</code> (tracejada) e <code>dotted</code> (pontilhada).
+                        </li>
+                        <li>
+                            <strong>Exemplo</strong>: <code>border: 2px solid black;</code>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Border-radius (O Fim das Quinas)</strong>
+                    <p>Antigamente, tudo na web tinha quinas de 90 graus. O <code>border-radius</code> mudou isso.</p>
+                    <ul>
+                        <li>
+                            <strong>Suavização</strong>: Com ele, você arredonda os cantos. Se você tiver um quadrado de 100px e aplicar <code>border-radius: 50%</code>, ele vira um círculo perfeito.
+                        </li>
+                        <li>
+                            <strong>Dica de Design</strong>: Arredondamentos leves (4px a 8px) dão um ar amigável e moderno para botões e cartões de informação.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Outline (O Contorno de Destaque)</strong>
+                    <p>O <code>outline</code> é como uma "aura" ao redor da caixa.</p>
+                    <ul>
+                        <li>
+                            <strong>O Segredo</strong>: Ele <strong>NÃO ocupa espaço</strong>. Ele é desenhado por cima de tudo, sem empurrar ninguém.
+                        </li>
+                        <li>
+                            <strong>Uso Principal</strong>: Acessibilidade. Sabe quando você aperta "Tab" e um retângulo azul aparece em volta de um link? Aquilo é um <code>outline</code>. Ele serve para mostrar onde o foco do usuário está sem quebrar o layout.
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </article>
+        <article>
+            <h2>Profundidade</h2>
+
+        </article>
+    </main>
+    <footer>
+        <nav>
+            <a href="">GitHub</a> <a href="">E-mail</a> <a href="">LinkedIn</a>
+        </nav>
+        Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.
+    </footer>
+</body>
+</html>
