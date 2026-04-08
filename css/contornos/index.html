@@ -11,7 +11,7 @@
             <ul>
                 <li><a href="../../index.html" target="" rel="">Página principal</a></li>
                 <!-- i > bars -->
-                <li><a href="../contornos/index.html" target="" rel="">Próximo artigo</a></li>
+                <li><a href="../fundo/index.html" target="" rel="">Próximo artigo</a></li>
             </ul>
         </nav>
         <h1>Diário DEV</h1>
@@ -72,7 +72,84 @@
         </article>
         <article>
             <h2>Profundidade</h2>
-
+            <p>Aqui é onde o design ganha "toque" e "volume".</p>
+            <ol>
+                <li>
+                    <strong>Box-shadow (A Sombra e o Relevo)</strong>
+                    <p>A sombra é o que diz ao cérebro do usuário: "Este elemento está flutuando acima da página".</p>
+                    <ul>
+                        <li>
+                            <strong>Os 4 Valores</strong>: Para criar uma sombra, você define:
+                            <ol>
+                                <li>
+                                    Deslocamento Horizontal (Eixo X)
+                                </li>
+                                <li>
+                                    Deslocamento Vertical (Eixo Y)
+                                </li>
+                                <li>
+                                    Desfoque (Blur) - o quão "esfumada" a sombra é.
+                                </li>
+                                <li>
+                                    Cor da sombra.
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <strong>Exemplo</strong>: <code>box-shadow: 5px 5px 15px rgba(0,0,0,0.3);</code>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>O Relevo das Palavras (<code>text-shadow</code>)</strong>
+                    <p>Se o <code>box-shadow</code> cria sombra na caixa (o papel), o <code>text-shadow</code> cria sombra na tinta (a letra). Esta propriedade é fundamental para garantir que o texto seja legível quando está sobre imagens ou fundos com muitas cores.</p>
+                    <strong>A Estrutura da Sombra de Texto</strong>
+                    <p>Tal como na sombra da caixa, aqui defines quatro valores essenciais:</p>
+                    <ul>
+                        <li>
+                            <strong>Deslocamento Horizontal (X)</strong>: Move a sombra para a esquerda ou direita.
+                        </li>
+                        <li>
+                            <strong>Deslocamento Vertical (Y)</strong>: Move a sombra para cima ou para baixo.
+                        </li>
+                        <li>
+                            <strong>Raio de Desfoque (Blur)</strong>: Define se a sombra é nítida ou esfumada.
+                        </li>
+                        <li>
+                            <strong>Cor</strong>: Define a cor da sombra (geralmente usamos <code>rgba</code> para controlar a transparência).
+                        </li>
+                    </ul>
+                    <strong>Diferença Crucial</strong>: Sem "Spread"
+                    <p>Diferente do <code>box-shadow</code>, o <code>text-shadow</code> <strong>não tem o quarto valor numérico</strong> (o <em>spread</em> ou <em>expansão</em>). Ele foca apenas na posição e no desfoque.</p>
+                    <strong>Aplicações Práticas</strong>:
+                    <ul>
+                        <li>
+                            <strong>Legibilidade</strong>: Uma sombra preta muito suave (<code>1px 1px 2px rgba(0,0,0,0.5)</code>) ajuda a destacar textos claros em fundos complexos.
+                        </li>
+                        <li>
+                            <strong>Efeito Neon</strong>: Se usares um desfoque alto e cores vibrantes sem deslocamento (ex: <code>0 0 10px blue</code>), crias um efeito de brilho.
+                        </li>
+                        <li>
+                            <strong>Camadas</strong>: Podes adicionar <strong>múltiplas sombras</strong> separadas por vírgula para criar efeitos 3D complexos.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Boas Práticas e Performance</strong>
+                    <p>Antes de aplicar propriedades de contorno, é preciso entender como elas impactam a experiência do usuário e a renderização do navegador.</p>
+                    <ul>
+                        <li>
+                            <strong>Menos é Mais</strong>: Sombras muito pretas e pesadas deixam o site com aspecto amador (parecendo WordArt dos anos 90). Use cores suaves e transparentes (rgba) para sombras elegantes.
+                        </li>
+                        <li>
+                            <strong>Diferença Visual</strong>: Use border para separar conteúdos (ex: uma tabela) e box-shadow para destacar elementos interativos (ex: um botão que o usuário deve clicar).
+                        </li>
+                        <li>
+                            <strong>Atenção</strong>: Evite usar outline: none; no seu CSS de reset sem colocar algo no lugar. Se você tirar o contorno padrão e não criar um novo, usuários que navegam pelo teclado ficarão "cegos" no seu site.
+                        </li>
+                    </ul>
+                </li>
+            </ol>
         </article>
     </main>
     <footer>

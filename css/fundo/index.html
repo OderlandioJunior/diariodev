@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de fundo</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html" target="" rel="">Página principal</a></li>
+                <!-- i > bars -->
+                <li><a href="../contornos/index.html" target="" rel="">Artigo anterior</a></li>
+                <li><a href="../pseudo/index.html" target="" rel="">Próximo artigo</a></li>
+            </ul>
+        </nav>
+        <h1>Diário DEV</h1>
+        <span>Por Oderlândio Júnior</span>
+    </header>
+    <main>
+        <article>
+            <h2>Engenharia de Planos de Fundo: Camadas, Comportamento e Performance</h2>
+            <p>O <code>background</code> no CSS não é apenas uma propriedade, mas um conjunto de subpropriedades que definem a camada visual situada atrás do conteúdo. Dominar essas ferramentas permite criar interfaces profundas, responsivas e visualmente ricas sem sacrificar a semântica do HTML.</p>
+        </article>
+        <article>
+            <h2>A Fundação (Color e Image)</h2>
+            <p>Toda estilização de fundo começa pela definição da substância: cor ou textura.</p>
+            <ol>
+                <li>
+                    <code>background-color</code>: Preenche o espaço total do elemento (incluindo o padding).
+                    <ul>
+                        <li>
+                            <strong>Uso Profissional</strong>: Sempre defina uma cor de fundo, mesmo ao usar imagens. Isso garante que o texto permaneça legível caso a imagem falhe ou demore a carregar.
+                        </li>
+                        <li>
+                            <strong>Exemplo</strong>: <code>background-color: #1a1a1a;</code>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <code>background-image</code>: Define um ou mais arquivos de imagem ou gradientes como fundo.
+                    <ul>
+                        <li>
+                            <strong>Exemplo</strong>: <code>background-image: url('assets/textura-dark.jpg');</code>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </article>
+        <article>
+            <h2>Controle de Geometria e Proporção</h2>
+            <p>Inserir a imagem é apenas o primeiro passo. O segredo está em como ela se adapta ao tamanho da caixa.</p>
+            <ol>
+                <li>
+                    <code>background-repeat</code>: Por padrão, o navegador repete a imagem nos eixos X e Y.
+                    <ul>
+                        <li>
+                            <strong>Valores comuns</strong>: <code>no-repeat</code> (exibe apenas uma vez), <code>repeat-x</code> (repete apenas horizontalmente) ou <code>space</code> (gera repetições com espaçamento uniforme).
+                        </li>
+                        <li>
+                            <strong>Exemplo</strong>: <code>background-repeat: no-repeat;</code>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <code>background-size</code>: Define a escala da imagem.
+                    <ul>
+                        <li>
+                            <code>cover</code>: A imagem é redimensionada para cobrir todo o elemento. Pode haver cortes, mas nunca espaços vazios.
+                        </li>
+                        <li>
+                            <code>contain</code>: A imagem é exibida inteira, ajustando-se à altura ou largura disponível.
+                        </li>
+                        <li>
+                            <strong>Exemplo</strong>: <code>background-size: cover;</code>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <code>background-position</code>: Define o ponto de origem.
+                    <ul>
+                        <li>
+                            <strong>Uso Técnico</strong>: Útil para garantir que o "assunto" da foto (ex: o rosto de uma pessoa) não seja cortado em telas menores.
+                        </li>
+                        <li>
+                            <strong>Exemplo</strong>: <code>background-position: center center;</code> (ou use porcentagens como <code>25% 75%</code>).
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </article>
+        <article>
+            <h2>Background-attachment (O Controle de Rolagem)</h2>
+            <p>Esta propriedade define o comportamento do fundo em relação ao <em>scroll</em> (rolagem) da página. É aqui que criamos efeitos de profundidade avançados.</p>
+            <ol>
+                <li>
+                    <code>scroll</code> (<strong>Padrão</strong>): O fundo está "fixo" ao elemento. Se o elemento sobe, o fundo sobe junto.
+                </li>
+                <li>
+                    <code>fixed</code>: O fundo está "fixo" em relação à <strong>janela do navegador (viewport)</strong>. Isso cria o efeito de paralaxe, onde o conteúdo parece deslizar por cima de uma janela aberta para a imagem de fundo.
+                </li>
+                <li>
+                    <code>local</code>: O fundo rola junto com o conteúdo interno do elemento. Essencial para áreas de texto longas com scroll próprio.
+                </li>
+                <li>
+                    <strong>Exemplo</strong>: <code>background-attachment: fixed;</code>
+                </li>
+            </ol>
+        </article>
+        <article>
+            <h2>Gradientes (Renderização Algorítmica)</h2>
+            <p>Gradientes não são arquivos de imagem, mas cálculos matemáticos feitos pelo navegador. Isso os torna extremamente leves e responsivos.</p>
+            <ol>
+                <li>
+                    <code>linear-gradient</code>: Transições lineares de cores.
+                    <ul>
+                        <li>
+                            <strong>Sintaxe</strong>: Você define a direção (em graus ou palavras-chave) e as "paradas" de cor.
+                        </li>
+                        <li>
+                            <strong>Exemplo</strong>: <code>background-image: linear-gradient(to right <del>(ou 135deg)</del>, #6e8efb, #a777e3);</code>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <code>radial-gradient</code>: Transições que partem de um ponto central (círculo ou elipse).
+                    <ul>
+                        <li><strong>Exemplo</strong>: <code>background-image: radial-gradient(circle, #ff00de, #000);</code></li>
+                    </ul>
+                </li>
+            </ol>
+        </article>
+        <article>
+            <h2>A Propriedade Shorthand (Abreviada)</h2>
+            <p>Para manter o Exemplo limpo (clean code), podemos declarar quase todas as propriedades anteriores em uma única linha. A ordem padrão é importante para evitar bugs de leitura.</p>
+            <strong>Sintaxe da Shorthand:</strong>
+            <code>background: [color] [image] [repeat] [attachment] [position] / [size];</code>
+<pre>
+    div {
+        background: #000 url('montanha.jpg') no-repeat
+        fixed center / cover;
+
+        /* Cor de fundo, Imagem, Sem repetição,
+        Fixa, Centralizada / Cobrindo tudo */
+    }
+</pre>
+        </article>
+        <article>
+            <h2>Boas Práticas de Engenharia Frontend</h2>
+            <ul>
+                <li>
+                    <strong>Performance</strong>: Imagens de fundo (background-image) não são indexadas pelo Google como imagens de conteúdo (&lt;img&gt;). Use o CSS apenas para fins decorativos.
+                </li>
+                <li>
+                    <strong>Fallback</strong>: Sempre forneça um background-color que contraste bem com o seu color. Se a imagem de fundo for escura e o texto branco, e a imagem não carregar, o fundo branco padrão do navegador tornará o texto invisível.
+                </li>
+                <li>
+                    <strong>Múltiplos Fundos</strong>: O CSS permite empilhar fundos. O primeiro da lista fica por cima.
+                </li>
+                <ul>
+                    <li>
+                        <code>background: url('overlay.png'), url('fundo.jpg');</code>
+                    </li>
+                </ul>
+            </ul>
+        </article>
+    </main>
+    <footer>
+        <nav>
+            <a href="">GitHub</a> <a href="">E-mail</a> <a href="">LinkedIn</a>
+        </nav>
+        <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.</p>
+    </footer>
+</body>
+</html>
