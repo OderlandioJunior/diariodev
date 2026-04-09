@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regras no CSS</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html" target="" rel="">Página principal</a></li>
+                <!-- i > bars -->
+                <li><a href="../variaveis/index.html" target="" rel="">Próximo artigo</a></li>
+            </ul>
+        </nav>
+        <h1>Diário DEV</h1>
+        <span>Por Oderlândio Júnior</span>
+    </header>
+    <main>
+        <header>
+            <h2>Regras At (<code>@-rules</code>): As Instruções de Comportamento do CSS</h2>
+            <p>Diferente dos seletores comuns, as <strong>Regras At</strong> são comandos que instruem o navegador sobre como processar o código CSS em diferentes cenários. Elas sempre começam com o símbolo <code>@</code> seguido por um identificador, e são fundamentais para criar sites responsivos, importar fontes e organizar arquiteturas de código complexas.</p>
+        </header>
+        <article>
+            <h3>Importação e Codificação</h3>
+            <p>Estas regras geralmente ficam no topo do arquivo CSS, pois definem as bases do que será lido a seguir.</p>
+            <section class="propriedades">
+                <ul>
+                    <li>
+                        <code>@charset</code>: Define a codificação de caracteres do arquivo (geralmente <code>UTF-8</code>).
+                    </li>
+                    <ul>
+                        <li>
+                            <em>Importante</em>: Deve ser a primeira coisa no arquivo, antes de qualquer outro código.
+                        </li>
+                    </ul>
+                    <li>
+                        <code>@import</code>: Permite importar estilos de outro arquivo CSS.
+                    </li>
+                    <ul>
+                        <li>
+                            <strong>Uso Técnico</strong>: Útil para carregar fontes do Google Fonts ou separar o CSS em arquivos menores (ex: header.css, footer.css).
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <strong>Exemplo</strong>: <code>@import url('https://fonts.googleapis.com/css2?family=Roboto')</code>;
+                        </li>
+                    </ul>
+                </ul>
+            </section>
+        </article>
+        <article>
+            <h3>Condicionais e Responsividade</h3>
+            <p>Aqui é onde o CSS ganha inteligência para se adaptar ao dispositivo do usuário.</p>
+            <section class="propriedade">
+                <ul>
+                    <li>
+                        <p><code>@media</code>: A regra mais importante para o <strong>Design Responsivo</strong>. Ela permite aplicar estilos apenas se certas condições forem atendidas (como a largura da tela).</p>
+                        <strong>Exemplo</strong>:
+                        <div class="code">
+                            <pre>
+                                @media (max-width: 600px) {
+                                    body { background-color: lightblue; }
+                                }
+                            </pre>
+                        </div>
+                    </li>
+                    <li>
+                        <p><code>@supports</code>: Verifica se o navegador suporta uma tecnologia específica antes de aplicá-la. É uma "rede de segurança" para usar recursos modernos sem quebrar o site em navegadores antigos.</p>
+                        <strong>Exemplo</strong>:
+                        <div class="code">
+                            <pre>
+                                @supports (display: grid) {
+                                    main { display: grid; }
+                                }
+                            </pre>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </article>
+        <article>
+            <h3>Fontes e Animações Personalizadas</h3>
+            <p>Estas regras definem recursos que não existem por padrão no navegador e precisam ser "criados" via código.</p>
+            <section class="propriedade">
+                <ul>
+                    <li>
+                        <p>
+                            <code>@font-face</code>: Permite que você carregue uma fonte baixada no seu próprio servidor, sem depender de serviços externos.
+                            Uso: Você define o nome da fonte e o caminho do arquivo (<code>.woff2</code>, <code>.ttf</code>).
+                        </p>
+                    </li>
+                    <li>
+                        <p><code>@keyframes</code>: Define as etapas de uma animação CSS. Você cria o "roteiro" do movimento aqui para depois aplicá-lo a um seletor.</p>
+                        <strong>Exemplo:</strong>
+                        <div class="code">
+                            <pre>
+                                @keyframes aparecer {
+                                    from { opacity: 0; }
+                                    to { opacity: 1; }
+                                }
+                            </pre>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </article>
+        <article>
+            <h3>Boas Práticas e Engenharia de Regras</h3>
+            <ul>
+                <li>
+                    <strong>Performance do @import</strong>: Evite usar muitos <code>@import</code> dentro de arquivos CSS grandes, pois cada um gera uma nova requisição ao servidor, o que pode deixar o site lento. Prefira linkar os arquivos diretamente no HTML quando possível.
+                </li>
+                <li>
+                    <strong>Ordem das Media Queries</strong>: Sempre organize suas <code>@media</code> de forma lógica (ex: do menor para o maior dispositivo, ou vice-versa). Isso evita que uma regra sobrescreva a outra por engano.
+                </li>
+                <li>
+                    <strong>Escopo</strong>: Lembre-se que regras como <code>@keyframes</code> e <code>@font-face</code> são globais; uma vez definidas, podem ser usadas em qualquer lugar do seu projeto.
+                </li>
+            </ul>
+        </article>
+    </main>
+    <footer>
+        <nav>
+            <a href="">GitHub</a> <a href="">E-mail</a> <a href="">LinkedIn</a>
+        </nav>
+        <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seletores especiais</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html" target="" rel="">Página principal</a></li>
+                <!-- i > bars -->
+                <li><a href="../fundo/index.html" target="" rel="">Artigo anterior</a></li>
+            </ul>
+        </nav>
+        <h1>Diário DEV</h1>
+        <span>Por Oderlândio Júnior</span>
+    </header>
+    <main>
+        <header>
+            <h2>Seletores Especiais: Estados, Comportamento e Pseudo-elementos</h2>
+            <p>No desenvolvimento moderno, selecionar um elemento pelo nome da tag ou classe é apenas o básico. Para criar interfaces interativas, precisamos de seletores que identifiquem o <strong>estado</strong> de um elemento (como um botão sendo clicado) ou partes específicas de sua <strong>estrutura</strong> (como a primeira letra de um parágrafo).</p>
+        </header>
+        <article>
+            <h3>Pseudo-classes de Estado (Interatividade)</h3>
+            <p>Pseudo-classes são palavras-chave adicionadas a um seletor que especificam um estado especial do elemento selecionado. Elas começam sempre com um único dois-pontos (<code>:</code>).</p>
+            <section class="propriedade">
+                <ul>
+                    <li>
+                        <code>:hover</code>: Ativado quando o usuário passa o cursor sobre o elemento. Essencial para indicar que algo é clicável.
+                    </li>
+                    <li>
+                        <code>:focus</code>: Ativado quando o elemento recebe foco (via teclado ou clique). É o pilar da acessibilidade em formulários.
+                    </li>
+                    <li>
+                        <code>:active</code>: Ativado no exato momento do clique, antes de soltar o botão do mouse.
+                    </li>
+                    <li>
+                        <code>:visited</code>: Usado em links para indicar que o usuário já navegou por aquele endereço.
+                    </li>
+                </ul>
+            </section>
+        </article>
+        <article>
+            <h3>Seletores Estruturais (Lógica de Árvore)</h3>
+            <p>Estes seletores permitem que você estilize elementos com base em sua posição dentro do HTML, evitando a necessidade de criar classes para tudo.</p>
+            <section class="propriedade">
+                <ul>
+                    <li>
+                        <code>:nth-child(valor)</code>: Seleciona o "<abbr title="Representa o número em uma sequência, indicando uma posição genérica, indefinida ou muito elevada.">enésimo</abbr>" filho. Você pode usar como valores: números, ou fórmulas como <code>odd</code> (ímpares) e <code>even</code> (pares).
+                    </li>
+                    <ul>
+                        <li>
+                            <em>Uso Técnico</em>: Ideal para zebrar tabelas ou listas de itens.
+                        </li>
+                    </ul>
+                    <li>
+                        <code>:first-child</code> e <code>:last-child</code>: Selecionam, respectivamente, o primeiro e o último filho dentro de um container.
+                    </li>
+                    <li>
+                        <code>:not(seletor)</code>: Seleciona todos os elementos, exceto o que estiver dentro dos parênteses. É um seletor de negação poderoso.
+                    </li>
+                </ul>
+            </section>
+        </article>
+        <article>
+            <h2>Pseudo-elementos (Injeção de Conteúdo e Estilo)</h2>
+            <p>Enquanto pseudo-classes lidam com estados, os pseudo-elementos permitem estilizar partes específicas de um elemento ou inserir conteúdo puramente decorativo via CSS. Usam dois-pontos duplos (<code>::</code>).</p>
+            <section class="propriedade">
+                <ul>
+                    <li>
+                        <code>::before</code> e <code>::after</code>: Criam um elemento "fantasma" antes ou depois do conteúdo real.
+                    </li>
+                    <ul>
+                        <li>
+                            <strong>Regra de Ouro</strong>: Eles exigem a propriedade <code>content: ""</code>; para serem renderizados.
+                        </li>
+                        <li>
+                            <em>Uso</em>: Inserir ícones, aspas decorativas ou detalhes gráficos sem sujar o HTML.
+                        </li>
+                    </ul>
+                    <li>
+                        <code>::placeholder</code>: Estiliza o texto de dica dentro de campos de formulário (<code>inputs</code>).
+                    </li>
+                    <li>
+                        <code>::selection</code>: Controla a cor do fundo e do texto quando o usuário destaca (seleciona) uma parte do seu site.
+                    </li>
+                </ul>
+            </section>
+        </article>
+        <article>
+            <h2>Boas Práticas e Engenharia de Seletores</h2>
+            <section>
+                <ul>
+                    <li>
+                        <strong>Especificidade</strong>: Lembre-se que seletores especiais aumentam a especificidade do seu CSS. Se você abusar de <code>:nth-child</code> em estruturas muito profundas, pode ter dificuldade para sobrescrever esses estilos depois.
+                    </li>
+                    <li>
+                        <strong>Acessibilidade</strong>: Nunca esconda o estado de <code>:focus</code>. Se você remover o estilo de foco, usuários que navegam por teclado não saberão onde estão.
+                    </li>
+                    <li>
+                        <strong>Semântica Visual</strong>: Use <code>:hover</code> e <code>:active</code> para dar feedback imediato. O usuário nunca deve ter dúvida se o clique dele foi registrado pelo sistema.
+                    </li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <nav>
+            <a href="">GitHub</a> <a href="">E-mail</a> <a href="">LinkedIn</a>
+        </nav>
+        Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.
+    </footer>
+</body>
+</html>
