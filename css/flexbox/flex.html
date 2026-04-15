@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixas flexíveis</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html" target="" rel="">Página principal</a></li>
+                <!-- i > bars -->
+                <li><a href="../position/posicao.html" target="" rel="">Artigo anterior</a></li>
+                <li><a href="../gridlayout/grid.html" target="" rel="">Próximo artigo</a></li>
+            </ul>
+        </nav>
+        <h1>Diário DEV</h1>
+        <span>Por Oderlândio Júnior</span>
+    </header>
+    <main>
+        <header>
+            <h2>Flexbox: O Guia Definitivo para Layouts Unidimensionais</h2>
+            <p>O Flexbox (<em>Flexible Box Layout</em>) é um modelo de layout projetado para alinhar itens e distribuir espaço de forma inteligente dentro de um container, mesmo que o tamanho dos elementos seja dinâmico ou desconhecido. Ele trabalha com a relação entre um <strong>Container (Pai)</strong> e <strong>Itens (Filhos)</strong>.</p>
+        </header>
+        <article>
+            <h3>Conceitos Fundamentais e Eixos</h3>
+            <p>Ao definir <code>display: flex;</code>, o elemento pai se torna um container flexível. A inteligência do Flexbox baseia-se em dois eixos:</p>
+            <ol>
+                <li><strong>Main Axis (Eixo Principal)</strong>: A direção primária onde os itens são dispostos (horizontal por padrão).</li>
+                <li><strong>Cross Axis (Eixo Transversal)</strong>: O eixo perpendicular ao principal (vertical por padrão).</li>
+            </ol>
+        </article>
+        <article>
+            <h3>Propriedades do Container (O Pai)</h3>
+            <p>Estas propriedades controlam o comportamento dos filhos de forma coletiva:</p>
+            <ul>
+                <li><code>flex-direction</code>: Define o sentido do eixo principal (<code>row</code>, <code>row-reverse</code>, <code>column</code>, <code>column-reverse</code>).</li>
+                <li><code>justify-content</code>: Alinha os itens no eixo principal (<code>center</code>, <code>space-between</code>, <code>space-around</code>).</li>
+                <li><code>align-items</code>: Alinha os itens no eixo transversal (<code>center</code>, <code>stretch</code>, <code>flex-start</code>).</li>
+                <li><code>flex-wrap</code>: Define se os itens devem quebrar linha (<code>wrap</code>) ou se devem ser espremidos em uma única linha (<code>nowrap</code>).</li>
+            </ul>
+            <p><strong>O Atalho <code>flex-flow:</code></strong></p>
+            <p>Você pode combinar a direção e a quebra de linha em uma única regra:</p>
+            <code>flex-flow: row wrap;</code>
+        </article>
+        <article>
+            <h3>Propriedades dos Itens e a Shorthand <code>flex</code></h3>
+            <p>A forma mais eficiente de controlar os itens filhos é através da shorthand <code>flex</code>, que combina três propriedades:</p>
+            <ol>
+                <li><code>flex-grow</code>: Define a capacidade de um item crescer para ocupar o espaço vazio (ex: <code>1</code>).</li>
+                <li><code>flex-shrink</code>: Define a capacidade de encolher caso o espaço falte (ex: <code>1</code>).</li>
+                <li><code>flex-basis</code>: O tamanho inicial do item antes da distribuição do espaço (ex: <code>200px</code> ou <code>auto</code>).</li>
+            </ol>
+            <p><strong>Sintaxe da Shorthand:</strong></p>
+            <code>flex: [grow] [shrink] [basis];</code>
+        </article>
+        <article>
+            <h3>Espaçamento Inteligente com <code>gap</code></h3>
+            <p>Para evitar o uso de margens manuais que sobram nas bordas, utilizamos o <code>gap</code>. Ele aplica espaçamento <strong>apenas entre</strong> os itens flexíveis.</p>
+            <ul>
+                <li><code>gap</code>: Define o espaço entre linhas e colunas simultaneamente.</li>
+                <li><strong>Exemplo</strong>: <code>gap</code>: 20px;</li>
+            </ul>
+        </article>
+        <article>
+            <h3>O Centro Perfeito (O "Santo Graal" do CSS)</h3>
+            <p>Centralizar um elemento horizontal e verticalmente agora exige apenas três linhas no container pai:</p>
+            <div class="code">
+                <pre>
+                    .container {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100vh; /* Para ocupar a tela toda */
+                    }
+                </pre>
+            </div>
+        </article>
+        <article>
+            <h3>Boas Práticas e Engenharia</h3>
+            <ul>
+                <li><strong>Priorize a Shorthand</strong>: Use <code>flex: 1;</code> em vez de apenas <code>flex-grow: 1;</code>. Isso garante que o navegador calcule os outros valores de forma mais previsível.</li>
+                <li><strong>Unidimensionalidade</strong>: Lembre-se que o Flexbox é para <strong>uma direção</strong> (linha OU coluna). Se precisar controlar as duas ao mesmo tempo, considere o CSS Grid.</li>
+                <li><strong>Acessibilidade</strong>: A propriedade <code>order</code> permite mudar a ordem visual dos itens, mas cuidado: ela não muda a ordem de leitura para teclados ou leitores de tela. Mantenha a ordem lógica sempre no HTML.</li>
+            </ul>
+        </article>
+    </main>
+    <footer>
+        <nav>
+            <a href="">GitHub</a> <a href="">E-mail</a> <a href="">LinkedIn</a>
+        </nav>
+        <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.</p>
+    </footer>
+</body>
+</html>

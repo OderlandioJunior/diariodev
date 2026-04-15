@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamento</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html" target="" rel="">Página principal</a></li>
+                <!-- i > bars -->
+                <li><a href="../flexbox/flex.html" target="" rel="">Próximo artigo</a></li>
+            </ul>
+        </nav>
+        <h1>Diário DEV</h1>
+        <span>Por Oderlândio Júnior</span>
+    </header>
+    <main>
+        <header>
+            <h2>Posicionamento (Position): O Controle das Coordenadas</h2>
+            <p>A propriedade <code>position</code> define como um elemento deve ser posicionado no documento. Quando mudamos o posicionamento, ganhamos acesso às propriedades auxiliares: <code>top</code>, <code>bottom</code>, <code>left</code>, <code>right</code> e <code>z-index</code>, que permitem mover o elemento com precisão cirúrgica.</p>
+        </header>
+        <article>
+            <h3>O Fluxo Normal e o Posicionamento Relativo</h3>
+            <ol>
+                <li>
+                    <code>static</code> <strong>(Padrão)</strong>: É o estado natural. O elemento segue o fluxo normal do HTML, um após o outro. Propriedades como <code>top</code> ou <code>left</code> não funcionam aqui.
+                </li>
+                <li>
+                    <code>relative</code>: O elemento é posicionado em relação à sua <strong>posição original</strong>.
+                    <ul>
+                        <li><strong>Ponto Chave</strong>: Ao mover um elemento com <code>relative</code>, ele deixa um "vácuo" (espaço vazio) onde ele costumava estar. Outros elementos não ocupam o espaço dele.</li>
+                        <li><strong>Uso Técnico</strong>: Muito usado para servir de "âncora" para elementos que usam <code>position: absolute</code>.</li>
+                    </ul>
+                </li>
+            </ol>
+        </article>
+        <article>
+            <h3>Saindo do Fluxo (Absolute e Fixed)</h3>
+            <p>Estes modos removem o elemento do fluxo normal, o que significa que eles não ocupam mais espaço na página e podem ficar em cima de outros conteúdos.</p>
+            <ol>
+                <li>
+                    <code>absolute</code>: O elemento é posicionado em relação ao seu <strong>ancestral (pai, avô) mais próximo</strong> que tenha um <code>position</code> diferente de <code>static</code>.
+                    <ul>
+                        <li>Se nenhum pai for <code>relative</code> ou <code>absolute</code>, ele se posicionará em relação ao corpo da página (<code>body</code>).</li>
+                    </ul>
+                </li>
+                <li>
+                    <code>fixed</code>: O elemento é posicionado em relação à <strong>janela do navegador (viewport)</strong>.
+                    <ul>
+                        <li>Mesmo que você role a página (scroll), o elemento permanece travado no mesmo lugar da tela. Ideal para botões de "Voltar ao topo" ou barras de navegação fixas.</li>
+                    </ul> 
+                </li>
+            </ol>
+        </article>
+        <article>
+            <h3>O Posicionamento Híbrido (Sticky)</h3>
+            <p><code>sticky</code>: É uma mistura de <code>relative</code> com <code>fixed</code>.</p>
+            <ul>
+                <li>O elemento se comporta como <code>relative</code> até que a rolagem da página atinja um ponto específico (definido por <code>top</code>, por exemplo), momento em que ele "gruda" na tela como se fosse <code>fixed</code>.</li>
+                <li><em>Exemplo Clássico</em>: Cabeçalhos de tabelas ou menus laterais que acompanham a leitura do artigo.</li>
+            </ul>
+        </article>
+        <article>
+            <h3>A Terceira Dimensão (Z-Index)</h3>
+            <p>Quando começamos a sobrepor elementos com <code>absolute</code> ou <code>fixed</code>, precisamos decidir quem fica na frente de quem.</p>
+            <ul>
+                <li><code>z-index</code>: Funciona apenas em elementos posicionados (qualquer um exceto <code>static</code>).</li>
+                <li>Quanto maior o número, mais "perto" do usuário o elemento está. Um <code>z-index: 10</code> ficará por cima de um <code>z-index: 5</code>.</li>
+            </ul>
+        </article>
+        <article>
+            <h3>Boas Práticas de Engenharia de Posicionamento</h3>
+            <ul>
+                <li><strong>Não abuse do Absolute</strong>: Usar <code>absolute</code> para tudo torna o layout difícil de manter e quebra a responsividade. Use-o apenas para elementos sobrepostos (ícones, badges, modais).</li>
+                <li><strong>Pai Relativo, Filho Absoluto</strong>: Esta é a regra de ouro do design de componentes. Sempre que quiser colocar algo "dentro" de uma caixa em um lugar específico, garanta que a caixa pai seja <code>position: relative</code>.</li>
+                <li><strong>Atenção ao Fixed</strong>: Lembre-se que elementos fixos podem cobrir conteúdos importantes. Sempre verifique se o <code>z-index</code> do seu menu fixo não está escondendo um formulário ou botão essencial.</li>
+            </ul>
+        </article>
+    </main>
+    <footer>
+        <nav>
+            <a href="">GitHub</a> <a href="">E-mail</a> <a href="">LinkedIn</a>
+        </nav>
+        <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.</p>
+    </footer>
+</body>
+</html>

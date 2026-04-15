@@ -3,147 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulários em HTML</title>
+    <title>Formulários</title>
 </head>
 <body>
-    <form action="cadastro.php" method="post" autocomplete="on">
-    <!--
-        O atributo "action" diz para onde o formulário será enviado, normalmente ele é vinculado a alguma linguagem de programação
-        O "method" por sua vez é a forma que se envia o formulário, esse atributo pode receber "GET", sendo o padrão mesmo não colocando o atributo, ou "POST". O metodo "GET" funciona quando os dados não forem sensíveis como senha ou endereço e que todo o formulário não passe de 3.000 letras, sendo 3.000 bits, ja o metodo "POST" funciona da maneira contrária, ocultando alguns dados importantes e ilimitando o arquivo
-    -->
-        <fieldset>
-            <legend>Dados pessoais</legend>
-                <p>
-                    <label for="inome">*Nome:</label>
-                        <input type="text" name="nome" id="inome" required autocomplete="name" placeholder="Seu nome" minlength="5" size="28">
-                </p>
-                <p>
-                    <label for="iemail">*Email:</label>
-                        <input type="email" name="email" id="iemail" required autocomplete="email" placeholder="joao@gmail.com" size="26">
-                </p>
-                <p>
-                    <label for="itel">*Telefone:</label>
-                        <input type="tel" name="tel" id="itel" required autocomplete="tel" placeholder="(xx) x xxxx-xxxx">
-                        <!-- Estudar sobre expressões regulares em HTLM ou RegEx-->
-                </p>
-                <p>
-                    <label for="idata">*Data de nascimento:</label>
-                        <input type="date" name="data" id="idata" required value="2000-01-01">
-                </p>
-                <p>
-                    <label for="imes">*Mês e ano:</label>
-                        <input type="month" name="mes" id="imes" required value="2000-01">
-                </p>
-                <p>
-                    *Sexo:
-                    <input type="radio" name="sexo" id="mas" value="M" required checked>
-                        <label for="mas">Masculino</label>
-                    <input type="radio" name="sexo" id="fem" required value="F" >
-                        <label for="fem">Feminino</label>
-                <!--
-                Diferente da tag "input:checkbox", a tag "input:radio" funciona para opção única, por exemplo o sexo da pessoa
-                -->
-                </p>
-                <p>
-                    <label for="iarq">*Arquivo:</label>
-                        <input type="file" name="arq" id="iarq" required>
-                </p>
-                <p>
-            <label for="iest">Estado:</label>
-                <select name="est" id="iest">
-                    <option value="">--- Escolha ---</option>
-                    <optgroup label="Região Sudeste">
-                        <option value="MG">Minas Gerais</option>
-                        <option value="RJ">Rio de Janeiro</option>
-                        <option value="SP">São Paulo</option>
-                    </optgroup>
-
-                    <optgroup label="Região Nordeste">
-                        <option value="MA">Maranhão</option>
-                        <option value="PE">Pernambuco</option>
-                        <option value="RN">Rio Grande do Norte</option>
-                    </optgroup>
-                </select>
-        </p>
-
-        <p>
-            <label for="iprof">Profissão:</label>
-                <input type="text" name="prof" id="iprof" list="lstprof">
-            <datalist id="lstprof">
-                <option value="Prof">Professor</option>
-                <option>Administrador</option>
-                <option>Contabilista</option>
-                <option>Desenvolvedor</option>
-            </datalist>
-        </p>
-        </fieldset>
-        <!--
-            No formulário, cada campo tem que ter uma "label", pois através dessa tag que é feita a ligação do HTML para o navegador.
-            Com isso, o "required" junto com o "minlength" e "maxlength" faz o campo ser obrigatório para o usuário preencher antes de prosseguir.
-            Dessa forma, para facilitar o preenchimento do usuário, podemos deixar o "autocomplete" ligado na tag e no atributo "input", indicando oque as informações salvas do usuário preencha automaticamente.
-
-            Outras configurações como o "placeholder", faz aparecer uma mensagem indicando para o usuário oque deve ser colocado no campo e o "size" que mostra a quantidade de letras na caixa
-
-            Por fim, o "fieldset" cria uma área que pode ser classificada por sessão
-        -->
-        <!--
-            Entre "datalist" e "select", vai depender da necessidade do uso, já que "select" oferece uma lista limitada ao usuário e o "datalist" além de oferecer opções já cadastradas, o usuário pode adicionar de acordo com o que desejar. 
-            Uma observação ao "datalist" é que ao colocar "value", o mesmo será mostrado na página (HMTL) e ao enviar o formulário
-        -->
-        <fieldset>
-            <legend>Conecte-se</legend>
-                <p>
-                    <label for="iusu">Usuário</label>
-                    <input type="text" name="usu" id="iusu" required minlength="5" maxlength="20" placeholder="Apelido" size="10" autocomplete="nickname">
-                </p>
-                <p>
-                    <label for="isen">Senha</label>
-                        <input type="password" name="sen" id="isen" required minlength="8" maxlength="20" placeholder="Mínimo de 8 caracteres" autocomplete="current-password">
-                    </p>
-        </fieldset>
-
-        <fieldset>
-            <legend>Avaliação do serviço</legend>
-            <p>
-                <label for="ihora">Horário do atendimento</label>
-                    <input type="time" name="hora" id="ihora">
-            </p>
-            <p>
-                <label for="inum">Número fornecido:</label>
-                <input type="number" name="num" id="inum" min="0" max="10" step="" placeholder="xxxxxxxx">
-            </p>
-            <p>
-                <label for="inivel">Satisfação:</label>
-                <input type="range" name="nivel" id="inivel" min="1" max="10" value="10" oninput="ival.innerHTML = Number(inivel.value)">
-                <output id="ival">10</output>
-            </p>
-            <p>
-                <label for="itex">Mensagem</label><br>
-                    <textarea name="tex" id="itex"></textarea>
-            </p>
-        </fieldset>
-        <!--
-            Campos com números podem ter atributos parecidos com com os de texto, por exemplo, limitar um mínimo e/ou um máximo com "min" e "max"
-            O atributo "step" indica de quanto vai começar a contagem e o "value" atua como um "placeholder" porém de maneira diferente, ao carregar a página, já se inicia no valor colocado
-        -->
-        <!--
-            O "output" funciona apenas para mostrar os dados na tela, diferente do "placeholder" que funciona para "input:text" e o próprio "value" que é enviado junto com o formulário
-        -->
-
-        <p>
-            <h2>Marque as opções</h2>
-                <label for="icor">Cor de pele</label>
-                    <input type="color" name="cor" id="icor" value="#472400">
-                <input type="checkbox" name="op" id="iop1" checked>
-                    <label for="iop1">Deficiente</label>
-                <input type="checkbox" name="op" id="iop3">
-                    <label for="iop3">Baixa renda</label>
-        </p>
-
-        <p>
-            <input type="submit" value="Enviar">
-            <input type="reset" value="Limpar">
-        </p>
-    </form>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html" target="" rel="">Página principal</a></li>
+                <!-- i > bars -->
+                <li><a href="../tabelas/index.html" target="" rel="">Artigo anterior</a></li>
+                <li><a href="../iframes/index.html" target="" rel="">Próximo artigo</a></li>
+            </ul>
+        </nav>
+        <h1>Diário DEV</h1>
+        <span>Por Oderlândio Júnior</span>
+    </header>
+    <main>
+        <section>
+            <h2>A Porta de Entrada para a Interatividade: Formulários em HTML</h2>
+            <p>Se o HTML é o esqueleto do site, o formulário é o sistema sensorial que permite ao usuário enviar dados para serem processados. Para construir um formulário funcional e acessível, utilizamos um conjunto de tags específicas:</p>
+            <!-- <code>&lt; &gt;</code> -->
+            <ul>
+                <li><code>&lt;form&gt;</code>: É o container principal. Ele define a área de interação e possui atributos cruciais como <code>action</code> (para onde os dados vão) e <code>method</code> (como os dados são enviados, geralmente <code>GET</code> ou <code>POST</code>).</li>
+                <li><code>&lt;label&gt;</code>: Essencial para a acessibilidade. Ela dá um nome ao campo e, ao usar o atributo <code>for</code> conectado ao <code>id</code> do input, permite que o usuário clique no texto para focar no campo.</li>
+                <li><code>&lt;input&gt;</code>: A tag mais versátil do formulário. Dependendo do atributo type, ela se transforma em um campo de texto (text), uma senha (password), um seletor de data (date) ou uma caixa de seleção (checkbox).</li>
+                <li><code>&lt;textarea&gt;</code>: Diferente do input, esta tag permite a entrada de textos longos com múltiplas linhas, ideal para mensagens ou comentários.</li>
+                <li><code>&lt;button&gt;</code>: O gatilho final. O tipo submit é o que dispara o envio de todas as informações preenchidas para o servidor.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Boas Práticas de Marcação</h2>
+            <p>Para manter o formulário organizado, podemos usar a tag <code>&lt;fieldset&gt;</code> para agrupar campos relacionados (como "Dados Pessoais") e a tag <code>&lt;legend&gt;</code> para dar um título a esse grupo. Isso melhora muito a experiência de quem usa leitores de tela.</p>
+        </section>
+        <section>
+            <h2>Atributos Essenciais: Refinando a Experiência do Usuário</h2>
+            <p>Os atributos são inseridos dentro da tag <code>&lt;input&gt;</code> para modificar seu comportamento padrão. Eles garantem que o usuário saiba o que digitar e que o navegador impeça erros comuns.</p>
+            <ul>
+                <li><code>placeholder</code>: Exibe um texto de ajuda dentro do campo (geralmente em cinza claro) que desaparece assim que o usuário começa a digitar. É ideal para dar exemplos de preenchimento, como "Ex: seuemail@dominio.com".</li>
+                <li><code>required</code>: Um atributo booleano (não precisa de valor) que torna o preenchimento do campo obrigatório. O navegador impedirá o envio do formulário e exibirá um alerta caso o campo esteja vazio.</li>
+                <li><code>value</code>: Define um valor padrão inicial para o campo. Diferente do placeholder, esse texto já conta como dado preenchido e será enviado ao servidor se o usuário não o apagar ou alterar.</li>
+                <li><code>autocomplete</code>: Ajuda o usuário a preencher campos comuns (como nome, e-mail ou endereço) usando dados que o navegador já tem salvos. Você pode usar valores como <code>on</code>, <code>off</code>, <code>name</code> ou <code>email</code>.</li>
+                <li><code>size</code>: Define a largura visual do campo em caracteres. Por exemplo, <code>size="20"</code> fará com que o campo tenha espaço visível para aproximadamente 20 letras (embora o usuário possa digitar mais do que isso se não houver limite).</li>
+                <li><code>minlength</code> e <code>maxlength</code>: Controlam a quantidade de caracteres permitida em campos de texto.</li>
+                <ul>
+                    <li><code>minlength</code>: Define o mínimo de caracteres (ex: uma senha de no mínimo 8 dígitos).</li>
+                    <li><code>maxlength</code>: Define o limite máximo, impedindo o usuário de continuar digitando após atingir o teto.</li>
+                </ul>
+                <li><code>min</code> e <code>max</code>: Exclusivos para tipos numéricos (<code>type="number"</code>) ou de data (<code>type="date"</code>). Eles definem o valor numérico mais baixo e o mais alto permitidos.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <nav>
+            <a href="">GitHub</a> <a href="">E-mail</a> <a href="">LinkedIn</a>
+        </nav>
+        <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.</p>
+    </footer>
 </body>
 </html>

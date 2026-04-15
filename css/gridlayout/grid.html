@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grades em CSS</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html" target="" rel="">Página principal</a></li>
+                <!-- i > bars -->
+                <li><a href="../flexbox/flex.html" target="" rel="">Artigo anterior</a></li>
+                <li><a href="../keyframes/anime.html" target="" rel="">Próximo artigo</a></li>
+            </ul>
+        </nav>
+        <h1>Diário DEV</h1>
+        <span>Por Oderlândio Júnior</span>
+    </header>
+    <main>
+        <header>
+            <h2>CSS Grid Layout: A Malha Bidimensional Profissional</h2>
+            <p>O CSS Grid é o sistema de layout mais robusto do CSS. Enquanto o Flexbox foca em uma dimensão por vez, o Grid permite controlar <strong>linhas e colunas simultaneamente</strong>. Ele introduz o conceito de "malha", onde definimos a estrutura do container primeiro e depois posicionamos os elementos nesta grade.</p>
+        </header>
+        <article>
+            <h3>Definindo a Malha (O Container)</h3>
+            <p>Ao aplicar <code>display: grid;</code>, transformamos o elemento em um Grid Container. Utilizamos as propriedades de template para definir as faixas (tracks):</p>
+            <ol>
+                <li><code>grid-template-columns</code>: Define as colunas.</li>
+                <li><code>grid-template-rows</code>: Define as linhas.</li>
+                <li><strong>Unidade </strong><code>fr</code>: Representa uma fração do espaço livre, lidando com o redimensionamento de forma muito mais inteligente que porcentagens.</li>
+            </ol>
+            <p><strong>Exemplo de Código:</strong></p>
+            <section class="code">
+                <pre>
+                    .container {
+                        display: grid;
+
+                        grid-template-columns: 200px 1fr 2fr; 
+                        /* Coluna fixa + duas flexíveis */
+
+                        gap: 20px;
+                        /* Espaçamento entre células */
+                    }
+                </pre>
+            </section>
+        </article>
+        <article>
+            <h3>Alinhamento e Justificação (O Coração do Grid)</h3>
+            <p>Esta é a parte essencial para o acabamento visual. Podemos alinhar os itens dentro de suas células ou o grid inteiro dentro do container.</p>
+            <ol>
+                <li>
+                    <strong>Alinhamento de Itens (Dentro da Célula):</strong>
+                    <ul>
+                        <li><code>justify-items</code>: Alinha o conteúdo horizontalmente (eixo da linha).</li>
+                        <li><code>align-items</code>: Alinha o conteúdo verticalmente (eixo da coluna).</li>
+                        <li>Valores: <code>start</code>, <code>end</code>, <code>center</code>, <code>stretch</code>.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Alinhamento do Grid (O Container):</strong>
+                    <ul>
+                        <li><code>justify-content</code> e <code>align-content</code>: Posicionam a malha inteira caso ela seja menor que o tamanho do elemento pai.</li>
+                    </ul>
+                </li>
+            </ol>
+            <p><strong>Atalho (Shorthand):</strong></p>
+            <p>Utilize <code>place-items: center;</code> para centralizar o conteúdo nos dois eixos com apenas uma linha de código.</p>
+        </article>
+        <article>
+            <h3>Grid Template Areas (O Mapa Visual)</h3>
+            <p>Uma das funcionalidades mais práticas é "desenhar" o layout usando nomes, o que torna o código extremamente fácil de ler e manter.</p>
+            <p><strong>Exemplo de Mapa de Layout:</strong></p>
+            <section class="code">
+                <pre>
+                    .container {
+                        display: grid;
+                        grid-template-areas:
+                            "header header header"
+                            "sidebar main main"
+                            "footer footer footer";
+                    }
+
+                    .item-header { grid-area: header; }
+                    .item-main { grid-area: main; }
+                </pre>
+            </section>
+        </article>
+        <article>
+            <h3>Funções Especiais e Grid Responsivo</h3>
+            <p>Para evitar repetições e criar layouts que se adaptam sem Media Queries, usamos:</p>
+            <ol>
+                <li><code>repeat()</code>: Simplifica colunas iguais. Ex: <code>repeat(3, 1fr)</code>.</li>
+                <li><code>minmax()</code>: Garante um tamanho mínimo e permite crescer até um máximo.</li>
+                <li><code>auto-fit</code> / <code>auto-fill</code>: Faz o navegador criar colunas automaticamente conforme o espaço disponível.</li>
+            </ol>
+            <p><strong>Código de Grid "Mágico":</strong></p>
+            <section class="code">
+                <pre>
+                    .grid-auto {
+                        display: grid;
+                        /* Cria colunas de no mínimo 250px que ocupam o espaço restante */
+                        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    }
+                </pre>
+            </section>
+        </article>
+        <article>
+            <h3>Grid Implícito e Posicionamento Insectionidual</h3>
+            <ul>
+                <li><code>grid-auto-rows</code>: Define o tamanho de linhas criadas automaticamente quando o conteúdo excede o template definido.</li>
+                <li><code>justify-self</code> / <code>align-self</code>: Permite que um único item quebre a regra do pai e se alinhe sozinho na sua célula.</li>
+            </ul>
+        </article>
+        <article>
+            <h3>Boas Práticas e Engenharia</h3>
+            <ul>
+                <li><strong>Grid vs Flex</strong>: Use Grid para o esqueleto principal da página (estruturas 2D) e Flexbox para componentes internos (estruturas 1D, como ícones em um cabeçalho).</li>
+                <li><strong>Subgrid</strong>: Para alinhamentos complexos entre pais e filhos, utilize <code>display: subgrid;</code>, permitindo que o filho herde as linhas do pai.</li>
+                <li><strong>Acessibilidade</strong>: Sempre mantenha a ordem lógica no HTML. O Grid permite mover itens visualmente, mas o leitor de tela seguirá a ordem das tags.</li>
+            </ul>
+        </article>
+    </main>
+    <footer>
+        <nav>
+            <a href="">GitHub</a> <a href="">E-mail</a> <a href="">LinkedIn</a>
+        </nav>
+        <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.</p>
+    </footer>
+</body>
+</html>

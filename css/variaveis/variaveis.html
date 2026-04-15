@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variáveis</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html" target="" rel="">Página principal</a></li>
+                <!-- i > bars -->
+                <li><a href="../mediaquery/mediaquery.html" target="" rel="">Artigo anterior</a></li>
+                <li><a href="../display/display.html" target="" rel="">Próximo artigo</a></li>
+            </ul>
+        </nav>
+        <h1>Diário DEV</h1>
+        <span>Por Oderlândio Júnior</span>
+    </header>
+    <main>
+        <header>
+            <h2>Variáveis CSS: Otimizando a Manutenção do Código</h2>
+            <p>Em projetos de grande escala, gerenciar cores, fontes e espaçamentos repetitivos pode se tornar um pesadelo. Se você decidir mudar o "azul da marca" e ele estiver em 50 lugares diferentes, terá que alterar um por um. As <strong>Variáveis CSS</strong> (também conhecidas como <em>Custom Properties</em>) resolvem esse problema ao permitir que você armazene valores sob um nome reutilizável.</p>
+        </header>
+        <article>
+            <h3>Declaração e Escopo Global</h3>
+            <p>Para que uma variável esteja disponível em todo o seu projeto, nós a declaramos em um seletor especial chamado <code>:root</code>, que representa o nível mais alto do seu documento HTML.</p>
+            <ul>
+                <li><strong>Sintaxe</strong>: O nome da variável deve obrigatoriamente começar com dois traços (<code>--</code>).</li>
+                <li><strong>Código de Exemplo</strong>:</li>
+            </ul>
+            <div class="code">
+                <pre>
+                    :root {
+                        --cor-principal: #007bff;
+                        --fonte-padrao: 'Roboto', sans-serif;
+                        --espacamento-padrao: 16px;
+                    }
+                </pre>
+            </div>
+        </article>
+        <article>
+            <h3>Utilizando a Função <code>var()</code></h3>
+            <p>Uma vez declarada, você utiliza a variável em qualquer seletor através da função <code>var()</code>.</p>
+            <ul>
+                <li><strong>Vantagem Técnica</strong>: Se você alterar o valor dentro do <code>:root</code>, todos os elementos que utilizam essa variável serão atualizados instantaneamente pelo navegador.</li>
+                <li><strong>Fallback (Segurança)</strong>: Você pode passar um segundo valor para a função caso a variável não esteja definida.</li>
+                <li><strong>Código de Exemplo</strong>:</li>
+            </ul>
+            <div class="code">
+                <pre>
+                    button {
+                        background-color: var(--cor-principal);
+                        padding: var(--espacamento-padrao);
+                    }
+                    /* Exemplo com Fallback */
+                    p {
+                        color: var(--cor-inexistente, black);
+                    }
+                </pre>
+            </div>
+        </article>
+        <article>
+            <h3>Escopo Local e Sobrescrita</h3>
+            <p>As variáveis respeitam a cascata do CSS. Isso significa que você pode redefinir uma variável dentro de um seletor específico sem afetar o resto do site.</p>
+            <ul>
+                <li><strong>Cenário</strong>: Útil para criar "Modo Escuro" ou temas específicos para seções da página.</li>
+                <li><strong>Código de Exemplo</strong>:</li>
+            </ul>
+            <div class="code">
+                <pre>
+                    .card-escuro {
+                        --cor-principal: #333; 
+                        /* Sobrescreve apenas dentro desta classe */
+                        background-color: var(--cor-principal);
+                    }
+                </pre>
+            </div>
+        </article>
+        <article>
+            <h3>Boas Práticas e Engenharia de Variáveis</h3>
+            <ul>
+                <li><strong>Nomes Semânticos</strong>: Evite nomes como <code>--azul</code>. Prefira <code>--cor-primaria</code> ou <code>--cor-sucesso</code>. Assim, se você mudar a cor para verde no futuro, o nome da variável ainda fará sentido.</li>
+                <li><strong>Performance</strong>: O uso de variáveis é processado nativamente pelo navegador, o que é muito mais eficiente do que fazer substituições via JavaScript.</li>
+                <li><strong>Organização</strong>: Tente agrupar todas as suas variáveis no início do seu arquivo principal de estilos ou em um arquivo separado chamado <code>variables.css</code>.</li>
+            </ul>
+        </article>
+    </main>
+    <footer>
+        <nav>
+            <a href="">GitHub</a> <a href="">E-mail</a> <a href="">LinkedIn</a>
+        </nav>
+        <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.</p>
+    </footer>
+</body>
+</html>

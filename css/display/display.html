@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exibição</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html" target="" rel="">Página principal</a></li>
+                <!-- i > bars -->
+                <li><a href="../variaveis/variaveis.html" target="" rel="">Artigo anterior</a></li>
+            </ul>
+        </nav>
+        <h1>Diário DEV</h1>
+        <span>Por Oderlândio Júnior</span>
+    </header>
+    <main>
+        <header>
+            <h2>Modos de exibição de conteúdo (Display): A Anatomia do Layout</h2>
+            <p>No CSS, a propriedade <code>display</code> determina como um elemento é renderizado no navegador e como ele interage com os elementos ao seu redor. Entender os diferentes modos de exibição é a chave para parar de "brigar" com o posicionamento dos elementos e começar a dominá-los.</p>
+        </header>
+        <article>
+            <h3>Os Comportamentos Padrão (Block vs Inline)</h3>
+            <p>Antes de falarmos de layouts complexos, precisamos entender as duas formas naturais de existência no HTML:</p>
+            <ol>
+                <li>
+                    <code>display: block</code>: O elemento se comporta como um bloco de construção.
+                    <ul>
+                        <li>Ocupa 100% da largura disponível (mesmo que o conteúdo seja pequeno).</li>
+                        <li>Sempre começa em uma nova linha.</li>
+                        <li>Aceita todas as propriedades de largura (<code>width</code>), altura (<code>height</code>), margens e preenchimentos.</li>
+                        <li><em>Exemplos</em>: <code>&lt;div&gt;</code>, <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;section&gt;</code>.</li>
+                    </ul>
+                </li>
+                <li>
+                    <code>display: inline</code>: O elemento se comporta como parte de um texto.
+                    <ul>
+                        <li>Ocupa apenas a largura necessária para o seu conteúdo.</li>
+                        <li>Não quebra a linha; os elementos ficam um ao lado do outro.</li>
+                        <li><strong>Atenção</strong>: Não aceita <code>width</code> ou <code>height</code>, e as margens verticais não empurram outros elementos.</li>
+                        <li><em>Exemplos</em>: <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>.</li>
+                    </ul>
+                </li>
+            </ol>
+        </article>
+        <article>
+            <h3>O Meio-Termo Híbrido</h3>
+            <p><code>display: inline-block</code>: Este é o "melhor dos dois mundos".</p>
+            <ul>
+                <li>Ele permite que o elemento fique na mesma linha que outros (como o <code>inline</code>), mas permite que você defina largura, altura e margens (como o <code>block</code>).</li>
+                <li><em>Uso Técnico</em>: Ideal para itens de menu ou botões que precisam ter um tamanho fixo, mas devem ficar lado a lado.</li>
+            </ul>
+        </article>
+        <article>
+            <h3>Layouts Modernos (Containers Inteligentes)</h3>
+            <p>Diferente dos anteriores, estas propriedades transformam o elemento em um <strong>container pai</strong> que dita as regras para todos os seus filhos.</p>
+            <ol>
+                <li><code>display: flex</code> <strong>(Flexbox)</strong>: Projetado para layouts unidimensionais (uma linha ou uma coluna). É excelente para alinhar e distribuir espaço entre itens de forma dinâmica.</li>
+                <li><code>display: grid</code> <strong>(Grid Layout)</strong>: Projetado para layouts bidimensionais (linhas e colunas simultaneamente). É a ferramenta mais poderosa para criar estruturas de páginas completas.</li>
+            </ol>
+        </article>
+        <article>
+            <h3>Ocultando Elementos</h3>
+            <p><code>display: none</code>: Remove o elemento completamente da página.</p>
+            <ul>
+                <li><strong>Diferença Importante</strong>: Diferente de <code>visibility: hidden</code> (que esconde o elemento mas deixa o buraco vazio), o <code>display: none</code> faz com que o navegador ignore o elemento, como se ele não existisse no layout.</li>
+                <li><em>Uso</em>: Muito usado com seletores especiais (como o <code>:hover</code>) para mostrar menus escondidos.</li>
+            </ul>
+        </article>
+        <article>
+            <h3>Boas Práticas e Engenharia de Display</h3>
+            <ul>
+                <li><strong>Semântica primeiro</strong>: Não mude o display de um elemento apenas por estética se houver uma tag HTML mais apropriada. Se você quer um bloco, prefira <code>&lt;div&gt;</code> ou <code>&lt;section&gt;</code> em vez de transformar um <code>&lt;span&gt;</code> em <code>block</code>.</li>
+                <li><strong>Cuidado com o Inline-block</strong>: Elementos com <code>inline-block</code> no código HTML costumam ter um pequeno espaço em branco entre eles (causado pela quebra de linha no editor).</li>
+                <li><strong>Consistência</strong>: Para layouts de página inteira, o padrão atual da indústria é utilizar <strong>Flexbox</strong> para componentes (como barras de navegação) e <strong>Grid</strong> para a estrutura principal do site.</li>
+            </ul>
+        </article>
+    </main>
+    <footer>
+        <nav>
+            <a href="">GitHub</a> <a href="">E-mail</a> <a href="">LinkedIn</a>
+        </nav>
+        Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html" target="" rel="">Página principal</a></li>
+                <!-- i > bars -->
+                <li><a href="../regras/regras.html" target="" rel="">Artigo anterior</a></li>
+                <li><a href="../variaveis/variaveis.html" target="" rel="">Próximo artigo</a></li>
+            </ul>
+        </nav>
+        <h1>Diário DEV</h1>
+        <span>Por Oderlândio Júnior</span>
+    </header>
+    <main>
+        <header>
+            <h2>Media Queries: A Inteligência do Design Responsivo</h2>
+            <p>As <strong>Media Queries</strong> são extensões da regra <code>@media</code> que permitem aplicar estilos CSS apenas quando certas condições são atendidas. Elas são a ferramenta definitiva para garantir que um site seja utilizável tanto em um smartphone de 4 polegadas quanto em um monitor UltraWide.</p>
+        </header>
+        <article>
+            <h3>Anatomia de uma Query</h3>
+            <p>Uma Media Query é composta por um <strong>tipo de mídia</strong> (opcional) e uma ou mais <strong>expressões de características</strong> (como a largura da tela).</p>
+            <ul>
+                <li><strong>Tipos de Mídia</strong>: <code>screen</code> (telas), <code>print</code> (impressão) ou <code>all</code> (todos).</li>
+                <li><strong>Operadores Lógicos</strong>: <code>and</code> (une condições), <code>not</code> (nega uma condição) e <code>only</code> (evita bugs em navegadores muito antigos).</li>
+            </ul>
+            <p><strong>Exemplo de Código:</strong></p>
+            <div class="code">
+                <pre>
+                    /* Se for uma TELA E tiver no máximo 768px de largura */
+                    @media screen and (max-width: 768px) {
+                        .sidebar { display: none; }
+                        .conteudo-principal { width: 100%; }
+                    }
+                </pre>
+            </div>
+</article>
+        <article>
+            <h3>Breakpoints e Estratégia Mobile-First</h3>
+            <p>Os <strong>Breakpoints</strong> (pontos de quebra) são as medidas de largura onde o layout "quebra" para se adaptar.</p>
+            <ol>
+                <li><strong>Mobile-First (Recomendado)</strong>: Você escreve o CSS principal focado em celulares (telas pequenas) e usa Media Queries com <code>min-width</code> para adicionar complexidade conforme a tela cresce.</li>
+                <ul>
+                    <li><em>Vantagem</em>: O código fica mais limpo e o carregamento em dispositivos móveis é mais rápido.</li>
+                </ul>
+                <li><strong>Desktop-First</strong>: Você cria o site para monitores grandes e usa <code>max-width</code> para esconder ou reduzir elementos em telas menores.</li>
+            </ol>
+        </article>
+        <article>
+            <h3>Além da Largura (Orientação e Resolução)</h3>
+            <p>As Media Queries podem detectar muito mais do que apenas pixels de largura:</p>
+            <ul>
+                <li><code>orientation</code>: Detecta se o aparelho está em <code>portrait</code> (em pé) ou <code>landscape</code> (deitado).</li>
+                <li><code>hover</code>: Detecta se o usuário possui um ponteiro (mouse) que permite passar o cursor sobre algo. Útil para esconder efeitos de hover em touchscreens.</li>
+                <li><code>prefers-color-scheme</code>: Detecta se o usuário prefere o "Modo Escuro" ou "Modo Claro" nas configurações do sistema operacional.</li>
+            </ul>
+            <p><strong>Exemplo de Código (Modo Escuro):</strong></p>
+            <div class="code">
+                <pre>
+                    @media (prefers-color-scheme: dark) {
+                        body {
+                            background-color: #121212;
+                            color: white;
+                        }
+                    }
+                </pre>
+            </div>
+        </article>
+        <article>
+            <h3>Boas Práticas de Engenharia Responsiva</h3>
+            <ul>
+                <li><strong>Não use Breakpoints Fixos por Dispositivo</strong>: Em vez de criar um breakpoint para "iPhone 15" ou "Samsung S24", crie breakpoints baseados no seu <strong>conteúdo</strong>. Se o texto começar a ficar apertado aos 540px, esse é o seu breakpoint.</li>
+                <li><strong>Viewport Meta Tag</strong>: Para as Media Queries funcionarem no celular, você <strong>precisa</strong> da tag <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> no seu HTML.</li>
+                <li><strong>Organização</strong>: Mantenha as Media Queries no final do arquivo. Agrupar todas as queries de um mesmo tamanho em um único bloco <code>@media</code> ajuda na manutenção.</li>
+            </ul>
+        </article>
+    </main>
+    <footer>
+        <nav>
+            <a href="">GitHub</a> <a href="">E-mail</a> <a href="">LinkedIn</a>
+        </nav>
+        <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.</p>
+    </footer>
+</body>
+</html>

@@ -3,588 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabelas HTML</title>
-    <style>
-        ul{
-            list-style-type: none;
-        }
-        body, h2 {
-            font-family: sans-serif;
-            font-size: 1.2em;
-        }
-
-        table {
-            width: 500px;
-            border-collapse: collapse; 
-            /*
-            border-collapse
-            é uma tag responsável por selecionar o modelo da borda da célula. Pode receber os valores: separate (por padrão, para ter um espaço entre elas) e collapse (para colar umas nas outras)
-            */
-            position: relative;
-        }
-
-        caption {
-            font-size: 1.3em;
-            font-weight: bold;
-            padding: 10px;
-            background-color: lightgray;
-            text-align: center;
-        }
-        td, th {
-            border: 1px solid black;
-            padding: 5px;
-            vertical-align: middle;
-            /*
-            vertical-align 
-            Seletor específico para tabela responsável por alinha os itens dentro da célula em forma vertical, recebe valores como: top (cima), middle (meio, padrão) e bottom (baixo). A tag pai, th ou td pode receber o text-align com os valores: left (esquerda), center (centro) e right (direita)
-            */
-        }
-        
-
-        #ex03 > thead, tfoot {
-            background-color: #2e2e2e;
-            color: white;
-        }
-
-        thead > tr > th {
-            position: sticky;
-            top: -1px;
-            background-color: #2e2e2e ;
-            /*
-            position: sticky
-            é responsável por fazer a linha selecionada grudar na página, geralmente usada nas linhas de importância da tabela como o "head";
-            */
-        }
-
-        td.num {
-            text-align: right;
-        }
-
-        #ex03 > tbody > tr:nth-child(even) {
-            background-color: lightgray;
-            /*ntr-child()
-            Pseudo-classe responsável por criar efeitos de linha por linha, como o efeito zebrado. Aceita valores como 2n, 2n-1, even (par) e odd (ímpar)
-            */
-        }
-
-        h2 {
-            text-align: center;
-        }
-
-        #ex03 tr td {
-            text-align: center;
-        }
-
-        #ex04 tr td {
-            text-align: center;
-        }
-
-        colgroup #nome, #profissao {
-            background-color: lightblue;
-        }
-
-        colgroup #idade {
-            background-color: lightgreen;
-        }
-
-        div#flex {
-            overflow-x:auto
-        }
-        /*
-        div + overflow
-        é responsável por encaixar a tabela dentro da janela, a sintaxe pode ser especifica nos eixos Y e X e aceita valores como auto, hidden, scroll...
-        */
-        </style>
+    <title>Tabelas</title>
 </head>
 <body>
-    <!--
-    Aninhamento para tabelas simples:
-        <table> (Abertura da tabela)
-            <tr> (Linha da tabela)
-                th (Título), td (Dado)
-                *: Acada th ou td criado dentro de um tr, se cria uma coluna
-            </tr>
-        </table>
-    -->
-    <h2>Tabelas simples</h2>
-    <table id="ex01">
-        <tr>
-            <td>A1</td><!--*Coluna 1-->
-            <td>B1</td>
-            <td>C1</td>
-        </tr>
-        <tr>
-            <td>A2</td>
-            <td>B2</td><!--*Coluna 2-->
-            <td>C2</td>
-        </tr>
-        <tr>
-            <td>A3</td>
-            <td>B3</td>
-            <td>C3</td><!--*Coluna 3-->
-        </tr>
-    </table>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html" target="" rel="">Página principal</a></li>
+                <!-- i > bars -->
+                <li><a href="../formulario/index.html" target="" rel="">Próximo artigo</a></li>
 
-    <h2>Mesclagem de células</h2>
-    <!--
-        Para fazer uma mesclagem de célula, usa-se dentro da tag, o parâmetro "rowspan", para expandir linha para baixo, ou, "colspan" para expandir o coluna para a direita. Para preencher então os valores desses parâmentros, use respectivamente a quantidade de expanção necessária
-    -->
-
-    <table id="ex02">
-        <tr>
-            <td>A</td>
-            <td colspan="2">B</td>
-        </tr>
-        <tr>
-            <td colspan="3">D</td>
-        </tr>
-        <tr>
-            <td rowspan="3">G</td>
-            <td>H</td>
-            <td>I</td>
-        </tr>
-        <tr>
-            <td colspan="2">K</td>
-        </tr>
-        <tr>
-            <td>N</td>
-            <td>O</td>
-        </tr>
-    </table>
-
-    <!--
-    Aninhamento para tabelas grandes:
-    <table>
-        <thead>
-            <tr>
-            td, th
-            </tr>
-        </thead>
-
-        <tbody>
-            <tr>
-            td, th
-            </tr>
-        </tbody>
-
-        <tfoot>
-            <tr> 
-            td, th
-            </tr>
-        </tfoot>
-    </table>
-    -->
-    <h2>Caption e Scope</h2>
-    <table id="ex03">
-        <caption>População dos estados brasileiros</caption> 
-        <!--
-        Caption
-        Título específico para tabelas, auxilia o navegador como ferramenta de busca 
-        -->
-        <thead>
-            <tr>
-                <th scope="col">Estado</th>
-                <!--
-                Scope
-                Marcação especifica para tabela e semântica para mecanismos de buscas, reponsável para indicar principalmente os dados da tabela. Aceita valores como: col, row, colgroup e rowgroup
-                -->
-                <th scope="col" style="width: 120px;">População atual</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>São Paulo</td>
-                <td class="num">45 973 194</td>
-            </tr>
-
-            <tr>
-                <td>Minas Gerais</td>
-                <td class="num">21 322 691</td>
-            </tr>
-
-            <tr>
-                <td>Rio de Janeiro</td>
-                <td class="num">17 219 679</td>
-            </tr>
-
-            <tr>
-                <td>Bahia</td>
-                <td class="num">14 850 513</td>
-            </tr>
-
-            <tr>
-                <td>Paraná</td>
-                <td class="num">11 824 665</td>
-            </tr>
-
-            <tr>
-                <td>Rio Grande do Sul</td>
-                <td class="num">11 229 915</td>
-            </tr>
-
-            <tr>
-                <td>Pernambuco</td>
-                <td class="num">9 539 029</td>
-            </tr>
-
-            <tr>
-                <td>Ceará</td>
-                <td class="num">9 233 656</td>
-            </tr>
-
-            <tr>
-                <td>Pará</td>
-                <td class="num">8 664 306</td>
-            </tr>
-
-            <tr>
-                <td>Santa Catarina</td>
-                <td class="num">8 058 441</td>
-            </tr>
-
-            <tr>
-                <td>Goiás</td>
-                <td class="num">7 350 483</td>
-            </tr>
-
-            <tr>
-                <td>Maranhão</td>
-                <td class="num">7 010 960</td>
-            </tr>
-
-            <tr>
-                <td>Amazonas</td>
-                <td class="num">4 281 209</td>
-            </tr>
-
-            <tr>
-                <td>Paraíba</td>
-                <td class="num">4 145 040</td>
-            </tr>
-
-            <tr>
-                <td>Espírito Santo</td>
-                <td class="num">4 102 129</td>
-            </tr>
-
-            <tr>
-                <td>Mato Grosso</td>
-                <td class="num">3 836 399</td>
-            </tr>
-
-            <tr>
-                <td>Rio Grande do Norte</td>
-                <td class="num">3 446 071</td>
-            </tr>
-
-            <tr>
-                <td>Piauí</td>
-                <td class="num">3 375 646</td>
-            </tr>
-
-            <tr>
-                <td>Alagoas</td>
-                <td class="num">3 220 104</td>
-            </tr>
-
-            <tr>
-                <td>Distrito Federal</td>
-                <td class="num">2 982 818</td>
-            </tr>
-
-            <tr>
-                <td>Mato Grosso do Sul</td>
-                <td class="num">2 901 895</td>
-            </tr>
-
-            <tr>
-                <td>Sergipe</td>
-                <td class="num">2 291 077</td>
-            </tr>
-
-            <tr>
-                <td>Rondônia</td>
-                <td class="num">1 746 227</td>
-            </tr>
-
-            <tr>
-                <td>Tocantins</td>
-                <td class="num">1 577 342</td>
-            </tr>
-
-            <tr>
-                <td>Acre</td>
-                <td class="num">880 631</td>
-            </tr>
-
-            <tr>
-                <td>Amapá</td>
-                <td class="num">802 837</td>
-            </tr>
-
-            <tr>
-                <td>Roraima</td>
-                <td class="num">716 793</td>
-            </tr>
-        </tbody>
-
-        <tfoot>
-            <tr>
-                <th scope="row">Total de habitantes</th>
-                <td class="num"><strong>212 589 750</strong></td>
-            </tr>
-        </tfoot>
-    </table>
-
-    <table id="ex04">
-        <caption>
-            Filmes favoritos
-        </caption>
-        <thead>
-            <tr>
-                <th scope="col">Grupo</th>
-                <th scope="col">Nomes</th>
-                <th scope="colgroup" colspan="3">Filmes</th>
-            </tr>
-        </thead>
-    
-        <tbody>
-            <tr>
-                <th scope="rowgroup" rowspan="3">Mulheres</th>
-                <td>Ana Maria Santos</td>
-                <td>Alien</td>
-                <td>Rambo</td>
-                <td>Vingadores</td>
-            </tr>
-            <tr>
-                <td>Beatriz Souza</td>
-                <td>Hulk</td>
-                <td>Inception</td>
-                <td>Batman</td>
-            </tr>
-            <tr>
-                <td>Cláudia Melo</td>
-                <td>Oblívion</td>
-                <td>Matrix</td>
-                <td>Big Hero</td>
-            </tr>
-            <tr>
-                <th scope="rowgroup" rowspan="3">Homens</th>
-                <td>Bruno Mendonça</td>
-                <td>Intocáveis</td>
-                <td>Amnésia</td>
-                <td>Gladiador</td>
-            </tr>
-            <tr>
-                <td>Daniel Lourenço</td>
-                <td>Wall-E</td>
-                <td>Oldboy</td>
-                <td>Dangal</td>
-            </tr>
-            <tr>
-                <td>Fabiano Mota</td>
-                <td>Star Wars 5</td>
-                <td>Taxi Driver</td>
-                <td>Toy Story</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h2>Colgroup</h2>
-    <!--
-    Colgroup
-    Marcação responsável para estilizar toda a coluna refente ajustando com id (#) ou class (.) na CSS
-    Dentro da marcação, pode-se adicionar o parâmetro SPAN com a quantidade de numero refente a quantidade de expanção (2+).
-    -->
-    <table>
-        <colgroup>
-            <col id="nome"> <!--Coluna 1-->
-            <col id="sexo"> <!--Coluna 2-->
-            <col id="idade"> <!--Coluna 3-->
-            <col id="profissao"> <!--Coluna 4-->
-        </colgroup>
-        <caption>Cadrastro</caption>
-        <thead>
-            <tr>
-                <th scope="col">Nome</th>
-                <th scope="col">Sexo</th>
-                <th scope="col">Idade</th>
-                <th scope="col">Profissão</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Ana Maria</td>
-                <td>F</td>
-                <td>25</td>
-                <td>Jornalista</td>
-            </tr>
-            <tr>
-                <td>Cláudio</td>
-                <td>M</td>
-                <td>26</td>
-                <td>Programador</td>
-            </tr>
-            <tr>
-                <td>Gustavo</td>
-                <td>M</td>
-                <td>42</td>
-                <td>Professor</td>
-            </tr>
-            <tr>
-                <td>Otávio</td>
-                <td>M</td>
-                <td>36</td>
-                <td>Vendedor</td>
-            </tr>
-            <tr>
-                <td>Maria</td>
-                <td>F</td>
-                <td>47</td>
-                <td>Médica</td>
-            </tr>
-            <tr>
-                <td>Clarisse</td>
-                <td>F</td>
-                <td>55</td>
-                <td>Nutricionista</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h2>Tabela responsiva</h2>
-    <div id="flex">
-        <table>
-            <thead>
-                <tr>
-                    <th scope="col">Produto</th>
-                    <th scope="col">Jan</th>
-                    <th scope="col">Fev</th>
-                    <th scope="col">Mar</th>
-                    <th scope="col">Abr</th>
-                    <th scope="col">Mai</th>
-                    <th scope="col">Jun</th>
-                    <th scope="col">Jul</th>
-                    <th scope="col">Ago</th>
-                    <th scope="col">Set</th>
-                    <th scope="col">Out</th>
-                    <th scope="col">Nov</th>
-                    <th scope="col">Dez</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>A</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>B</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>C</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>D</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>E</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>F</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>G</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <ul> Clique nas opções abaixo para ver mais tipos de tabelas:
-        <li><a href="tabela1.html">Opção 1</a></li>
-        <li><a href="tabela2.html">Opção 2</a></li>
-        <li><a href="tabela3.html">Opção 3</a></li>
-    </ul>
+            </ul>
+        </nav>
+        <h1>Diário DEV</h1>
+        <span>Por Oderlândio Júnior</span>
+    </header>
+    <main>
+        <section>
+            <h2>Arquitetura de Dados: Construção de Tabelas em HTML5</h2>
+            <p>As tabelas são utilizadas exclusivamente para exibir dados que possuem uma relação lógica entre linhas e colunas (como cronogramas, listas de preços ou especificações técnicas). Antigamente, tabelas eram usadas para criar o layout dos sites, mas hoje isso é considerado uma prática amadora e incorreta — layouts são responsabilidade do CSS.</p>
+        </section>
+        <section>
+            <h2>A Anatomia Estrutural</h2>
+            <p>Para uma tabela ser semântica e acessível, dividimos sua anatomia em três partes principais:</p> 
+            <ul>
+                <li>
+                    <code>&lt;table&gt;</code>: O container que define o início e o fim da tabela.
+                </li>
+                <li>
+                    <code>&lt;thead&gt;</code>: O cabeçalho da tabela. É aqui que definimos os títulos das colunas.
+                </li>
+                <li>
+                    <code>&lt;tbody&gt;</code>: O corpo da tabela, onde os dados reais (o conteúdo) ficam armazenados.
+                </li>
+                <li>
+                    <code>&lt;tfoot&gt;</code>: O rodapé da tabela, geralmente usado para somatórios ou notas de rodapé.
+                </li>
+            </ul>
+        </section>
+        <section>
+            <!-- <code>&lt;&gt;</code> -->
+            <h2>As Tags de Células e Linhas</h2>
+            <p>Dentro dessas divisões, utilizamos as tags que constroem a grade:</p>
+            <ul>
+                <li>
+                    <code>&lt;tr&gt;</code> (Table Row): Representa uma linha horizontal completa.
+                </li>
+                <li>
+                    <code>&lt;th&gt;</code> (Table Header): Uma célula de cabeçalho. Por padrão, o navegador a deixa em negrito e centralizada.
+                </li>
+                <li>
+                    <code>&lt;td&gt;</code> (Table Data): Uma célula de dado comum, que compõe o corpo da tabela.
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>Extensão de células</h2>
+            <p>Quando estamos lidando com dados mais complexos, nem sempre uma informação cabe em apenas um "quadradinho" da tabela. É aí que entram os atributos de expansão (ou mesclagem), que permitem que uma célula ocupe o espaço de várias outras.</p>
+            <p>No HTML, usamos o termo span (que significa "alcance" ou "extensão") para esticar as células em duas direções:</p>
+        </section>
+        <section>
+            <h2>Mesclagem Horizontal: <code>colspan</code></h2>
+            <p>O atributo <code>colspan</code> (abreviação de <em>column span</em>) define quantas colunas uma célula deve ocupar para a direita.</p>
+            <ul>
+                <li><strong>Quando usar</strong>: Imagine que você quer criar um título que cubra toda a largura da tabela ou uma categoria que englobe vários subitens laterais.</li>
+                <li><strong>Regra de Ouro</strong>: Se você definir <code>colspan="2"</code>, você deve "remover" uma tag <code>&lt;td&gt;</code> ou <code>&lt;th&gt;</code> daquela mesma linha, caso contrário, a tabela vai ficar com uma célula sobrando para fora da grade.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Mesclagem Vertical: <code>rowspan</code></h2>
+            <p>O atributo <code>rowspan</code> define quantas <strong>linhas</strong> uma célula deve ocupar para baixo.</p>
+            <ul>
+                <li><strong>Quando usar</strong>: É perfeito para quando um mesmo dado se repete em várias linhas consecutivas. Em vez de escrever "HTML5" três vezes em três linhas diferentes, você cria uma célula única que "estica" para baixo.</li>
+                <li><strong>Regra de Ouro</strong>: Esta é a que mais confunde! Se você usar <code>rowspan="3"</code> na primeira linha, você não deve criar a primeira célula das próximas duas linhas, pois o espaço delas já foi "roubado" pela célula que veio de cima.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Semântica e Acessibilidade: O atributo <code>caption</code></h2>
+            <p>Toda tabela profissional deve ter um "título" visível que descreva seu conteúdo. Para isso, utilizamos a tag <code>&lt;caption&gt;</code>, que deve ser a primeira tag logo após a abertura da <code>&lt;table&gt;</code>. Isso ajuda usuários de leitores de tela a entenderem rapidamente do que se trata aquele conjunto de dados.</p>
+        </section>
+    </main>
+    <footer>
+        <nav>
+            <a href="">GitHub</a> <a href="">E-mail</a> <a href="">LinkedIn</a>
+        </nav>
+        <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.</p>
+    </footer>
 </body>
 </html>
