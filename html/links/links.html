@@ -18,65 +18,95 @@
         <span>Por Oderlândio Júnior</span>
     </header>
     <main>
-        <section>
-            <h2>O Guia Definitivo da Tag de Âncora &lt;a&gt;</h2>
-            <p>A tag &lt;a&gt; (de anchor) é, sem dúvida, a espinha dorsal da World Wide Web. É ela que permite a navegação entre páginas, transformando documentos isolados em uma rede conectada.</p>
-            <h2>Entendendo a Anatomia: Atributos/Parâmetros e Valores</h2>
+        <header>
+            <h2>O Guia Definitivo da Tag de Âncora <code>&lt;a&gt;</code></h2>
+            <p>A tag <code>&lt;a&gt;</code> (de <em>anchor</em>) é, sem dúvida, a espinha dorsal da World Wide Web. É ela que permite a navegação entre páginas, transformando documentos isolados em uma rede conectada.</p>
+        </header>
+        <article>
+            <h3>Entendendo a Anatomia: Atributos e Valores</h3>
             <p>Antes de mergulhar nos links, precisamos entender como o HTML se comunica. Muitas vezes chamamos as configurações das tags de "parâmetros", mas o termo técnico correto é Atributo.</p>
             <ul>
-                <li>Atributo (O "O quê"): É o nome da característica que você quer modificar na tag. Ele sempre vem antes do sinal de igual (ex: href, target).</li>
-                <li>Valor (O "Como"): É a instrução específica que você dá ao atributo. Ele sempre deve estar entre aspas (ex: "<code>https://google.com</code>", "<code>_blank</code>").</li>
-                <li>Analogia: Pense na tag como um carro. O atributo seria "cor" e o valor seria "verde". Sem o atributo, o navegador não sabe o que configurar; sem o valor, ele não sabe qual instrução aplicar.</li>
+                <li><strong>Atributo (O "O quê")</strong>: É o nome da característica que você quer modificar na tag. Ele sempre vem antes do sinal de igual (ex: <code>href</code>, <code>target</code>).</li>
+                <li><strong>Valor (O "Como")</strong>: É a instrução específica que você dá ao atributo. Ele sempre deve estar entre aspas (ex: <code>"https://google.com"</code>, <code>"_blank"</code>).</li>
+                <li><strong>Analogia</strong>: Pense na tag como um carro. O atributo seria "cor" e o valor seria "verde". Sem o atributo, o navegador não sabe o que configurar; sem o valor, ele não sabe qual instrução aplicar.</li>
             </ul>
-        </section>
-        <section>
-            <h2>Desvendando os Atributos: <code>href</code>, <code>target</code> e <code>rel</code></h2>
+        </article>
+        <article>
+            <h3>Desvendando os Atributos: <code>href</code>, <code>target</code> e <code>rel</code></h3>
             <p>Para que um link funcione e se comporte da maneira correta, utilizamos três atributos principais:</p>
-            <h3><code>href</code> (Hypertext Reference)</h3>
-            <p>É o atributo mais importante. Ele define o destino do link. Sem ele, a tag &lt;a&gt; perde sua função principal.</p>
-            <ul>
-                <li>Pode ser uma URL completa (Link Externo).</li>
-                <li>Pode ser um caminho de arquivo (Link Interno entre pastas do sistema operacional).</li>
-                <li>Pode ser uma "âncora" para a mesma página (usando #id).</li>
-            </ul>
-            <h3><code>target</code> (Onde abrir?)</h3>
-            <p>Define em qual janela ou aba o destino será carregado.</p>
-            <ul>
-                <li>_self: Valor padrão. Abre na mesma aba que o usuário já está.</li>
-                <li>_blank: Abre o link em uma nova aba ou janela. Muito usado para links externos para que o usuário não saia do seu site.</li>
-                <li>_parent / _top: Usados em contextos de iframes para abrir o link na janela pai ou no topo da hierarquia.</li>
-            </ul>
-            <h3>rel (Relationship)</h3>
-            <p>O atributo <code>rel</code> descreve a <strong>relação</strong> entre a página atual e a página de destino. Ele é invisível para o usuário comum, mas fundamental para navegadores e mecanismos de busca (SEO).</p>
-        </section>
-        <section>
-            <h2>Valores Aceitáveis para o Atributo rel</h2>
-            <p>O <code>rel</code> possui uma lista vasta de valores. Aqui estão os principais e mais utilizados no desenvolvimento moderno:</p>
-            <!-- Criar tabela para informação
-            Valor
-            Descrição
-            next
-            Indica que o link aponta para o próximo documento de uma série (como você usou no seu Nível 1).
-            prev
-            Indica o documento anterior em uma sequência.
-            author
-            Indica que o link aponta para o perfil ou página do autor do documento.
-            external
-            Informa que o link leva a um site que não faz parte do domínio atual.
-            nofollow
-            Diz aos motores de busca (Google) para não "passar autoridade" para aquele link. Útil para links de comentários ou pagos.
-            noopener
-            Impede que a nova página aberta tenha acesso à página original via JavaScript. Vital para segurança ao usar target="_blank".
-            noreferrer
-            Similar ao noopener, mas também impede que o navegador envie o endereço da sua página para o site de destino.
-            license
-            Indica que o conteúdo do destino é a licença de direitos autorais do documento atual.
-            help
-            Link para um documento de ajuda ou suporte contextual.
-            search
-            Indica um recurso de busca para o documento atual.
-            -->
-        </section>
+            <ol>
+                <li>
+                    <strong><code>href</code> (Hypertext Reference)</strong>
+                    <ul>
+                        <li>Pode ser uma URL completa (Link Externo).</li>
+                        <li>Pode ser um caminho de arquivo (Link Interno entre pastas do sistema operacional).</li>
+                        <li>Pode ser uma "âncora" para a mesma página (usando #id).</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong><code>target</code> (Onde abrir?)</strong>
+                    <ul>
+                        <li><code>_self</code>: Valor padrão. Abre na mesma aba que o usuário já está.</li>
+                        <li><code>_blank</code>: Abre o link em uma nova aba ou janela. Muito usado para links externos para que o usuário não saia do seu site.</li>
+                        <li><code>_parent</code> / <code>_top</code>: Usados em contextos de iframes para abrir o link na janela pai ou no topo da hierarquia.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong><code>rel</code> (Relationship)</strong>
+                    <p>O atributo <code>rel</code> descreve a <strong>relação</strong> entre a página atual e a página de destino. Ele é invisível para o usuário comum, mas fundamental para navegadores e mecanismos de busca (SEO).</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Valor</th>
+                                <th>Descrição</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>next</th>
+                                <td>Indica que o link aponta para o próximo documento de uma série.</td>
+                            </tr>
+                            <tr>
+                                <th>prev</th>
+                                <td>Indica o documento anterior em uma sequência.</td>
+                            </tr>
+                            <tr>
+                                <th>author</th>
+                                <td>Indica que o link aponta para o perfil ou página do autor do documento.</td>
+                            </tr>
+                            <tr>
+                                <th>external</th>
+                                <td>Informa que o link leva a um site que não faz parte do domínio atual.</td>
+                            </tr>
+                            <tr>
+                                <th>nofollow</th>
+                                <td>Diz aos motores de busca (Google) para não "passar autoridade" para aquele link. Útil para links de comentários ou pagos.</td>
+                            </tr>
+                            <tr>
+                                <th>noopener</th>
+                                <td>Impede que a nova página aberta tenha acesso à página original via JavaScript. Vital para segurança ao usar target="_blank".</td>
+                            </tr>
+                            <tr>
+                                <th>noreferrer</th>
+                                <td>Similar ao noopener, mas também impede que o navegador envie o endereço da sua página para o site de destino.</td>
+                            </tr>
+                            <tr>
+                                <th>license</th>
+                                <td>Indica que o conteúdo do destino é a licença de direitos autorais do documento atual.</td>
+                            </tr>
+                            <tr>
+                                <th>help</th>
+                                <td>Link para um documento de ajuda ou suporte contextual.</td>
+                            </tr>
+                            <tr>
+                                <th>search</th>
+                                <td>Indica um recurso de busca para o documento atual.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+            </ol>
+        </article>
     </main>
     <footer>
         <nav>

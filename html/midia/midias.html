@@ -12,62 +12,57 @@
                 <li><a href="../../index.html" target="" rel="">Página principal</a></li>
                 <!-- i > bars -->
                 <li><a href="../listas/index.html" target="" rel="">Artigo anterior</a></li>
-
             </ul>
         </nav>
         <h1>Diário DEV</h1>
         <span>Por Oderlândio Júnior</span>
     </header>
     <main>
-        <section>
+        <header>
             <h2>Ecossistema de Mídia: Formatos e Implementação Semântica</h2>
             <p>A integração de recursos multimídia é um dos pilares da experiência do usuário moderna, mas exige uma responsabilidade técnica e ética. Antes de manipular qualquer arquivo, o desenvolvedor deve compreender que saber codar é apenas metade do trabalho; a outra metade é respeitar a criação alheia.</p>
             <p>Utilizar imagens, vídeos ou áudios sem autorização pode resultar em penalidades legais e na remoção do seu site.</p>
-        </section>
-        <section>
-            <h2>Imagens: Formatos de arquivos</h2>
+        </header>
+        <article>
+            <h3>Imagens: Formatos de arquivos</h3>
             <p>A gestão de imagens exige o equilíbrio entre peso de arquivo e fidelidade visual.</p>
             <ul>
-                <li><p><code>.JPEG</code> / <code>.JPG</code>: Utilizam compressão lossy (com perda), sendo ideais para fotografias complexas por permitirem arquivos pequenos com boa qualidade visual. Ele descarta informações que o olho humano não percebe para reduzir o peso do arquivo.</p></li>
-                <li><p><code>.PNG</code>: Utiliza compressão lossless (sem perda) e suporta canal alfa (transparência), essencial para logotipos e ícones.</p></li>
-                <li><p><code>.WebP</code>: O padrão atual de performance, oferecendo compressão superior (até 34% menor que JPEG) com suporte a transparência e animação.</p></li>
-                <li><p><code>.SVG</code>: Formato vetorial baseado em XML, que não perde resolução ao ser redimensionado, ideal para elementos gráficos e ilustrações.</p></li>
+                <li><code>.JPEG</code> / <code>.JPG</code>: Utilizam compressão lossy (com perda), sendo ideais para fotografias complexas por permitirem arquivos pequenos com boa qualidade visual. Ele descarta informações que o olho humano não percebe para reduzir o peso do arquivo.</li>
+                <li><code>.PNG</code>: Utiliza compressão lossless (sem perda) e suporta canal alfa (transparência), essencial para logotipos e ícones.</li>
+                <li><code>.WebP</code>: O padrão atual de performance, oferecendo compressão superior (até 34% menor que JPEG) com suporte a transparência e animação.</li>
+                <li><code>.SVG</code>: Formato vetorial baseado em XML, que não perde resolução ao ser redimensionado, ideal para elementos gráficos e ilustrações.</li>
             </ul>
-            <h2>Implementação com <code>figure</code> e <code>figcaption</code></h2>
+        </article>
+        <article>
+            <h3>Implementação com <code>figure</code> e <code>figcaption</code></h3>
             <p>Para uma marcação profissional, não usamos apenas a tag <code>&lt;img&gt;</code> solta. Utilizamos o conjunto semântico:</p>
             <ol>
                 <li>A Tag <img>: É o elemento que renderiza a imagem. Atributos vitais: src (caminho), alt (descrição para acessibilidade) e loading="lazy" (carregamento inteligente).</li>
                 <li>O Container <code>&lt;figure&gt;</code>: Envolve a imagem para indicar que ela é uma unidade ilustrativa autônoma. A vantagem é que ele isola a mídia do fluxo comum de parágrafos.</li>
                 <li>A Legenda <code>&lt;figcaption&gt;</code>: Define o título ou a descrição da imagem. A grande vantagem aqui é a associação lógica: o navegador e o Google entendem que aquele texto pertence especificamente àquela imagem, o que melhora drasticamente o SEO e a acessibilidade.</li>
             </ol>
-        </section>
-        <section>
-            <h2>Vídeos: Contentores e a Tag <code>&lt;video&gt;</code></h2>
+        </article>
+        <article>
+            <h3>Vídeos: Contentores e a Tag <code>&lt;video&gt;</code></h3>
             <p>Vídeos na web são servidos em "containers" que abrigam faixas de vídeo e áudio. Os formatos mais comuns são o <strong>.MP4</strong> pela compatibilidade universal e o <strong>.WebM</strong> pela eficiência em navegadores modernos.</p>
             <p><strong>Atributos fundamentais:</strong></p>
             <ul>
-                <li><p><code>controls</code>: Exibe a interface de player (play, volume, tela cheia).</p></li>
-                <li><p><code>autoplay</code> e <code>muted</code>: Inicia o vídeo sozinho (browsers só permitem o autoplay se o som estiver desligado via muted).</p></li>
-                <li><p><code>poster</code>: Uma imagem de capa que aparece enquanto o vídeo não é carregado.</p></li>
-                <li><p><code>loop</code>: Faz o vídeo recomeçar infinitamente.</p></li>
+                <li><code>controls</code>: Exibe a interface de player (play, volume, tela cheia).</li>
+                <li><code>autoplay</code> e <code>muted</code>: Inicia o vídeo sozinho (browsers só permitem o autoplay se o som estiver desligado via muted).</li>
+                <li><code>poster</code>: Uma imagem de capa que aparece enquanto o vídeo não é carregado.</li>
+                <li><code>loop</code>: Faz o vídeo recomeçar infinitamente.</li>
             </ul>
-        </section>
-        <section>
-            <h2>Áudios: Formatos e a Tag <code>&lt;audio&gt;</code></h2>
+        </article>
+        <article>
+            <h3>Áudios: Formatos e a Tag <code>&lt;audio&gt;</code></h3>
             <p>Para áudio, o equilíbrio entre peso e qualidade é feito principalmente com o formato <strong>.MP3</strong>. Alternativas como <strong>.OGG</strong> ou <strong>.WAV</strong> existem, mas o MP3 continua sendo o padrão de maior suporte.</p>
             <p><strong>Atributos fundamentais:</strong></p>
             <ul>
-                <li>
-                    <p><code>src</code>: O caminho do arquivo de som.</p>
-                </li>
-                <li>
-                    <p><code>controls</code>: Essencial para que o usuário tenha o comando sobre o áudio.</p>
-                </li>
-                <li>
-                    <p><code>preload</code>: Informa ao navegador se ele deve baixar o arquivo imediatamente (<code>auto</code>) ou esperar o comando do usuário (<code>none</code>).</p>
-                </li>
+                <li><code>src</code>: O caminho do arquivo de som.</li>
+                <li><code>controls</code>: Essencial para que o usuário tenha o comando sobre o áudio.</li>
+                <li><code>preload</code>: Informa ao navegador se ele deve baixar o arquivo imediatamente (<code>auto</code>) ou esperar o comando do usuário (<code>none</code>).</li>
             </ul>
-        </section>
+        </article>
     </main>
     <footer>
         <nav>

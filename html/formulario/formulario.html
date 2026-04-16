@@ -11,32 +11,36 @@
             <ul>
                 <li><a href="../../index.html" target="" rel="">Página principal</a></li>
                 <!-- i > bars -->
-                <li><a href="../tabelas/index.html" target="" rel="">Artigo anterior</a></li>
-                <li><a href="../iframes/index.html" target="" rel="">Próximo artigo</a></li>
+                <li><a href="../tabelas/tabelas.html" target="" rel="">Artigo anterior</a></li>
+                <li><a href="../iframes/iframes.html" target="" rel="">Próximo artigo</a></li>
             </ul>
         </nav>
         <h1>Diário DEV</h1>
         <span>Por Oderlândio Júnior</span>
     </header>
     <main>
-        <section>
-            <h2>A Porta de Entrada para a Interatividade: Formulários em HTML</h2>
+        <header>
+            <h2>Interatividade e Coleta de Dados: A Engenharia dos Formulários</h2>
+            <p>Se o HTML define a estrutura e o conteúdo, os formulários representam a <strong>ponte de comunicação</strong> entre o usuário e a aplicação. É através deles que capturamos intenções, processamos cadastros e viabilizamos a interatividade real na web.</p>
+            <p>Nesta seção, exploramos a fundo as tags e atributos que compõem um sistema de entrada de dados eficiente. O foco aqui vai além da simples criação de campos; trata-se de garantir a <strong>integridade das informações</strong>, a <strong>acessibilidade</strong> para todos os usuários e uma experiência de preenchimento fluida e intuitiva.</p>
+        </header>
+        <article>
+            <h3>A Porta de Entrada para a Interatividade: Formulários em HTML</h3>
             <p>Se o HTML é o esqueleto do site, o formulário é o sistema sensorial que permite ao usuário enviar dados para serem processados. Para construir um formulário funcional e acessível, utilizamos um conjunto de tags específicas:</p>
-            <!-- <code>&lt; &gt;</code> -->
-            <ul>
+            <ol>
                 <li><code>&lt;form&gt;</code>: É o container principal. Ele define a área de interação e possui atributos cruciais como <code>action</code> (para onde os dados vão) e <code>method</code> (como os dados são enviados, geralmente <code>GET</code> ou <code>POST</code>).</li>
                 <li><code>&lt;label&gt;</code>: Essencial para a acessibilidade. Ela dá um nome ao campo e, ao usar o atributo <code>for</code> conectado ao <code>id</code> do input, permite que o usuário clique no texto para focar no campo.</li>
                 <li><code>&lt;input&gt;</code>: A tag mais versátil do formulário. Dependendo do atributo type, ela se transforma em um campo de texto (text), uma senha (password), um seletor de data (date) ou uma caixa de seleção (checkbox).</li>
                 <li><code>&lt;textarea&gt;</code>: Diferente do input, esta tag permite a entrada de textos longos com múltiplas linhas, ideal para mensagens ou comentários.</li>
                 <li><code>&lt;button&gt;</code>: O gatilho final. O tipo submit é o que dispara o envio de todas as informações preenchidas para o servidor.</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Boas Práticas de Marcação</h2>
+            </ol>
+        </article>
+        <article>
+            <h3>Boas Práticas de Marcação</h3>
             <p>Para manter o formulário organizado, podemos usar a tag <code>&lt;fieldset&gt;</code> para agrupar campos relacionados (como "Dados Pessoais") e a tag <code>&lt;legend&gt;</code> para dar um título a esse grupo. Isso melhora muito a experiência de quem usa leitores de tela.</p>
-        </section>
-        <section>
-            <h2>Atributos Essenciais: Refinando a Experiência do Usuário</h2>
+        </article>
+        <article>
+            <h3>Atributos Essenciais: Refinando a Experiência do Usuário</h3>
             <p>Os atributos são inseridos dentro da tag <code>&lt;input&gt;</code> para modificar seu comportamento padrão. Eles garantem que o usuário saiba o que digitar e que o navegador impeça erros comuns.</p>
             <ul>
                 <li><code>placeholder</code>: Exibe um texto de ajuda dentro do campo (geralmente em cinza claro) que desaparece assim que o usuário começa a digitar. É ideal para dar exemplos de preenchimento, como "Ex: seuemail@dominio.com".</li>
@@ -51,6 +55,27 @@
                 </ul>
                 <li><code>min</code> e <code>max</code>: Exclusivos para tipos numéricos (<code>type="number"</code>) ou de data (<code>type="date"</code>). Eles definem o valor numérico mais baixo e o mais alto permitidos.</li>
             </ul>
+        </article>
+        <section class="code">
+            <pre>
+                <code>
+                &lt;form action="/enviar-dados" method="POST"&gt;
+                &lt;fieldset&gt;
+                    &lt;legend&gt;Usúario&lt;/legend&gt;
+                        &lt;label for="nome"&gt;Nome:&lt;/label&gt;
+                        &lt;input type="text" id="nome" name="nome" required&gt;
+                        &lt;label for="email"&gt;E-mail:&lt;/label&gt;
+                        &lt;input type="email" id="email" name="email" required&gt;
+                &lt;/fieldset&gt;
+                &lt;fieldset&gt;
+                    &lt;legend&gt;Sua mensagem&lt;/legend&gt;
+                    &lt;label for="mensagem"&gt;Mensagem:&lt;/label&gt;
+                    &lt;textarea id="mensagem" name="mensagem"&gt;&lt;/textarea&gt;
+                &lt;/fieldset&gt;
+                &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+                &lt;/form&gt;
+                </code>
+            </pre>
         </section>
     </main>
     <footer>

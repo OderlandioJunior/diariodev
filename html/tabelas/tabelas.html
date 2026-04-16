@@ -11,7 +11,7 @@
             <ul>
                 <li><a href="../../index.html" target="" rel="">Página principal</a></li>
                 <!-- i > bars -->
-                <li><a href="../formulario/index.html" target="" rel="">Próximo artigo</a></li>
+                <li><a href="../formulario/formulario.html" target="" rel="">Próximo artigo</a></li>
 
             </ul>
         </nav>
@@ -19,68 +19,78 @@
         <span>Por Oderlândio Júnior</span>
     </header>
     <main>
-        <section>
+        <header>
             <h2>Arquitetura de Dados: Construção de Tabelas em HTML5</h2>
             <p>As tabelas são utilizadas exclusivamente para exibir dados que possuem uma relação lógica entre linhas e colunas (como cronogramas, listas de preços ou especificações técnicas). Antigamente, tabelas eram usadas para criar o layout dos sites, mas hoje isso é considerado uma prática amadora e incorreta — layouts são responsabilidade do CSS.</p>
-        </section>
-        <section>
-            <h2>A Anatomia Estrutural</h2>
+        </header>
+        <article>
+            <h3>A Anatomia Estrutural</h3>
             <p>Para uma tabela ser semântica e acessível, dividimos sua anatomia em três partes principais:</p> 
             <ul>
-                <li>
-                    <code>&lt;table&gt;</code>: O container que define o início e o fim da tabela.
-                </li>
-                <li>
-                    <code>&lt;thead&gt;</code>: O cabeçalho da tabela. É aqui que definimos os títulos das colunas.
-                </li>
-                <li>
-                    <code>&lt;tbody&gt;</code>: O corpo da tabela, onde os dados reais (o conteúdo) ficam armazenados.
-                </li>
-                <li>
-                    <code>&lt;tfoot&gt;</code>: O rodapé da tabela, geralmente usado para somatórios ou notas de rodapé.
-                </li>
+                <li><code>&lt;table&gt;</code>: O container que define o início e o fim da tabela.</li>
+                <li><code>&lt;thead&gt;</code>: O cabeçalho da tabela. É aqui que definimos os títulos das colunas.</li>
+                <li><code>&lt;tbody&gt;</code>: O corpo da tabela, onde os dados reais (o conteúdo) ficam armazenados.</li>
+                <li><code>&lt;tfoot&gt;</code>: O rodapé da tabela, geralmente usado para somatórios ou notas de rodapé.</li>
             </ul>
-        </section>
-        <section>
-            <!-- <code>&lt;&gt;</code> -->
-            <h2>As Tags de Células e Linhas</h2>
+        </article>
+        <article>
+            <h3>As Tags de Células e Linhas</h3>
             <p>Dentro dessas divisões, utilizamos as tags que constroem a grade:</p>
             <ul>
-                <li>
-                    <code>&lt;tr&gt;</code> (Table Row): Representa uma linha horizontal completa.
-                </li>
-                <li>
-                    <code>&lt;th&gt;</code> (Table Header): Uma célula de cabeçalho. Por padrão, o navegador a deixa em negrito e centralizada.
-                </li>
-                <li>
-                    <code>&lt;td&gt;</code> (Table Data): Uma célula de dado comum, que compõe o corpo da tabela.
-                </li>
+                <li><code>&lt;tr&gt;</code> (Table Row): Representa uma linha horizontal completa.</li>
+                <li><code>&lt;th&gt;</code> (Table Header): Uma célula de cabeçalho. Por padrão, o navegador a deixa em negrito e centralizada.</li>
+                <li><code>&lt;td&gt;</code> (Table Data): Uma célula de dado comum, que compõe o corpo da tabela.</li>
             </ul>
-        </section>
-        <section>
-            <h2>Extensão de células</h2>
+        </article>
+        <article>
+            <h3>Extensão de células</h3>
             <p>Quando estamos lidando com dados mais complexos, nem sempre uma informação cabe em apenas um "quadradinho" da tabela. É aí que entram os atributos de expansão (ou mesclagem), que permitem que uma célula ocupe o espaço de várias outras.</p>
             <p>No HTML, usamos o termo span (que significa "alcance" ou "extensão") para esticar as células em duas direções:</p>
-        </section>
-        <section>
-            <h2>Mesclagem Horizontal: <code>colspan</code></h2>
+        </article>
+        <article>
+            <h3>Mesclagem Horizontal: <code>colspan</code></h3>
             <p>O atributo <code>colspan</code> (abreviação de <em>column span</em>) define quantas colunas uma célula deve ocupar para a direita.</p>
             <ul>
                 <li><strong>Quando usar</strong>: Imagine que você quer criar um título que cubra toda a largura da tabela ou uma categoria que englobe vários subitens laterais.</li>
                 <li><strong>Regra de Ouro</strong>: Se você definir <code>colspan="2"</code>, você deve "remover" uma tag <code>&lt;td&gt;</code> ou <code>&lt;th&gt;</code> daquela mesma linha, caso contrário, a tabela vai ficar com uma célula sobrando para fora da grade.</li>
             </ul>
-        </section>
-        <section>
-            <h2>Mesclagem Vertical: <code>rowspan</code></h2>
+        </article>
+        <article>
+            <h3>Mesclagem Vertical: <code>rowspan</code></h3>
             <p>O atributo <code>rowspan</code> define quantas <strong>linhas</strong> uma célula deve ocupar para baixo.</p>
             <ul>
                 <li><strong>Quando usar</strong>: É perfeito para quando um mesmo dado se repete em várias linhas consecutivas. Em vez de escrever "HTML5" três vezes em três linhas diferentes, você cria uma célula única que "estica" para baixo.</li>
                 <li><strong>Regra de Ouro</strong>: Esta é a que mais confunde! Se você usar <code>rowspan="3"</code> na primeira linha, você não deve criar a primeira célula das próximas duas linhas, pois o espaço delas já foi "roubado" pela célula que veio de cima.</li>
             </ul>
-        </section>
-        <section>
-            <h2>Semântica e Acessibilidade: O atributo <code>caption</code></h2>
+        </article>
+        <article>
+            <h3>Semântica e Acessibilidade: O atributo <code>caption</code></h3>
             <p>Toda tabela profissional deve ter um "título" visível que descreva seu conteúdo. Para isso, utilizamos a tag <code>&lt;caption&gt;</code>, que deve ser a primeira tag logo após a abertura da <code>&lt;table&gt;</code>. Isso ajuda usuários de leitores de tela a entenderem rapidamente do que se trata aquele conjunto de dados.</p>
+        </article>
+        <section class="code">
+            <pre>
+                <code>
+                    &lt;table&gt;
+                    &lt;thead&gt;
+                        &lt;tr&gt;
+                        &lt;th&gt;Produto&lt;/th&gt;
+                        &lt;th&gt;Preço&lt;/th&gt;
+                        &lt;/tr&gt;
+                    &lt;/thead&gt;
+                    &lt;tbody&gt;
+                        &lt;tr&gt;
+                        &lt;td&gt;Notebook&lt;/td&gt;
+                        &lt;td&gt;R$ 3000&lt;/td&gt;
+                        &lt;/tr&gt;
+
+                        &lt;tr&gt;
+                        &lt;td&gt;Mouse&lt;/td&gt;
+                        &lt;td&gt;R$ 50&lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/tbody&gt;
+                    &lt;/table&gt;
+                </code>
+            </pre>
         </section>
     </main>
     <footer>

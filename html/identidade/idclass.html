@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificadores</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html" target="" rel="">Página principal</a></li>
+                <!-- i > bars -->
+                <li><a href="../listas/listas.html" target="" rel="">Próximo artigo</a></li>
+            </ul>
+        </nav>
+        <h1>Diário DEV</h1>
+        <span>Por Oderlândio Júnior</span>
+    </header>
+    <main>
+        <header>
+            <h2>Identificadores e Classificadores: A Identidade dos Elementos (ID e Class)</h2>
+            <p>Após definir a arquitetura semântica do documento, o desenvolvedor precisa de mecanismos para distinguir elementos específicos ou agrupar elementos que compartilham características comuns. No HTML5, isso é feito através dos atributos globais <code>id</code> e <code>class</code>. Embora sejam frequentemente associados ao CSS, sua função primária é estrutural: fornecer "ganchos" (hooks) para que o navegador, scripts e motores de busca identifiquem partes do DOM.</p>
+        </header>
+        <article>
+            <h3>1. O Atributo ID: A Identidade Única</h3>
+            <p>O atributo <code>id</code> funciona como o "Nome Próprio" ou o "CPF" de um elemento. Sua principal regra é a <strong>exclusividade</strong>: um valor de <code>id</code> só pode ser usado uma única vez em todo o documento HTML.</p>
+            <ul>
+                <li><strong>Propósito Estrutural:</strong> Ele isola um componente único na página, como o <code>id="menu-principal"</code> ou <code>id="rodape-contato"</code>.</li>
+                <li><strong>Âncoras de Navegação:</strong> O <code>id</code> permite a criação de links internos (bookmark links). Quando você clica em um link como <code>&lt;a href="#perfil"&gt;</code>, o navegador busca o elemento que possui o <code>id="perfil"</code> e rola a página automaticamente até ele.</li>
+                <li><strong>Acessibilidade:</strong> É fundamental para conectar etiquetas a campos de formulário (usando o atributo <code>for</code> no <code>&lt;label&gt;</code>) e para tecnologias assistivas descreverem relações entre elementos complexos.</li>
+            </ul>
+        </article>
+        <article>
+            <h3>2. O Atributo Class: A Classificação por Grupo</h3>
+            <p>Diferente do ID, o atributo <code>class</code> funciona como um "Sobrenome" ou uma "Etiqueta de Categoria". Ele é usado para agrupar múltiplos elementos que possuem a mesma finalidade ou comportamento, independentemente da tag que utilizam.</p>
+            <ul>
+                <li><strong>Multiplicidade:</strong> Você pode usar a mesma classe em dezenas de elementos diferentes (ex: todos os botões de compra podem ter a classe <code>class="btn-comprar"</code>).</li>
+                <li><strong>Composição:</strong> Um único elemento pode pertencer a várias classes simultaneamente, bastando separá-las por um espaço: <code>&lt;article class="postagem destaque tecnologia"&gt;</code>. Isso permite que o elemento herde comportamentos de diferentes categorias.</li>
+                <li><strong>Semântica Customizada:</strong> Quando as tags padrões do HTML (como <code>section</code> ou <code>article</code>) não são específicas o suficiente, as classes ajudam a descrever o que aquele bloco representa (ex:<code> class="card-produto" ou class="alerta-erro"</code>).</li>
+            </ul>
+        </article>
+        <article>
+            <h3>3. Diferenças Técnicas e Boas Práticas</h3>
+            <p>Evite começar nomes de IDs ou Classes com números ou caracteres especiais. Prefira nomes semânticos que descrevam a função do elemento (ex: class="noticia-principal") em vez da sua aparência (ex: class="texto-azul-negrito"), pois o design pode mudar, mas a função do elemento geralmente permanece a mesma.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>Frequência</th>
+                        <th>Nomenclatura</th>
+                        <th>Prioridade</th>
+                        <th>Uso em Links</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Atributo <code>id</code></th>
+                        <td>Deve ser único na página.</td>
+                        <td>Geralmente em camelCase ou com hifens.</td>
+                        <td>Alta (identifica um alvo específico).</td>
+                        <td>Funciona como destino de âncoras (#)</td>
+                    </tr>
+                    <tr>
+                        <th>Atributo <code>class</code></th>
+                        <td>Pode ser repetido várias vezes.</td>
+                        <td>Geralmente com hifens (kebab-case).</td>
+                        <td>Média (identifica um tipo de elemento).</td>
+                        <td>Não pode ser usado como destino de âncoras.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+    </main>
+    <footer>
+        <nav>
+            <a href="">GitHub</a> <a href="">E-mail</a> <a href="">LinkedIn</a>
+        </nav>
+        <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.</p>
+    </footer>
+</body>
+</html>

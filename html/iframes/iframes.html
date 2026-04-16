@@ -12,29 +12,28 @@
                 <li><a href="../../index.html" target="" rel="">Página principal</a></li>
                 <!-- i > bars -->
                 <li><a href="../formulario/index.html" target="" rel="">Artigo anterior</a></li>
-
             </ul>
         </nav>
         <h1>Diário DEV</h1>
         <span>Por Oderlândio Júnior</span>
     </header>
     <main>
-        <section>
+        <header>
             <h2>Documentos Aninhados: A Engenharia dos <code>iframes</code></h2>
             <p>O elemento <code>&lt;iframe&gt;</code> (<em>Inline Frame</em>) funciona como uma janela recortada no seu documento que exibe um segundo conteúdo independente. É amplamente utilizado para integrar serviços externos, como mapas do Google Maps, vídeos do YouTube ou widgets de redes sociais, sem que o usuário precise sair do seu site.</p>
-        </section>
-        <section>
-            <h2>Funcionamento e Atributos Essenciais</h2>
+        </header>
+        <article>
+            <h3>Funcionamento e Atributos Essenciais</h3>
             <p>Diferente de uma imagem, o <code>iframe</code> carrega um documento HTML completo dentro de si. Para que ele funcione corretamente, o desenvolvedor utiliza os seguintes atributos:</p>
-            <ul>
+            <ol>
                 <li><strong><code>src</code> (Source):</strong> Define o endereço (URL) da página ou recurso que será carregado na moldura.</li>
                 <li><strong><code>width</code></strong> e <strong><code>height</code></strong>: Definem as dimensões da janela. No HTML, recomenda-se o uso de valores em pixels, mas o ajuste fino de responsividade deve ser feito via CSS.</li>
                 <li><strong><code>title</code></strong>: <strong>Obrigatório para acessibilidade.</strong> Descreve o conteúdo do iframe para que leitores de tela informem ao usuário o que está sendo exibido naquela janela externa.</li>
                 <li><strong><code>loading="lazy"</code></strong>: Uma otimização moderna que instrui o navegador a carregar o conteúdo do iframe apenas quando o usuário rolar a página até ele, economizando dados e melhorando a velocidade de carregamento.</li>
-            </ul>
-        </section>
-        <section>
-            <h2>O Atributo <code>sandbox</code>: Segurança em Primeiro Lugar</h2>
+            </ol>
+        </article>
+        <article>
+            <h3>O Atributo <code>sandbox</code>: Segurança em Primeiro Lugar</h3>
             <p>Como você está carregando um site externo dentro do seu, isso pode gerar riscos de segurança (como scripts maliciosos tentando roubar dados). O atributo <code>sandbox</code> aplica restrições extras ao conteúdo do iframe:</p>
             <ul>
                 <li>Se usado vazio (<code>sandbox=""</code>), ele bloqueia quase tudo: formulários, scripts e pop-ups.</li>
@@ -46,15 +45,15 @@
                     <li><strong><code>allow-popups</code></strong>: Permite a abertura de janelas extras a partir do iframe.</li>
                 </ul>
             </ul>
-        </section>
-        <section>
-            <h2>Integração de Mídia e Permissões (<code>allow</code>)</h2>
+        </article>
+        <article>
+            <h3>Integração de Mídia e Permissões (<code>allow</code>)</h3>
             <p>Para recursos que dependem de hardware ou comportamentos específicos do navegador (como colocar um vídeo em tela cheia), utilizamos o atributo <code>allow</code>.</p>
             <ul>
                 <li><strong><code>allowfullscreen</code></strong>: Permite que o iframe entre em modo de tela cheia.</li>
                 <li><strong><code>allow="camera; microphone"</code></strong>: Solicita permissão para que o site dentro do iframe utilize o hardware do usuário (comum em ferramentas de videoconferência).</li>
             </ul>
-        </section>
+        </article>
     </main>
     <footer>
         <nav>
