@@ -11,7 +11,7 @@
             <ul>
                 <li><a href="../../index.html" target="" rel="">Página principal</a></li>
                 <!-- i > bars -->
-                <li><a href="../formulario/index.html" target="" rel="">Artigo anterior</a></li>
+                <li><a href="../formulario/formulario.html" target="" rel="">Artigo anterior</a></li>
             </ul>
         </nav>
         <h1>Diário DEV</h1>
@@ -54,6 +54,24 @@
                 <li><strong><code>allow="camera; microphone"</code></strong>: Solicita permissão para que o site dentro do iframe utilize o hardware do usuário (comum em ferramentas de videoconferência).</li>
             </ul>
         </article>
+        <section class="code">
+            <h3>A Anatomia no Código</h3>
+            <p>No HTML, descrevemos assim:</p>
+            <pre>
+                <code>
+                    &lt;iframe 
+                        src="https://exemplo.com" 
+                        width="600" 
+                        height="400" 
+                        style="border:none;" 
+                        title="Descrição do conteúdo do iframe"
+                        allowfullscreen
+                        loading="lazy"&gt;
+                        &lt;p&gt;Seu navegador não suporta iframes.&lt;/p&gt;
+                    &lt;/iframe&gt;
+                </code>
+            </pre>
+        </section>
     </main>
     <footer>
         <nav>

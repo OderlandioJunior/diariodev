@@ -30,15 +30,17 @@
                 <li><strong>Sintaxe</strong>: O nome da variável deve obrigatoriamente começar com dois traços (<code>--</code>).</li>
                 <li><strong>Código de Exemplo</strong>:</li>
             </ul>
-            <div class="code">
+            <section class="code">
                 <pre>
-                    :root {
-                        --cor-principal: #007bff;
-                        --fonte-padrao: 'Roboto', sans-serif;
-                        --espacamento-padrao: 16px;
-                    }
+                    <code>
+                        :root {
+                            --cor-principal: #007bff;
+                            --fonte-padrao: 'Roboto', sans-serif;
+                            --espacamento-padrao: 16px;
+                        }
+                    </code>
                 </pre>
-            </div>
+            </section>
         </article>
         <article>
             <h3>Utilizando a Função <code>var()</code></h3>
@@ -48,18 +50,20 @@
                 <li><strong>Fallback (Segurança)</strong>: Você pode passar um segundo valor para a função caso a variável não esteja definida.</li>
                 <li><strong>Código de Exemplo</strong>:</li>
             </ul>
-            <div class="code">
+            <section class="code">
                 <pre>
-                    button {
-                        background-color: var(--cor-principal);
-                        padding: var(--espacamento-padrao);
-                    }
-                    /* Exemplo com Fallback */
-                    p {
-                        color: var(--cor-inexistente, black);
-                    }
+                    <code>
+                        button {
+                            background-color: var(--cor-principal);
+                            padding: var(--espacamento-padrao);
+                        }
+                        /* Exemplo com Fallback */
+                        p {
+                            color: var(--cor-inexistente, black);
+                        }
+                    </code>
                 </pre>
-            </div>
+            </section>
         </article>
         <article>
             <h3>Escopo Local e Sobrescrita</h3>
@@ -68,15 +72,17 @@
                 <li><strong>Cenário</strong>: Útil para criar "Modo Escuro" ou temas específicos para seções da página.</li>
                 <li><strong>Código de Exemplo</strong>:</li>
             </ul>
-            <div class="code">
+            <section class="code">
                 <pre>
-                    .card-escuro {
-                        --cor-principal: #333; 
-                        /* Sobrescreve apenas dentro desta classe */
-                        background-color: var(--cor-principal);
-                    }
+                    <code>
+                        .card-escuro {
+                            --cor-principal: #333;
+                            /* Sobrescreve apenas dentro desta classe */
+                            background-color: var(--cor-principal);
+                        }
+                    </code>
                 </pre>
-            </div>
+            </section>
         </article>
         <article>
             <h3>Boas Práticas e Engenharia de Variáveis</h3>

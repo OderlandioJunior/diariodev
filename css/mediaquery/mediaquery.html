@@ -30,8 +30,9 @@
                 <li><strong>Tipos de Mídia</strong>: <code>screen</code> (telas), <code>print</code> (impressão) ou <code>all</code> (todos).</li>
                 <li><strong>Operadores Lógicos</strong>: <code>and</code> (une condições), <code>not</code> (nega uma condição) e <code>only</code> (evita bugs em navegadores muito antigos).</li>
             </ul>
-            <p><strong>Exemplo de Código:</strong></p>
-            <div class="code">
+            <section class="code">
+                <h3>A Anatomia no Código</h3>
+                <p>No CSS, controlamos assim:</p>
                 <pre>
                     /* Se for uma TELA E tiver no máximo 768px de largura */
                     @media screen and (max-width: 768px) {
@@ -39,8 +40,8 @@
                         .conteudo-principal { width: 100%; }
                     }
                 </pre>
-            </div>
-</article>
+            </section>
+        </article>
         <article>
             <h3>Breakpoints e Estratégia Mobile-First</h3>
             <p>Os <strong>Breakpoints</strong> (pontos de quebra) são as medidas de largura onde o layout "quebra" para se adaptar.</p>
@@ -60,17 +61,20 @@
                 <li><code>hover</code>: Detecta se o usuário possui um ponteiro (mouse) que permite passar o cursor sobre algo. Útil para esconder efeitos de hover em touchscreens.</li>
                 <li><code>prefers-color-scheme</code>: Detecta se o usuário prefere o "Modo Escuro" ou "Modo Claro" nas configurações do sistema operacional.</li>
             </ul>
-            <p><strong>Exemplo de Código (Modo Escuro):</strong></p>
-            <div class="code">
+            <section class="code">
+                <h3>A Anatomia no Código</h3>
+                <p>No CSS, controlamos assim:</p>
                 <pre>
-                    @media (prefers-color-scheme: dark) {
-                        body {
-                            background-color: #121212;
-                            color: white;
+                    <code>
+                        @media (prefers-color-scheme: dark) {
+                            body {
+                                background-color: #121212;
+                                color: white;
+                            }
                         }
-                    }
+                    </code>
                 </pre>
-            </div>
+            </section>
         </article>
         <article>
             <h3>Boas Práticas de Engenharia Responsiva</h3>

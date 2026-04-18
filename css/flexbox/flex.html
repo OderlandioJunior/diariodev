@@ -40,7 +40,7 @@
                 <li><code>align-items</code>: Alinha os itens no eixo transversal (<code>center</code>, <code>stretch</code>, <code>flex-start</code>).</li>
                 <li><code>flex-wrap</code>: Define se os itens devem quebrar linha (<code>wrap</code>) ou se devem ser espremidos em uma única linha (<code>nowrap</code>).</li>
             </ul>
-            <p><strong>O Atalho <code>flex-flow:</code></strong></p>
+            <h4>O Atalho <code>flex-flow:</code></h4>
             <p>Você pode combinar a direção e a quebra de linha em uma única regra:</p>
             <code>flex-flow: row wrap;</code>
         </article>
@@ -52,7 +52,7 @@
                 <li><code>flex-shrink</code>: Define a capacidade de encolher caso o espaço falte (ex: <code>1</code>).</li>
                 <li><code>flex-basis</code>: O tamanho inicial do item antes da distribuição do espaço (ex: <code>200px</code> ou <code>auto</code>).</li>
             </ol>
-            <p><strong>Sintaxe da Shorthand:</strong></p>
+            <h4>Sintaxe da Shorthand:</h4>
             <code>flex: [grow] [shrink] [basis];</code>
         </article>
         <article>
@@ -66,16 +66,18 @@
         <article>
             <h3>O Centro Perfeito (O "Santo Graal" do CSS)</h3>
             <p>Centralizar um elemento horizontal e verticalmente agora exige apenas três linhas no container pai:</p>
-            <div class="code">
+            <section class="code">
                 <pre>
-                    .container {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        height: 100vh; /* Para ocupar a tela toda */
-                    }
+                    <code>
+                        section {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100vh; /* Para ocupar a tela toda */
+                        }
+                    </code>
                 </pre>
-            </div>
+            </section>
         </article>
         <article>
             <h3>Boas Práticas e Engenharia</h3>

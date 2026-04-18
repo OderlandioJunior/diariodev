@@ -11,146 +11,160 @@
             <ul>
                 <li><a href="../../index.html" target="" rel="">Página principal</a></li>
                 <!-- i > bars -->
-                <li><a href="../fundo/index.html" target="" rel="">Próximo artigo</a></li>
+                <li><a href="../fundo/fundo.html" target="" rel="">Próximo artigo</a></li>
             </ul>
         </nav>
         <h1>Diário DEV</h1>
         <span>Por Oderlândio Júnior</span>
     </header>
     <main>
+        <header>
+            <h2>Geometria e Profundidade: A Estrutura Visual Além do Plano</h2>
+            <p>Se a tipografia cuida da mensagem, as propriedades de contorno e relevo cuidam da <strong>percepção espacial</strong>. No design de interfaces, definir onde um elemento termina e onde a profundidade começa é o que separa um layout simples de uma interface moderna e intuitiva.</p>
+            <p>Nesta seção do <strong>Diário DEV</strong>, exploramos a tríade visual do CSS: a <strong>borda</strong> como limite físico, o <strong>outline</strong> como ferramenta de acessibilidade e as <strong>sombras</strong> como geradoras de volume. O objetivo é dominar como essas camadas interagem com o Box Model para criar hierarquia, foco e um senso de tridimensionalidade que guia o olhar do usuário.</p>
+        </header>
         <article>
-            <h2>Contornos e Relevo: Borda, Outline e Sombra</h2>
-            <p>Se a estilização de textos cuida da mensagem, os contornos cuidam da forma. No CSS, temos três ferramentas principais para definir os limites e a profundidade de um elemento. Entender a diferença entre elas é o que separa um layout "chapado" de uma interface moderna e profissional.</p>
-        </article>
-        <article>
-            <h2>Molduras</h2>
+            <h3>Molduras</h3>
             <p>Embora pareçam iguais, essas duas propriedades se comportam de <strong>formas</strong> completamente diferentes no espaço do seu site.</p>
-            <ol>
+            <h4>Border (A Borda Real)</h4>
+            <p>A <code>border</code> é a moldura clássica.</p>
+            <ul>
                 <li>
-                    <strong>Border (A Borda Real)</strong>
-                    <p>A <code>border</code> é a moldura clássica.</p>
-                    <ul>
-                        <li>
-                            <strong>Impacto no Espaço</strong>: Lembra do Box Model? A borda <strong>ocupa espaço</strong>. Se você adicionar uma borda de 5px em um botão, ele vai "empurrar" os elementos vizinhos para caber.
-                        </li>
-                        <li>
-                            <strong>Sintaxe</strong>: Ela precisa de três valores: largura, estilo e cor.
-                        </li>
-                        <li>
-                            <strong>Estilos comuns</strong>: <code>solid</code> (linha contínua), <code>dashed</code> (tracejada) e <code>dotted</code> (pontilhada).
-                        </li>
-                        <li>
-                            <strong>Exemplo</strong>: <code>border: 2px solid black;</code>
-                        </li>
-                    </ul>
+                    <strong>Impacto no Espaço</strong>: Lembra do Box Model? A borda <strong>ocupa espaço</strong>. Se você adicionar uma borda de 5px em um botão, ele vai "empurrar" os elementos vizinhos para caber.
                 </li>
                 <li>
-                    <strong>Border-radius (O Fim das Quinas)</strong>
-                    <p>Antigamente, tudo na web tinha quinas de 90 graus. O <code>border-radius</code> mudou isso.</p>
-                    <ul>
-                        <li>
-                            <strong>Suavização</strong>: Com ele, você arredonda os cantos. Se você tiver um quadrado de 100px e aplicar <code>border-radius: 50%</code>, ele vira um círculo perfeito.
-                        </li>
-                        <li>
-                            <strong>Dica de Design</strong>: Arredondamentos leves (4px a 8px) dão um ar amigável e moderno para botões e cartões de informação.
-                        </li>
-                    </ul>
+                    <strong>Sintaxe</strong>: Ela precisa de três valores: largura, estilo e cor.
                 </li>
                 <li>
-                    <strong>Outline (O Contorno de Destaque)</strong>
-                    <p>O <code>outline</code> é como uma "aura" ao redor da caixa.</p>
-                    <ul>
-                        <li>
-                            <strong>O Segredo</strong>: Ele <strong>NÃO ocupa espaço</strong>. Ele é desenhado por cima de tudo, sem empurrar ninguém.
-                        </li>
-                        <li>
-                            <strong>Uso Principal</strong>: Acessibilidade. Sabe quando você aperta "Tab" e um retângulo azul aparece em volta de um link? Aquilo é um <code>outline</code>. Ele serve para mostrar onde o foco do usuário está sem quebrar o layout.
-                        </li>
-                    </ul>
+                    <strong>Estilos comuns</strong>: <code>solid</code> (linha contínua), <code>dashed</code> (tracejada) e <code>dotted</code> (pontilhada).
                 </li>
-            </ol>
+                <li>
+                    <strong>Exemplo</strong>: <code>border: 2px solid black;</code>
+                </li>
+            </ul>
+            <h4>Border-radius (O Fim das Quinas)</h4>
+            <p>Antigamente, tudo na web tinha quinas de 90 graus. O <code>border-radius</code> mudou isso.</p>
+            <ul>
+                <li>
+                    <strong>Suavização</strong>: Com ele, você arredonda os cantos. Se você tiver um quadrado de 100px e aplicar <code>border-radius: 50%</code>, ele vira um círculo perfeito.
+                </li>
+                <li>
+                    <strong>Dica de Design</strong>: Arredondamentos leves (4px a 8px) dão um ar amigável e moderno para botões e cartões de informação.
+                </li>
+            </ul>
+            <h4>Outline (O Contorno de Destaque)</h4>
+            <p>O <code>outline</code> é como uma "aura" ao redor da caixa.</p>
+            <ul>
+                <li>
+                    <strong>O Segredo</strong>: Ele <strong>NÃO ocupa espaço</strong>. Ele é desenhado por cima de tudo, sem empurrar ninguém.
+                </li>
+                <li>
+                    <strong>Uso Principal</strong>: Acessibilidade. Sabe quando você aperta "Tab" e um retângulo azul aparece em volta de um link? Aquilo é um <code>outline</code>. Ele serve para mostrar onde o foco do usuário está sem quebrar o layout.
+                </li>
+            </ul>
         </article>
         <article>
-            <h2>Profundidade</h2>
+            <h3>Profundidade</h3>
             <p>Aqui é onde o design ganha "toque" e "volume".</p>
-            <ol>
+            <h4>Box-shadow (A Sombra e o Relevo)</h4>
+            <p>A sombra é o que diz ao cérebro do usuário: "Este elemento está flutuando acima da página".</p>
+            <ul>
                 <li>
-                    <strong>Box-shadow (A Sombra e o Relevo)</strong>
-                    <p>A sombra é o que diz ao cérebro do usuário: "Este elemento está flutuando acima da página".</p>
-                    <ul>
+                    <strong>Os 4 Valores</strong>: Para criar uma sombra, você define:
+                    <ol>
                         <li>
-                            <strong>Os 4 Valores</strong>: Para criar uma sombra, você define:
-                            <ol>
-                                <li>
-                                    Deslocamento Horizontal (Eixo X)
-                                </li>
-                                <li>
-                                    Deslocamento Vertical (Eixo Y)
-                                </li>
-                                <li>
-                                    Desfoque (Blur) - o quão "esfumada" a sombra é.
-                                </li>
-                                <li>
-                                    Cor da sombra.
-                                </li>
-                            </ol>
+                            Deslocamento Horizontal (Eixo X)
                         </li>
                         <li>
-                            <strong>Exemplo</strong>: <code>box-shadow: 5px 5px 15px rgba(0,0,0,0.3);</code>
+                            Deslocamento Vertical (Eixo Y)
                         </li>
-                    </ul>
+                        <li>
+                            Desfoque (Blur) - o quão "esfumada" a sombra é.
+                        </li>
+                        <li>
+                            Cor da sombra.
+                        </li>
+                    </ol>
                 </li>
                 <li>
-                    <strong>O Relevo das Palavras (<code>text-shadow</code>)</strong>
-                    <p>Se o <code>box-shadow</code> cria sombra na caixa (o papel), o <code>text-shadow</code> cria sombra na tinta (a letra). Esta propriedade é fundamental para garantir que o texto seja legível quando está sobre imagens ou fundos com muitas cores.</p>
-                    <strong>A Estrutura da Sombra de Texto</strong>
-                    <p>Tal como na sombra da caixa, aqui defines quatro valores essenciais:</p>
-                    <ul>
-                        <li>
-                            <strong>Deslocamento Horizontal (X)</strong>: Move a sombra para a esquerda ou direita.
-                        </li>
-                        <li>
-                            <strong>Deslocamento Vertical (Y)</strong>: Move a sombra para cima ou para baixo.
-                        </li>
-                        <li>
-                            <strong>Raio de Desfoque (Blur)</strong>: Define se a sombra é nítida ou esfumada.
-                        </li>
-                        <li>
-                            <strong>Cor</strong>: Define a cor da sombra (geralmente usamos <code>rgba</code> para controlar a transparência).
-                        </li>
-                    </ul>
-                    <strong>Diferença Crucial</strong>: Sem "Spread"
-                    <p>Diferente do <code>box-shadow</code>, o <code>text-shadow</code> <strong>não tem o quarto valor numérico</strong> (o <em>spread</em> ou <em>expansão</em>). Ele foca apenas na posição e no desfoque.</p>
-                    <strong>Aplicações Práticas</strong>:
-                    <ul>
-                        <li>
-                            <strong>Legibilidade</strong>: Uma sombra preta muito suave (<code>1px 1px 2px rgba(0,0,0,0.5)</code>) ajuda a destacar textos claros em fundos complexos.
-                        </li>
-                        <li>
-                            <strong>Efeito Neon</strong>: Se usares um desfoque alto e cores vibrantes sem deslocamento (ex: <code>0 0 10px blue</code>), crias um efeito de brilho.
-                        </li>
-                        <li>
-                            <strong>Camadas</strong>: Podes adicionar <strong>múltiplas sombras</strong> separadas por vírgula para criar efeitos 3D complexos.
-                        </li>
-                    </ul>
+                    <strong>Exemplo</strong>: <code>box-shadow: 5px 5px 15px rgba(0,0,0,0.3);</code>
                 </li>
-                <li>
-                    <strong>Boas Práticas e Performance</strong>
-                    <p>Antes de aplicar propriedades de contorno, é preciso entender como elas impactam a experiência do usuário e a renderização do navegador.</p>
-                    <ul>
-                        <li>
-                            <strong>Menos é Mais</strong>: Sombras muito pretas e pesadas deixam o site com aspecto amador (parecendo WordArt dos anos 90). Use cores suaves e transparentes (rgba) para sombras elegantes.
-                        </li>
-                        <li>
-                            <strong>Diferença Visual</strong>: Use border para separar conteúdos (ex: uma tabela) e box-shadow para destacar elementos interativos (ex: um botão que o usuário deve clicar).
-                        </li>
-                        <li>
-                            <strong>Atenção</strong>: Evite usar outline: none; no seu CSS de reset sem colocar algo no lugar. Se você tirar o contorno padrão e não criar um novo, usuários que navegam pelo teclado ficarão "cegos" no seu site.
-                        </li>
-                    </ul>
-                </li>
-            </ol>
+            </ul>
         </article>
+        <article>
+            <h4>O Relevo das Palavras (<code>text-shadow</code>)</h4>
+            <p>Se o <code>box-shadow</code> cria sombra na caixa (o papel), o <code>text-shadow</code> cria sombra na tinta (a letra). Esta propriedade é fundamental para garantir que o texto seja legível quando está sobre imagens ou fundos com muitas cores.</p>
+            <strong>A Estrutura da Sombra de Texto</strong>
+            <p>Tal como na sombra da caixa, aqui defines quatro valores essenciais:</p>
+            <ul>
+                <li>
+                    <strong>Deslocamento Horizontal (X)</strong>: Move a sombra para a esquerda ou direita.
+                </li>
+                <li>
+                    <strong>Deslocamento Vertical (Y)</strong>: Move a sombra para cima ou para baixo.
+                </li>
+                <li>
+                    <strong>Raio de Desfoque (Blur)</strong>: Define se a sombra é nítida ou esfumada.
+                </li>
+                <li>
+                    <strong>Cor</strong>: Define a cor da sombra (geralmente usamos <code>rgba</code> para controlar a transparência).
+                </li>
+            </ul>
+            <strong>Diferença Crucial</strong>: Sem "Spread"
+            <p>Diferente do <code>box-shadow</code>, o <code>text-shadow</code> <strong>não tem o quarto valor numérico</strong> (o <em>spread</em> ou <em>expansão</em>). Ele foca apenas na posição e no desfoque.</p>
+            <strong>Aplicações Práticas</strong>:
+            <ul>
+                <li>
+                    <strong>Legibilidade</strong>: Uma sombra preta muito suave (<code>1px 1px 2px rgba(0,0,0,0.5)</code>) ajuda a destacar textos claros em fundos complexos.
+                </li>
+                <li>
+                    <strong>Efeito Neon</strong>: Se usares um desfoque alto e cores vibrantes sem deslocamento (ex: <code>0 0 10px blue</code>), crias um efeito de brilho.
+                </li>
+                <li>
+                    <strong>Camadas</strong>: Podes adicionar <strong>múltiplas sombras</strong> separadas por vírgula para criar efeitos 3D complexos.
+                </li>
+            </ul>
+        </article>
+        <article>
+            <h4>Boas Práticas e Performance</h4>
+            <p>Antes de aplicar propriedades de contorno, é preciso entender como elas impactam a experiência do usuário e a renderização do navegador.</p>
+            <ul>
+                <li>
+                    <strong>Menos é Mais</strong>: Sombras muito pretas e pesadas deixam o site com aspecto amador (parecendo WordArt dos anos 90). Use cores suaves e transparentes (rgba) para sombras elegantes.
+                </li>
+                <li>
+                    <strong>Diferença Visual</strong>: Use border para separar conteúdos (ex: uma tabela) e box-shadow para destacar elementos interativos (ex: um botão que o usuário deve clicar).
+                </li>
+                <li>
+                    <strong>Atenção</strong>: Evite usar outline: none; no seu CSS de reset sem colocar algo no lugar. Se você tirar o contorno padrão e não criar um novo, usuários que navegam pelo teclado ficarão "cegos" no seu site.
+                </li>
+            </ul>
+        </article>
+        <section class="code">
+            <pre>
+                <code>
+                    article{
+                        border: 2px solid black;
+                        border-radius: 15px;
+
+                        outline: 2px solid blue;
+
+                        box-shadow: 5px 5px 10px 2px gray inset;
+                        /* 
+                        box-shadow: [deslocamento horizontal] [deslocamento vertical] [desfoque] [propagação] [cor] [posição];
+                        */
+                    }
+
+                    h1 {
+                        border-bottom: 2px solid black;
+                        text-shadow: 2px 4px 5px gray;
+                        /*
+                        text-shadow: [deslocamento horizontal] [deslocamento vertical] [desfoque] [cor];
+                        */
+                    }
+                </code>
+            </pre>
+        </section>
     </main>
     <footer>
         <nav>

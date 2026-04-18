@@ -80,6 +80,28 @@
             <h3>Semântica e Acessibilidade</h3>
             <p>Para leitores de tela, as listas <code>&lt;ol&gt;</code> e <code>&lt;ul&gt;</code> são "marcos" de navegação. Quando um usuário com deficiência visual chega em uma <code>&lt;ul&gt;</code>, o software anuncia: "<em>Lista com X itens</em>". Isso permite que o usuário saiba de antemão o tamanho do conteúdo e decida se quer ouvir item por item ou saltar para o próximo bloco. Já as <code>&lt;dt&gt;</code> informa ao navegador e aos motores de busca que existe uma relação direta de "Pergunta e Resposta" ou "Termo e Definição" entre os elementos. Leitores de tela conseguem anunciar para o usuário que aquele bloco de texto é uma lista de definições, facilitando a compreensão do conteúdo. Além disso, um único termo (<code>&lt;dt&gt;</code>) pode ter múltiplas descrições (<code>&lt;dd&gt;</code>), o que é ideal para palavras com mais de um significado.</p>
         </article>
+        <section class="code">
+            <h3>A Anatomia no Código</h3>
+            <p>No HTML, descrevemos assim:</p>
+            <pre>
+                <code>
+                    &lt;ol&gt;
+                        &lt;li&gt;&lt;/li&gt;
+                    &lt;/ol&gt;
+                </code>
+                <code>
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                </code>
+                <code>
+                    &lt;dl&gt;
+                        &lt;dt&gt;&lt;/dt&gt;
+                        &lt;dd&gt;&lt;/dd&gt;
+                    &lt;/dl&gt;
+                </code>
+            </pre>
+        </section>
     </main>
     <footer>
         <nav>

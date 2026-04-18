@@ -11,7 +11,7 @@
             <ul>
                 <li><a href="../../index.html" target="" rel="">Página principal</a></li>
                 <!-- i > bars -->
-                <li><a href="../contornos/index.html" target="" rel="">Próximo artigo</a></li>
+                <li><a href="../boxmodel/boxmodelcss.html" target="" rel="">Artigo anterior</a></li>
             </ul>
         </nav>
         <h1>Diário DEV</h1>
@@ -19,13 +19,14 @@
     </header>
     <main>
         <header>
-            <h2>Cores, Fontes e a Identidade do Site</h2>
-            <p>Depois de entender que tudo na internet são "caixas" (o famoso Box Model), chega a hora de aprender a personalizar essas caixas. Estilizar é o processo de definir a aparência: que cores usar, qual o tamanho das letras e como as fontes devem se parecer.</p>
+            <h2>Fundamentos de Estilo: A Psicologia das Cores e a Arte da Tipografia</h2>
+            <p>A estilização é o processo de definir como as informações serão consumidas pelo usuário. Nesta etapa do <strong>Diário DEV</strong>, mergulhamos no uso estratégico de sistemas de cores (Hexadecimal, RGB/A) e na implementação de fontes personalizadas via <code>@import</code>.</p>
+            <p>Dominar as propriedades de texto e cor é fundamental para criar <strong>hierarquia visual</strong>. Aqui, documentamos como ajustar tamanhos, pesos e espaçamentos para garantir que o conteúdo seja não apenas bonito, mas legível e acessível para todos, respeitando as boas práticas de contraste e ergonomia digital.</p>
         </header>
         <article>
             <h3>Onde as Cores e Fontes Nascem</h3>
             <p>Antes de pintar, precisamos entender os "baldes de tinta" e como trazer novas ferramentas para o nosso trabalho.</p>
-            <p><strong>Como o computador entende as cores?</strong></p>
+            <h4>Como o computador entende as cores?</h4>
             <p>Você não precisa saber apenas os nomes das cores em inglês (como red ou blue). Existem formas mais precisas:</p>
             <ul>
                 <li>
@@ -35,67 +36,73 @@
                     <strong>RGB</strong> e <strong>RGBA</strong>: Funciona como misturar tintas reais (Red/Vermelho, Green/Verde, Blue/Azul). O "A" no final é o segredo da <strong>transparência</strong>: se você quer uma cor que deixe ver o que está atrás, você mexe no "A".
                 </li>
             </ul>
-            <strong>Trazendo fontes e arquivos de fora</strong>
+            <h4>Trazendo fontes e arquivos de fora</h4>
             <p>Às vezes, as fontes que já vêm no computador são sem graça. Para usar fontes bonitas (como as do Google), usamos um comando chamado <code>@import</code>.</p>
             <p>Ele funciona como um "mensageiro": você coloca ele no topo do seu código e ele vai buscar a fonte na internet para você usar. É assim que sites profissionais conseguem ter visuais únicos.</p>
         </article>
         <article>
-            <h2>Moldando o seu Texto</h2>
+            <h3>Moldando o seu Texto</h3>
             <p>O texto é a parte mais importante de um site. Se ele estiver difícil de ler, o usuário vai embora. Aqui estão os três pilares para evitar isso:</p>
-            <ol>
+            <h4>Propriedades de Fonte (<code>font-</code>)</h4>
+            <p>Imagine que você está escolhendo uma caneta para escrever:</p>
+            <ul>
                 <li>
-                    <strong>Propriedades de Fonte (<code>font-</code>)</strong>
-                    <p>Imagine que você está escolhendo uma caneta para escrever:</p>
-                    <ul>
-                        <li>
-                            <code>font-family</code>: É o "estilo" da letra. Defina sua "pilha de fontes" (font-stack). Comece pela fonte personalizada e termine sempre com uma família genérica (<code>sans-serif</code> ou <code>serif</code>) para garantir o fallback do sistema.
-                        </li>
-                        <li>
-                            <code>font-size</code>: É o tamanho da letra. Embora o <code>px</code> seja fixo, em projetos reais você começará a ver o <code>rem</code>. Ele é relativo ao tamanho da fonte do navegador, respeitando a preferência de zoom do usuário.
-                        </li>
-                        <li>
-                            <code>font-weight</code>: Controla a espessura. Valores numéricos (de 100 a 900) oferecem mais precisão que apenas <code>bold</code> ou <code>normal</code>.
-                        </li>
-                    </ul>
+                    <code>font-family</code>: É o "estilo" da letra. Defina sua "pilha de fontes" (font-stack). Comece pela fonte personalizada e termine sempre com uma família genérica (<code>sans-serif</code> ou <code>serif</code>) para garantir o fallback do sistema.
                 </li>
                 <li>
-                    <strong>Organizando o Bloco de Texto (<code>text-</code>)</strong>
-                    <p>Aqui você ajusta como as palavras se comportam na tela:</p>
-                    <ul>
-                        <li>
-                            <code>text-align</code>: Quer o texto no meio? Alinhado à esquerda? É aqui que você manda.
-                        </li>
-                        <li>
-                            <code>text-decoration</code>: Essencial para o controle visual de links. O valor <code>none</code> remove o sublinhado padrão, permitindo que você crie interações mais modernas
-                        </li>
-                        <li>
-                            <code>text-transform</code>: É uma ferramenta de consistência. Se você quer que todos os títulos sejam maiúsculos, use <code>uppercase</code> no CSS em vez de digitar tudo em Caps Lock no HTML. Isso mantém o dado puro e o estilo controlado.
-                        </li>
-                        <li>
-                            <code>line-height</code>: Define a altura da linha, este é o segredo da leitura confortável. Um valor de <code>1.5</code> ou <code>1.6</code> é o padrão da indústria para garantir que as linhas não "sangrem" uma sobre a outra, mantendo a escaneabilidade.
-                        </li>
-                    </ul>
+                    <code>font-size</code>: É o tamanho da letra. Embora o <code>px</code> seja fixo, em projetos reais você começará a ver o <code>rem</code>. Ele é relativo ao tamanho da fonte do navegador, respeitando a preferência de zoom do usuário.
                 </li>
                 <li>
-                    <strong>A Cor do Texto (color)</strong>
-                    <p>A propriedade color é uma das mais simples e poderosas do CSS. Imagine que você está escrevendo em um papel. A propriedade color é a cor da tinta da sua caneta. Ela não pinta o papel, não pinta a mesa; ela define apenas a cor dos caracteres que formam as palavras.</p>
-                    <strong>Acessibilidade e Contraste</strong>
-                    <p>No desenvolvimento profissional, escolher a cor do texto não é apenas uma questão estética. Existe um conceito chamado <strong>Contraste de Cor</strong>, que é a diferença de luminosidade entre a cor da letra (<code>color</code>) e a cor que está por trás dela.</p>
-                    <p>Se o contraste for baixo, você está criando uma barreira técnica para usuários com baixa visão, daltonismo ou até mesmo para alguém tentando ler seu site sob luz solar intensa.</p>
-                    <ul>
-                        <li>
-                            <strong>Texto Escuro em Fundo Claro</strong>: É o padrão de livros e sites de notícias. Cansa menos a vista. Podendo alterar para texto claro em fundo escuro que é muito usado em "Modo Noturno".
-                        </li>
-                        <li>
-                            <strong>Hierarquia Visual</strong>: Use tons mais escuros para conteúdos principais e tons levemente mais claros (mas ainda dentro do contraste) para informações secundárias. Isso guia o olho do usuário sem sacrificar a leitura.
-                        </li>
-                        <li>
-                            <strong>O Erro</strong>: Usar um texto cinza claro em um fundo branco. Se o usuário tiver qualquer dificuldade visual ou estiver sob o sol, ele não conseguirá ler nada.
-                        </li>
-                    </ul>
+                    <code>font-weight</code>: Controla a espessura. Valores numéricos (de 100 a 900) oferecem mais precisão que apenas <code>bold</code> ou <code>normal</code>.
                 </li>
-            </ol>
+            </ul>
+            <h4>Organizando o Bloco de Texto (<code>text-</code>)</h4>
+            <p>Aqui você ajusta como as palavras se comportam na tela:</p>
+            <ul>
+                <li>
+                    <code>text-align</code>: Quer o texto no meio? Alinhado à esquerda? É aqui que você manda.
+                </li>
+                <li>
+                    <code>text-decoration</code>: Essencial para o controle visual de links. O valor <code>none</code> remove o sublinhado padrão, permitindo que você crie interações mais modernas
+                </li>
+                <li>
+                    <code>text-transform</code>: É uma ferramenta de consistência. Se você quer que todos os títulos sejam maiúsculos, use <code>uppercase</code> no CSS em vez de digitar tudo em Caps Lock no HTML. Isso mantém o dado puro e o estilo controlado.
+                </li>
+                <li>
+                    <code>line-height</code>: Define a altura da linha, este é o segredo da leitura confortável. Um valor de <code>1.5</code> ou <code>1.6</code> é o padrão da indústria para garantir que as linhas não "sangrem" uma sobre a outra, mantendo a escaneabilidade.
+                </li>
+            </ul>
+            <h4>A Cor do Texto (<code>color</code>)</h4>
+            <p>A propriedade color é uma das mais simples e poderosas do CSS. Imagine que você está escrevendo em um papel. A propriedade color é a cor da tinta da sua caneta. Ela não pinta o papel, não pinta a mesa; ela define apenas a cor dos caracteres que formam as palavras.</p>
+            <strong>Acessibilidade e Contraste</strong>
+            <p>No desenvolvimento profissional, escolher a cor do texto não é apenas uma questão estética. Existe um conceito chamado <strong>Contraste de Cor</strong>, que é a diferença de luminosidade entre a cor da letra (<code>color</code>) e a cor que está por trás dela.</p>
+            <p>Se o contraste for baixo, você está criando uma barreira técnica para usuários com baixa visão, daltonismo ou até mesmo para alguém tentando ler seu site sob luz solar intensa.</p>
+            <ul>
+                <li>
+                    <strong>Texto Escuro em Fundo Claro</strong>: É o padrão de livros e sites de notícias. Cansa menos a vista. Podendo alterar para texto claro em fundo escuro que é muito usado em "Modo Noturno".
+                </li>
+                <li>
+                    <strong>Hierarquia Visual</strong>: Use tons mais escuros para conteúdos principais e tons levemente mais claros (mas ainda dentro do contraste) para informações secundárias. Isso guia o olho do usuário sem sacrificar a leitura.
+                </li>
+                <li>
+                    <strong>O Erro</strong>: Usar um texto cinza claro em um fundo branco. Se o usuário tiver qualquer dificuldade visual ou estiver sob o sol, ele não conseguirá ler nada.
+                </li>
+            </ul>
         </article>
+        <section class="code">
+            <h3>A Anatomia no Código</h3>
+            <p>No CSS, controlamos cada parte assim:</p>
+            <pre>
+                <code>
+                    article {
+                        color: black;
+                        font-family: arial, helvetica, sans-serif;
+                        font-size: 1.2em;
+                        font-weight: normal;
+                    }
+                </code>
+            </pre>
+        </section>
     </main>
     <footer>
         <nav>

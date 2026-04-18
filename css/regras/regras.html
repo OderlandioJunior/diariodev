@@ -25,87 +25,85 @@
         <article>
             <h3>Importação e Codificação</h3>
             <p>Estas regras geralmente ficam no topo do arquivo CSS, pois definem as bases do que será lido a seguir.</p>
-            <section class="propriedades">
+            <ul>
+                <li>
+                    <code>@charset</code>: Define a codificação de caracteres do arquivo (geralmente <code>UTF-8</code>).
+                </li>
                 <ul>
                     <li>
-                        <code>@charset</code>: Define a codificação de caracteres do arquivo (geralmente <code>UTF-8</code>).
+                        <em>Importante</em>: Deve ser a primeira coisa no arquivo, antes de qualquer outro código.
                     </li>
-                    <ul>
-                        <li>
-                            <em>Importante</em>: Deve ser a primeira coisa no arquivo, antes de qualquer outro código.
-                        </li>
-                    </ul>
-                    <li>
-                        <code>@import</code>: Permite importar estilos de outro arquivo CSS.
-                    </li>
-                    <ul>
-                        <li>
-                            <strong>Uso Técnico</strong>: Útil para carregar fontes do Google Fonts ou separar o CSS em arquivos menores (ex: header.css, footer.css).
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <strong>Exemplo</strong>: <code>@import url('https://fonts.googleapis.com/css2?family=Roboto')</code>;
-                        </li>
-                    </ul>
                 </ul>
-            </section>
+                <li>
+                    <code>@import</code>: Permite importar estilos de outro arquivo CSS.
+                </li>
+                <ul>
+                    <li>
+                        <strong>Uso Técnico</strong>: Útil para carregar fontes do Google Fonts ou separar o CSS em arquivos menores (ex: header.css, footer.css).
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <strong>Exemplo</strong>: <code>@import url('https://fonts.googleapis.com/css2?family=Roboto')</code>;
+                    </li>
+                </ul>
+            </ul>
         </article>
         <article>
             <h3>Condicionais e Responsividade</h3>
             <p>Aqui é onde o CSS ganha inteligência para se adaptar ao dispositivo do usuário.</p>
-            <section class="propriedade">
-                <ul>
-                    <li>
-                        <p><code>@media</code>: A regra mais importante para o <strong>Design Responsivo</strong>. Ela permite aplicar estilos apenas se certas condições forem atendidas (como a largura da tela).</p>
-                        <strong>Exemplo</strong>:
-                        <div class="code">
-                            <pre>
-                                @media (max-width: 600px) {
-                                    body { background-color: lightblue; }
-                                }
-                            </pre>
-                        </div>
-                    </li>
-                    <li>
-                        <p><code>@supports</code>: Verifica se o navegador suporta uma tecnologia específica antes de aplicá-la. É uma "rede de segurança" para usar recursos modernos sem quebrar o site em navegadores antigos.</p>
-                        <strong>Exemplo</strong>:
-                        <div class="code">
-                            <pre>
+            <ul>
+                <li>
+                    <p><code>@media</code>: A regra mais importante para o <strong>Design Responsivo</strong>. Ela permite aplicar estilos apenas se certas condições forem atendidas (como a largura da tela).</p>
+                    <strong>Exemplo</strong>:
+                    <div class="code">
+                        <pre>
+                            @media (max-width: 600px) {
+                                body { background-color: lightblue; }
+                            }
+                        </pre>
+                    </div>
+                </li>
+                <li>
+                    <p><code>@supports</code>: Verifica se o navegador suporta uma tecnologia específica antes de aplicá-la. É uma "rede de segurança" para usar recursos modernos sem quebrar o site em navegadores antigos.</p>
+                    <strong>Exemplo</strong>:
+                    <section class="code">
+                        <pre>
+                            <code>
                                 @supports (display: grid) {
                                     main { display: grid; }
                                 }
-                            </pre>
-                        </div>
-                    </li>
-                </ul>
-            </section>
+                            </code>
+                        </pre>
+                    </section>
+                </li>
+            </ul>
         </article>
         <article>
             <h3>Fontes e Animações Personalizadas</h3>
             <p>Estas regras definem recursos que não existem por padrão no navegador e precisam ser "criados" via código.</p>
-            <section class="propriedade">
-                <ul>
-                    <li>
-                        <p>
-                            <code>@font-face</code>: Permite que você carregue uma fonte baixada no seu próprio servidor, sem depender de serviços externos.
-                            Uso: Você define o nome da fonte e o caminho do arquivo (<code>.woff2</code>, <code>.ttf</code>).
-                        </p>
-                    </li>
-                    <li>
-                        <p><code>@keyframes</code>: Define as etapas de uma animação CSS. Você cria o "roteiro" do movimento aqui para depois aplicá-lo a um seletor.</p>
-                        <strong>Exemplo:</strong>
-                        <div class="code">
-                            <pre>
+            <ul>
+                <li>
+                    <p>
+                        <code>@font-face</code>: Permite que você carregue uma fonte baixada no seu próprio servidor, sem depender de serviços externos.
+                        Uso: Você define o nome da fonte e o caminho do arquivo (<code>.woff2</code>, <code>.ttf</code>).
+                    </p>
+                </li>
+                <li>
+                    <p><code>@keyframes</code>: Define as etapas de uma animação CSS. Você cria o "roteiro" do movimento aqui para depois aplicá-lo a um seletor.</p>
+                    <strong>Exemplo:</strong>
+                    <section class="code">
+                        <pre>
+                            <code>
                                 @keyframes aparecer {
                                     from { opacity: 0; }
                                     to { opacity: 1; }
                                 }
-                            </pre>
-                        </div>
-                    </li>
-                </ul>
-            </section>
+                            </code>
+                        </pre>
+                    </section>
+                </li>
+            </ul>
         </article>
         <article>
             <h3>Boas Práticas e Engenharia de Regras</h3>

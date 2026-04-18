@@ -11,7 +11,7 @@
             <ul>
                 <li><a href="../../index.html" target="" rel="">Página principal</a></li>
                 <!-- i > bars -->
-                <li><a href="../listas/index.html" target="" rel="">Artigo anterior</a></li>
+                <li><a href="../listas/listas.html" target="" rel="">Artigo anterior</a></li>
             </ul>
         </nav>
         <h1>Diário DEV</h1>
@@ -63,6 +63,32 @@
                 <li><code>preload</code>: Informa ao navegador se ele deve baixar o arquivo imediatamente (<code>auto</code>) ou esperar o comando do usuário (<code>none</code>).</li>
             </ul>
         </article>
+        <section class="code">
+            <h3>A Anatomia no Código</h3>
+            <p>No HTML, descrevemos assim:</p>
+            <pre>
+                <code>
+                    &lt;figure&gt;
+                        &lt;img src="caminho-da-imagem.jpg alt="" alt="Descrição da imagem para acessibilidade"&gt;
+                        &lt;figcaption&gt;Esta é a legenda explicativa da imagem.&lt;/figcaption&gt;
+                    &lt;/figure&gt;
+                </code>
+                <code>
+                    &lt;video width="640" height="360" controls poster="imagem-capa.jpg"&gt;
+                        &lt;source src="video.mp4" type="video/mp4"&gt;
+                        &lt;source src="video.webm" type="video/webm"&gt;
+                        Seu navegador não suporta vídeos em HTML5.
+                    &lt;/video&gt;
+                </code>
+                <code>
+                    &lt;audio controls&gt;
+                        &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+                        &lt;source src="audio.ogg" type="audio/ogg"&gt;
+                        &lt;p&gt;Seu navegador não suporta este elemento de áudio.&lt;/p&gt;
+                    &lt;/audio&gt;
+                </code>
+            </pre>
+        </section>
     </main>
     <footer>
         <nav>

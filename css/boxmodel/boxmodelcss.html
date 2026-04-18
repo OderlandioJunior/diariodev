@@ -11,26 +11,26 @@
             <ul>
                 <li><a href="../../index.html" target="" rel="">Página principal</a></li>
                 <!-- i > bars -->
-                <li><a href="../seletores/index.html" target="" rel="">Artigo anterior</a></li>
+                <li><a href="../seletores/seletores.html" target="" rel="">Artigo anterior</a></li>
+                <li><a href="../estilo/estilo.html">Próximo Artigo</a></li>
             </ul>
         </nav>
         <h1>Diário DEV</h1>
         <span>Por Oderlândio Júnior</span>
     </header>
     <main>
-        <article>
+        <header>
             <h2>Modelo de Caixa (Box Model)</h2>
             <p>Se você acompanhou a seção de HTML, viu que usamos tags para estruturar o conteúdo. O que talvez você não tenha percebido é que, para o navegador, <strong>cada uma daquelas tags é, na verdade, uma caixa.</strong></p>
             <p>Desde um simples <code>&lt;span&gt;</code> até um grande <code>&lt;main&gt;</code>, tudo o que você coloca na tela é tratado como um retângulo. O <strong>Box Model</strong> é a regra do CSS que define como o tamanho dessas caixas é calculado e como elas interagem umas com as outras.</p>
-            <p>Mas, antes de entendermos como essas caixas se comportam, precisamos aprender a "conversar" com o código de forma organizada.</p>
-        </article>
+        </header>
         <article>
-            <h2>Notas no Código: O poder dos Comentários</h2>
-            <p>No CSS, usamos <code>/* */</code> para escrever anotações que o navegador ignora.</p>
+            <h3>Notas no Código: O poder dos Comentários</h3>
+            <p>Mas, antes de entendermos como essas caixas se comportam, precisamos aprender a "conversar" com o código de forma organizada. No CSS, usamos <code>/* */</code> para escrever anotações que o navegador ignora</p>
             <p><strong>Por que isso é importante?</strong> Porque o CSS pode ficar gigante. Comentários servem para separar seções (<code>ex: /* Estilo do Menu */</code>), explicar por que você usou um valor específico ou até "esconder" uma regra temporariamente para testes. Um código bem comentado é o sinal de um desenvolvedor profissional.</p>
         </article>
         <article>
-            <h2>As 4 Camadas da Caixa</h2>
+            <h3>As 4 Camadas da Caixa</h3>
             <p>Imagine que cada elemento é uma caixa de presente protegida por várias camadas:</p>
             <ol>
                 <li>
@@ -48,81 +48,89 @@
             </ol>
         </article>
         <article>
-            <h2>A Anatomia no Código</h2>
+            <h3>A Anatomia no Código</h3>
             <p>No CSS, controlamos cada parte assim:</p>
-<pre>
-    div {
-        box-sizing: border-box; /* Largura e altura total*/
+            <pre>
+                <code>
+                    main {
+                        box-sizing: border-box; /* Largura e altura total*/
 
-        height: 300px;          /* Altura do Conteúdo */
-        width: 300px;           /* Largura do Conteúdo */
+                        height: 300px;          /* Altura do Conteúdo */
+                        width: 300px;           /* Largura do Conteúdo */
 
-        margin: 50px;           /* Distância externa */
-        padding: 20px;          /* Espaço interno */
+                        margin: 50px;           /* Distância externa */
+                        padding: 20px;          /* Espaço interno */
 
-        border: 5px solid;      /* Espessura da borda */
-        }
-</pre>
-        <h2>O Controle Total com Box-sizing</h2>
-        <p>Por padrão, o navegador é um péssimo matemático. Se você define uma largura e depois adiciona bordas, ele soma tudo e sua caixa fica maior do que o planejado.</p>
-        <ul>
-            <li>
-                <code>box-sizing: content-box;</code>: É o padrão (e o vilão). A largura que você define vale apenas para o conteúdo. Padding e bordas são somados por fora.
-            </li>
-            <li>
-                <code>box-sizing: border-box;</code>: É o herói. Ele diz ao navegador: "A largura total é esta e ponto final". O padding e a borda são espremidos para dentro, mantendo o tamanho que você definiu.
-            </li>
-        </ul>
-        <h2>Dominando o Tamanho (Width e Height)</h2>
-        <p>No CSS, definir o tamanho de uma caixa não é apenas sobre números, é sobre <strong>comportamento</strong>. Existem dois tipos de unidades: as <strong>Absolutas</strong> (que não mudam nunca) e as <strong>Relativas</strong> (que dependem de algum fator externo).</p>
-            <ol>
+                        border: 5px solid;      /* Espessura da borda */
+                        }
+                </code>
+            </pre>
+        </article>
+        <article>
+            <h3>O Controle Total com Box-sizing</h3>
+            <p>Por padrão, o navegador é um péssimo matemático. Se você define uma largura e depois adiciona bordas, ele soma tudo e sua caixa fica maior do que o planejado.</p>
+            <ul>
                 <li>
-                    <strong>Unidades Absolutas: O Pixel (<code>px</code>)</strong>
-                    <p>O pixel é a unidade mais comum. Ele é fixo. Se você define <code>width: 300px</code>, aquela caixa terá exatamente esse tamanho, seja em um monitor gigante ou em um celular pequeno.</p>
-                    <ul>
-                        <li>
-                            <strong>Vantagem</strong>: Precisão total. Ótimo para bordas ou elementos que não podem mudar de tamanho.
-                        </li>
-                        <li>
-                            <strong>Desvantagem</strong>: Não é responsivo. Pode fazer o seu site ter aquela barra de rolagem horizontal chata em telas menores.
-                        </li>
-                    </ul>
+                    <code>box-sizing: content-box;</code>: É o padrão (e o vilão). A largura que você define vale apenas para o conteúdo. Padding e bordas são somados por fora.
                 </li>
                 <li>
-                    <strong>Unidades Relativas: Porcentagem (<code>%</code>)</strong>
-                    <p>A porcentagem é relativa ao elemento pai. Se você tem uma <code>div</code> dentro do <code>body</code> e define <code>width: 50%</code>, ela ocupará metade da largura disponível do corpo da página.</p>
-                    <ul>
-                        <li>
-                            <strong>Uso ideal</strong>: Criar colunas e layouts que se ajustam quando você redimensiona a janela do navegador.
-                        </li>
-                    </ul>
+                    <code>box-sizing: border-box;</code>: É o herói. Ele diz ao navegador: "A largura total é esta e ponto final". O padding e a borda são espremidos para dentro, mantendo o tamanho que você definiu.
                 </li>
-                <li>
-                    <strong>Unidades de Viewport: <code>vw</code> e <code>vh</code></strong>
-                    <p>Essas são as unidades mais modernas e poderosas. Elas são relativas ao <strong>tamanho da janela do navegador (viewport)</strong>, ignorando quem é o "pai" do elemento.</p>
-                    <ul>
-                        <li>
-                            <code>vw</code> <strong>(Viewport Width)</strong>: 1vw é igual a 1% da largura total da tela. 100vw ocupa a tela inteira de ponta a ponta.
-                        </li>
-                        <li>
-                            <code>vh</code> <strong>(Viewport Height)</strong>: 1vh é igual a 1% da altura total da tela.
-                        </li>
-                        <li>
-                            <strong>Exemplo Prático</strong>: Quer que sua seção de "Destaque" ocupe a tela inteira do usuário assim que ele abre o site? Use <code>height: 100vh;</code>.
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>O "Coringa" do Tamanho: <code>max-width</code></strong>
-                    <p>Em vez de usar apenas <code>width: 500px</code>, os devs profissionais costumam usar <code>max-width: 100%</code>.</p>
-                    <ul>
-                        <li>
-                            O que isso faz? Diz ao navegador: "Pode ser até 500px, mas se a tela for menor que isso, diminua para caber 100% no espaço disponível". Isso evita que seu layout quebre em celulares.
-                        </li>
-                    </ul>
-                </li>
-            </ol>
-        <h2>Espaçamentos (Margin e Padding)</h2>
+            </ul>
+        </article>
+        <article>
+            <h3>Dominando o Tamanho (Width e Height)</h3>
+            <p>No CSS, definir o tamanho de uma caixa não é apenas sobre números, é sobre <strong>comportamento</strong>. Existem dois tipos de unidades: as <strong>Absolutas</strong> (que não mudam nunca) e as <strong>Relativas</strong> (que dependem de algum fator externo).</p>
+                <ol>
+                    <li>
+                        <strong>Unidades Absolutas: O Pixel (<code>px</code>)</strong>
+                        <p>O pixel é a unidade mais comum. Ele é fixo. Se você define <code>width: 300px</code>, aquela caixa terá exatamente esse tamanho, seja em um monitor gigante ou em um celular pequeno.</p>
+                        <ul>
+                            <li>
+                                <strong>Vantagem</strong>: Precisão total. Ótimo para bordas ou elementos que não podem mudar de tamanho.
+                            </li>
+                            <li>
+                                <strong>Desvantagem</strong>: Não é responsivo. Pode fazer o seu site ter aquela barra de rolagem horizontal chata em telas menores.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Unidades Relativas: Porcentagem (<code>%</code>)</strong>
+                        <p>A porcentagem é relativa ao elemento pai. Se você tem uma <code>div</code> dentro do <code>body</code> e define <code>width: 50%</code>, ela ocupará metade da largura disponível do corpo da página.</p>
+                        <ul>
+                            <li>
+                                <strong>Uso ideal</strong>: Criar colunas e layouts que se ajustam quando você redimensiona a janela do navegador.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Unidades de Viewport: <code>vw</code> e <code>vh</code></strong>
+                        <p>Essas são as unidades mais modernas e poderosas. Elas são relativas ao <strong>tamanho da janela do navegador (viewport)</strong>, ignorando quem é o "pai" do elemento.</p>
+                        <ul>
+                            <li>
+                                <code>vw</code> <strong>(Viewport Width)</strong>: 1vw é igual a 1% da largura total da tela. 100vw ocupa a tela inteira de ponta a ponta.
+                            </li>
+                            <li>
+                                <code>vh</code> <strong>(Viewport Height)</strong>: 1vh é igual a 1% da altura total da tela.
+                            </li>
+                            <li>
+                                <strong>Exemplo Prático</strong>: Quer que sua seção de "Destaque" ocupe a tela inteira do usuário assim que ele abre o site? Use <code>height: 100vh;</code>.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>O "Coringa" do Tamanho: <code>max-width</code></strong>
+                        <p>Em vez de usar apenas <code>width: 500px</code>, os devs profissionais costumam usar <code>max-width: 100%</code>.</p>
+                        <ul>
+                            <li>
+                                O que isso faz? Diz ao navegador: "Pode ser até 500px, mas se a tela for menor que isso, diminua para caber 100% no espaço disponível". Isso evita que seu layout quebre em celulares.
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+        </article>
+        <article>
+        <h3>Espaçamentos (Margin e Padding)</h3>
         <p>É aqui que o site ganha vida e para de parecer um amontoado de coisas coladas.</p>
         <ul>
             <li>

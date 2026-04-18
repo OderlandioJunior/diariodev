@@ -31,7 +31,7 @@
                 <li><code>grid-template-rows</code>: Define as linhas.</li>
                 <li><strong>Unidade </strong><code>fr</code>: Representa uma fração do espaço livre, lidando com o redimensionamento de forma muito mais inteligente que porcentagens.</li>
             </ol>
-            <p><strong>Exemplo de Código:</strong></p>
+            <p>No CSS, controlamos a declaração da seguinte maneira:</p>
             <section class="code">
                 <pre>
                     .container {
@@ -71,19 +71,20 @@
         <article>
             <h3>Grid Template Areas (O Mapa Visual)</h3>
             <p>Uma das funcionalidades mais práticas é "desenhar" o layout usando nomes, o que torna o código extremamente fácil de ler e manter.</p>
-            <p><strong>Exemplo de Mapa de Layout:</strong></p>
+            <p>Exemplo de Mapa de Layout:</p>
             <section class="code">
                 <pre>
-                    .container {
-                        display: grid;
-                        grid-template-areas:
-                            "header header header"
-                            "sidebar main main"
-                            "footer footer footer";
-                    }
-
-                    .item-header { grid-area: header; }
-                    .item-main { grid-area: main; }
+                    <code>
+                        .container {
+                            display: grid;
+                            grid-template-areas:
+                                "header header header"
+                                "sidebar main main"
+                                "footer footer footer";
+                        }
+                        .item-header { grid-area: header; }
+                        .item-main { grid-area: main; }
+                    </code>
                 </pre>
             </section>
         </article>
@@ -98,11 +99,13 @@
             <p><strong>Código de Grid "Mágico":</strong></p>
             <section class="code">
                 <pre>
-                    .grid-auto {
-                        display: grid;
-                        /* Cria colunas de no mínimo 250px que ocupam o espaço restante */
-                        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                    }
+                    <code>
+                        .grid-auto {
+                            display: grid;
+                            /* Cria colunas de no mínimo 250px que ocupam o espaço restante */
+                            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                        }
+                    </code>
                 </pre>
             </section>
         </article>
