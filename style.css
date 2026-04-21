@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
 :root {
-    --font-title: "VT323", monospace;
+    --font-title: "Press Start 2P", system-ui;
     --font-sub: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     --font-text: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --font-link: "Source Code Pro", monospace;
@@ -13,9 +13,11 @@
     --color-pg: #181B20;
     --color-hd: #233B69;
     --color-link: #7BBBDF;
-    --color-strong: #FFCE82;
+    --color-strong1: #D6A548;
+    --color-strong2: #508215;
 }
 
+/* Configurações gerais */
 * {
     margin: 0;
     padding: 0;
@@ -26,6 +28,20 @@ body {
     background-color: var(--color-bg);
 }
 
+a {
+    font-family: var(--font-link);
+    color: var(--color-link);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ol, ul {
+    list-style-type: none;
+}
+/* Fim das configurações gerais */
 /* Configuração para o cabeçalho */
 header {
     background-color: var(--color-hd);
@@ -33,8 +49,9 @@ header {
 }
 
 header h1 {
+    padding-top: .5em;
     font-family: var(--font-title);
-    font-size: 4.5em;
+    font-size: 2.5em;
     color: #F6D592;
     text-transform: uppercase;
     text-shadow: 3px 2px 3px black;
@@ -49,11 +66,11 @@ header p {
 header nav {
     background-color: var(--color-pg);
     border-top: 5px solid #37547E;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.6);
     padding: 1em;
 }
 
 header ul {
-    list-style-type: none;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
@@ -81,6 +98,7 @@ section {
     width: 90%;
     background-color: var(--color-pg);
     border: 3px solid #5c6166;
+    box-shadow: 0px 0px 3px rgba(255, 255, 255, 0.6);
     border-radius: .5em;
 }
 
@@ -100,11 +118,51 @@ section p {
     text-indent: 1.3em;
     padding: .3em 0;
 }
+/* Manipulação da sessão estudo */
+menu {
+    border: 3px solid var(--color-strong1);
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px var(--color-strong1);
+    cursor: pointer;
+    padding: .5em;
+}
 
+menu h2 {
+    padding: 0;
+    font-family: var(--font-link);
+}
+
+ol {
+    padding: 0 1em;
+}
+
+h3 {
+    font-family: var(--font-link);
+    cursor: pointer;
+    border: 2px solid var(--color-strong2);
+    border-radius: 5px;
+    padding: .3em;
+}
+
+.nivel {
+    padding-top: 0;
+    display: none;
+}
+
+.passo {
+    padding-top: 0;
+    margin-bottom: 1em;
+}
+/* Fim da manipulação da sessão estudo */
+/* Manipulação da sessão sobre mim */
 .detalhes {
     width: 100%;
-    padding: .3em 1em;
-    border: 1px solid var(--color-strong);
+    padding: .8em;
+    border: 3px solid var(--color-strong1);
+}
+
+p:first-child {
+    padding-top: 0;
 }
 
 q {
@@ -112,8 +170,9 @@ q {
 }
 
 figure {
-    border: 1px solid var(--color-strong);
-    padding: .5em;
+    margin: .5em 0;
+    padding: .3em;
+    border: 3px solid var(--color-strong2);
     border-radius: 10px;
 }
 
@@ -121,9 +180,9 @@ img {
     width: 100%;
     border-radius: 5px;
 }
-
-
+/* Fim da manipulação da sessão sobre mim */
 /* Fim da configuração para o conteúdo */
+
 /* Configuração para o rodapé */
 footer {
     background-color: var(--color-pg);
@@ -135,22 +194,10 @@ footer nav {
 }
 
 footer ul {
-    list-style-type: none;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
     align-items: center;
-}
-
-footer a {
-    font-family: var(--font-link);
-    color: var(--color-link);
-    text-decoration: none;
-    padding: .5em .8em;
-}
-
-footer a:hover {
-    text-decoration: underline;
 }
 
 footer p {
