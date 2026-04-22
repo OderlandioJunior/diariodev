@@ -118,8 +118,12 @@ section p {
     text-indent: 1.3em;
     padding: .3em 0;
 }
+
+#intro h2 {
+    text-align: center;
+}
 /* Manipulação da sessão estudo */
-menu {
+#estudo menu {
     border: 3px solid var(--color-strong1);
     border-radius: 10px;
     box-shadow: 0px 0px 3px var(--color-strong1);
@@ -127,16 +131,16 @@ menu {
     padding: .5em;
 }
 
-menu h2 {
+#estudo menu h2 {
     padding: 0;
     font-family: var(--font-link);
 }
 
-ol {
+#estudo ol {
     padding: 0 1em;
 }
 
-h3 {
+#estudo h3 {
     font-family: var(--font-link);
     cursor: pointer;
     border: 2px solid var(--color-strong2);
@@ -144,12 +148,17 @@ h3 {
     padding: .3em;
 }
 
-.nivel {
+#estudo .nivel {
     padding-top: 0;
-    display: none;
 }
 
-.passo {
+#estudo .nivel figure {
+}
+
+#estudo .nivel img {
+}
+
+#estudo .passo {
     padding-top: 0;
     margin-bottom: 1em;
 }
@@ -161,22 +170,22 @@ h3 {
     border: 3px solid var(--color-strong1);
 }
 
-p:first-child {
+.detalhes p:first-child {
     padding-top: 0;
 }
 
-q {
+.detalhes q {
     font-family: var(--font-text);
 }
 
-figure {
+#perfil figure {
     margin: .5em 0;
     padding: .3em;
     border: 3px solid var(--color-strong2);
     border-radius: 10px;
 }
 
-img {
+#perfil figure img {
     width: 100%;
     border-radius: 5px;
 }
