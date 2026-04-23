@@ -124,16 +124,28 @@ section p {
 }
 /* Manipulação da sessão estudo */
 #estudo menu {
-    border: 3px solid var(--color-strong1);
-    border-radius: 10px;
-    box-shadow: 0px 0px 3px var(--color-strong1);
+    border: 3px solid transparent; 
+    background: 
+        linear-gradient(var(--color-pg), var(--color-pg)) padding-box,
+        linear-gradient(to right, var(--color-strong2), var(--color-strong1)) border-box; /* Cor da borda */
+    border-radius: 10px; /* AGORA FUNCIONA! */
+    box-shadow: 1px -1px 5px var(--color-strong1);
     cursor: pointer;
     padding: .5em;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #estudo menu h2 {
     padding: 0;
     font-family: var(--font-link);
+}
+
+#estudo menu img {
+    height: 100px;
 }
 
 #estudo ol {
@@ -143,19 +155,33 @@ section p {
 #estudo h3 {
     font-family: var(--font-link);
     cursor: pointer;
-    border: 2px solid var(--color-strong2);
+    border: 3px solid var(--color-strong2);
     border-radius: 5px;
-    padding: .3em;
+    padding: .7em;
+    flex-grow: 1;
 }
 
 #estudo .nivel {
     padding-top: 0;
 }
 
+.nivel div {
+    margin-top: -4px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
 #estudo .nivel figure {
+    margin-top: 2px;
+    border: 3px solid var(--color-strong1);
+    border-radius: 5px;
 }
 
 #estudo .nivel img {
+    margin-top: 2px;
 }
 
 #estudo .passo {
