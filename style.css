@@ -24,6 +24,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--color-bg);
 }
@@ -126,7 +130,10 @@ section p {
 .detalhes {
     width: 100%;
     padding: .8em;
-    border: 3px solid var(--color-strong1);
+    border: 4px solid transparent;
+    background: 
+        linear-gradient(var(--color-pg), var(--color-pg)) padding-box,
+        linear-gradient(to top, var(--color-strong2), var(--color-strong1)) border-box;
 }
 
 .detalhes p:first-child {
@@ -140,15 +147,14 @@ section p {
 #perfil figure {
     overflow: hidden;
     margin: .5em 0;
-    border: 3px solid transparent; 
+    border: 4px solid transparent; 
     border-radius: 10px;
 }
 
 .detalhes figure {
     background: 
         linear-gradient(var(--color-pg), var(--color-pg)) padding-box,
-        linear-gradient(to bottom, var(--color-strong2), var(--color-strong1)) border-box;
-    box-shadow: 0px -2px 5px var(--color-strong2);
+        linear-gradient(to top, var(--color-strong2), var(--color-strong1)) border-box;
 }
 
 #perfil figure img {
@@ -176,6 +182,18 @@ section p {
 #estudo menu h2 {
     padding: 0;
     font-family: var(--font-link);
+}
+
+#estudo div {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#estudo i {
+    color: #e1e1e6;
+    cursor: help;
 }
 
 #estudo figure {
