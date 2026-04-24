@@ -122,73 +122,6 @@ section p {
 #intro h2 {
     text-align: center;
 }
-/* Manipulação da sessão estudo */
-#estudo menu {
-    border: 3px solid transparent; 
-    background: 
-        linear-gradient(var(--color-pg), var(--color-pg)) padding-box,
-        linear-gradient(to right, var(--color-strong2), var(--color-strong1)) border-box; /* Cor da borda */
-    border-radius: 10px; /* AGORA FUNCIONA! */
-    box-shadow: 1px -1px 5px var(--color-strong1);
-    cursor: pointer;
-    padding: .5em;
-
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#estudo menu h2 {
-    padding: 0;
-    font-family: var(--font-link);
-}
-
-#estudo menu img {
-    height: 100px;
-}
-
-#estudo ol {
-    padding: 0 1em;
-}
-
-#estudo h3 {
-    font-family: var(--font-link);
-    cursor: pointer;
-    border: 3px solid var(--color-strong2);
-    border-radius: 5px;
-    padding: .7em;
-    flex-grow: 1;
-}
-
-#estudo .nivel {
-    padding-top: 0;
-}
-
-.nivel div {
-    margin-top: -4px;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-}
-
-#estudo .nivel figure {
-    margin-top: 2px;
-    border: 3px solid var(--color-strong1);
-    border-radius: 5px;
-}
-
-#estudo .nivel img {
-    margin-top: 2px;
-}
-
-#estudo .passo {
-    padding-top: 0;
-    margin-bottom: 1em;
-}
-/* Fim da manipulação da sessão estudo */
 /* Manipulação da sessão sobre mim */
 .detalhes {
     width: 100%;
@@ -205,17 +138,132 @@ section p {
 }
 
 #perfil figure {
+    overflow: hidden;
     margin: .5em 0;
-    padding: .3em;
-    border: 3px solid var(--color-strong2);
+    border: 3px solid transparent; 
     border-radius: 10px;
+}
+
+.detalhes figure {
+    background: 
+        linear-gradient(var(--color-pg), var(--color-pg)) padding-box,
+        linear-gradient(to bottom, var(--color-strong2), var(--color-strong1)) border-box;
+    box-shadow: 0px -2px 5px var(--color-strong2);
 }
 
 #perfil figure img {
     width: 100%;
-    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
 }
 /* Fim da manipulação da sessão sobre mim */
+/* Manipulação da sessão estudo */
+#estudo menu {
+    border: 3px solid transparent;
+    background: 
+        linear-gradient(var(--color-pg), var(--color-pg)) padding-box,
+        linear-gradient(to right, var(--color-strong2), var(--color-strong1)) border-box;
+    border-radius: 10px;
+    box-shadow: 1px -1px 5px var(--color-strong1);
+    padding: .5em;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#estudo menu h2 {
+    padding: 0;
+    font-family: var(--font-link);
+}
+
+#estudo figure {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+#estudo menu img {
+    display: block;
+    margin: 0 auto;
+    height: auto;
+}
+
+#estudo figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--color-strong1);
+    font-size: 0.7em;
+    font-family: var(--font-text);
+    padding: 5px;
+    text-align: center;
+    opacity: 0;
+    overflow: hidden;
+    cursor: help;
+
+    transition: opacity 0.3s ease;
+}
+
+#estudo menu figure:hover figcaption {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: brightness(1.2);
+    transition: 0.3s;
+}
+
+#estudo ol {
+    padding: 0 1em;
+}
+
+#estudo h3 {
+    font-family: var(--font-link);
+    border: 3px solid transparent; 
+    background: 
+        linear-gradient(var(--color-pg), var(--color-pg)) padding-box,
+        linear-gradient(to right, var(--color-strong2), var(--color-strong1)) border-box;
+    border-radius: 10px;
+    padding: 14px;
+    flex-grow: 1;
+}
+
+#estudo .nivel {
+    padding-top: 0;
+}
+
+.nivel div {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+#estudo .nivel figure {
+    border: 3px solid var(--color-strong1);
+    border-radius: 5px;
+    text-align: center;
+}
+
+#estudo .nivel img {
+    display: block;
+    margin: 0 auto;
+}
+
+#estudo .passo {
+    padding-top: 0;
+    margin-bottom: 1em;
+}
+/* Fim da manipulação da sessão estudo */
 /* Fim da configuração para o conteúdo */
 
 /* Configuração para o rodapé */
