@@ -14,6 +14,9 @@ Oque eu preciso configurar?
 - .nivel, li, .progresso, h3, figure, img, .passo, li, a
 
 - footer (#262B33), nav, ul, li, a (#86B6E4), p
+
+Verde: #2E8C4B
+Amarelo: #EEAF14
 */
 
 * {
@@ -71,15 +74,13 @@ nav a {
 }
 
 nav a:hover {
-    border-bottom: 1px solid #9BD89C;
-    border-top: 1px solid #9BD89C;
+    border-bottom: 3px solid #2E8C4B;
+    border-top: 3px solid #2E8C4B;
     text-shadow: 0px 0px 8px #9BD89C;
     color: #9BD89C;
 }
 /* Fim da config */
 /* Config conteúdo */
-
-
 main {
     margin: 0 1.5em;
 }
@@ -93,11 +94,10 @@ section {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
 }
 
-h2 {
+h2, h3, h4 {
     color: #DBE6D6;
     font-family: 'Source Code Pro', Courier, monospace;
     font-size: 1.8em;
-    text-indent: .7em;
     margin-bottom: 5px;
 }
 
@@ -110,11 +110,9 @@ p {
 }
 
 figure {
-    margin: 0 auto;
+    margin-bottom: .5em;
     width: 100%;
     overflow: hidden;
-    border: 5px solid transparent;
-    background: linear-gradient( to bottom, #2E8C4B, #EEAF14) border-box;
     border-radius: 15px;
 }
 
@@ -123,11 +121,93 @@ img {
     margin: 0 auto;
     width: 100%;
 }
-/* Fim da config */
 
+a {
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #9BD89C;
+}
+
+a:hover {
+    border-bottom: 1px solid #2E8C4B;
+    text-shadow: 0px 0px 8px #2E8C4B;
+    color: #2E8C4B;
+}
+
+ol {
+    list-style-type: none;
+}
+/* Fim da config */
 /* Config individual */
 #intro h2{
     text-align: center;
     font-size: 2em;
+}
+
+.header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    padding: 0 .1em;
+}
+.header h3 {
+    text-align: center;
+    margin: 0;
+}
+.info-img {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.info-img i {
+    color: #EBEDEA;
+    cursor: help;
+}
+.info-img figure {
+    margin-bottom: 0px;
+    height: auto;
+    max-width: 100px;
+    border-radius: 0;
+    position: relative;
+}
+.info-img figcaption { /* Deu trabalho essa porr* */
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+    text-align: center;
+    color: black;
+    opacity: .3;
+    transition: ease-in-out .3s;
+}
+.info-img figcaption:hover {
+    opacity: 1;
+}
+
+.progresso {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progresso h4 {
+    font-size: 1.2em;
+    flex-grow: 1;
+}
+
+.progresso figure {
+    width: 30px;
+    height: 30px;
 }
 /* Fim da config */
