@@ -86,9 +86,8 @@ nav a:hover {
 /* Fim da config */
 /* Config conteúdo */
 section {
-    margin: 1em auto;
+    margin: 2em auto;
     padding: .8em;
-    width: 95%;
     background-color: #262B33;
     border: 5px solid #3D484D;
     border-radius: 15px;
@@ -98,7 +97,7 @@ section {
 h2, h3{
     color: #DBE6D6;
     font-family: 'Source Code Pro', Courier, monospace;
-    margin-bottom: .5em;
+    margin-bottom: .2em;
 }
 
 p {
@@ -155,8 +154,7 @@ figcaption { /* Deu trabalho fazer essa porr* */
     transition: ease-in-out .3s;
     cursor: help;
     }
-
-    figcaption:hover {
+figcaption:hover {
     opacity: 1;
     background-color: rgba(0, 0, 0, 0.5);
 }
@@ -167,11 +165,14 @@ footer p{
 }
 /* Fim da config */
 /* Config individual */
-#intro h2, #perfil h2{
+#intro h2, #perfil h2 {
     text-align: center;
     font-size: 2em;
 }
-#proposito h2, #estudo h2{
+#estudo h2 {
+    font-size: 2.2em;
+}
+#proposito h2, {
     font-size: 1.6em;
 }
 
