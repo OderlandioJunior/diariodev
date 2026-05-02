@@ -1,0 +1,145 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    scroll-behavior: smooth;
+    background-color: #5B6370;
+}
+/* Config header */
+header {
+    background-color: #2B4985;
+    text-align: center;
+}
+
+header h1 {
+    padding: .5em 0 .1em 0;
+    color: #FBDB9E;
+    font-family:'Press Start 2P', Courier, monospace;
+    font-size: 2.3em;
+    text-shadow: 0px 2px 5px black;
+}
+
+header p {
+    color: #A8B6D9;
+    font-family: 'Source Code Pro', Courier, monospace;
+}
+
+nav {
+    background-color: #262B33;
+    margin-top: 1em;
+    padding: 10px 0;
+    border-top: 5px solid #416DB3;
+    box-shadow: 0px -1px 5px #416DB3;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #FCFDF8;
+    padding: 5px;
+}
+
+nav a:hover {
+    border-bottom: 3px solid #2E8C4B;
+    border-top: 3px solid #2E8C4B;
+    text-shadow: 0px 0px 8px #9BD89C;
+    color: #9BD89C;
+}
+/* Fim da config */
+/* Config conteúdo*/
+main header {
+    background-color: #262B33;
+    margin: 1em auto;
+}
+
+article, .code, .video {
+    margin: 1em auto;
+    padding: .8em;
+    background-color: #262B33;
+    border: 5px solid #3D484D;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+}
+
+h2, h3, h4{
+    color: #DBE6D6;
+    font-family: 'Source Code Pro', Courier, monospace;
+    margin-bottom: .2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+p {
+    color: #EBEDEA;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2em;
+    text-indent: 1em;
+    padding-bottom: 10px;
+}
+
+pre {
+    background-color: #1e1e1e; /* Um tom escuro tipo VS Code */
+    padding: 1em;
+    border-radius: 8px;
+    color: #EEAF14;
+    overflow-x: auto; /* Permite scroll lateral se o código for grande */
+    /* A MÁGICA ESTÁ AQUI: */
+    tab-size: 4; 
+    white-space: pre; /* Mantém espaços mas evita que o texto fuja da tela */
+}
+
+pre code {
+    display: block;
+    margin-left: -100px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    text-shadow: none;
+}
+/* Para remover o excesso de espaços no início das linhas */
+
+
+code {
+    padding: 2px 6px;
+    background: #3D484D;
+    border-radius: 10px;
+    border: 2px solid #EEAF14;
+    color: #EEAF14;
+    text-shadow: 0px 0px 3px #EEAF14;
+}
+
+footer {
+    background-color: #2B4985;
+}
+/* Fim da config*/
+/* Config individual*/
+
+
+footer nav{
+    border-top: 0;
+    border-bottom: 5px solid #416DB3;
+    box-shadow: 0px 1px 5px #416DB3;
+}
+footer p{
+    color: #FBDB9E;
+    text-align: center;
+    padding: .5em 0;
+}
+/* Fim da Config*/

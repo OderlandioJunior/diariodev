@@ -159,9 +159,8 @@ figcaption:hover {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-footer p{
-    text-align: center;
-    padding: .5em 0;
+footer {
+    background-color: #2B4985;
 }
 /* Fim da config */
 /* Config individual */
@@ -257,5 +256,17 @@ footer p{
 }
 .nivel > li:last-child .passo {
     margin-bottom: 2em;
+}
+
+
+footer nav{
+    border-top: 0;
+    border-bottom: 5px solid #416DB3;
+    box-shadow: 0px 1px 5px #416DB3;
+}
+footer p{
+    color: #FBDB9E;
+    text-align: center;
+    padding: .5em 0;
 }
 /* Fim da config */
