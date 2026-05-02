@@ -85,13 +85,10 @@ nav a:hover {
 }
 /* Fim da config */
 /* Config conteúdo */
-main {
-    margin: 0 1.5em;
-}
-
 section {
     margin: 1em auto;
     padding: .8em;
+    width: 95%;
     background-color: #262B33;
     border: 5px solid #3D484D;
     border-radius: 15px;
@@ -101,7 +98,6 @@ section {
 h2, h3{
     color: #DBE6D6;
     font-family: 'Source Code Pro', Courier, monospace;
-    font-size: 1.8em;
     margin-bottom: .5em;
 }
 
@@ -164,11 +160,19 @@ figcaption { /* Deu trabalho fazer essa porr* */
     opacity: 1;
     background-color: rgba(0, 0, 0, 0.5);
 }
+
+footer p{
+    text-align: center;
+    padding: .5em 0;
+}
 /* Fim da config */
 /* Config individual */
-#intro h2{
+#intro h2, #perfil h2{
     text-align: center;
     font-size: 2em;
+}
+#proposito h2, #estudo h2{
+    font-size: 1.6em;
 }
 
 #perfil figure {
@@ -192,6 +196,7 @@ figcaption { /* Deu trabalho fazer essa porr* */
 }
 .header h3 {
     margin: 0;
+    font-size: 1.5em;
 }
 .info-img {
     display: flex;
@@ -220,16 +225,15 @@ figcaption { /* Deu trabalho fazer essa porr* */
     padding: 8px;
     flex-grow: 1;
     font-family: 'Source Code Pro', Courier, monospace;
-    font-size: 1em;
+    font-size: 1.2em;
     color: #DBE6D6;
     border: 3px solid transparent;
+    border-radius: 10px;
     background: linear-gradient(#262B33) padding-box, linear-gradient(to left, #EEAF14, #2E8C4B) border-box;
     box-shadow: 1px 1px 5px #EEAF14;
 }
-.nivel > li:first-child .progresso h4 {
-    margin-top: -18px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+.nivel > li:first-child {
+    margin-top: -14px;
 }
 .progresso figure {
     margin: 0;
@@ -237,12 +241,20 @@ figcaption { /* Deu trabalho fazer essa porr* */
     width: fit-content;
     height: auto;
     border: 3px solid #EEAF14;
-    border-radius: 0;
+    border-radius: 10px;
     box-shadow: inset 0px 0px 8px #EEAF14;
 }
 .nivel > li:first-child .progresso figure {
-    margin-top: -2px;
+    margin-top: 13px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+}
+.nivel > li:first-child .passo {
+    margin-top: -8px;
+}
+.nivel > li:last-child .passo {
+    margin-bottom: 2em;
 }
 /* Fim da config */
