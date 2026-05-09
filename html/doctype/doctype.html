@@ -24,7 +24,7 @@
             <p>A construção de um site resiliente e acessível começa pela compreensão minuciosa do esqueleto HTML. Um documento HTML5 não é apenas uma sequência de tags; é uma hierarquia de objetos que formam o Document Object Model (DOM). A omissão ou o uso incorreto de tags fundamentais pode levar ao "Quirks Mode", onde o navegador renderiza a página de forma imprevisível para manter compatibilidade com tecnologias obsoletas da década de 90.</p>
         </article>
         <article>
-            <h3>O Preâmbulo Obrigatório: <br> <code>!DOCTYPE html</code></h3>
+            <h3>O Preâmbulo Obrigatório:<br><code>!DOCTYPE html</code></h3>
             <p>A primeira linha de qualquer documento moderno deve ser obrigatoriamente <code>!DOCTYPE html</code>. Tecnicamente, esta instrução não é uma tag HTML, mas uma declaração de tipo de documento. Ela informa ao navegador que o arquivo segue os padrões vigentes do HTML5, garantindo que o motor de renderização utilize o "Standards Mode" para interpretar o layout e os estilos CSS com precisão.</p>
         </article>
         <article>
@@ -37,7 +37,7 @@
             <h4>Codificação de Caracteres:</h4>
             <p> A tag <code>&lt;meta charset="utf-8"&gt;</code> deve ser a primeira dentro do <code>&lt;head&gt;</code>. Ela garante que o navegador consiga exibir corretamente acentos, caracteres especiais de diversos idiomas e emojis. Sem ela, o texto pode ser corrompido, exibindo símbolos ilegíveis.</p>
             <h4>Responsividade</h4>
-            <p>A metatag de viewport, tipicamente escrita como <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>, é o que torna o site "mobile-friendly". Ela instrui o navegador a ajustar a escala do conteúdo de acordo com a largura real da tela do dispositivo, evitando que o site apareça minúsculo em smartphones.</p>
+            <p>A metatag de viewport, tipicamente escrita como <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> é o que torna o site "mobile-friendly". Ela instrui o navegador a ajustar a escala do conteúdo de acordo com a largura real da tela do dispositivo, evitando que o site apareça minúsculo em smartphones.</p>
             <h4>Identidade e SEO:</h4>
             <p>A tag <code>&lt;title&gt;</code> define o nome que aparecerá na aba do navegador e no título principal dos resultados de busca do Google. É um dos fatores de SEO mais pesados para o ranqueamento orgânico.</p>
         </article>
@@ -53,7 +53,8 @@
                 &lt;html lang="pt-br"&gt;
                 &lt;head&gt;
                     &lt;meta charset="UTF-8"&gt;
-                    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                    &lt;meta name="viewport" 
+                    content="width=device-width, initial-scale=1.0"&gt;
                     &lt;title&gt;Document&lt;/title&gt;
                 &lt;/head&gt;
                 &lt;body&gt;
@@ -65,7 +66,7 @@
         <section class="video">
             <h3>Aprofundando o Conhecimento</h3>
             <p>Para visualizar esses conceitos em ação e entender detalhes de renderização, assista à aula completa do mestre Gustavo Guanabara:</p>
-            <del><p>Aqui eu pretendo por um &lt;iframe&gt; do vídeo relacionado a aula</p></del>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/E6CdIawPTh0?si=OudJZ9pyz_lHiKgJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </section>
     </main>
     <footer>

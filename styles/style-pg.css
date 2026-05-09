@@ -94,6 +94,15 @@ p {
     padding-bottom: 10px;
 }
 
+code {
+    padding: 2px 6px;
+    background: #3D484D;
+    border-radius: 10px;
+    border: 2px solid #EEAF14;
+    color: #EEAF14;
+    text-shadow: 0px 0px 3px #EEAF14;
+}
+
 pre {
     background-color: #1e1e1e; /* Um tom escuro tipo VS Code */
     padding: 1em;
@@ -104,7 +113,6 @@ pre {
     tab-size: 4; 
     white-space: pre; /* Mantém espaços mas evita que o texto fuja da tela */
 }
-
 pre code {
     display: block;
     margin-left: -100px;
@@ -115,14 +123,12 @@ pre code {
 }
 /* Para remover o excesso de espaços no início das linhas */
 
-
-code {
-    padding: 2px 6px;
-    background: #3D484D;
+.video iframe {
+    overflow: hidden;
+    border: none;
     border-radius: 10px;
-    border: 2px solid #EEAF14;
-    color: #EEAF14;
-    text-shadow: 0px 0px 3px #EEAF14;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+    max-width: 100%;
 }
 
 footer {
@@ -130,8 +136,6 @@ footer {
 }
 /* Fim da config*/
 /* Config individual*/
-
-
 footer nav{
     border-top: 0;
     border-bottom: 5px solid #416DB3;
