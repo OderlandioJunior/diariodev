@@ -13,6 +13,9 @@ html, body {
 }
 /* Config header */
 header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
     background-color: #2B4985;
     text-align: center;
 }
@@ -101,10 +104,8 @@ p {
 code {
     padding: 2px 6px;
     background: #3D484D;
-    border-radius: 10px;
-    border: 2px solid #EEAF14;
+    border-radius: 5px;
     color: #EEAF14;
-    text-shadow: 0px 0px 3px #EEAF14;
 }
 
 pre {
