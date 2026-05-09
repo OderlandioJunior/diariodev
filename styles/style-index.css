@@ -90,7 +90,7 @@ nav a:hover {
 /* Fim da config */
 /* Config conteúdo */
 section {
-    margin: 2em auto;
+    margin: 1.5em auto;
     padding: .8em;
     background-color: #262B33;
     border: 5px solid #3D484D;
@@ -164,6 +164,7 @@ figcaption:hover {
 }
 
 footer {
+    margin-top: 3em;
     background-color: #2B4985;
 }
 /* Fim da config */
@@ -262,8 +263,8 @@ footer {
     margin-bottom: 2em;
 }
 
-
 footer nav{
+    margin: 0;
     border-top: 0;
     border-bottom: 5px solid #416DB3;
     box-shadow: 0px 1px 5px #416DB3;
