@@ -70,6 +70,10 @@ main header {
 article, .code, .video {
     margin: 1em auto;
     padding: .8em;
+    /*
+    Config para media query: 
+    max-width: 80%;
+    */
     background-color: #262B33;
     border: 5px solid #3D484D;
     border-radius: 15px;
@@ -104,8 +108,8 @@ code {
 }
 
 pre {
-    background-color: #1e1e1e; /* Um tom escuro tipo VS Code */
     padding: 1em;
+    background-color: #1e1e1e; /* Um tom escuro tipo VS Code */
     border-radius: 8px;
     color: #EEAF14;
     overflow-x: auto; /* Permite scroll lateral se o código for grande */
@@ -113,35 +117,42 @@ pre {
     tab-size: 4; 
     white-space: pre; /* Mantém espaços mas evita que o texto fuja da tela */
 }
-pre code {
-    display: block;
-    margin-left: -100px;
-    padding: 0;
-    background: transparent;
-    border: none;
-    text-shadow: none;
-}
 /* Para remover o excesso de espaços no início das linhas */
 
 .video iframe {
-    overflow: hidden;
-    border: none;
+    width: 100%;
+    height: 100%;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
-    max-width: 100%;
-    height: 254px;
 }
 
 footer {
     background-color: #2B4985;
+    margin-top: 2.5em;
 }
 /* Fim da config*/
 /* Config individual*/
+pre code {
+    display: block;
+    margin-left: -145px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    text-shadow: none;
+    font-size: 1.3em;
+}
+
 .video {
-    height: auto;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.video p, .code p {
+    text-indent: 0;
 }
 
 footer nav{
+    margin: 0;
     border-top: 0;
     border-bottom: 5px solid #416DB3;
     box-shadow: 0px 1px 5px #416DB3;
