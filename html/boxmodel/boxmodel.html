@@ -25,19 +25,6 @@
             <p>No desenvolvimento frontend, entender que "tudo é uma caixa" é a chave para o domínio do layout. Mesmo que um elemento pareça circular no navegador, ele reside dentro de uma fronteira retangular definida pelo CSS Box Model. No entanto, antes de aplicar estilos complexos, é preciso compreender como o HTML organiza essas caixas por padrão através do "Normal Flow" (Fluxo Normal).</p>
         </article>
         <article>
-            <h3>Componentes da Caixa no Contexto HTML</h3>
-            <p>Cada elemento gera uma caixa que consiste em quatro áreas distintas:</p>
-            <ol>
-                <li>Margin (Margem): Espaço externo que separa a caixa de seus vizinhos.</li>
-                <li>Height (Altura):</li>
-                <li>Width: (Largura):</li>
-                <li>Padding (Preenchimento): Espaço interno entre o conteúdo e a borda.</li>
-                <li>Border (Borda): A linha que delimita a caixa.</li>
-                <li>Outline (Contorno): </li>
-                <li>Content (Conteúdo): Onde o texto ou imagem reside.</li>
-            </ol>
-        </article>
-        <article>
             <h3>Comportamento de Bloco vs. Em Linha</h3>
             <p>O HTML categoriza os elementos com base em como eles se comportam no fluxo da página:</p>
             <ul>
@@ -67,38 +54,40 @@
                 <li>Listas: Os itens de lista (<code>&lt;li&gt;</code>) só podem ser filhos diretos de uma lista ordenada (<code>&lt;ol&gt;</code>) ou desordenada (<code>&lt;ul&gt;</code>). Aninhar uma <code>&lt;div&gt;</code> diretamente como filha de um <code>&lt;ul&gt;</code> é uma violação estrutural grave.</li>
             </ol>
         </article>
+        <article class="video">
+            <h3>Aprofundando o Conhecimento</h3>
+            <p>Para visualizar esses conceitos em ação e entender detalhes de renderização, assista à aula completa do mestre Gustavo Guanabara:</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/HaSgt1hK2Fs?si=ejFZxiyShrGsKUIA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </article>
         <section class="code">
             <h3>Colocando a mão na massa</h3>
             <p>Analisar o código "bruto" é fundamental para compreender como a sintaxe se transforma em estrutura e como as boas práticas de indentação e semântica facilitam a manutenção do projeto a longo prazo.</p>
-            <pre><code>
-                &lt;main&gt;
-                    &lt;header&gt;
+<pre><code>&lt;main&gt;
+    &lt;header&gt;
 
-                    &lt;/header&gt;
-                    &lt;article&gt;
+    &lt;/header&gt;
+    &lt;article&gt;
 
-                    &lt;/article&gt;
-                    &lt;section&gt;
+    &lt;/article&gt;
+    &lt;section&gt;
 
-                    &lt;/section&gt;
-                    &lt;aside&gt;
+    &lt;/section&gt;
+    &lt;aside&gt;   
 
-                    &lt;/aside&gt;
-                    &lt;footer&gt;
+    &lt;/aside&gt;
+    &lt;footer&gt;
 
-                    &lt;/footer&gt;
-                &lt;/main&gt;
-            </code></pre>
-        </section>
-        <section class="video">
-            <h3>Aprofundando o Conhecimento</h3>
-            <p>Para visualizar esses conceitos em ação e entender detalhes de renderização, assista à aula completa do mestre Gustavo Guanabara:</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/3ZFYXkzXhqE?si=3S-MGN0Rw4cErwK9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    &lt;/footer&gt;
+&lt;/main&gt;</code></pre>
         </section>
     </main>
     <footer>
         <nav>
-            <a href="">GitHub</a> <a href="">E-mail</a> <a href="">LinkedIn</a>
+            <ul>
+                <li><a href="">GitHub</a></li>
+                <li><a href="">E-mail</a></li>
+                <li><a href="">LinkedIn</a></li>
+            </ul>
         </nav>
         <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.</p>
     </footer>

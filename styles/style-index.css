@@ -141,6 +141,10 @@ ol {
     margin: 0 1em;
 }
 
+li {
+    font-size: 1.1em;
+}
+
 figcaption { /* Deu trabalho fazer essa porr* */
     position: absolute;
     top: 0px;
@@ -260,7 +264,7 @@ footer {
     margin-top: -8px;
 }
 .nivel > li:last-child .passo {
-    margin-bottom: 2em;
+    margin-bottom: 1.3em;
 }
 
 footer nav{

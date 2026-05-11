@@ -24,7 +24,7 @@ header h1 {
     padding: .5em 0 .1em 0;
     color: #FBDB9E;
     font-family:'Press Start 2P', Courier, monospace;
-    font-size: 2.3em;
+    font-size: 2em;
     text-shadow: 0px 2px 5px black;
 }
 
@@ -35,7 +35,7 @@ header p {
 
 nav {
     background-color: #262B33;
-    margin-top: 1em;
+    margin-top: .6em;
     padding: 10px 0;
     border-top: 5px solid #416DB3;
     box-shadow: 0px -1px 5px #416DB3;
@@ -53,6 +53,7 @@ nav ul {
 nav a {
     text-decoration: none;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: .9em;
     color: #FCFDF8;
     padding: 5px;
 }
@@ -89,23 +90,37 @@ h2, h3, h4{
     margin-bottom: .2em;
 }
 
-h3 {
-    font-size: 1.5em;
-}
-
 p {
     color: #EBEDEA;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1.2em;
+    font-size: 1em;
     text-indent: 1em;
+    line-height: 1.5em;
     padding-bottom: 10px;
 }
 
-ol, ul {
-    margin: 0 1em;
-    color: #EBEDEA;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1.2em;
+table {
+    width: 100%;
+    margin: 10px 0;
+    border-collapse: separate;
+    border-radius: 15px;
+    background-color: #262B33;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+
+th, td {
+    border: 1px solid #3D484D;
+    padding: 15px 12px;
+    text-align: center;
+}
+
+.video iframe {
+    margin-bottom: 1em;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
 }
 
 code {
@@ -116,33 +131,38 @@ code {
 }
 
 pre {
+    margin-bottom: .8em;
     padding: 1em;
-    background-color: #1e1e1e; /* Um tom escuro tipo VS Code */
+    background-color: #1e1e1e;
     border-radius: 8px;
     color: #EEAF14;
-    overflow-x: auto; /* Permite scroll lateral se o código for grande */
-    /* A MÁGICA ESTÁ AQUI: */
-    tab-size: 4; 
-    white-space: pre; /* Mantém espaços mas evita que o texto fuja da tela */
-}
-/* Para remover o excesso de espaços no início das linhas */
-
-.video iframe {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+    overflow-x: auto;
 }
 
 footer {
     background-color: #2B4985;
-    margin-top: 2.5em;
+    margin-top: 2em;
 }
 /* Fim da config*/
 /* Config individual*/
+h3 {
+    font-size: 1.5em;
+}
+
+main ol, ul {
+    margin: 0 1em;
+    color: #EBEDEA;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}   main li {
+    padding-bottom: .6em;
+    font-size: 1em;
+}
+
+pre:last-child {
+    margin-bottom: 0;
+}
+
 pre code {
-    display: block;
-    margin-left: -145px;
     padding: 0;
     background: transparent;
     border: none;
@@ -150,13 +170,26 @@ pre code {
     font-size: 1.3em;
 }
 
+th {
+    background-color: #2B4985; /* Cor do seu header */
+    color: #FBDB9E; /* Amarelo do seu h1 */
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-family: 'Source Code Pro', Courier, monospace;
+    font-weight: bold;
+}   td {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1em;
+    color: #EBEDEA;
+}
+
 .video {
     width: 100%;
     aspect-ratio: 16 / 9;
-}
-
-.video p, .code p {
+}   .video p, .code p {
     text-indent: 0;
+}   .video > iframe:last-child {
+    margin-bottom: 0;
 }
 
 footer nav{
@@ -164,8 +197,7 @@ footer nav{
     border-top: 0;
     border-bottom: 5px solid #416DB3;
     box-shadow: 0px 1px 5px #416DB3;
-}
-footer p{
+}   footer p{
     color: #FBDB9E;
     text-align: center;
     padding: .5em 0;
