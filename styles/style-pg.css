@@ -99,19 +99,23 @@ p {
     padding-bottom: 10px;
 }
 
+.table {
+    margin: auto;
+    background-color: #262B33;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+    overflow-x: auto;
+}
+
 table {
     width: 100%;
-    margin: 10px 0;
     border-collapse: separate;
-    border-radius: 15px;
-    background-color: #262B33;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
-    overflow: hidden;
+
 }
 
 th, td {
     border: 1px solid #3D484D;
-    padding: 15px 12px;
+    padding: .5em 1em;
     text-align: center;
 }
 
