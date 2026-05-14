@@ -3,60 +3,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
-/* 
-Oque eu preciso configurar? 
-- header (#2B4985), h1 (#FBDB9E), p (#A8B6D9)
-- nav (#262B33), ul, li, a (#FCFDF8)
-
-- body (#5B6370), main, #intro, h2 (#A8B6D9), p, section (#262B33)
-- #perfil, .detalhes, figure, img, .card
-- #estudo, .header, h2, .info-img, i, figure, img, figcaption
-- .nivel, li, .progresso, h3, figure, img, .passo, li, a
-
-- footer (#262B33), nav, ul, li, a (#86B6E4), p
-
-
-border: 4px solid transparent;
-background: linear-gradient(#262B33, #5B6370) padding-box, linear-gradient(to top, #EEAF14, #2E8C4B) border-box;
-
-Verde: #2E8C4B
-Amarelo: #EEAF14
-*/
-
+/* Configuração da página */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html, body {
+}html, body {
     scroll-behavior: smooth;
     background-color: #5B6370;
 }
+/* Fim da configuração */
 
-/* Config Header */
+/* Configuração do header */
 header {
     position: sticky;
     top: 0;
     z-index: 1;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 1);
+    box-shadow: 0px 2px 10px black;
     background-color: #2B4985;
     text-align: center;
 }
+/* Fim da configuração */
 
-header h1 {
-    padding: .5em 0 .1em 0;
-    color: #FBDB9E;
-    font-family:'Press Start 2P', Courier, monospace;
-    font-size: 2.3em;
-    text-shadow: 0px 2px 5px black;
-}
-
-header p {
-    color: #A8B6D9;
-    font-family: 'Source Code Pro', Courier, monospace;
-}
-
+/* Configuração do nav */
 nav {
     background-color: #262B33;
     margin-top: .6em;
@@ -64,45 +33,39 @@ nav {
     border-top: 5px solid #416DB3;
     box-shadow: 0px -1px 5px #416DB3;
 }
-
-nav ul {
-    list-style-type: none;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
+footer nav{
+    margin: 0;
+    border-top: 0;
+    border-bottom: 5px solid #416DB3;
+    box-shadow: 0px 1px 5px #416DB3;
 }
+/* Fim da configuração */
 
-nav a {
-    text-decoration: none;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: .9em;
-    color: #FCFDF8;
-    padding: 5px;
-}
-
-nav a:hover {
-    border-bottom: 3px solid #2E8C4B;
-    border-top: 3px solid #2E8C4B;
-    text-shadow: 0px 0px 8px #9BD89C;
-    color: #9BD89C;
-}
-/* Fim da config */
-/* Config conteúdo */
-section {
-    margin: 1.5em auto;
-    padding: .8em;
-    background-color: #262B33;
-    border: 5px solid #3D484D;
-    border-radius: 15px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
-}
-
-h2, h3{
+/* Configuração das palavras*/
+h1 {
+    padding: .5em 0 .2em 0;
+    color: #FBDB9E;
+    font-family:'Press Start 2P', Courier, monospace;
+    text-shadow: 0px 2px 5px black;
+}h2, h3{
     color: #DBE6D6;
     font-family: 'Source Code Pro', Courier, monospace;
     margin-bottom: .2em;
+}#intro h2, #perfil h2 {
+    text-align: center;
+}.header h3 {
+    margin: 0;
+    font-size: 1.5em;
+}.progresso h4 {
+    padding: 8px;
+    flex-grow: 1;
+    font-family: 'Source Code Pro', Courier, monospace;
+    font-size: 1.2em;
+    color: #DBE6D6;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    background: linear-gradient(#262B33) padding-box, linear-gradient(to left, #EEAF14, #2E8C4B) border-box;
+    box-shadow: 1px 1px 5px #EEAF14;
 }
 
 p {
@@ -110,103 +73,69 @@ p {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-indent: 1em;
     padding-bottom: 8px;
+}header p {
+    color: #A8B6D9;
+    font-family: 'Source Code Pro', Courier, monospace;
+    font-size: .9em;
+}footer p{
+    color: #FBDB9E;
+    text-align: center;
+    padding: .5em 0;
 }
+/* Fim da configuração */
 
-figure {
-    margin-bottom: .5em;
-    width: 100%;
-    border-radius: 15px;
-}
-
-img {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-}
-
+/* Configuração dos links */
 a {
     text-decoration: none;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #9BD89C;
-}
-
-a:hover {
-    border-bottom: 1px solid #2E8C4B;
+}a:hover {
     text-shadow: 0px 0px 8px #2E8C4B;
     color: #2E8C4B;
+}nav a {
+    color: #FCFDF8;
+    padding: 5px;
+}nav a:hover {
+    border-bottom: 3px solid #2E8C4B;
+    border-top: 3px solid #2E8C4B;
+    text-shadow: 0px 0px 8px #9BD89C;
+    color: #9BD89C;
 }
+/* Fim da configuração */
 
-ol {
-    list-style-type: none;
-    margin: 0 1em;
-}
-
-li {
-    font-size: 1.1em;
-}
-
-figcaption { /* Deu trabalho fazer essa porr* */
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    width: 100%;
+/* Configuração div.card */
+.card {
+    margin: .5em auto;
     display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
-    align-items: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: bold;
-    text-align: center;
-    color: #EEAF14;
-    opacity: .1;
-    transition: ease-in-out .3s;
-    cursor: help;
-    }
-figcaption:hover {
-    opacity: 1;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-footer {
-    margin-top: 3em;
-    background-color: #2B4985;
-}
-/* Fim da config */
-/* Config individual */
-#intro h2, #perfil h2 {
-    text-align: center;
-    font-size: 2em;
-}
-#estudo h2 {
-    font-size: 2.2em;
-}
-#proposito h2 {
-    font-size: 1.6em;
-}
-
-#perfil figure {
+    align-items: flex-start;
+}.card picture{
+    width: 100%;
+    height: auto;
     overflow: hidden;
-}
-.card figure{
+    border-radius: 10px;
+}.card img {
+    width: 100%;
+    height: 100%;
     border: 4px solid transparent;
+    border-radius: 10px;
     background: linear-gradient(to top, #EEAF14, #2E8C4B) border-box;
 }
 
-.header {
+.card2 {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    padding: .5em;
-    border-radius: 10px;
-    border: 3px solid transparent;
-    background: linear-gradient(#262B33) padding-box, linear-gradient(to left, #EEAF14, #2E8C4B) border-box;
-    box-shadow: 1px 0px 5px #EEAF14;
+    gap: 8px;
 }
-.header h3 {
-    margin: 0;
-    font-size: 1.5em;
-}
+
+/* Fim da configuração */
+
+
+
+
 .info-img {
     display: flex;
     flex-flow: row nowrap;
@@ -223,6 +152,52 @@ footer {
     position: relative;
     width: 100px;
 }
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+section {
+    margin: 1.5em auto;
+    padding: .8em;
+    background-color: #262B33;
+    border: 5px solid #3D484D;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+}
+
+ol {
+    list-style-type: none;
+    margin: 0 1em;
+}
+
+li {
+    font-size: 1.1em;
+}
+
+footer {
+    margin-top: 3em;
+    background-color: #2B4985;
+}
+
+.header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5em;
+    border-radius: 10px;
+    border: 3px solid transparent;
+    background: linear-gradient(#262B33) padding-box, linear-gradient(to left, #EEAF14, #2E8C4B) border-box;
+    box-shadow: 1px 0px 5px #EEAF14;
+}
+
+
 .progresso {
     display: flex;
     flex-flow: row nowrap;
@@ -230,17 +205,7 @@ footer {
     align-items: center;
     gap: 15px;
 }
-.progresso h4 {
-    padding: 8px;
-    flex-grow: 1;
-    font-family: 'Source Code Pro', Courier, monospace;
-    font-size: 1.2em;
-    color: #DBE6D6;
-    border: 3px solid transparent;
-    border-radius: 10px;
-    background: linear-gradient(#262B33) padding-box, linear-gradient(to left, #EEAF14, #2E8C4B) border-box;
-    box-shadow: 1px 1px 5px #EEAF14;
-}
+
 .nivel > li:first-child {
     margin-top: -14px;
 }
@@ -267,15 +232,5 @@ footer {
     margin-bottom: 1.3em;
 }
 
-footer nav{
-    margin: 0;
-    border-top: 0;
-    border-bottom: 5px solid #416DB3;
-    box-shadow: 0px 1px 5px #416DB3;
-}
-footer p{
-    color: #FBDB9E;
-    text-align: center;
-    padding: .5em 0;
-}
+
 /* Fim da config */
