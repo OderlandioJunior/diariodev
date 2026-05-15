@@ -73,6 +73,16 @@ p {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-indent: 1em;
     padding-bottom: 8px;
+}.card p:last-child{
+    padding: 0;
+    text-indent: 0;
+    text-align: justify;
+    line-height: 1.3em;
+}.card2 p {
+    padding: 5px;
+    line-height: 1.4em;
+    text-indent: 0px;
+    text-align: justify;
 }header p {
     color: #A8B6D9;
     font-family: 'Source Code Pro', Courier, monospace;
@@ -103,16 +113,26 @@ a {
 }
 /* Fim da configuração */
 
-/* Configuração div.card */
+/* Configuração da sessão */
+section {
+    margin: 1.5em auto;
+    padding: .8em;
+    background-color: #262B33;
+    border: 5px solid #3D484D;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+}
+/* Fim da configuração */
+
+/* Configuração das divs */
 .card {
-    margin: .5em auto;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: flex-start;
-}.card picture{
+}.card figure{
     width: 100%;
-    height: auto;
+    margin: .5em auto;
     overflow: hidden;
     border-radius: 10px;
 }.card img {
@@ -122,37 +142,45 @@ a {
     border-radius: 10px;
     background: linear-gradient(to top, #EEAF14, #2E8C4B) border-box;
 }
-
 .card2 {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
     align-items: center;
-    gap: 8px;
+}.card2 figure{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}.card2 img {
+    height: 100%;
+    width: 100%;
+    border: 4px solid transparent;
+    border-radius: 10px;
+    background: linear-gradient(to top, #EEAF14, #2E8C4B) border-box;
 }
-
-/* Fim da configuração */
-
-
-
-
-.info-img {
+.header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5em;
+    border-radius: 10px;
+    border: 3px solid transparent;
+    background: linear-gradient(#262B33) padding-box, linear-gradient(to left, #EEAF14, #2E8C4B) border-box;
+    box-shadow: 1px 0px 5px #EEAF14;
+}.info-img {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
     gap: 10px;
-}
-.info-img i {
+}.info-img i {
     color: #EBEDEA;
     cursor: help;
+}.info-img figure {
 }
-.info-img figure {
-    margin-bottom: 0px;
-    position: relative;
-    width: 100px;
-}
-
+/* Fim da configuração */
 nav ul {
     list-style-type: none;
     display: flex;
@@ -160,15 +188,6 @@ nav ul {
     justify-content: center;
     align-items: center;
     gap: 15px;
-}
-
-section {
-    margin: 1.5em auto;
-    padding: .8em;
-    background-color: #262B33;
-    border: 5px solid #3D484D;
-    border-radius: 15px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
 }
 
 ol {
@@ -185,17 +204,7 @@ footer {
     background-color: #2B4985;
 }
 
-.header {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: .5em;
-    border-radius: 10px;
-    border: 3px solid transparent;
-    background: linear-gradient(#262B33) padding-box, linear-gradient(to left, #EEAF14, #2E8C4B) border-box;
-    box-shadow: 1px 0px 5px #EEAF14;
-}
+
 
 
 .progresso {
@@ -231,6 +240,6 @@ footer {
 .nivel > li:last-child .passo {
     margin-bottom: 1.3em;
 }
-
+#perfil > 
 
 /* Fim da config */
