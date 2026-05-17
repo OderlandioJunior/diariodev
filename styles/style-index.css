@@ -79,6 +79,8 @@ p {
     text-align: justify;
     line-height: 1.3em;
 }.card2 p {
+    width: 80%;
+    height: auto;
     padding: 5px;
     line-height: 1.4em;
     text-indent: 0px;
@@ -121,11 +123,7 @@ section {
     border: 5px solid #3D484D;
     border-radius: 15px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
-}
-/* Fim da configuração */
-
-/* Configuração das divs */
-.card {
+}.card {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -148,8 +146,8 @@ section {
     justify-content: space-evenly;
     align-items: center;
 }.card2 figure{
-    width: 100%;
-    height: 100%;
+    width: 20%;
+    height: auto;
     overflow: hidden;
     border-radius: 10px;
 }.card2 img {
@@ -169,17 +167,28 @@ section {
     border: 3px solid transparent;
     background: linear-gradient(#262B33) padding-box, linear-gradient(to left, #EEAF14, #2E8C4B) border-box;
     box-shadow: 1px 0px 5px #EEAF14;
-}.info-img {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
 }.info-img i {
     color: #EBEDEA;
     cursor: help;
 }.info-img figure {
+    position: relative;
+}.info-img figcaption{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 5px;
+    font-family: 'Source Code Pro', Courier, monospace;
+    font-size: .8em;
+    color: #FBDB9E;
+    
+
+}.info-img figcaption:hover {
+    background-color: rgba(92, 100, 112, .5);
 }
+
+
 /* Fim da configuração */
 nav ul {
     list-style-type: none;
@@ -240,6 +249,5 @@ footer {
 .nivel > li:last-child .passo {
     margin-bottom: 1.3em;
 }
-#perfil > 
 
 /* Fim da config */
