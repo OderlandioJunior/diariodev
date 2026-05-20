@@ -171,7 +171,7 @@ section {
     position: absolute;
     top: 0px;
     right: -1px;
-    z-index: 2;
+    z-index: 1;
 }.info-img figure {
     position: relative;
 }.info-img figcaption{
@@ -182,7 +182,7 @@ section {
     position: absolute;
     top: 0px;
     left: 0px;
-    z-index: 1;
+    z-index: 2;
     font-family: 'Source Code Pro', Courier, monospace;
     font-size: .8em;
     color: #FBDB9E;
@@ -191,9 +191,7 @@ section {
     cursor: help;
 }.info-img figcaption:hover {
     background-color: rgba(92, 100, 112, .5);
-    opacity: 1;;
-}.nivel > li:first-child {
-    margin-top: -16px;
+    opacity: 1;
 }.progresso {
     display: flex;
     flex-flow: row nowrap;
@@ -201,32 +199,32 @@ section {
     align-items: center;
     gap: 15px;
 }.progresso figure {
-    margin: 0;
-    padding: 2px;
-    width: fit-content;
+    width: 14%;
     height: auto;
+    overflow: hidden;
     border: 3px solid #EEAF14;
     border-radius: 10px;
     box-shadow: inset 0px 0px 8px #EEAF14;
-}.nivel > li:first-child .progresso figure {
-    margin-top: 13px;
+}.progresso img {
+    width: 100%;
+    height: 100%;
+}
+/*
+.progresso > figure:first-child {
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-}
-.nivel > li:first-child .passo {
-    margin-top: -4px;
-}.nivel > li:last-child .passo {
-    margin-bottom: 1em;
-}
+*/
 /* Fim da configuração */
 
-footer {
-    margin-top: 3em;
-    background-color: #2B4985;
+/* Configuração das listas */
+ol {
+    color: #9BD89C;
+    margin-left: 2.5em;
+    margin-bottom: .6em;
 }
-nav ul {
+ul {
     list-style-type: none;
     display: flex;
     flex-flow: row nowrap;
@@ -234,13 +232,13 @@ nav ul {
     align-items: center;
     gap: 15px;
 }
-
-ol {
-    list-style-type: none;
-    margin: 0 1em;
-}
-
 li {
     font-size: 1.1em;
 }
+/* Fim da configuração */
+footer {
+    margin-top: 3em;
+    background-color: #2B4985;
+}
+
 
