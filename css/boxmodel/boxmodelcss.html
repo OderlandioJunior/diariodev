@@ -3,36 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/style-pg.css">
     <title>Modelo de Caixa</title>
 </head>
 <body>
     <header>
+        <h1>Diário DEV</h1>
+        <p>Por Oderlândio Júnior</p>
         <nav>
             <ul>
                 <li><a href="../../index.html" target="" rel="">Página principal</a></li>
                 <!-- i > bars -->
-                <li><a href="../seletores/seletores.html" target="" rel="">Artigo anterior</a></li>
-                <li><a href="../estilo/estilo.html">Próximo Artigo</a></li>
+                <li><a href="../contornos/contornos.html">Próximo Artigo</a></li>
             </ul>
         </nav>
-        <h1>Diário DEV</h1>
-        <span>Por Oderlândio Júnior</span>
     </header>
     <main>
-        <header>
+        <article class="header">
             <h2>Modelo de Caixa (Box Model)</h2>
             <p>Se você acompanhou a seção de HTML, viu que usamos tags para estruturar o conteúdo. O que talvez você não tenha percebido é que, para o navegador, <strong>cada uma daquelas tags é, na verdade, uma caixa.</strong></p>
             <p>Desde um simples <code>&lt;span&gt;</code> até um grande <code>&lt;main&gt;</code>, tudo o que você coloca na tela é tratado como um retângulo. O <strong>Box Model</strong> é a regra do CSS que define como o tamanho dessas caixas é calculado e como elas interagem umas com as outras.</p>
-        </header>
-        <article>
-            <h3>Componentes da Caixa no Contexto HTML</h3>
-            
-        </article>
-
-        <article>
-            <h3>Notas no Código: O poder dos Comentários</h3>
-            <p>Mas, antes de entendermos como essas caixas se comportam, precisamos aprender a "conversar" com o código de forma organizada. No CSS, usamos <code>/* */</code> para escrever anotações que o navegador ignora</p>
-            <p><strong>Por que isso é importante?</strong> Porque o CSS pode ficar gigante. Comentários servem para separar seções (<code>ex: /* Estilo do Menu */</code>), explicar por que você usou um valor específico ou até "esconder" uma regra temporariamente para testes. Um código bem comentado é o sinal de um desenvolvedor profissional.</p>
         </article>
         <article>
             <h3>As 4 Camadas da Caixa</h3>
@@ -50,21 +40,25 @@
         <article>
             <h3>A Anatomia no Código</h3>
             <p>No CSS, controlamos cada parte assim:</p>
-            <pre>
-                <code>
-                    main {
-                        box-sizing: border-box; /* Largura e altura total*/
+            <pre><code>main {
+    box-sizing: border-box;
+    /* Largura e altura total*/
 
-                        height: 300px;          /* Altura do Conteúdo */
-                        width: 300px;           /* Largura do Conteúdo */
+    height: 300px;
+    /* Altura do Conteúdo */
+    
+    width: 300px;
+    /* Largura do Conteúdo */
 
-                        margin: 50px;           /* Distância externa */
-                        padding: 20px;          /* Espaço interno */
+    margin: 50px;
+    /* Distância externa */
+    
+    padding: 20px;
+    /* Espaço interno */
 
-                        border: 5px solid;      /* Espessura da borda */
-                        }
-                </code>
-            </pre>
+    border: 5px solid;
+    /* Espessura da borda */
+    }</code></pre>
         </article>
         <article>
             <h3>O Controle Total com Box-sizing</h3>
@@ -144,12 +138,20 @@
             </li>
         </ul>
         </article>
+        <article class="video">
+            <h3>Aprofundando o Conhecimento</h3>
+            <p>Para visualizar esses conceitos em ação e entender detalhes de renderização, assista à aula completa do mestre Gustavo Guanabara:</p>
+        </article>
     </main>
     <footer>
         <nav>
-            <a href="">GitHub</a> <a href="">E-mail</a> <a href="">LinkedIn</a>
+            <ul>
+                <li><a href="">GitHub</a></li>
+                <li><a href="">E-mail</a></li>
+                <li><a href="">LinkedIn</a></li>
+            </ul>
         </nav>
-        Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.
+        <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.</p>
     </footer>
 </body>
 </html>

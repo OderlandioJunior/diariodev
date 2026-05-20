@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/style-pg.css">
     <title>Contornos</title>
 </head>
 <body>
     <header>
+        <h1>Diário DEV</h1>
+        <p>Por Oderlândio Júnior</p>
         <nav>
             <ul>
                 <li><a href="../../index.html" target="" rel="">Página principal</a></li>
                 <!-- i > bars -->
+                <li><a href="../boxmodel/boxmodelcss.html">Artigo anterior</a></li>
                 <li><a href="../fundo/fundo.html" target="" rel="">Próximo artigo</a></li>
             </ul>
         </nav>
-        <h1>Diário DEV</h1>
-        <span>Por Oderlândio Júnior</span>
     </header>
     <main>
-        <header>
+        <article class="header">
             <h2>Geometria e Profundidade: A Estrutura Visual Além do Plano</h2>
             <p>Se a tipografia cuida da mensagem, as propriedades de contorno e relevo cuidam da <strong>percepção espacial</strong>. No design de interfaces, definir onde um elemento termina e onde a profundidade começa é o que separa um layout simples de uma interface moderna e intuitiva.</p>
             <p>Nesta seção do <strong>Diário DEV</strong>, exploramos a tríade visual do CSS: a <strong>borda</strong> como limite físico, o <strong>outline</strong> como ferramenta de acessibilidade e as <strong>sombras</strong> como geradoras de volume. O objetivo é dominar como essas camadas interagem com o Box Model para criar hierarquia, foco e um senso de tridimensionalidade que guia o olhar do usuário.</p>
-        </header>
+        </article>
         <article>
             <h3>Molduras</h3>
             <p>Embora pareçam iguais, essas duas propriedades se comportam de <strong>formas</strong> completamente diferentes no espaço do seu site.</p>
@@ -94,7 +96,7 @@
         <article>
             <h4>O Relevo das Palavras (<code>text-shadow</code>)</h4>
             <p>Se o <code>box-shadow</code> cria sombra na caixa (o papel), o <code>text-shadow</code> cria sombra na tinta (a letra). Esta propriedade é fundamental para garantir que o texto seja legível quando está sobre imagens ou fundos com muitas cores.</p>
-            <strong>A Estrutura da Sombra de Texto</strong>
+            <h4>A Estrutura da Sombra de Texto</h4>
             <p>Tal como na sombra da caixa, aqui defines quatro valores essenciais:</p>
             <ul>
                 <li>
@@ -110,9 +112,9 @@
                     <strong>Cor</strong>: Define a cor da sombra (geralmente usamos <code>rgba</code> para controlar a transparência).
                 </li>
             </ul>
-            <strong>Diferença Crucial</strong>: Sem "Spread"
+            <h4>Diferença Crucial: Sem "Spread"</h4>
             <p>Diferente do <code>box-shadow</code>, o <code>text-shadow</code> <strong>não tem o quarto valor numérico</strong> (o <em>spread</em> ou <em>expansão</em>). Ele foca apenas na posição e no desfoque.</p>
-            <strong>Aplicações Práticas</strong>:
+            <h4>Aplicações Práticas:</h4>
             <ul>
                 <li>
                     <strong>Legibilidade</strong>: Uma sombra preta muito suave (<code>1px 1px 2px rgba(0,0,0,0.5)</code>) ajuda a destacar textos claros em fundos complexos.
@@ -140,41 +142,52 @@
                 </li>
             </ul>
         </article>
+        <article class="video">
+            <h3>Aprofundando o Conhecimento</h3>
+            <p>Para visualizar esses conceitos em ação e entender detalhes de renderização, assista à aula completa do mestre Gustavo Guanabara:</p>
+        </article>
         <section class="code">
             <h3>Colocando a mão na massa</h3>
             <p>Analisar o código "bruto" é fundamental para compreender como a sintaxe se transforma em estrutura e como as boas práticas de indentação e semântica facilitam a manutenção do projeto a longo prazo.</p>
-            <pre><code>
-                article{
-                    border: 2px solid black;
-                    border-radius: 15px;
+<pre><code>article{
+    border: 2px solid black;
+    border-radius: 15px;
 
-                    outline: 2px solid blue;
+    outline: 2px solid blue;
 
-                    box-shadow: 5px 5px 10px 2px gray inset;
-                    /* 
-                    box-shadow: [deslocamento horizontal] [deslocamento vertical] [desfoque] [propagação] [cor] [posição];
-                    */
-                }
+    box-shadow: 5px 5px 10px 2px gray inset;
+    /* 
+    box-shadow: 
+    [deslocamento horizontal]
+    [deslocamento vertical]
+    [desfoque]
+    [propagação] [cor]
+    [posição];
+    */
+}
 
-                h1 {
-                    border-bottom: 2px solid black;
-                    text-shadow: 2px 4px 5px gray;
-                    /*
-                    text-shadow: [deslocamento horizontal] [deslocamento vertical] [desfoque] [cor];
-                    */
-                }
-            </code></pre>
-            </section>
-        <section class="video">
-            <h3>Aprofundando o Conhecimento</h3>
-            <p>Para visualizar esses conceitos em ação e entender detalhes de renderização, assista à aula completa do mestre Gustavo Guanabara:</p>
+h1 {
+    border-bottom: 2px solid black;
+    text-shadow: 2px 4px 5px gray;
+    
+    /*
+    text-shadow: 
+    [deslocamento horizontal] 
+    [deslocamento vertical] 
+    [desfoque] [cor];
+    */
+}</code></pre>
         </section>
     </main>
     <footer>
         <nav>
-            <a href="">GitHub</a> <a href="">E-mail</a> <a href="">LinkedIn</a>
+            <ul>
+                <li><a href="">GitHub</a></li>
+                <li><a href="">E-mail</a></li>
+                <li><a href="">LinkedIn</a></li>
+            </ul>
         </nav>
-        Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.
+        <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.</p>
     </footer>
 </body>
 </html>

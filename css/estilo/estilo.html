@@ -3,26 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/style-pg.css">
     <title>Estilização</title>
 </head>
 <body>
     <header>
+        <h1>Diário DEV</h1>
+        <p>Por Oderlândio Júnior</p>
         <nav>
             <ul>
                 <li><a href="../../index.html" target="" rel="">Página principal</a></li>
                 <!-- i > bars -->
-                <li><a href="../boxmodel/boxmodelcss.html" target="" rel="">Artigo anterior</a></li>
+                <li><a href="../identidade/idclass.html" target="" rel="">Artigo anterior</a></li>
             </ul>
         </nav>
-        <h1>Diário DEV</h1>
-        <span>Por Oderlândio Júnior</span>
     </header>
     <main>
-        <header>
+        <article class="header">
             <h2>Fundamentos de Estilo: A Psicologia das Cores e a Arte da Tipografia</h2>
             <p>A estilização é o processo de definir como as informações serão consumidas pelo usuário. Nesta etapa do <strong>Diário DEV</strong>, mergulhamos no uso estratégico de sistemas de cores (Hexadecimal, RGB/A) e na implementação de fontes personalizadas via <code>@import</code>.</p>
             <p>Dominar as propriedades de texto e cor é fundamental para criar <strong>hierarquia visual</strong>. Aqui, documentamos como ajustar tamanhos, pesos e espaçamentos para garantir que o conteúdo seja não apenas bonito, mas legível e acessível para todos, respeitando as boas práticas de contraste e ergonomia digital.</p>
-        </header>
+        </article>
         <article>
             <h3>Onde as Cores e Fontes Nascem</h3>
             <p>Antes de pintar, precisamos entender os "baldes de tinta" e como trazer novas ferramentas para o nosso trabalho.</p>
@@ -74,7 +75,7 @@
             </ul>
             <h4>A Cor do Texto (<code>color</code>)</h4>
             <p>A propriedade color é uma das mais simples e poderosas do CSS. Imagine que você está escrevendo em um papel. A propriedade color é a cor da tinta da sua caneta. Ela não pinta o papel, não pinta a mesa; ela define apenas a cor dos caracteres que formam as palavras.</p>
-            <strong>Acessibilidade e Contraste</strong>
+            <h4>Acessibilidade e Contraste</h4>
             <p>No desenvolvimento profissional, escolher a cor do texto não é apenas uma questão estética. Existe um conceito chamado <strong>Contraste de Cor</strong>, que é a diferença de luminosidade entre a cor da letra (<code>color</code>) e a cor que está por trás dela.</p>
             <p>Se o contraste for baixo, você está criando uma barreira técnica para usuários com baixa visão, daltonismo ou até mesmo para alguém tentando ler seu site sob luz solar intensa.</p>
             <ul>
@@ -89,28 +90,30 @@
                 </li>
             </ul>
         </article>
+        <article class="video">
+            <h3>Aprofundando o Conhecimento</h3>
+            <p>Para visualizar esses conceitos em ação e entender detalhes de renderização, assista à aula completa do mestre Gustavo Guanabara:</p>
+        </article>
         <section class="code">
             <h3>Colocando a mão na massa</h3>
             <p>Analisar o código "bruto" é fundamental para compreender como a sintaxe se transforma em estrutura e como as boas práticas de indentação e semântica facilitam a manutenção do projeto a longo prazo.</p>
-            <pre><code>
-                article {
-                    color: black;
-                    font-family: arial, helvetica, sans-serif;
-                    font-size: 1.2em;
-                    font-weight: normal;
-                }
-            </code></pre>
+<pre><code>article {
+    color: black;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 1.2em;
+    font-weight: normal;
+}</code></pre>
             </section>
-        <section class="video">
-            <h3>Aprofundando o Conhecimento</h3>
-            <p>Para visualizar esses conceitos em ação e entender detalhes de renderização, assista à aula completa do mestre Gustavo Guanabara:</p>
-        </section>
     </main>
     <footer>
         <nav>
-            <a href="">GitHub</a> <a href="">E-mail</a> <a href="">LinkedIn</a>
+            <ul>
+                <li><a href="">GitHub</a></li>
+                <li><a href="">E-mail</a></li>
+                <li><a href="">LinkedIn</a></li>
+            </ul>
         </nav>
-        Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.
+        <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.</p>
     </footer>
 </body>
 </html>
