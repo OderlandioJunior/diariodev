@@ -3,26 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/style-pg.css">
     <title>Media Queries</title>
 </head>
 <body>
     <header>
+        <h1>Diário DEV</h1>
+        <p>Por Oderlândio Júnior</p>
         <nav>
             <ul>
                 <li><a href="../../index.html" target="" rel="">Página principal</a></li>
                 <!-- i > bars -->
                 <li><a href="../regras/regras.html" target="" rel="">Artigo anterior</a></li>
-                <li><a href="../variaveis/variaveis.html" target="" rel="">Próximo artigo</a></li>
+                <li><a href="../display/display.html" target="" rel="">Próximo artigo</a></li>
             </ul>
         </nav>
-        <h1>Diário DEV</h1>
-        <span>Por Oderlândio Júnior</span>
     </header>
     <main>
-        <header>
+        <article class="header">
             <h2>Media Queries: A Inteligência do Design Responsivo</h2>
             <p>As <strong>Media Queries</strong> são extensões da regra <code>@media</code> que permitem aplicar estilos CSS apenas quando certas condições são atendidas. Elas são a ferramenta definitiva para garantir que um site seja utilizável tanto em um smartphone de 4 polegadas quanto em um monitor UltraWide.</p>
-        </header>
+        </article>
         <article>
             <h3>Anatomia de uma Query</h3>
             <p>Uma Media Query é composta por um <strong>tipo de mídia</strong> (opcional) e uma ou mais <strong>expressões de características</strong> (como a largura da tela).</p>
@@ -30,18 +31,20 @@
                 <li><strong>Tipos de Mídia</strong>: <code>screen</code> (telas), <code>print</code> (impressão) ou <code>all</code> (todos).</li>
                 <li><strong>Operadores Lógicos</strong>: <code>and</code> (une condições), <code>not</code> (nega uma condição) e <code>only</code> (evita bugs em navegadores muito antigos).</li>
             </ul>
-            <section class="code">
-                <h3>A Anatomia no Código</h3>
-                <p>No CSS, controlamos assim:</p>
-                <pre>
-                    /* Se for uma TELA E tiver no máximo 768px de largura */
-                    @media screen and (max-width: 768px) {
-                        .sidebar { display: none; }
-                        .conteudo-principal { width: 100%; }
-                    }
-                </pre>
-            </section>
         </article>
+        <section class="code">
+            <h3>Colocando a mão na massa</h3>
+            <p>Analisar o código "bruto" é fundamental para compreender como a sintaxe se transforma em estrutura e como as boas práticas de indentação e semântica facilitam a manutenção do projeto a longo prazo.</p>
+<pre><code>/* Se for uma TELA E tiver no máximo 768px de largura */
+@media screen and (max-width: 768px) {
+    aside { 
+        display: none; 
+    }
+    main { 
+        width: 100%; 
+    }
+}</code></pre>
+            </section>
         <article>
             <h3>Breakpoints e Estratégia Mobile-First</h3>
             <p>Os <strong>Breakpoints</strong> (pontos de quebra) são as medidas de largura onde o layout "quebra" para se adaptar.</p>
@@ -61,21 +64,16 @@
                 <li><code>hover</code>: Detecta se o usuário possui um ponteiro (mouse) que permite passar o cursor sobre algo. Útil para esconder efeitos de hover em touchscreens.</li>
                 <li><code>prefers-color-scheme</code>: Detecta se o usuário prefere o "Modo Escuro" ou "Modo Claro" nas configurações do sistema operacional.</li>
             </ul>
-            <section class="code">
-                <h3>A Anatomia no Código</h3>
-                <p>No CSS, controlamos assim:</p>
-                <pre>
-                    <code>
-                        @media (prefers-color-scheme: dark) {
-                            body {
-                                background-color: #121212;
-                                color: white;
-                            }
-                        }
-                    </code>
-                </pre>
-            </section>
         </article>
+        <section class="code">
+            <h3>Colocando a mão na massa</h3>
+<pre><code>@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: white;
+    }
+}</code></pre>
+            </section>
         <article>
             <h3>Boas Práticas de Engenharia Responsiva</h3>
             <ul>
@@ -87,7 +85,11 @@
     </main>
     <footer>
         <nav>
-            <a href="">GitHub</a> <a href="">E-mail</a> <a href="">LinkedIn</a>
+            <ul>
+                <li><a href="">GitHub</a></li>
+                <li><a href="">E-mail</a></li>
+                <li><a href="">LinkedIn</a></li>
+            </ul>
         </nav>
         <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.</p>
     </footer>

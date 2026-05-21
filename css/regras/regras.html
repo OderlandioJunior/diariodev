@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/style-pg.css">
     <title>Regras no CSS</title>
 </head>
 <body>
     <header>
+        <h1>Diário DEV</h1>
+        <p>Por Oderlândio Júnior</p>
         <nav>
             <ul>
                 <li><a href="../../index.html" target="" rel="">Página principal</a></li>
@@ -14,14 +17,12 @@
                 <li><a href="../mediaquery/mediaquery.html" target="" rel="">Próximo artigo</a></li>
             </ul>
         </nav>
-        <h1>Diário DEV</h1>
-        <span>Por Oderlândio Júnior</span>
     </header>
     <main>
-        <header>
+        <article class="header">
             <h2>Regras At (<code>@-rules</code>): As Instruções de Comportamento do CSS</h2>
             <p>Diferente dos seletores comuns, as <strong>Regras At</strong> são comandos que instruem o navegador sobre como processar o código CSS em diferentes cenários. Elas sempre começam com o símbolo <code>@</code> seguido por um identificador, e são fundamentais para criar sites responsivos, importar fontes e organizar arquiteturas de código complexas.</p>
-        </header>
+        </article>
         <article>
             <h3>Importação e Codificação</h3>
             <p>Estas regras geralmente ficam no topo do arquivo CSS, pois definem as bases do que será lido a seguir.</p>
@@ -42,74 +43,81 @@
                         <strong>Uso Técnico</strong>: Útil para carregar fontes do Google Fonts ou separar o CSS em arquivos menores (ex: header.css, footer.css).
                     </li>
                 </ul>
-                <ul>
-                    <li>
-                        <strong>Exemplo</strong>: <code>@import url('https://fonts.googleapis.com/css2?family=Roboto')</code>;
-                    </li>
-                </ul>
             </ul>
         </article>
+<section class="code">
+            <h3>Colocando a mão na massa</h3>
+            <p>Analisar o código "bruto" é fundamental para compreender como a sintaxe se transforma em estrutura e como as boas práticas de indentação e semântica facilitam a manutenção do projeto a longo prazo.</p>
+<pre><code>@charset "UTF-8";
+
+@import url('https://...);</code></pre>
+</section>
         <article>
             <h3>Condicionais e Responsividade</h3>
             <p>Aqui é onde o CSS ganha inteligência para se adaptar ao dispositivo do usuário.</p>
             <ul>
                 <li>
-                    <p><code>@media</code>: A regra mais importante para o <strong>Design Responsivo</strong>. Ela permite aplicar estilos apenas se certas condições forem atendidas (como a largura da tela).</p>
-                    <strong>Exemplo</strong>:
-                    <div class="code">
-                        <pre>
-                            @media (max-width: 600px) {
-                                body { background-color: lightblue; }
-                            }
-                        </pre>
-                    </div>
+                    <code>@media</code>:A regra mais importante para o <strong>Design Responsivo</strong>. Ela permite aplicar estilos apenas se certas condições forem atendidas (como a largura da tela).
                 </li>
                 <li>
-                    <p><code>@supports</code>: Verifica se o navegador suporta uma tecnologia específica antes de aplicá-la. É uma "rede de segurança" para usar recursos modernos sem quebrar o site em navegadores antigos.</p>
-                    <strong>Exemplo</strong>:
-                    <section class="code">
-                        <pre>
-                            <code>
-                                @supports (display: grid) {
-                                    main { display: grid; }
-                                }
-                            </code>
-                        </pre>
-                    </section>
+                    <code>@supports</code>: Verifica se o navegador suporta uma tecnologia específica antes de aplicá-la. É uma "rede de segurança" para usar recursos modernos sem quebrar o site em navegadores antigos.
                 </li>
             </ul>
         </article>
+        <section class="code">
+            <h3>Colocando a mão na massa</h3>
+<pre><code>@media (max-width: 600px) {
+    body { 
+        background-color: ; 
+    }
+}
+
+@supports (display: grid) {
+    main { 
+        display: grid; 
+    }
+}</code></pre>
+</section>
         <article>
             <h3>Fontes e Animações Personalizadas</h3>
             <p>Estas regras definem recursos que não existem por padrão no navegador e precisam ser "criados" via código.</p>
             <ul>
                 <li>
-                    <p>
-                        <code>@font-face</code>: Permite que você carregue uma fonte baixada no seu próprio servidor, sem depender de serviços externos.
-                        Uso: Você define o nome da fonte e o caminho do arquivo (<code>.woff2</code>, <code>.ttf</code>).
-                    </p>
+                    <code>@font-face</code>: Permite que você carregue uma fonte baixada, sem depender de serviços externos.
                 </li>
                 <li>
-                    <p><code>@keyframes</code>: Define as etapas de uma animação CSS. Você cria o "roteiro" do movimento aqui para depois aplicá-lo a um seletor.</p>
-                    <strong>Exemplo:</strong>
-                    <section class="code">
-                        <pre>
-                            <code>
-                                @keyframes aparecer {
-                                    from { opacity: 0; }
-                                    to { opacity: 1; }
-                                }
-                            </code>
-                        </pre>
-                    </section>
+                    <code>@keyframes</code>: Define as etapas de uma animação CSS. Você cria o "roteiro" do movimento aqui para depois aplicá-lo a um seletor.
                 </li>
             </ul>
         </article>
+<section class="code">
+            <h3>Colocando a mão na massa</h3>
+<pre><code>@font-face {
+    font-family: 'NomeDaSuaFonte';
+    src: url('fonts/sua-fonte.woff2') format('woff2'),
+        url('fonts/sua-fonte.woff') format('woff'),
+        url('fonts/sua-fonte.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+body {
+    font-family: 'NomeDaSuaFonte', sans-serif;
+}
+
+@keyframes aparecer {
+    from { 
+        opacity: 0;
+    }
+    to { 
+        opacity: 1; 
+    }
+}</code></pre>
+</section>
         <article>
             <h3>Boas Práticas e Engenharia de Regras</h3>
             <ul>
                 <li>
-                    <strong>Performance do @import</strong>: Evite usar muitos <code>@import</code> dentro de arquivos CSS grandes, pois cada um gera uma nova requisição ao servidor, o que pode deixar o site lento. Prefira linkar os arquivos diretamente no HTML quando possível.
+                    <strong>Performance do</strong> <code>@import</code>: Evite usar muitos <code>@import</code> dentro de arquivos CSS grandes, pois cada um gera uma nova requisição ao servidor, o que pode deixar o site lento. Prefira linkar os arquivos diretamente no HTML quando possível.
                 </li>
                 <li>
                     <strong>Ordem das Media Queries</strong>: Sempre organize suas <code>@media</code> de forma lógica (ex: do menor para o maior dispositivo, ou vice-versa). Isso evita que uma regra sobrescreva a outra por engano.
@@ -122,7 +130,11 @@
     </main>
     <footer>
         <nav>
-            <a href="">GitHub</a> <a href="">E-mail</a> <a href="">LinkedIn</a>
+            <ul>
+                <li><a href="">GitHub</a></li>
+                <li><a href="">E-mail</a></li>
+                <li><a href="">LinkedIn</a></li>
+            </ul>
         </nav>
         <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.</p>
     </footer>

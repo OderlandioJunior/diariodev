@@ -135,16 +135,6 @@
             <p>Para manter o Exemplo limpo (clean code), podemos declarar quase todas as propriedades anteriores em uma única linha. A ordem padrão é importante para evitar bugs de leitura.</p>
             <h4>Sintaxe da Shorthand:</h4>
             <code>background: [color] [image] [repeat] [attachment] [position] / [size];</code>
-            <section class="code">
-<pre><code>aside {
-    background: #000 url('montanha.jpg') no-repeat fixed center / cover;
-    /* 
-    [Cor de fundo] [Imagem]
-    [Sem repetição] [Fixa]
-    [Centralizada] / [Cobrindo tudo]
-    */
-}</code></pre>
-            </section>
         </article>
         <article>
             <h3>Boas Práticas de Engenharia Frontend</h3>
@@ -165,10 +155,13 @@
                 </ul>
             </ul>
         </article>
-        <article class="video">
-            <h3>Aprofundando o Conhecimento</h3>
-            <p>Para visualizar esses conceitos em ação e entender detalhes de renderização, assista à aula completa do mestre Gustavo Guanabara:</p>
-        </article>
+        <section class="code">
+            <h3>Colocando a mão na massa</h3>
+            <p>Analisar o código "bruto" é fundamental para compreender como a sintaxe se transforma em estrutura e como as boas práticas de indentação e semântica facilitam a manutenção do projeto a longo prazo.</p>
+<pre><code>aside {
+    background: #000 url('montanha.jpg') no-repeat fixed cover;
+}</code></pre>
+            </section>
     </main>
     <footer>
         <nav>

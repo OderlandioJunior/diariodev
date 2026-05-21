@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/style-pg.css">
     <title>Caixas flexíveis</title>
 </head>
 <body>
     <header>
+        <h1>Diário DEV</h1>
+        <p>Por Oderlândio Júnior</p>
         <nav>
             <ul>
                 <li><a href="../../index.html" target="" rel="">Página principal</a></li>
@@ -15,14 +18,12 @@
                 <li><a href="../gridlayout/grid.html" target="" rel="">Próximo artigo</a></li>
             </ul>
         </nav>
-        <h1>Diário DEV</h1>
-        <span>Por Oderlândio Júnior</span>
     </header>
     <main>
-        <header>
+        <article class="header">
             <h2>Flexbox: O Guia Definitivo para Layouts Unidimensionais</h2>
             <p>O Flexbox (<em>Flexible Box Layout</em>) é um modelo de layout projetado para alinhar itens e distribuir espaço de forma inteligente dentro de um container, mesmo que o tamanho dos elementos seja dinâmico ou desconhecido. Ele trabalha com a relação entre um <strong>Container (Pai)</strong> e <strong>Itens (Filhos)</strong>.</p>
-        </header>
+        </article>
         <article>
             <h3>Conceitos Fundamentais e Eixos</h3>
             <p>Ao definir <code>display: flex;</code>, o elemento pai se torna um container flexível. A inteligência do Flexbox baseia-se em dois eixos:</p>
@@ -66,17 +67,12 @@
         <article>
             <h3>O Centro Perfeito (O "Santo Graal" do CSS)</h3>
             <p>Centralizar um elemento horizontal e verticalmente agora exige apenas três linhas no container pai:</p>
-            <section class="code">
-                <pre>
-                    <code>
-                        section {
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            height: 100vh; /* Para ocupar a tela toda */
-                        }
-                    </code>
-                </pre>
+<pre><code>section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}</code></pre>
             </section>
         </article>
         <article>
@@ -87,10 +83,36 @@
                 <li><strong>Acessibilidade</strong>: A propriedade <code>order</code> permite mudar a ordem visual dos itens, mas cuidado: ela não muda a ordem de leitura para teclados ou leitores de tela. Mantenha a ordem lógica sempre no HTML.</li>
             </ul>
         </article>
+        <section class="code">
+            <h3>Colocando a mão na massa</h3>
+            <p>Analisar o código "bruto" é fundamental para compreender como a sintaxe se transforma em estrutura e como as boas práticas de indentação e semântica facilitam a manutenção do projeto a longo prazo.</p>
+<pre><code>display: flex;
+flex-direction: row 
+flex-wrap: wrap
+flex-flow: row wrap;
+
+justify-content: space-between
+align-items: center;
+
+gap: 20px;</code></pre>
+
+<pre><code>order: 1;
+
+flex-grow: 1;
+flex-shrink: 0;
+flex-basis: 100px;
+flex: 1 0 100px;
+
+align-self: flex-start;</code></pre>
+        </section>
     </main>
     <footer>
         <nav>
-            <a href="">GitHub</a> <a href="">E-mail</a> <a href="">LinkedIn</a>
+            <ul>
+                <li><a href="">GitHub</a></li>
+                <li><a href="">E-mail</a></li>
+                <li><a href="">LinkedIn</a></li>
+            </ul>
         </nav>
         <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.</p>
     </footer>

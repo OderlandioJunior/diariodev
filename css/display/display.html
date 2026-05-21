@@ -3,25 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/style-pg.css">
     <title>Exibição</title>
 </head>
 <body>
     <header>
+        <h1>Diário DEV</h1>
+        <p>Por Oderlândio Júnior</p>
         <nav>
             <ul>
                 <li><a href="../../index.html" target="" rel="">Página principal</a></li>
                 <!-- i > bars -->
-                <li><a href="../variaveis/variaveis.html" target="" rel="">Artigo anterior</a></li>
+                <li><a href="../mediaquery/mediaquery.html">Artigo anterior</a></li>
+                <li><a href="../variaveis/variaveis.html" target="" rel=""> Próximo artigo</a></li>
             </ul>
         </nav>
-        <h1>Diário DEV</h1>
-        <span>Por Oderlândio Júnior</span>
     </header>
     <main>
-        <header>
+        <article class="header">
             <h2>Modos de exibição de conteúdo (Display): A Anatomia do Layout</h2>
             <p>No CSS, a propriedade <code>display</code> determina como um elemento é renderizado no navegador e como ele interage com os elementos ao seu redor. Entender os diferentes modos de exibição é a chave para parar de "brigar" com o posicionamento dos elementos e começar a dominá-los.</p>
-        </header>
+        </article>
         <article>
             <h3>Os Comportamentos Padrão (Block vs Inline)</h3>
             <p>Antes de falarmos de layouts complexos, precisamos entender as duas formas naturais de existência no HTML:</p>
@@ -81,9 +83,13 @@
     </main>
     <footer>
         <nav>
-            <a href="">GitHub</a> <a href="">E-mail</a> <a href="">LinkedIn</a>
+            <ul>
+                <li><a href="">GitHub</a></li>
+                <li><a href="">E-mail</a></li>
+                <li><a href="">LinkedIn</a></li>
+            </ul>
         </nav>
-        Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.
+        <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.</p>
     </footer>
 </body>
 </html>
