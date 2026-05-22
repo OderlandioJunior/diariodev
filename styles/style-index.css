@@ -140,7 +140,7 @@ section {
     background: linear-gradient(to top, #EEAF14, #2E8C4B) border-box;
 }
 .card2 figure{
-    width: 45%;
+    width: 40%;
     padding-top: 8px;
     margin-right: 8px;
     float: left;
@@ -157,6 +157,7 @@ section {
     justify-content: space-between;
     align-items: center;
     padding: .5em;
+    margin-bottom: 0;
     border: 3px solid transparent;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
