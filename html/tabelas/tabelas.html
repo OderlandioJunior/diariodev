@@ -38,12 +38,6 @@
                 <li><code>&lt;td&gt;</code> (Table Data): Uma célula de dado comum, que compõe o corpo da tabela.</li>
             </ul>
         </article>
-        <article class="video">
-            <h3>Aprofundando o Conhecimento</h3>
-            <p>Para visualizar esses conceitos em ação e entender detalhes de renderização, assista à aula completa do mestre Gustavo Guanabara:</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/lIiZu-94PBk?si=LgwE1FIOKa7Xo5wd&amp;start=310" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/XmrNuqmmckM?si=2wxsTA03fn14tTwY&amp;start=480" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </article>
         <article>
             <h3>Extensão de células</h3>
             <p>Quando estamos lidando com dados mais complexos, nem sempre uma informação cabe em apenas um "quadradinho" da tabela. É aí que entram os atributos de expansão (ou mesclagem), que permitem que uma célula ocupe o espaço de várias outras.</p>
@@ -61,11 +55,6 @@
                 <li><strong>Regra de Ouro</strong>: Esta é a que mais confunde! Se você usar <code>rowspan="3"</code> na primeira linha, você não deve criar a primeira célula das próximas duas linhas, pois o espaço delas já foi "roubado" pela célula que veio de cima.</li>
             </ul>
         </article>
-        <article class="video">
-            <h3>Aprofundando o Conhecimento</h3>
-            <p>Para visualizar esses conceitos em ação e entender detalhes de renderização, assista à aula completa do mestre Gustavo Guanabara:</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/olZgL09uDAU?si=uMIelYW19LhdZ2sU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </article>
         <article>
             <h3>Organização Vertical: A Tag colgroup e col</h3>
             <p>Embora as tabelas sejam construídas linha por linha (<code>&lt;tr&gt;</code>), muitas vezes precisamos aplicar estilos a uma coluna inteira (como destacar a primeira coluna de cabeçalho ou dar uma largura específica para uma coluna de valores). Em vez de repetir classes em todas as células, utilizamos o grupo de colunas.</p>
@@ -74,10 +63,6 @@
             <h3>O atributo <code>span</code></h3>
             <p>O grande trunfo aqui é o atributo <code>span</code>. Se você tem três colunas que devem ter o mesmo estilo, você não precisa de três tags <code>&lt;col&gt;</code>. Basta usar <code>&lt;col span="3"&gt;</code>.</p>
         </article>
-        <article class="video">
-            <h3>Aprofundando o Conhecimento</h3>
-            <p>Para visualizar esses conceitos em ação e entender detalhes de renderização, assista à aula completa do mestre Gustavo Guanabara:</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/1Ro7rjINNb0?si=G7BwcUk1ETYiCX7q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <article>
             <h3>Semântica e Acessibilidade: O atributo <code>caption</code> e <code>scope</code></h3>
             <p>Toda tabela profissional deve ter um "título" visível que descreva seu conteúdo. Para isso, utilizamos a tag <code>&lt;caption&gt;</code>, que deve ser a primeira tag logo após a abertura da <code>&lt;table&gt;</code>. Isso ajuda usuários de leitores de tela a entenderem rapidamente do que se trata aquele conjunto de dados.</p>

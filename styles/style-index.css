@@ -12,9 +12,9 @@
     scroll-behavior: smooth;
     background-color: #5B6370;
 }
-/* Fim da configuração */
+/* Fim da configuração da página */
 
-/* Configuração do header */
+/* Configuração do cabeçalho */
 header {
     position: sticky;
     top: 0;
@@ -23,9 +23,9 @@ header {
     background-color: #2B4985;
     text-align: center;
 }
-/* Fim da configuração */
+/* Fim da configuração do cabeçalho */
 
-/* Configuração do nav */
+/* Configuração da navegação */
 nav {
     background-color: #262B33;
     margin-top: .6em;
@@ -39,9 +39,9 @@ footer nav{
     border-bottom: 5px solid #416DB3;
     box-shadow: 0px 1px 5px #416DB3;
 }
-/* Fim da configuração */
+/* Fim da configuração da navegação */
 
-/* Configuração das palavras*/
+/* Configuração das palavras */
 h1 {
     padding: .5em 0 .2em 0;
     color: #FBDB9E;
@@ -67,7 +67,6 @@ h1 {
     background: linear-gradient(#262B33) padding-box, linear-gradient(to left, #EEAF14, #2E8C4B) border-box;
     box-shadow: 1px 1px 5px #EEAF14;
 }
-
 p {
     color: #EBEDEA;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -91,9 +90,12 @@ p {
     font-size: .9em;
 }footer p{
     color: #FBDB9E;
-    text-align: center;
+    text-align: justify;
+    text-indent: 0;
+    padding: .5em;
+    padding-top: 5px;
 }
-/* Fim da configuração */
+/* Fim da configuração das palavras */
 
 /* Configuração dos links */
 a {
@@ -112,15 +114,15 @@ a {
     text-shadow: 0px 0px 8px #9BD89C;
     color: #9BD89C;
 }
-/* Fim da configuração */
+/* Fim da configuração dos links */
 
-/* Configuração da sessão */
+/* Configuração do conteúdo */
 section {
-    margin: 1.5em auto;
-    padding: .8em;
+    margin: 1em auto;
+    padding: .5em;
     background-color: #262B33;
     border: 5px solid #3D484D;
-    border-radius: 15px;
+    border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
 }.card {
     display: flex;
@@ -128,8 +130,9 @@ section {
     justify-content: center;
     align-items: flex-start;
 }.card figure{
-    width: 100%;
-    margin: .5em auto;
+    max-width: max-content;
+    height: 100%;
+    margin: 0 auto;
     overflow: hidden;
     border-radius: 10px;
 }.card img {
@@ -156,8 +159,11 @@ section {
     border: 4px solid transparent;
     border-radius: 10px;
     background: linear-gradient(to top, #EEAF14, #2E8C4B) border-box;
-}
-.header {
+}.tech {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}.header {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -223,7 +229,7 @@ section {
     width: 100%;
     height: 100%;
 }
-/* Fim da configuração */
+/* Fim da configuração do conteúdo */
 
 /* Configuração das listas */
 ol {
@@ -243,8 +249,11 @@ ul {
 li {
     font-size: 1.1em;
 }
-/* Fim da configuração */
+/* Fim da configuração das listas */
+
+/* Configuração do rodapé*/
 footer {
-    margin-top: 3em;
+    margin-top: 2em;
     background-color: #2B4985;
 }
+/* Fim da configuração do rodapé*/
