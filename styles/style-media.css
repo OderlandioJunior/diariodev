@@ -1,16 +1,5 @@
 @charset "UTF-8";
 
-#
-
-#estudo {
-    width: 70%;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    gap: 10px;
-}h2 {
-    flex: 1 0 100%;
-    text-align: center;
-}.tech {
-    margin: 0;
+body {
+    display: none;
 }

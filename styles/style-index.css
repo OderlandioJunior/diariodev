@@ -132,7 +132,6 @@ section {
 }.card figure{
     max-width: max-content;
     height: 100%;
-    margin: 0 auto;
     overflow: hidden;
     border-radius: 10px;
 }.card img {
@@ -148,7 +147,7 @@ section {
     overflow: hidden;
 }
 .card2 figure{
-    max-width:   100px;
+    max-width: 100px;
     height: 100%;
     margin: .3em .5em;
     margin-left: 0;
