@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu primeiro programa...</title>
+    <title>Entendendo JS</title>
     <style>
         body {
             background-color: rgb(105, 105, 173);
@@ -20,45 +20,26 @@
     <p>Já me livrei da maldição</p>
     <script>
         /* A ordem afeta, igual nas CSS */
-        var nome = window.prompt('Qual é o seu nome?');
-        window.alert('É um grande prazer te conhecer, ' + nome);
-
-        /*
-        Um sinal de = significa "recebe"
-        "Atribuição" significa colocar os valores das variáveis dentro da memória
-        "Concatenação" significa unir elementos, é feita através do sinal + entre duas strings
-        */
-
         /*
         Variáveis são dados coletados que podem ser escritas como:
         > var:
         > let:
         > const:
         */
-
+        var nome = window.prompt('Qual é o seu nome?');
         /*
-        Identificadores é um nome referente ao dado da variável, por exemplo: var idade = 35
-        - Não pode começar com número ou palavras reservadas do próprio JS e nem ter espaços
+        Um sinal de = significa "recebe"
+        Quando uma variavel receber um valor, essa ação tem o nome de "Atribuição"
+        >> Nesse contexto, a variável nome está recebendo o valor de prompt
+        */
+        /*
+        Identificadores é um nome referente ao dado da variável, por exemplo: var nome = Júnior
         - Podemos usar letras, acentos e simbolos ($ / _)
+        - Não pode começar com número ou palavras reservadas do próprio JS e nem ter espaços
         */
-
+        window.alert('É um grande prazer te conhecer, ' + nome);
         /*
-        Tipos de primitivos primordiais das variaveis: 
-        > number: numeros inteiros e reais (5, -12, 3.14)
-        > string: palavras em geral escrita dentro de ", ' e ` (aspas duplas, aspas simples e crase (string dentro de crase podem sofrer inserção de template string, que é um conjunto de variáveis dentro de ${})) e/ou conjunto de números (ex.: CPF/CEP)
-        > boolean: valores como true e false
-        */
-
-        /*
-        Conversão de variável:
-        string > number
-        Number.parseInt() //inteiros
-        Number.parseFloat() //reais
-        Number() //detecção automática
-
-        number > string
-        String()
-        .toString() //Deve ser colocado depois do identificador
+        Um sinal de + entre string serve para unir os elementos, essa ação tem o nome de "Concatenação"
         */
     </script>
 </body>
