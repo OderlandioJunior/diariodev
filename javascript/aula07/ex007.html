@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores</title>
+</head>
+<body>
+    
+    <script>
+        /*
+        Relacionais
+        A precedência ainda acompanha os operadores aritméticos, logo depois seguido pelos operadores relacionais. A ordem dos relacionais não importam necessariamentem, a relevância de um é a mesma pro outro, mas diferencia na posição de acordo a leitura deles na expressão
+        - > (Maior)
+        - < (Menor)
+        - >= (Maior/igual)
+        - <= (Menor/igual)
+        - == (Igual)
+        // Sinal de igual não testa o tipo da expressão (typeof), ele testa a grandeza do valor, por exemplo: 5 == '5' = true ( 5 'number' == 5 'string' = true para o valor 5)
+        - === (Igualdade restrita / Identico)
+        // Sinal de identico testa se o valor tem a mesma grandeza e o mesmo tipo (typeof), logo naquele exemplo 5 === '5' = falsa (5 'number' == 5 'string' = false por causa da string mesmo que a grandeza seja igual)
+        - != (Não é igual)
+        Pra toda expressão que tenha um operador RELACIONAL, o resultado dessa expressão vai ser SEMPRE um valor Booleano (True / False)
+        */
+        /*
+        Lógicos
+        Para esses operadores, a procedência vale na respectiva ordem: 
+        - ! (Negação)           *
+
+        // Operadores binários: tem que estar entre dois valores para entregar o resultado
+        - && (Conjunção / "E")  **
+        // Exemplo: true && false = false (Precisa dos dois valores true para dar um resultado true)
+
+        - || (Disjunção / "Ou") ***
+        // Exemplo: true || false = true (Precisa de um valor true para dar um resultado true)
+        */
+        /*
+        Ternário
+        // Aparecem na mesma expressão com 3 blocos de ação: teste ? true : false
+        // É a ultima preferência de analagia na precedencia em comparação aos outros operadores
+        - ?, :
+        // Exemplo: var média = 5.5 / var médio >= 7.0 ? "Aprovado"(true) : "Reprovado"(false)
+        */
+        /*
+        Logo, numa expressão com todos os operadores, temos a seguinte ordem de precedencia:
+        - Aritméticos   *
+        - Lógicos       **
+        - Relacionais   ***
+        - Ternários     ****
+        */
+    </script>
+</body>
+</html>
