@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body {
+            background-color: rgb(68, 125, 199);
+            color: white;
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Document Object Model</h1>
+    <h2>Iniciando estudos DOM</h2>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <p>Aqui vai o resultado</p>
+    <div id="msg">Clique em mim</div>
+    <script>
+        /*
+        Arvore DOM:
+        Criado a partir de elementos
+        - window
+        - location / document / history
+        - html
+        - head / body
+        - meta / title
+        - h1 / p / p /div
+        - strong
+        */
+        /*
+        Seletores de elementos:
+        - Por Marca:
+        getElementsByTagName()[]
+        // Consegue selecionar mais de um objeto, onde o numero 0 entre os colchetes "[]" significa o primeiro objeto e o numero 1 o segundo respectivamente
+        - Por ID:
+        getElementById()
+        - Por Nome:
+        getElementsByName()[]
+        - Por Classe:
+        getElementsByClassName()[]
+        - Por Seletor:
+        // Nesse modo, a seleção é feita de maneira parecida com os seletores CSS, por exemplo: ID = # e Class = .
+        querySelector() / querySelectorAll()[]
+        */
+        var corpo = window.document.body;
+        var p1 = window.document.getElementsByTagName('p')[1];
+        /*
+        var d = window.document.getElementsById('msg')
+        d.style.background = 'green'
+        d.innerText = 'Estou aguardando...'
+        */
+        var d = window.document.querySelector('div#msg');
+        d.style.color = 'blue';
+    </script>
+</body>
+</html>
