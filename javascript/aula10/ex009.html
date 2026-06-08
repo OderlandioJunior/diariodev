@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        #area {
+            font: normal 20pt Arial;
+            background-color: rgb(42, 139, 42);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="area">
+        Interaja...
+    </div>
+    <script>
+        /*
+        listas de eventos DOM: Mouse, Toque, Teclado, Documento e Janela, e Formulário
+        Link para acessar toda a lista: 
+        https://www.google.com/search?q=listas+de+eventos+DOM&oq=lista&gs_lcrp=EgZjaHJvbWUqCAgAEEUYJxg7MggIABBFGCcYOzIUCAEQRRg5GEMYgwEYsQMYgAQYigUyDQgCEAAYgwEYsQMYgAQyDQgDEAAYsQMYgAQYigUyBwgEEAAYgAQyBwgFEAAYgAQyBggGEEUYPDIGCAcQRRg80gEHOTA1ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8
+
+        Lista detalhada de Eventos DOM para mouse:
+        - mouseenter / mouseout (Quando o mouse entra e quando sai)
+        - mousemove (Quando move dentro do elemento)
+        - mousedown / mouseup (Quando o botão de click so desce ou so sobe)
+        - click (Quando clica)
+        */
+        var a = window.document.getElementById('area');
+        a.addEventListener ('click', clicar);
+        a.addEventListener ('mouseenter', entrar);
+        a.addEventListener ('mouseout', sair);
+        function clicar() {
+            a.innerText = 'Clicou!'
+            a.style.background = 'red'
+        }
+        function entrar() {
+            a.innerText = 'Entrou!'
+        }
+        function sair() {
+            a.innerText = 'Saiu!'
+        }
+    </script>
+</body>
+</html>
