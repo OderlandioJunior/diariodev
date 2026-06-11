@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições</title>
+</head>
+<body>
+    <h1>Sistema de multas</h1>
+    <label for="txtvel">Velocidade do carro:</label> <input type="number" name="txtvel" id="txtvel"> Km/h
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res">
+
+    </div>
+
+    <h1>Nacionalidade</h1>
+    <label for="cxt">Onde você nasceu? </label> <input type="text" name="cxt" id="cxt">
+    <input type="button" value="Enviar" onclick="verificar()">
+    <div id="nasce"></div>
+    <script>
+        function calcular() {
+            var txtv = document.querySelector('input#txtvel');
+            var vel = Number(txtv.value);
+            res = document.querySelector('div#res');
+            res.innerHTML = `<p>Sua velocidade atual é de <strong>${vel}</strong> Km/h</p>`
+            if (vel > 60) {
+                res.innerHTML +='<p>Você está <strong>multado</strong> por excesso de velocidade</p>'
+            }
+            res.innerHTML += '<p>Diriga sempre com cinto de segurança</p>'
+        }
+
+        function verificar() {
+            var inputPais = document.querySelector('input#cxt'); // Variável inputPais está recebendo o input caixa de texto 
+            var paisDigitado = inputPais.value; // Variável paisDigitado está recebendo o valor escrito dentro do input caixa de texto 
+            var divResultado = document.querySelector('div#nasce'); // Variável divResultado está recebendo a div com id nasce
+            var textoFinal = `<p>Você nasceu no <strong>${paisDigitado}</strong></p>`; // Variável textoFinal está recebendo
+
+            if (paisDigitado.toLowerCase() !== 'brasil') { // Converta o valor que foi digitado dentro do input caixa de texto para letras minusculas e SE o valor não for igual a brasil
+                divResultado.innerHTML = textoFinal + `<p>Sua nacionalidade é estrangeira!</p>`; // Escreva dentro da div por JS a variável textoFinal junto (concatenada) com
+            } else {
+                textoFinal + `<p>Sua nacionalidade é brasileira!</p>`; // SENÃO, escreva junto com o textoFinal dentro da DIV
+            }
+            divResultado.innerHTML = textoFinal;
+        }
+    </script>
+</body>
+</html>
