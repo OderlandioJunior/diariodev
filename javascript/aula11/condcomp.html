@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições Compostas</title>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+    <label for="cxt">Onde você nasceu? </label> <input type="text" name="cxt" id="cxt">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="nasce"></div>
+    <hr>
+    <h1>Título de eleitor</h1>
+    <label for="idade">Coloque sua idade</label> <input type="text" name="idade" id="idade">
+    <input type="button" value="Verificar" onclick="votar()">
+    <div id="veja"></div>
+    <hr>
+    <h1>Que horas são?</h1>
+    <div id="horas"></div>
+
+    <script>
+        function verificar() {
+            var inputPais = document.querySelector('input#cxt'); // Variável inputPais está recebendo o input caixa de texto
+            var paisDigitado = inputPais.value // Variável paisDigitado está recebendo o valor escrito dentro do input caixa de texto
+            var div = document.querySelector('div#nasce') // Variável div está recebendo a div com id nasce
+
+            div.innerHTML = `<p>Você nasceu no <strong>${paisDigitado}</strong></p>` // Estou pedindo para escrever com JS dentro da DIV 
+            if (paisDigitado.toLowerCase() != 'brasil') {
+                div.innerHTML += `Sua nacionalidade é estrangeira!` // Estou pedindo para mudar o valor para letras minusculas do input caixa de texto, ou seja, mesmo que receba BRASIL ou Brasil, o texto vai ser considerado como brasil e SE o valor NÃO FOR IGUAL a brasil, escreva junto com oque já estava escrito dentro da DIV
+            } else {
+                div.innerHTML += `Sua nacionalidade é brasileira!` // SENÃO, escreva junto com oque já estava escrito dentro da DIV
+            }
+        }
+        function votar () {
+            var inputIdade = document.getElementById('idade');
+            var idade = inputIdade.value;
+            var resultado = document.querySelector('div#veja');
+
+            resultado.innerHTML = `<p>Você tem <strong>${idade}</strong> anos</p>`
+            if (idade < 16) {
+                resultado.innerHTML += 'Você não vota'
+            } else if (idade < 18 || idade > 65) {
+                resultado.innerHTML += 'Seu voto é opcional'
+            } else {
+                resultado.innerHTML += 'Seu voto é obrigatório'
+            }
+        }
+        function mostrarHoras() {
+            var local = new Date();
+            var agoraHora = String(local.getHours()) .padStart(2, '0');
+            var agoraMinuto = String(local.getMinutes()) .padStart(2, '0');
+            var agoraSegundo = String(local.getSeconds()) .padStart(2, '0');
+            var relogio = document.querySelector('div#horas');
+            var textoFinal = `<p>Agora são exatamente <strong>${agoraHora}:${agoraMinuto}:${agoraSegundo}</strong> horas.</p>`;
+            if (agoraHora < 12) {
+                textoFinal += '<p>Bom dia!</p>'
+            } else if ( agoraHora < 18) {
+                textoFinal += '<p>Boa tarde!</p>'
+            } else {
+                textoFinal += '<p>Boa noite!</p>'
+            }
+            relogio.innerHTML = textoFinal
+        }
+        setInterval(mostrarHoras, 1000);
+        mostrarHoras();
+    </script>
+</body>
+</html>

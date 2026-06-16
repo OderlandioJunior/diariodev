@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições em JavaScript</title>
+</head>
+<body>
+    
+    <script>
+        /*
+        Um desvio condicional é uma instrução que permite ao programa tomar decisões e alterar seu caminho de execução com base no resultado de um teste lógico
+        */
+
+        /*
+        Condicional Simples (if): Executa uma ação apenas se a condição for verdadeira. Se for falsa, o programa simplesmente ignora o bloco.
+        */
+
+        /*
+        Condicional Composta (if / else): Permite definir um caminho para quando a condição for verdadeira e um caminho alternativo (o "senão") para quando ela for falsa.
+
+        Condição Aninhada (if / elseif / else): Permite definir mais caminhos para quando a condição for verdadeira e um caminho alternativo (o "senão") para quando ela for falsa.
+        */
+
+        /*
+        Condição Multipla (switch): O switch é a estrutura perfeita para quando você tem uma única variável e quer testar vários valores específicos para ela. Em vez de fazer aquele monte de else if grudados, você abre um "painel de controle" e lista os caminhos possíveis.
+
+        Pense no switch como uma Central de Atendimento Telefônico:
+        "Digite 1 para falar com o suporte, digite 2 para financeiro, digite 3 para comercial. Se não digitar nenhum desses, você vai para a recepção".
+
+        A Estrutura Prática:
+        var plano = 'Premium';
+        switch (plano.toLowerCase()) {
+            case 'bronze':
+                console.log('Você tem suporte por e-mail.');
+                break;
+
+            case 'prata':
+                console.log('Você tem suporte por e-mail e chat.');
+                break;
+
+            case 'premium':
+                console.log('Você tem suporte 24h e prioridade máxima!');
+                break;
+
+            default:
+                console.log('Plano inválido ou não selecionado.');
+                break;
+        }
+        Os 3 Segredos do switch que você não pode esquecer:
+        1. O case é uma comparação direta (===): Ele checa o valor exato. Se sua variável for o número 1 e no case você colocou o texto '1' (com aspas), não vai entrar. Tem que ser idêntico.
+
+        2. O break é OBRIGATÓRIO: O JavaScript é meio fofoqueiro. Se entrar no case 'prata' e você esquecer de colocar o break, ele vai continuar lendo e executando o case logo abaixo, mesmo que seja mentira! O break serve para falar: "Achou o que queria? Então sai do switch!".
+
+        3. O default é o seu porto seguro: Ele é o equivalente ao else puro. Se o usuário digitar algo que você não previu nos case, o código cai direto no default.
+        */
+</script>
+</body>
+</html>
