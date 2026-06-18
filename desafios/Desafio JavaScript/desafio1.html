@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagens</title>
+    <style>
+        input {
+            margin-left: 10px;
+            padding: 8%;
+            border-radius: 15px;
+            font: normal 15pt arial;
+            transition: background .5s ease-out;
+        }
+        input:hover {
+            cursor: pointer;
+            text-decoration: underline;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio das Mensagens</h1>
+    <input type="button" value="Botão 1" onclick="clicou1()">
+    <input type="button" value="Botão 2" onclick="clicou2()">
+    <input type="button" value="Botão 3" onclick="clicou3()">
+    <script>
+        function clicou1() {
+            window.alert('Você clicou no 1º botão');
+        }
+        function clicou2() {
+            window.alert('Você clicou no 2º botão');
+        }
+        function clicou3() {
+            window.alert('Você clicou no 3º botão');
+        }
+    </script>
+</body>
+</html>

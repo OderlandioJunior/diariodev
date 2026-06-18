@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antes e depois</title>
+    <style>
+        input {
+                margin-left: 10px;
+                padding: 8%;
+                border-radius: 15px;
+                font: normal 15pt arial;
+                transition: background .5s ease-out;
+            }
+            input:hover {
+                cursor: pointer;
+                text-decoration: underline;
+                background-color: gray;
+            }
+    </style>
+</head>
+<body>
+    <h1>Desafio Antes e depois</h1>
+    <input type="button" value="Antecessor e Sucessor" onclick="calcularAntesDepois()">
+
+    <script>
+        function calcularAntesDepois() {
+            var numero = Number(window.prompt('Digite um número inteiro qualquer'));
+            var antes = numero - 1;
+            var depois = numero + 1;
+
+            window.alert(`Antes de ${numero}, temos o número ${antes}. E depois de ${numero} temos o numero ${depois}`);
+        }
+    </script>
+</body>
+</html>

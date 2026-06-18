@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo troco</title>
+    <style>
+        input {
+                margin-left: 10px;
+                padding: 8%;
+                border-radius: 15px;
+                font: normal 15pt arial;
+                transition: background .5s ease-out;
+            }
+            input:hover {
+                cursor: pointer;
+                text-decoration: underline;
+                background-color: gray;
+            }
+    </style>
+</head>
+<body>
+    <h1>Calculando o Troco</h1>
+    <input type="button" value="Comprar produto" onclick="precisaTroco()">
+
+    <script>
+        function precisaTroco() {
+            var produto = window.prompt('Que produto você esta comprando?')
+            var valor = Number(window.prompt(`Digite o valor do ${produto} que você está comprando`));
+            var pagou = Number(window.prompt(`Quanto você pagou pelo ${produto}?`));
+            if (pagou !== valor) {
+                var troco = Number(window.prompt(`Quanto você pagou pelo ${produto}?`));
+            }
+
+            window.alert(`Antes de ${numero}, temos o número ${antes}. E depois de ${numero} temos o numero ${depois}`);
+        }
+    </script>
+</body>
+</html>
