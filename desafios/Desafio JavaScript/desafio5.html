@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de medidas</title>
+    <style>
+        input {                
+            padding: 2%;
+            border-radius: 10px;
+            font: normal 15pt arial;
+            transition: background .5s ease-out;
+        }
+        input:hover {
+            cursor: pointer;
+            text-decoration: underline;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+    <input type="button" value="Converter" onclick="conversor()">
+    <div id="resultado">
+    </div>
+
+    <script>
+        // alert('Esse programa só funciona com unidade de medida em metros, por favor preencha a caixa a seguir com a essa unidade! Qualquer outra unidade será incompatível com o resultado!')
+        function conversor() {
+            var distancia = Number(prompt('Coloque uma distância medida em metros'));
+            var divMostrar = document.querySelector('div#resultado');
+            var textoDiv = `<h2>A distância de ${distancia} em metros, corresponde à:</h2>`
+            divMostrar.innerHTML = textoDiv + 
+        }
+        
+    </script>
+</body>
+</html>
