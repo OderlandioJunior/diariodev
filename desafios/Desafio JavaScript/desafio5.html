@@ -19,20 +19,39 @@
     </style>
 </head>
 <body>
-    <h1>Conversor de Medidas</h1>
-    <input type="button" value="Converter" onclick="conversor()">
+    <h1>Conversor de comprimento e temperaturas</h1>
+    <input type="button" value="Converter comprimento" onclick="conversorComprimento()">
+    <input type="button" value="Converter temperatura" onclick="conversorTemperatura()">
     <div id="resultado">
+    Clique no botão acima para iniciar.
     </div>
 
     <script>
         // alert('Esse programa só funciona com unidade de medida em metros, por favor preencha a caixa a seguir com a essa unidade! Qualquer outra unidade será incompatível com o resultado!')
-        function conversor() {
+        function conversorComprimento() {
             var distancia = Number(prompt('Coloque uma distância medida em metros'));
             var divMostrar = document.querySelector('div#resultado');
-            var textoDiv = `<h2>A distância de ${distancia} em metros, corresponde à:</h2>`
-            divMostrar.innerHTML = textoDiv + 
+            var textoDiv = `<h2>A distância de ${distancia} em metros, corresponde à:</h2>`;
+
+            var km = `${distancia} = ${distancia / 1000} Quilômetros (KM)`;
+            var hm = `${distancia} = ${distancia / 100} Hectômetros (HM)`;
+            var dam = `${distancia} = ${distancia / 10} Decâmetros (DAM)`;
+            var dm = `${distancia} = ${distancia * 10} Decímetros (DM)`;
+            var cm = `${distancia} = ${distancia * 100} Centímetros (CM)`;
+            var mm = `${distancia} = ${distancia * 1000} Milímetros (MM)`;
+
+            divMostrar.innerHTML = `${textoDiv} <p>${km}</p> <p>${hm}</p> <p>${dam}</p> <p>${dm}</p> <p>${cm}</p> <p>${mm}</p>`;
         }
-        
+        function conversorTemperatura() {
+            var temperatura = Number(prompt('Coloque uma temperatura em graus Celcius (°C)'));
+            var divMostrar = document.querySelector('div#resultado');
+            var textoDiv = `<h2>A temperatura de ${temperatura}°C, corresponde à:</h2>`;
+
+            var k = `${temperatura} = ${temperatura + 273.15}°K (Kelvin)`
+            var f = `${temperatura} = ${temperatura * 1.8 + 32}°F (Fahrenheit)`
+
+            divMostrar.innerHTML = `${textoDiv} <p>${k}</p> <p>${f}</p>`;
+        }
     </script>
 </body>
 </html>
