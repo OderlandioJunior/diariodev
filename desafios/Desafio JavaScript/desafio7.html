@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor</title>
+    <style>
+        input {                
+            padding: 2%;
+            border-radius: 10px;
+            font: normal 15pt arial;
+            transition: background .5s ease-out;
+        }
+        input:hover {
+            cursor: pointer;
+            text-decoration: underline;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor R$ -> US$</h1>
+    <input type="button" value="Converter temperatura" onclick="conversorDinheiro()">
+    <div id="resultado">
+    Clique no botão acima para iniciar.
+    </div>
+
+    <script>
+        var valorDolar = Number(prompt('Antes de mais nada. Quanto está a cotação do dolar agora?'));
+        function conversorDinheiro() {
+            var valorReais = Number(prompt('Quantos R$ você tem na carteira?'));
+            var divMostrar = document.querySelector('div#resultado');
+            var moeda =  valorReais / valorDolar;
+            divMostrar.innerHTML = `De acordo com o valor do dolar atualmente, ${valorDolar}, o valor da sua carteira está convertido e você tem equivalente à ${moeda}`
+        }
+    </script>
+</body>
+</html>

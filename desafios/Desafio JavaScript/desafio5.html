@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversor de medidas</title>
+    <title>Conversor</title>
     <style>
         input {                
             padding: 2%;
@@ -19,9 +19,8 @@
     </style>
 </head>
 <body>
-    <h1>Conversor de comprimento e temperaturas</h1>
+    <h1>Conversor de comprimento</h1>
     <input type="button" value="Converter comprimento" onclick="conversorComprimento()">
-    <input type="button" value="Converter temperatura" onclick="conversorTemperatura()">
     <div id="resultado">
     Clique no botão acima para iniciar.
     </div>
@@ -41,16 +40,6 @@
             var mm = `${distancia} = ${distancia * 1000} Milímetros (MM)`;
 
             divMostrar.innerHTML = `${textoDiv} <p>${km}</p> <p>${hm}</p> <p>${dam}</p> <p>${dm}</p> <p>${cm}</p> <p>${mm}</p>`;
-        }
-        function conversorTemperatura() {
-            var temperatura = Number(prompt('Coloque uma temperatura em graus Celcius (°C)'));
-            var divMostrar = document.querySelector('div#resultado');
-            var textoDiv = `<h2>A temperatura de ${temperatura}°C, corresponde à:</h2>`;
-
-            var k = `${temperatura} = ${temperatura + 273.15}°K (Kelvin)`
-            var f = `${temperatura} = ${temperatura * 1.8 + 32}°F (Fahrenheit)`
-
-            divMostrar.innerHTML = `${textoDiv} <p>${k}</p> <p>${f}</p>`;
         }
     </script>
 </body>
