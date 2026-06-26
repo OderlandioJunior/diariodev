@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajustar salario</title>
+    <style>
+        body {
+            font: normal 15pt arial;
+        }
+        input {
+            font: normal 15pt arial;
+            padding: 15px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reajuste salarial</h1>
+    <input type="button" value="Reajustar Salário" onclick="reajuste()">
+    <div id="resultado">
+        <p>Clique no botão acima para iniciar.</p>
+    </div>
+
+    <script>
+        function reajuste() {
+            var funcionario = prompt('Qual é o nome do funcionário?');
+            var salario = Number(prompt(`Qual é o salário de ${funcionario}`));
+            var aumento = Number(prompt(`O salário de ${funcionario} vai ser reajustado em quantos porcentos(%)?`));
+            var salarioAumento = (salario * aumento) / 100;
+            var salarioAtual = salario + salarioAumento;
+            var exibirTela = document.querySelector('div#resultado');
+
+            exibirTela.innerHTML = `<h2>${funcionario} recebeu um aumento salarial!</h2> <p>O salario atual era de ${(salario).toLocaleString('pt-BR', {style: 'currency', currency:'BRL'})}.</p> <p>Com um aumento de ${aumento}%, o salário vai aumentar ${(salarioAumento).toLocaleString('pt-BR', {style: 'currency', currency:'BRL'})} no próximo mês.</p> <p>E a partir daí, ${funcionario} vai passar a ganhar ${(salarioAtual).toLocaleString('pt-BR', {style: 'currency', currency:'BRL'})}.</p>`
+        }
+    </script>
+</body>
+</html>
