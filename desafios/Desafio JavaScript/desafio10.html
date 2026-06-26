@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula de Bhaskara</title>
+    <style>
+        body {
+            font: normal 15pt arial;
+        }
+        input {
+            font: normal 15pt arial;
+            padding: 15px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resolvendo Bhaskara</h1>
+    <input type="button" value="Calcular" onclick="resolver()">
+    <div id="resultado">
+        <p>Considerando uma equação no formato <strong>ax<sup>2</sup> + bx + c = 0</strong>, aperte o botão acima para calcular o valor de Delta (Δ)</p>
+    </div>
+
+    <script>
+        function resolver() {
+            var valorA = Number(prompt('Qual o valor de a?'));
+            var valorB = Number(prompt('Qual o valor de b?'));
+            var valorC = Number(prompt('Qual o valor de c?'));
+            var calculo1 = (valorB ** 2)
+            var calculo2 = (4 * valorA * valorC)
+            var resultado = calculo1 - calculo2
+            var exibirTela = document.querySelector('div#resultado');
+
+            exibirTela.innerHTML = 
+            `<h2>Resolvendo Bhaskara</h2> 
+            <p>Trocando os valores da fórmula <strong>ax<sup>2</sup> + bx + c = 0</strong> para os valores solicitados <strong>${valorA}x<sup>2</sup> + ${valorB}x + ${valorC} = 0</strong></p>
+            <p>O cálculo realizado para descobrir o Delta será <strong>Δ = b<sup>2</sup> - 4 . a . c</strong>, logo temos os valores: <strong>Δ = ${valorB}<sup>2</sup> - 4 . ${valorA} . ${valorC}</strong></p>
+            <p>Com isso, temos os valores reais da fórmula é: <strong>Δ = ${calculo1} - ${calculo2}</strong>.</p>
+            <p>O valor calculado foi <strong><mark>Δ = ${resultado}</mark></strong></p>`
+        }
+    </script>
+</body>
+</html>
