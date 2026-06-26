@@ -31,6 +31,7 @@
             var valorReais = Number(prompt('Quantos R$ você tem na carteira?'));
             var divMostrar = document.querySelector('div#resultado');
             var moeda =  valorDolar / valorReais;
+
             divMostrar.innerHTML = `<p>De acordo com o valor do dolar atualmente, ${(valorDolar).toLocaleString('pt-BR', {style: 'currency', currency: 'USD'})}, o valor da sua carteira está convertido e você tem equivalente à ${(moeda).toLocaleString('pt-BR', {style: 'currency', currency: 'USD'})}</p>`
         }
     </script>
