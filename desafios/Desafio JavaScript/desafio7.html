@@ -20,7 +20,7 @@
 </head>
 <body>
     <h1>Conversor R$ -> US$</h1>
-    <input type="button" value="Converter temperatura" onclick="conversorDinheiro()">
+    <input type="button" value="Converter moeda" onclick="conversorDinheiro()">
     <div id="resultado">
     Clique no botão acima para iniciar.
     </div>
@@ -30,8 +30,8 @@
         function conversorDinheiro() {
             var valorReais = Number(prompt('Quantos R$ você tem na carteira?'));
             var divMostrar = document.querySelector('div#resultado');
-            var moeda =  valorReais / valorDolar;
-            divMostrar.innerHTML = `De acordo com o valor do dolar atualmente, ${valorDolar}, o valor da sua carteira está convertido e você tem equivalente à ${moeda}`
+            var moeda =  valorDolar / valorReais;
+            divMostrar.innerHTML = `<p>De acordo com o valor do dolar atualmente, ${(valorDolar).toLocaleString('pt-BR', {style: 'currency', currency: 'USD'})}, o valor da sua carteira está convertido e você tem equivalente à ${(moeda).toLocaleString('pt-BR', {style: 'currency', currency: 'USD'})}</p>`
         }
     </script>
 </body>
