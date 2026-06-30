@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDD e a região</title>
+</head>
+<body>
+    <h1>Digite o DDD e veja de qual região ele pertence</h1>
+    <input type="button" value="DDD e a região" onclick="descobrir()">
+    <div class="resultado">
+    </div>
+
+    <script>
+        function descobrir() {
+            var exibirTela = document.querySelector('div.resultado');
+            var ddd = prompt('Digite o DDD');
+            var texto = '';
+            switch(ddd) {
+                case '73':
+                    texto = `<p>Você é da Bahia</p>`
+                break
+                case '11':
+                    texto = `<p>Você é de São Paulo</p>`
+                break
+                case '21':
+                    texto = `<p>Você é do Rio de Janeiro</p>`
+                break
+                case '31':
+                    texto = `<p>Você é de Minas Gerais</p>`
+                break
+                default:
+                    texto = `<p>DDD não cadastrado</p>`
+            }
+            exibirTela.innerHTML = texto
+        }
+    </script>
+</body>
+</html>

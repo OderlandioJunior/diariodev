@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação do aluno</title>
+    <style>
+        body {
+            font: normal 15pt arial;
+        }
+        input {
+            font: normal 15pt arial;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 3px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação do aluno</h1>
+    <input type="button" value="Entrar com as notas" onclick="verificar()">
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Média</th>
+                    <th>Situação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Abaixo de 3.0</td>
+                    <td>REPROVADO</td>
+                </tr>
+                <tr>
+                    <td>Entre 3.0 e 6.0</td>
+                    <td>RECUPERAÇÃO</td>
+                </tr>
+                <tr>
+                    <td>Acima de 6.0</td>
+                    <td>APROVADO</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="resultado">
+        <p>Clique no botão acima para informar as notas do aluno.</p>
+    </div>
+
+    <script>
+        function verificar() {
+            var exibirTela = document.querySelector('div#resultado');
+            var nomeAluno = prompt('Qual é o nome do aluno');
+            var nota1 = Number(prompt(`Digite a primeira nota de ${nomeAluno}`));
+            var nota2 = Number(prompt(`Digite a segunda nota de ${nomeAluno}`));
+            var media = (nota1 + nota2) / 2
+            var texto = `<h2>Analisando a situação de ${nomeAluno}</h2> <p>Com as notas ${nota1} e ${nota2}, a <strong>média é de ${media}</strong></p>`
+            if (media < 3) {
+                texto += `<p>Com média abaixo de 3.0, o aluno está <mark style="background-color: lightcoral">REPROVADO</mark></p>`
+            } else if(media <= 6) {
+                texto += `<p>Com média entre 3.0 e 6.0, o aluno está <mark style="background-color: yellow">RECUPERAÇÃO</mark></p>`
+            } else {
+                texto += `<p>Com média acima de 6, o aluno está <mark style="background-color: lightgreen;">APROVADO</mark></p>`
+            }
+            exibirTela.innerHTML = texto
+        }
+    </script>
+</body>
+</html>
