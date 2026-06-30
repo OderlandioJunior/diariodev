@@ -26,14 +26,14 @@
         function verificar() {
             var ano = prompt('Qual é o ano que você quer verificar?');
             var exibirTela = document.querySelector('div#resultado');
-            var textoFinal = `O ano de ${ano}`
+            var textoFinal = `<h2>Analisando o ano de ${ano}...</h2> <p>O ano de ${ano}`
 
             if ((ano % 4 == 0 && ano % 100 != 0) || ano % 400 == 0) {
-                textoFinal+=' <mark style="background-color: green;">É BISSEXTO</mark>'
+                textoFinal+=' <mark style="background-color: green;">É BISSEXTO</mark></p>'
             } else {
-                textoFinal+=' <mark style="background-color: red;">NÃO É BISSEXTO</mark'
+                textoFinal+=' <mark style="background-color: red;">NÃO É BISSEXTO</mark></p>'
             }
-            exibirTela.innerHTML = `<h2>Analisando o ano de ${ano}...</h2> ${textoFinal}`
+            exibirTela.innerHTML = textoFinal
         }
     </script>
 </body>

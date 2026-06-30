@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço mudou</title>
+    <style>
+        body {
+                font: normal 15pt arial;
+            }
+            input {
+                font: normal 15pt arial;
+                padding: 15px;
+                border-radius: 10px;
+            }
+    </style>
+</head>
+<body>
+    <h1>Preço mudou</h1>
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="resultado">
+        <p>Clique no botão acima para analisar a mudança de preço.</p>
+    </div>
+
+    <script>
+        function verificar() {
+            var mostrar = document.querySelector('div#resultado');
+            var precoAntigo = Number(prompt('Qual era o preço anterior do produto?'))
+            var precoAtual = Number(prompt('Qual é o preço atual do produto?'))
+            var texto = `<h2>Analisando os valores informados...</h2> <p>O produto custava ${(precoAntigo).toLocaleString('pt-BR', {style: "currency", currency: 'BRL'})} e agora custa ${(precoAtual).toLocaleString('pt-BR', {style: "currency", currency: 'BRL'})}.</p>`
+            if (precoAntigo < precoAtual) {
+                var subiu = precoAtual - precoAntigo
+                var margem = (subiu / precoAntigo) * 100
+                texto +=`<p>Hoje o produto está mais caro.</p> <p>O preço subiu ${(subiu).toLocaleString('pt-BR', {style: "currency", currency: 'BRL'})} em relação ao preço anterior.</p> <p>Uma variação de ${(margem).toFixed(2).replace('.',',')}% pra cima.</p>`
+            } else if (precoAntigo > precoAtual) {
+                var subiu = precoAntigo - precoAtual
+                var margem = (subiu / precoAntigo) * 100
+                texto +=`<p>Hoje o produto está mais barato.</p> <p>O preço caiu ${(subiu).toLocaleString('pt-BR', {style: "currency", currency: 'BRL'})} em relação ao preço anterior.</p> <p>Uma variação de ${(margem).toFixed(2).replace('.',',')}% pra baixo.</p>`
+            }
+            mostrar.innerHTML = texto
+        }
+    </script>
+</body>
+</html>
