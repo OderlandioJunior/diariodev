@@ -18,6 +18,8 @@ html, body {
     overflow-x: hidden;
     scroll-behavior: smooth;
     position: relative;
+
+    font-family: Arial, Helvetica, sans-serif;
 }
 /* Fim da configuração da página */
 /* Configuração do cabeçalho */
@@ -25,9 +27,7 @@ header{
     z-index: 1;
     position: sticky;
     top: 0;
-    height: max-content;
     width: 100%;
-    margin-bottom: 1em;
     padding-top: 1em;
     padding-bottom: .5em;
     background-color: rgb(70, 12, 97);
@@ -36,9 +36,15 @@ header{
 
     text-align: center;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
+}header a {
+    text-decoration: none;
+    color: white;
+}header a:hover {
+    border-bottom: 2px solid white;
 }
-
+header span {
+    cursor: pointer;
+}
 menu {
     padding-top: 1em;
 }
@@ -49,15 +55,7 @@ ul {
     align-items: center;
     justify-content: space-evenly;
 }
-a {
-    text-decoration: none;
-    color: white;
-}a:hover {
-    border-bottom: 2px solid white;
-}
-span {
-    cursor: pointer;
-}
+
 .burguer {
     position: absolute;
     height: max-content;
@@ -84,6 +82,28 @@ span {
 /* Configuração do conteúdo */
 section  {
     scroll-margin-top: 120px;
+    margin: .5em;
+    padding: .5em;
+}
+section p {
+    line-height: normal;
+    padding: .4em 0;
+}
+.header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+figure {
+    position: relative;
+}
+figcaption {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
 }
 
 /* Fim da configuração do conteúdo */
