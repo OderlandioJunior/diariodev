@@ -9,21 +9,23 @@
 <body>
     <header>
         <h1>Diário DEV</h1>
-        <p>Caderno online - Oderlândio Júnior</p>
-        <nav>
+        <p>Caderno online || Oderlândio Júnior</p>
+        <menu>
             <ul>
                 <li><a href="#into">Objetivo</a></li>
-                <li>
-                    <span>Aprendizado</span>
-                    <ul>
-                        <li><a href="#html">HTML</a></li>
-                        <li><a href="#css">CSS</a></li>
-                        <li><a href="#js">JavaScript</a></li>
-                    </ul>
-                </li>
                 <li><a href="#profile">Sobre mim</a></li>
+                <li>
+                    <span onclick="opcoesMenu()">Aprendizado</span>
+                    <menu class="burguer">
+                        <ul>
+                            <li><a href="#html">HTML</a></li>
+                            <li><a href="#css">CSS</a></li>
+                            <li><a href="#js">JavaScript</a></li>
+                        </ul>
+                    </menu>
+                </li>
             </ul>
-        </nav>
+        </menu>
     </header>
     <main>
         <section id="into">
@@ -46,7 +48,7 @@
                         <h3>HTML5</h3>
                         <figure>
                             <img src="assets/images/Broken_Greenhouse.png" alt="">
-                            <figcaption></figcaption>
+                            <figcaption>HTML como a estrutura bruta. A base sólida de qualquer projeto, antes da reforma visual</figcaption>
                         </figure>
                     </div>
                     <div class="nivel">
@@ -95,8 +97,7 @@
                         <h3>CSS3</h3>
                         <figure>
                             <img src="assets/images/Greenhouse.png" alt="">
-                            <figcaption>
-                            </figcaption>
+                            <figcaption>CSS sendo o acabamento que transforma entulho em um lugar agradável</figcaption>
                         </figure>
                     </div>
                     <div class="nivel">
@@ -145,9 +146,7 @@
                         <h3>JavaScript</h3>
                         <figure>
                             <img src="assets/images/Completed_Greenhouse.png" alt="">
-                            <figcaption>
-            
-                            </figcaption>
+                            <figcaption>JavaScript é a automação total. A inteligência que traz vida, movimento e utilidade ao espaço</figcaption>
                         </figure>
                     </div>
                     <div class="nivel">
@@ -207,12 +206,20 @@
         </section>
     </main>
     <footer>
-        <ul>
-            <li><a href="">E-mail</a></li>
-            <li><a href="">GitHub</a></li>
-            <li><a href="">LinkedIn</a></li>
-        </ul>
+        <nav>
+            <ul>
+                <li><a href="">E-mail</a></li>
+                <li><a href="">GitHub</a></li>
+                <li><a href="">LinkedIn</a></li>
+            </ul>
+        </nav>
         <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, possuindo caráter estritamente acadêmico e sem fins lucrativos.</p>
     </footer>
+    <script>
+        function opcoesMenu() {
+            var opcoes = document.querySelector('.burguer')
+            opcoes.classList.toggle('burguerOpcoes')
+        }
+    </script>
 </body>
 </html>
