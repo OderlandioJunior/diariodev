@@ -82,31 +82,68 @@ ul {
 /* Configuração do conteúdo */
 section  {
     scroll-margin-top: 120px;
-    margin: .5em;
     padding: .5em;
-}
-section p {
-    line-height: normal;
+}section p {
+    line-height: 1.5em;
     padding: .4em 0;
 }
 .header {
+    padding: 0 10px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    
+
+    border: 3px solid rgb(70, 12, 97);
+    border-radius: 5px;
+}.header h3 {
+    width: 100px;
 }
 figure {
     position: relative;
 }
 figcaption {
+    width: 100%;
+    height: 100%;
+    padding: 4px;
+
     position: absolute;
     top: 0;
-    height: 100%;
-    width: 100%;
-}
+    left: 0;
 
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    line-height: 1.5em;
+    text-align: center;
+    opacity: .2;
+    transition: all .5s;
+}figcaption:hover {
+    background-color: rgba(250, 250, 210, .6);
+    opacity: 1;
+}
+ol {
+    margin-left: 2em;
+    margin-bottom: 1em
+}ol li {
+    padding: 5px 0;
+}
+.fala {
+    padding-bottom: .4em;
+}
 /* Fim da configuração do conteúdo */
 /* Configuração do rodapé */
-
+footer {
+    padding: 8px 5px;
+    background-color: rgb(70, 12, 97);
+    border-top: 3px solid rgb(96, 0, 141);
+    box-shadow: 0px -5px 10px rgba(96, 0, 141, 0.5);
+}footer p {
+    text-align: center;
+}
+nav {
+    padding-bottom: 5px;
+}
 /* Fim da configuração do rodapé */
