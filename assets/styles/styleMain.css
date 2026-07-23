@@ -1,11 +1,11 @@
 /* Configuração da página */
 @charset "UTF-8";
-
-/* :root {
-    --font-title: ;
-    --font-sub: ;
-    --font-text: ;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+:root {
+    --font-title: "Merriweather", serif;
+    --font-text: "Inter", sans-serif;
+}
 
 * {
     margin: 0;
@@ -15,38 +15,57 @@
 html, body {
     height: 100vh;
     width: 100vw;
+    margin: 0 5px;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    position: relative;
 
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1E1826;
 }
 /* Fim da configuração da página */
 /* Configuração do cabeçalho */
 header{
-    z-index: 1;
-    position: sticky;
-    top: 0;
     width: 100%;
     padding-top: 1em;
-    padding-bottom: .5em;
-    background-color: rgb(70, 12, 97);
-    border-bottom: 3px solid rgb(96, 0, 141);
-    box-shadow: 0px 5px 10px rgba(96, 0, 141, 0.5);
 
     text-align: center;
-    color: white;
-}header a {
-    text-decoration: none;
-    color: white;
-}header a:hover {
-    border-bottom: 2px solid white;
-}
-header span {
-    cursor: pointer;
+}header h1 {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding: 8px 0;
+
+    color: #E5B978;
+    font-family: var(--font-title);
+    font-size: 2.5em;
+    text-shadow: 0px 2px 5px black;
+
+    background-color: #4A3B52;
+    border: 6px solid #4A3B52;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px inset rgba(0, 0, 0, 0.7);
+}header p {
+    color: #EEEDEB;
+    font-size: 1.1em;
+    font-family: var(--font-title);
+    margin-bottom: 10px;
 }
 menu {
-    padding-top: 1em;
+    padding: 5px;
+    background-color: #B4A794;
+    box-shadow: 0px 0px 10px inset rgba(0, 0, 0, 0.8);
+    border: 5px solid #516178;
+    border-radius: 5px;
+    position: relative;
+}menu li {
+    color: black;
+    font-family: var(--font-title);
+    font-weight: bold;
+}menu a {
+    color: black;
+    text-decoration: none;
+}menu span {
+    cursor: pointer;
 }
 ul {
     list-style-type: none;
@@ -55,16 +74,12 @@ ul {
     align-items: center;
     justify-content: space-evenly;
 }
-
 .burguer {
     position: absolute;
+    top: 30px;
     height: max-content;
     padding: .6em;
-    opacity: 0;
-    visibility: hidden;
-    background-color: rgb(70, 12, 97);
-    box-shadow: 0px 5px 10px rgba(96, 0, 141, 0.5);
-    border-radius: 10px;
+    border-radius: 5px;
 
     transition: all .3s ease-in-out;
 }.burguerOpcoes {
@@ -80,12 +95,39 @@ ul {
 }
 /* Fim da configuração do cabeçalho */
 /* Configuração do conteúdo */
-section  {
+main {
+    background-color: #40323D;
+    border: 2px solid #516178;
+    border-top: none;
+    padding: 10px;
+}
+section {
     scroll-margin-top: 120px;
+    background-image: linear-gradient(to bottom, #EFD8A6, #F8E2BB);
     padding: .5em;
+    border-radius: 10px;
 }section p {
-    line-height: 1.5em;
     padding: .4em 0;
+    font-family: var(--font-text);
+    line-height: 1.5em;
+}section h3, h4 {
+    font-family: var(--font-title);
+    color: #E5B978;
+}
+#html {
+    background-image: linear-gradient(to right, #4A3866, #241C29);
+}
+#css {
+    background-image: linear-gradient(to right, #5BB144, #143F35);
+}
+#js {
+    background-image: linear-gradient(to right, #4E4773, #342F4D);
+}
+.card {
+    margin: 5px 0;
+    border: 5px solid #806459;
+    box-shadow: 0px 0px 5px inset black;
+    border-radius: 5px;
 }
 .header {
     padding: 0 10px;
@@ -93,9 +135,6 @@ section  {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-
-    border: 3px solid rgb(70, 12, 97);
-    border-radius: 5px;
 }.header h3 {
     width: 100px;
 }
@@ -129,6 +168,16 @@ ol {
     margin-bottom: 1em
 }ol li {
     padding: 5px 0;
+    color: white;
+}
+.jogo {
+    display: block;
+    width: 100%;
+    height: 100%;
+}.jogo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .fala {
     padding-bottom: .4em;
@@ -137,9 +186,6 @@ ol {
 /* Configuração do rodapé */
 footer {
     padding: 8px 5px;
-    background-color: rgb(70, 12, 97);
-    border-top: 3px solid rgb(96, 0, 141);
-    box-shadow: 0px -5px 10px rgba(96, 0, 141, 0.5);
 }footer p {
     text-align: center;
 }
