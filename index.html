@@ -8,15 +8,17 @@
 </head>
 <body>
     <header>
-        <h1>Diário DEV</h1>
-        <p>Caderno online || Oderlândio Júnior</p>
+        <div class="title">
+            <h1>Diário DEV</h1>
+            <p>Caderno online || Oderlândio Júnior</p>
+        </div>
         <menu>
             <ul>
                 <li><a href="#into">Objetivo</a></li>
                 <li><a href="#profile">Sobre mim</a></li>
                 <li>
-                    <span onclick="opcoesMenu()">Aprendizado</span>
-                    <menu class="burguer">
+                    <span>Aprendizado</span>
+                    <menu class="opcoes">
                         <ul>
                             <li><a href="#html">HTML</a></li>
                             <li><a href="#css">CSS</a></li>
@@ -216,23 +218,5 @@
         </nav>
         <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, possuindo caráter estritamente acadêmico e sem fins lucrativos.</p>
     </footer>
-    <script>
-        function opcoesMenu() {
-            var opcoes = document.querySelector('.burguer')
-            opcoes.classList.toggle('burguerOpcoes')
-
-            // Seleciona todos os links 'a' dentro do menu '.burguer'
-            var links = document.querySelectorAll('.burguer a');
-
-            // Para cada link encontrado, adiciona o evento de clique
-            links.forEach(link => {
-                link.addEventListener('click', () => {
-                    // Seleciona o menu e remove a classe que o mantém aberto
-                    const opcoes = document.querySelector('.burguer');
-                    opcoes.classList.remove('burguerOpcoes');
-                });
-            });
-        }
-    </script>
 </body>
 </html>
