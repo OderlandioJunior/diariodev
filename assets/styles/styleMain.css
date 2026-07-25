@@ -1,9 +1,13 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Configuração da página */
 :root {
     --font-title: "Merriweather", serif;
     --font-text: "Inter", sans-serif;
+    --cor-title: #F1F2EC;
+    --cor-text: #212025;
 }
 * {
     margin: 0;
@@ -13,5 +17,95 @@
 html, body {
     width: 100%;
     height: 100%;
+    background-color: #21402D;
+    /* background-image: linear-gradient(to bottom, #1A3424, #B6F23A); */
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
+/* Fim da configuração da página */ 
+/* Configuração do cabeçalho */
+    header{
+        display: none;
+    }
+/* Fim da configuração do cabeçalho */
+/* Configuração do conteúdo */
+    main {
+        margin: 12px;        
+    }
+    .detail {
+        padding: 6px;
+        border: 6px solid transparent;
+        outline: 2px solid #262626;
+        border-radius: 6px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, .6) inset;
+        background: linear-gradient(#D3C2A6) padding-box, linear-gradient(to right, #4C2C23, #734134) border-box;
+    } .detail h2 {
+        font: 500 15pt var(--font-title);
+    } .detail p {
+        padding: 4px 0px;
+        font: 400 14pt var(--font-text);
+        line-height: 1.4em;
+    } .detail a {
+        color: #378D1B;
+        text-decoration: none;
+        text-shadow: 0px 0px 2px #5F942F;
+    } .detail a:hover {
+        text-decoration: underline;
+    } .detail abbr {
+        cursor: help;
+        text-decoration: none;
+        color: #5F942F;
+    }
+    .jogo {
+        display: block;
+    } .jogo img {
+        height: 100%;
+        width: 100%;
+        outline: 2px solid #262626;
+        border: 4px solid transparent;
+        border-radius: 4px;
+        background: linear-gradient(#F1EAD8) padding-box, linear-gradient(to bottom, #734134, #4C2C23) border-box;
+    }
+    .fala {
+        padding-left: 4px;
+        border-left: 6px solid #4C2C23;
+        border-radius: 5px;
+    } .fala p {
+        padding: 2px 0;
+    } .fala blockquote {
+        padding-left: 8px;
+        font: normal 12pt var(--font-text);
+    }
+/* Fim da configuração do conteúdo */
+/* Configuração do rodapé */
+    footer {
+        min-height: 150px;
+        padding: 0 5px;
+        border-top: 4px solid #734134;
+        background-image: url(../images/stardew-valley_footer.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+    } footer p {
+        width: 70%;
+        padding: 8px 5px;
+        font: normal 10pt var(--font-text);
+        text-align: center;
+        hyphens: auto;
+        color: var(--cor-text);
+    } 
+    nav {
+        padding: 5px 0;
+    } nav ul {
+        list-style-type: none;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+    } nav a {
+        font: 500 12pt var(--font-text);
+        color: var(--cor-title);
+        text-shadow: 0px 2px 2px black;
+        text-decoration: none;
+    } nav a:hover {
+        text-decoration: underline;
+    }
+/* Fim da configuração do rodapé */
