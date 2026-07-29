@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/styles/styleMain.css">
+    <script src="https://kit.fontawesome.com/1cf26eb200.js" crossorigin="anonymous"></script>
     <title>Diário DEV</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
                 <li><a href="#into">Objetivo</a></li>
                 <li><a href="#profile">Sobre mim</a></li>
                 <li>
-                    <span>Aprendizado</span>
+                    <span>Aprendizado <i class="fa-solid fa-caret-down"></i></span>
                     <menu class="opcoes">
                         <ul>
                             <li><a href="#html">HTML</a></li>
@@ -30,6 +31,7 @@
         </menu>
     </header>
     <main>
+        <!-- [OBJETIVO] -->
         <section id="into" class="detail">
             <!-- [Objetivo do blog] -->
             <h2>A Filosofia do Diário DEV: Documentação como Ativo Profissional</h2>
@@ -37,155 +39,168 @@
             <p>A estruturação desta plataforma reflete a "Tríade do Frontend" — HTML, CSS e JavaScript — estabelecendo conexões profundas entre a estrutura, a apresentação e a lógica comportamental. O Diário aborda a tipologia de arquivos, a anatomia do documento HTML, o modelo de caixas e a arquitetura semântica, integrando esses conceitos a uma visão de longo prazo para a carreira de desenvolvedor.</p>
             <p>O propósito fundamental do Diário DEV é mitigar o fenômeno do "conhecimento raso". Ao transformar o aprendizado em uma narrativa, o autor do blog utiliza a técnica de aprendizado por explicação, o que garante que o conhecimento seja permanente. Além do benefício cognitivo, o blog atua como um portfólio vivo, demonstrando a capacidade analítica e a evolução técnica do desenvolvedor para potenciais recrutadores e para a comunidade.</p>
         </section>
+        <!-- [CONTEÚDO PRINCIPAL] -->
         <section class="chapter">
-            <h2>Conhecimentos consolidados, ecossistema de desenvolvimento e prática</h2>
-            <!-- [CONTEÚDO PRINCIPAL] -->
-            <div class="tech">
-                <!-- HTML5 -->
-                <section id="html" class="card">
-                    <div class="header">
-                        <img src="assets/images/Broken_Greenhouse.png" alt="">
-                        <figcaption>HTML: Estrutura bruta</figcaption>
+            <!-- HTML5 -->
+            <section id="html" class="card">
+                <div class="header-card">
+                    <figure>
+                        <img src="assets/images/Broken_Greenhouse.png" alt="Estufa CSS" class="img-estufa">
+                    </figure>
+                    <div class="card-text">
+                        <h4>Estrutura bruta</h4>
+                        <h3>HTML5</h3>
                     </div>
-                    <section class="page">
-                        <div class="nivel">
-                            <div class="ref">
-                                <h3>Nível 1</h3>
-                                <picture>
-                                    <img src="assets/images/Hoe.png" alt="Enxada do Stardew Valley">
-                                </picture>
-                            </div>
-                            <ol>
-                                <li>Estrutura do documento</li>
-                                <li>Estrutura do conteúdo</li>
-                                <li>Hierarquia de títulos e elementos textuais</li>
-                            </ol>
-                        </div>
-                        <div class="nivel">
-                            <div class="ref">
-                                <h3>Nível 2</h3>
-                                <picture>
-                                    <img src="assets/images/Gold_Hoe.png" alt="Enxada de Ouro do Stardew Valley">
-                                </picture>
-                            </div>
-                            <ol>
-                                <li> url, domínio e direitos e formatos de imagem</li>
-                                <li>Conexões</li>
-                                <li>Mídia</li>
-                            </ol>
-                        </div>
-                        <div class="nivel">
-                            <div class="ref">
-                                <h3>Nivel 3</h3>
-                                <picture>
-                                    <img src="assets/images/Iridium_Hoe.png" alt="Enxada de Íridio do Stardew Valley">
-                                </picture>
-                            </div>
-                            <ol>
-                                <li>Listas</li>
-                                <li>Tabela</li>
-                                <li>Formulario</li>
-                            </ol>
-                        </div>
-                    </section>
-                </section>
-                <!-- CSS3 -->
-                <section id="css" class="card">
-                    <div class="header">
-                        <img src="assets/images/Greenhouse.png" alt="">
-                        <figcaption>CSS: Refino estético</figcaption>
+                </div>
+                <section class="page">
+                    <div class="ref">
+                        <h3>Nível 1 <i class="fa-solid fa-caret-down"></i></h3>
+                        <picture>
+                            <img src="assets/images/Hoe.png" alt="Enxada do Stardew Valley">
+                        </picture>
                     </div>
-                    <section class="page">
-                        <div class="nivel">
-                            <div class="ref">
-                                <h3>Nível 1</h3>
-                                <picture>
-                                    <img src="assets/images/Scythe.png" alt="Foice do Stardew Valley">
-                                </picture>
-                            </div>
-                            <ol>
-                                <li>Regras CSS</li>
-                                <li>Variáveis</li>
-                                <li>Seletores e pseudo-seletores</li>
-                            </ol>
-                        </div>
-                        <div class="nivel">
-                            <div class="ref">
-                                <h3>Nível 2</h3>
-                                <picture>
-                                    <img src="assets/images/Golden_Scythe.png" alt="Foice de Ouro do Stardew Valley">
-                                </picture>
-                            </div>
-                            <ol>
-                                <li>Modelo de caixas</li>
-                                <li>Contornos</li>
-                                <li>Plano de fundo</li>
-                            </ol>
-                        </div>
-                        <div class="nivel">
-                            <div class="ref">
-                                <h3>Nível 3</h3>
-                                <picture>
-                                    <img src="assets/images/Iridium_Scythe.png" alt="Foice de Íridio do Stardew Valley">
-                                </picture>
-                            </div>
-                            <ol>
-                                <li>Media Query</li>
-                                <li>Flexbox</li>
-                                <li>Grid layout</li>
-                            </ol>
-                        </div>
-                    </section>
-                </section>
-                <!-- JavaScript -->
-                <section id="js" class="card">
-                    <div class="header">
-                        <img src="assets/images/Completed_Greenhouse.png" alt="">
-                        <figcaption>JavaScript: Automação total</figcaption>
+                    <div class="opcoes">
+                        <ol>
+                            <li>Estrutura do documento</li>
+                            <li>Estrutura do conteúdo</li>
+                            <li>Hierarquia de títulos e elementos textuais</li>
+                        </ol>
                     </div>
-                    <section class="page">
-                        <div class="nivel">
-                            <div class="ref">
-                                <h3>Nível 1</h3>
-                                <picture>
-                                    <img src="assets/images/Sprinkler.png" alt="Irrigador Simples do Stardew Valley">
-                                </picture>
-                            </div>
-                            <ol>
-                                <li>JavaScript</li>
-                                <li>Variáveis</li>
-                                <li>Tipos primitivos</li>
-                            </ol>
-                        </div>
-                        <div class="nivel">
-                            <div class="ref">
-                                <h3>Nível 2</h3>
-                                <picture>
-                                    <img src="assets/images/Quality_Sprinkler.png" alt="Irrigador de Qualidade do Stardew Valley">
-                                </picture>
-                            </div>
-                            <ol>
-                                <li>Formatação de Number e formatação de String</li>
-                                <li>Operadores</li>
-                                <li>Condições</li>
-                            </ol>
-                        </div>
-                        <div class="nivel">
-                            <div class="ref">
-                                <h3>Nível 3</h3>
-                                <picture>
-                                    <img src="assets/images/Iridium_Sprinkler.png" alt="Irrigador de Irídio do Stardew Valley">
-                                </picture>
-                            </div>
-                            <ol>
-                                <li>Eventos DOM</li>
-                                <li>Laços</li>
-                            </ol>
-                        </div>
-                    </section>
+                    <div class="ref">
+                        <h3>Nível 2 <i class="fa-solid fa-caret-down"></i></h3>
+                        <picture>
+                            <img src="assets/images/Gold_Hoe.png" alt="Enxada de Ouro do Stardew Valley">
+                        </picture>
+                    </div>
+                    <div class="opcoes">
+                        <ol>
+                            <li> url, domínio e direitos e formatos de imagem</li>
+                            <li>Conexões</li>
+                            <li>Mídia</li>
+                        </ol>
+                    </div>
+                    <div class="ref">
+                        <h3>Nível 3 <i class="fa-solid fa-caret-down"></i></h3>
+                        <picture>
+                            <img src="assets/images/Iridium_Hoe.png" alt="Enxada de Íridio do Stardew Valley">
+                        </picture>
+                    </div>
+                    <div class="opcoes">
+                        <ol>
+                            <li>Listas</li>
+                            <li>Tabela</li>
+                            <li>Formulario</li>
+                        </ol>
+                    </div>
                 </section>
-            </div>
+            </section>
+            <!-- CSS3 -->
+            <section id="css" class="card">
+                <div class="header-card">
+                    <figure>
+                        <img src="assets/images/Greenhouse.png" alt="Estufa CSS" class="img-estufa">
+                    </figure>
+                    <div class="card-text">
+                        <h4>Refino estético</h4>
+                        <h3>CSS3</h3>
+                    </div>
+                </div>
+                <section class="page">
+                    <div class="ref">
+                        <h3>Nível 1 <i class="fa-solid fa-caret-down"></i></h3>
+                        <picture>
+                            <img src="assets/images/Scythe.png" alt="Foice do Stardew Valley">
+                        </picture>
+                    </div>
+                    <div class="opcoes">
+                        <ol>
+                            <li>Regras CSS</li>
+                            <li>Variáveis</li>
+                            <li>Seletores e pseudo-seletores</li>
+                        </ol>
+                    </div>
+                    <div class="ref">
+                        <h3>Nível 2 <i class="fa-solid fa-caret-down"></i></h3>
+                        <picture>
+                            <img src="assets/images/Golden_Scythe.png" alt="Foice de Ouro do Stardew Valley">
+                        </picture>
+                    </div>
+                    <div class="opcoes">
+                        <ol>
+                            <li>Modelo de caixas</li>
+                            <li>Contornos</li>
+                            <li>Plano de fundo</li>
+                        </ol>
+                    </div>
+                    <div class="ref">
+                        <h3>Nível 3 <i class="fa-solid fa-caret-down"></i></h3>
+                        <picture>
+                            <img src="assets/images/Iridium_Scythe.png" alt="Foice de Íridio do Stardew Valley">
+                        </picture>
+                    </div>
+                    <div class="opcoes">
+                        <ol>
+                            <li>Media Query</li>
+                            <li>Flexbox</li>
+                            <li>Grid layout</li>
+                        </ol>
+                    </div>
+                </section>
+            </section>
+            <!-- JavaScript -->
+            <section id="js" class="card">
+                <div class="header-card">
+                    <figure>
+                        <img src="assets/images/Completed_Greenhouse.png" alt="Estufa CSS" class="img-estufa">
+                    </figure>
+                    <div class="card-text">
+                        <h4>Automatização</h4>
+                        <h3>JavaScript</h3>
+                    </div>
+                </div>
+                <section class="page">
+                    <div class="ref">
+                        <h3>Nível 1 <i class="fa-solid fa-caret-down"></i></h3>
+                        <picture>
+                            <img src="assets/images/Sprinkler.png" alt="Irrigador Simples do Stardew Valley">
+                        </picture>
+                    </div>
+                    <div class="opcoes">
+                        <ol>
+                            <li>JavaScript</li>
+                            <li>Variáveis</li>
+                            <li>Tipos primitivos</li>
+                        </ol>
+                    </div>
+                    <div class="ref">
+                        <h3>Nível 2 <i class="fa-solid fa-caret-down"></i></h3>
+                        <picture>
+                            <img src="assets/images/Quality_Sprinkler.png" alt="Irrigador de Qualidade do Stardew Valley">
+                        </picture>
+                    </div>
+                    <div class="opcoes">
+                        <ol>
+                            <li>Formatação de Number e formatação de String</li>
+                            <li>Operadores</li>
+                            <li>Condições</li>
+                        </ol>
+                    </div>
+                    <div class="ref">
+                        <h3>Nível 3 <i class="fa-solid fa-caret-down"></i></h3>
+                        <picture>
+                            <img src="assets/images/Iridium_Sprinkler.png" alt="Irrigador de Irídio do Stardew Valley">
+                        </picture>
+                    </div>
+                    <div class="opcoes">
+                        <ol>
+                            <li>Eventos DOM</li>
+                            <li>Laços</li>
+                        </ol>
+                    </div>
+                </section>
+            </section>
         </section>
+        <!-- [SOBRE MIM] -->
         <section id="profile" class="detail">
             <h2>A Mente por trás do Diário: Biografia, trajetória e propósito</h2>
             <p>Me chamo Oderlândio, nasci em Teixeira de Freitas e atualmente moro em Caraíva com minha esposa, tenho 24 anos e estou estudando para ser um desenvolvedor WEB.</p>
