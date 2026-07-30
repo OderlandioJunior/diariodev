@@ -59,7 +59,7 @@
                             <img src="assets/images/Hoe.png" alt="Enxada do Stardew Valley">
                         </picture>
                     </div>
-                    <div class="opcoes">
+                    <div class="niveis">
                         <ol>
                             <li>Estrutura do documento</li>
                             <li>Estrutura do conteúdo</li>
@@ -72,7 +72,7 @@
                             <img src="assets/images/Gold_Hoe.png" alt="Enxada de Ouro do Stardew Valley">
                         </picture>
                     </div>
-                    <div class="opcoes">
+                    <div class="niveis">
                         <ol>
                             <li> url, domínio e direitos e formatos de imagem</li>
                             <li>Conexões</li>
@@ -85,7 +85,7 @@
                             <img src="assets/images/Iridium_Hoe.png" alt="Enxada de Íridio do Stardew Valley">
                         </picture>
                     </div>
-                    <div class="opcoes">
+                    <div class="niveis">
                         <ol>
                             <li>Listas</li>
                             <li>Tabela</li>
@@ -112,7 +112,7 @@
                             <img src="assets/images/Scythe.png" alt="Foice do Stardew Valley">
                         </picture>
                     </div>
-                    <div class="opcoes">
+                    <div class="niveis">
                         <ol>
                             <li>Regras CSS</li>
                             <li>Variáveis</li>
@@ -125,7 +125,7 @@
                             <img src="assets/images/Golden_Scythe.png" alt="Foice de Ouro do Stardew Valley">
                         </picture>
                     </div>
-                    <div class="opcoes">
+                    <div class="niveis">
                         <ol>
                             <li>Modelo de caixas</li>
                             <li>Contornos</li>
@@ -138,7 +138,7 @@
                             <img src="assets/images/Iridium_Scythe.png" alt="Foice de Íridio do Stardew Valley">
                         </picture>
                     </div>
-                    <div class="opcoes">
+                    <div class="niveis">
                         <ol>
                             <li>Media Query</li>
                             <li>Flexbox</li>
@@ -165,7 +165,7 @@
                             <img src="assets/images/Sprinkler.png" alt="Irrigador Simples do Stardew Valley">
                         </picture>
                     </div>
-                    <div class="opcoes">
+                    <div class="niveis">
                         <ol>
                             <li>JavaScript</li>
                             <li>Variáveis</li>
@@ -178,7 +178,7 @@
                             <img src="assets/images/Quality_Sprinkler.png" alt="Irrigador de Qualidade do Stardew Valley">
                         </picture>
                     </div>
-                    <div class="opcoes">
+                    <div class="niveis">
                         <ol>
                             <li>Formatação de Number e formatação de String</li>
                             <li>Operadores</li>
@@ -191,7 +191,7 @@
                             <img src="assets/images/Iridium_Sprinkler.png" alt="Irrigador de Irídio do Stardew Valley">
                         </picture>
                     </div>
-                    <div class="opcoes">
+                    <div class="niveis">
                         <ol>
                             <li>Eventos DOM</li>
                             <li>Laços</li>
@@ -230,5 +230,42 @@
         </nav>
         <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web <em>possuindo caráter estritamente acadêmico e sem fins lucrativos</em>.</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        // 1. Evento para o Menu Dropdown do Header
+        const btnAprendizado = document.querySelector('header menu span');
+        const menuDropdown = document.querySelector('.opcoes');
+        if (btnAprendizado && menuDropdown) {
+            btnAprendizado.addEventListener('click', (e) => {
+                e.stopPropagation();
+                menuDropdown.classList.toggle('mostrar');
+                // Gira a setinha
+                const icone = btnAprendizado.querySelector('i');
+                if (icone) icone.classList.toggle('fa-rotate-180');
+            });
+        // Fecha o menu se clicar em qualquer outro lugar da tela
+        document.addEventListener('click', () => {
+            menuDropdown.classList.remove('mostrar');
+            const icone = btnAprendizado.querySelector('i');
+            if (icone) icone.classList.remove('fa-rotate-180');
+        });
+    }
+    // 2. Evento para as Opções do Main
+    const gatilhosNivel = document.querySelectorAll('.ref');
+    gatilhosNivel.forEach(gatilho => {
+        gatilho.addEventListener('click', () => {
+            const niveis = gatilho.nextElementSibling;
+            if (niveis && niveis.classList.contains('niveis')) {
+                // Alterna a expansão
+                niveis.classList.toggle('show');
+
+                // Gira a seta da ref
+                const icone = gatilho.querySelector('i');
+                if (icone) icone.classList.toggle('fa-rotate-180');
+            }
+        });
+    });
+});
+    </script>
 </body>
 </html>

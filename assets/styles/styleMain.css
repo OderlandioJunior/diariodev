@@ -25,18 +25,35 @@ html, body {
 /* Fim da configuração da página */ 
 /* Configuração do cabeçalho */
     header {
+        width: 100%;
+        min-height: 125px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent), url('../images/stardew-valley_header.png');
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, .4);
         border-bottom: 2px solid #F1F2EC;
         outline: 2px solid black;
     }
     .title {
-        padding: 10px;
+        padding-top: 10px;
+        padding-left: 10px;
         font: 200 10pt var(--font-title);
         color: var(--cor-title);
     } .title h1 {
         font-weight: 300;
     }
+    menu {
+    }
     menu ul {
-        padding-top: 10px;
         list-style-type: none;
         display: flex;
         flex-flow: row nowrap;
@@ -44,15 +61,42 @@ html, body {
         align-items: center;
     } menu li {
         padding: 10px;
+        position: relative;
     } menu a, menu span {
         cursor: pointer;
         color: var(--cor-title);
         text-decoration: none;
+        font-size: 13pt;
     } menu a:hover, menu span:hover {
         text-decoration: underline;
     }
     .opcoes {
-        display: none;
+        position: absolute;
+        top: 80%;
+        right: 15%;
+
+        background-color: #2C2E33;
+        border: 2px solid #636D68;
+        border-radius: 6px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        width: 105px;
+
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out, opacity 0.2s ease-in-out;
+    } .opcoes ul {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding: 5px 0;
+    } .opcoes a {
+        color: var(--cor-title);
+    }
+    .opcoes.mostrar{
+        max-height: 200px;
+        opacity: 1;
     }
 /* Fim da configuração do cabeçalho */
 /* Configuração do conteúdo */
@@ -87,7 +131,7 @@ html, body {
         display: flex;
         flex-flow: row nowrap;
         justify-content: flex-start;
-        align-items: flex-end;
+        align-items: stretch;
 
         background-color: #383D43;
         outline: 2px solid black;
@@ -101,6 +145,7 @@ html, body {
         padding: 12px 8px;
         background-color: #2C2E33;
 
+        flex-shrink: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -124,10 +169,11 @@ html, body {
         color: #B5BEB9;
     }
     .page {
+        flex-grow: 1;
         display: flex;
         flex-flow: column nowrap;
         justify-content: space-evenly;
-        align-items: flex-start;
+        align-items: stretch;
         gap: 5px;
         padding: 10px;
     } .ref {
@@ -144,21 +190,32 @@ html, body {
     } .ref img {
         width: 40px;
     }
-    .nivel ol {
-        display: none;
+    .niveis {
+        width: 100%;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0, 1, 0, 1), opacity 0.3s ease-in-out;
+    } .nivel-opcoes ol {
         margin-left: 25px;
-    } .nivel li {
+        padding: 8px 0;
+    }.nivel-opcoes a {
         font-family: 'Courier New', Courier, monospace;
         color: var(--cor-title);
-        hyphens: auto;
+        padding: 3px 0;
+    }
+    .niveis.show {
+        max-height: 300px;
+        opacity: 1;
+        transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
     }
     .detail {
         padding: 6px;
         border: 6px solid transparent;
         outline: 2px solid #262626;
         border-radius: 6px;
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, .6) inset;
-        background: linear-gradient(#D3C2A6) padding-box, linear-gradient(to right, #4C2C23, #734134) border-box;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, .6) inset, 0px 0px 10px rgba(0, 0, 0, 0.5);
+        background: linear-gradient(135deg, #D3C2A6 30%, #C8B393 70%) padding-box, linear-gradient(to right, #4C2C23, #734134) border-box;
     } .detail h2 {
         font: 500 16pt var(--font-title);
     } .detail p {
