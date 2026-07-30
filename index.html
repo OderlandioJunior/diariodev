@@ -235,37 +235,37 @@
         // 1. Evento para o Menu Dropdown do Header
         const btnAprendizado = document.querySelector('header menu span');
         const menuDropdown = document.querySelector('.opcoes');
-        if (btnAprendizado && menuDropdown) {
-            btnAprendizado.addEventListener('click', (e) => {
-                e.stopPropagation();
-                menuDropdown.classList.toggle('mostrar');
-                // Gira a setinha
+            if (btnAprendizado && menuDropdown) {
+                btnAprendizado.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    menuDropdown.classList.toggle('mostrar');
+                    // Gira a setinha
+                    const icone = btnAprendizado.querySelector('i');
+                    if (icone) icone.classList.toggle('fa-rotate-180');
+                });
+            // Fecha o menu se clicar em qualquer outro lugar da tela
+            document.addEventListener('click', () => {
+                menuDropdown.classList.remove('mostrar');
                 const icone = btnAprendizado.querySelector('i');
-                if (icone) icone.classList.toggle('fa-rotate-180');
+                if (icone) icone.classList.remove('fa-rotate-180');
             });
-        // Fecha o menu se clicar em qualquer outro lugar da tela
-        document.addEventListener('click', () => {
-            menuDropdown.classList.remove('mostrar');
-            const icone = btnAprendizado.querySelector('i');
-            if (icone) icone.classList.remove('fa-rotate-180');
-        });
-    }
-    // 2. Evento para as Opções do Main
-    const gatilhosNivel = document.querySelectorAll('.ref');
-    gatilhosNivel.forEach(gatilho => {
-        gatilho.addEventListener('click', () => {
-            const niveis = gatilho.nextElementSibling;
-            if (niveis && niveis.classList.contains('niveis')) {
-                // Alterna a expansão
-                niveis.classList.toggle('show');
+        }
+            // 2. Evento para as Opções do Main
+        const gatilhosNivel = document.querySelectorAll('.ref');
+            gatilhosNivel.forEach(gatilho => {
+                gatilho.addEventListener('click', () => {
+                    const niveis = gatilho.nextElementSibling;
+                    if (niveis && niveis.classList.contains('niveis')) {
+                        // Alterna a expansão
+                        niveis.classList.toggle('show');
 
-                // Gira a seta da ref
-                const icone = gatilho.querySelector('i');
-                if (icone) icone.classList.toggle('fa-rotate-180');
-            }
+                        // Gira a seta da ref
+                        const icone = gatilho.querySelector('i');
+                        if (icone) icone.classList.toggle('fa-rotate-180');
+                    }
+                });
+            });
         });
-    });
-});
     </script>
 </body>
 </html>

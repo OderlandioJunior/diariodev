@@ -125,6 +125,7 @@ html, body {
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
     }
     .card {
+        scroll-margin-top: 135px;
         margin: 20px 0;
         overflow: hidden;
 
@@ -137,7 +138,7 @@ html, body {
         outline: 2px solid black;
         border: 3px solid #636D68;
         border-radius: 8px;
-        box-shadow: inset 0px 2px 10px rgba(0, 0, 0, 0.6);
+        box-shadow: inset 0px 2px 10px rgba(0, 0, 0, 0.6), 0px 0px 10px rgba(0, 0, 0, 0.8);
 
         position: relative;
     } .header-card {
@@ -210,6 +211,7 @@ html, body {
         transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
     }
     .detail {
+        scroll-margin-top: 135px;
         padding: 6px;
         border: 6px solid transparent;
         outline: 2px solid #262626;
