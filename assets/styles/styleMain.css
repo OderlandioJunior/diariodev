@@ -215,7 +215,7 @@ html, body {
         outline: 2px solid #262626;
         border-radius: 6px;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4) inset, 0px 0px 10px rgba(0, 0, 0, 0.5);
-        background: linear-gradient(135deg, #D3C2A6 30%, #C8B393 70%) padding-box, linear-gradient(to right, #4C2C23, #734134) border-box;
+        background: url(../images/fundo-texto.jpg) padding-box, linear-gradient(to right, #4C2C23, #734134) border-box;
     } .detail h2 {
         font: 500 16pt var(--font-title);
     } .detail p {
@@ -392,14 +392,14 @@ RESPONSIVIDADE: Viewports Maiores (Desktops / Laptops)
 @media screen and (min-width: 1361px) {
 
     main {
-        margin: 20px;
+        margin: 20px 40px;
 
         /* ATIVA O CSS GRID */
         display: grid;
         justify-content: center;
 
         /* 2 colunas: Esquerda (70%), Direita (30%) */
-        grid-template-columns: 950px 350px; 
+        grid-template-columns: 1fr 350px; 
         
         /* Define que o tamanho das linhas é baseado APENAS no texto (auto) */
         grid-template-rows: auto auto; 
@@ -421,6 +421,11 @@ RESPONSIVIDADE: Viewports Maiores (Desktops / Laptops)
     } .title {
         padding-top: 30px;
         padding-left: 50px;
+        font: 200 20pt var(--font-title);
+        color: var(--cor-title);
+    } 
+    } menu {
+        display: none;
     }
 
     /* POSICIONAMENTO DOS FILHOS NO GRID */
@@ -433,10 +438,11 @@ RESPONSIVIDADE: Viewports Maiores (Desktops / Laptops)
 
     } 
     .detail h2 {
-        font-size: 1.6em;
+        font-size: 1.8em;
     } 
     .detail p {
         font-size: 1.1em;
+        padding: 8px 0px;
     }
 
     /* #profile: Coluna 1 (Esquerda), Linha 2 */
@@ -497,12 +503,11 @@ RESPONSIVIDADE: Viewports Maiores (Desktops / Laptops)
     /* Garante que o navegador mantenha os pixels nítidos e bem definidos! */
     image-rendering: pixelated;
     } footer p {
-        max-width: 600px; /* Em vez de 70%, limita em pixels pra não virar uma linha gigante e fina */
+        max-width: 700px; /* Em vez de 70%, limita em pixels pra não virar uma linha gigante e fina */
         width: 100%;
-        font-size: 1em;
+        font-size: 1.2em;
         text-align: right;
         margin: auto;
         color: var(--cor-title);
         text-shadow: 0px 2px 2px black;
     }
-}
