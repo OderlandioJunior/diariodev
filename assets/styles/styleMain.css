@@ -259,7 +259,7 @@ html, body {
         border-top: 4px solid #734134;
         background-image: url(../images/stardew-valley_footer.jpg);
         background-position: center;
-        background-repeat: no-repeat;
+        background-repeat: repeat;
     } footer p {
         width: 70%;
         padding: 8px 5px;
@@ -284,3 +284,225 @@ html, body {
         text-decoration: underline;
     }
 /* Fim da configuração do rodapé */
+/* Configuração WideScreen*/
+/* ===================================================
+RESPONSIVIDADE: Tablets e Telas Médias (630px até 1360px)
+=================================================== */
+@media screen and (min-width: 630px) and (max-width: 1360px) {
+
+    main {
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    header {
+        position: static;
+        height: 45%;
+        /* Repete a imagem na horizontal pra preencher a tela toda sem esticar */
+        /* 1. Faz o padrão repeti-lo na horizontal sem esticar a imagem desproporcionalmente */
+        background-repeat: repeat-x; 
+
+        /* 2. Mantém a altura da imagem cobrindo o header e ajusta a largura automaticamente */
+        background-size: contain; 
+
+        /* 3. A MÁGICA DO PIXEL ART: Proíbe o navegador de borrar os pixels! */
+        image-rendering: pixelated;
+    } .title {
+        padding-top: 30px;
+        padding-left: 50px;
+    }
+    /* A .chapter agora coloca os cards lado a lado */
+    .chapter {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch; /* Deixa todos os cards com a mesma altura */
+        gap: 15px;
+        margin: 0;
+    }
+
+    /* Cada card vai ocupar 1/3 do espaço disponível */
+    .card {
+        flex: 1; /* Distribui a largura igualmente entre os 3 cards */
+        flex-direction: column; /* No card individual, mantemos header em cima e níveis embaixo */
+        margin: 0;
+    }
+
+    .header-card {
+        width: 100%;
+        padding: 12px 8px;
+    }
+
+    /* Ajustes finos nos ícones e textos pra não apertar no card em colunas mais estreitas */
+    .page {
+        padding: 8px;
+    }
+
+    .ref {
+        gap: 5px;
+    }
+
+    .ref h3 {
+        font-size: 10pt; /* Reduz ligeiramente a fonte pra caber no card estreito */
+    }
+
+    .ref img {
+        width: 30px; /* Reduz ligeiramente a ferramenta */
+    }
+    /* Configuração geral / mobile */
+    .jogo {
+        display: block;
+        margin: 10px auto;
+    } 
+
+    .jogo img {
+        width: 100%;
+        height: auto;
+        max-height: 320px; /* Trava a ALTURA MÁXIMA pra não ocupar a tela toda */
+        object-fit: cover; /* Corta sutilmente as bordas excessivas se precisar, sem distorcer */
+        display: block;
+        
+        /* Mantém seu estilo de moldura Stardew */
+        outline: 2px solid #262626;
+        border: 4px solid transparent;
+        border-radius: 4px;
+        background: linear-gradient(#F1EAD8) padding-box, linear-gradient(to bottom, #734134, #4C2C23) border-box;
+    }
+    footer {
+        /* Repete a imagem na horizontal pra preencher a tela toda sem esticar */
+    background-repeat: repeat-x; 
+    
+    /* Garante que o navegador mantenha os pixels nítidos e bem definidos! */
+    image-rendering: pixelated;
+    } footer p {
+        max-width: 600px; /* Em vez de 70%, limita em pixels pra não virar uma linha gigante e fina */
+        width: 100%;
+        font-size: 1em;
+        text-align: right;
+        margin: auto;
+        color: var(--cor-title);
+        text-shadow: 0px 2px 2px black;
+    }
+}
+/* ===================================================
+RESPONSIVIDADE: Viewports Maiores (Desktops / Laptops)
+=================================================== */
+@media screen and (min-width: 1361px) {
+
+    main {
+        margin: 20px;
+
+        /* ATIVA O CSS GRID */
+        display: grid;
+        justify-content: center;
+
+        /* 2 colunas: Esquerda (70%), Direita (30%) */
+        grid-template-columns: 950px 350px; 
+        
+        /* Define que o tamanho das linhas é baseado APENAS no texto (auto) */
+        grid-template-rows: auto auto; 
+        
+        gap: 20px; /* Reduzi um pouco o gap geral */
+    }
+    header {
+        position: static;
+        height: 45%;
+        /* Repete a imagem na horizontal pra preencher a tela toda sem esticar */
+        /* 1. Faz o padrão repeti-lo na horizontal sem esticar a imagem desproporcionalmente */
+        background-repeat: repeat-x; 
+
+        /* 2. Mantém a altura da imagem cobrindo o header e ajusta a largura automaticamente */
+        background-size: contain; 
+
+        /* 3. A MÁGICA DO PIXEL ART: Proíbe o navegador de borrar os pixels! */
+        image-rendering: pixelated;
+    } .title {
+        padding-top: 30px;
+        padding-left: 50px;
+    }
+
+    /* POSICIONAMENTO DOS FILHOS NO GRID */
+
+    /* #into: Coluna 1 (Esquerda), Linha 1 */
+    #into {
+        grid-column: 1;
+        grid-row: 1;
+        margin-bottom: 0; /* Garante que não tenha margens sobressalentes */
+
+    } 
+    .detail h2 {
+        font-size: 1.6em;
+    } 
+    .detail p {
+        font-size: 1.1em;
+    }
+
+    /* #profile: Coluna 1 (Esquerda), Linha 2 */
+    #profile {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    /* .chapter: Coluna 2 (Direita), ocupa a Linha 1 e vai até a Linha 3 */
+    .chapter {
+        grid-column: 2;
+        grid-row: 1 / span 2; /* "span 2" faz ele se esticar pelas 2 linhas do texto! */
+        margin: 0;
+
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* TRAVA DA IMAGEM DO STARDEW (continua necessária pra não estourar a tela) */
+    .jogo img {
+        width: 100%;
+        max-height: 350px;
+        object-fit: cover;
+        display: block;
+        margin: 10px 0;
+    }
+
+    /* AJUSTES VISUAIS DOS CARDS NO DESKTOP */
+    .card {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .header-card {
+        width: 100%;
+        padding: 16px;
+    }
+
+    /* EXPANSÃO DOS NÍVEIS */
+    .niveis {
+        max-height: none !important;
+        opacity: 1 !important;
+        margin-left: 0;
+    }
+
+    .ref i {
+        display: none;
+    }
+
+    .ref {
+        cursor: default;
+    }
+    footer {
+        /* Repete a imagem na horizontal pra preencher a tela toda sem esticar */
+    background-repeat: repeat-x; 
+    
+    /* Garante que o navegador mantenha os pixels nítidos e bem definidos! */
+    image-rendering: pixelated;
+    } footer p {
+        max-width: 600px; /* Em vez de 70%, limita em pixels pra não virar uma linha gigante e fina */
+        width: 100%;
+        font-size: 1em;
+        text-align: right;
+        margin: auto;
+        color: var(--cor-title);
+        text-shadow: 0px 2px 2px black;
+    }
+}

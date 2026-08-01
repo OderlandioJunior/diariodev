@@ -34,7 +34,7 @@
         <!-- [OBJETIVO] -->
         <section id="into" class="detail">
             <!-- [Objetivo do blog] -->
-            <h2>A filosofia do Diário DEV: Documentação como ativo profissional</h2>
+            <h2>A Filosofia do Diário DEV: Documentação como ativo profissional</h2>
             <p>O Diário DEV, vai além da simples prática de anotações; ele se configura como uma estratégia de engenharia cognitiva destinada a mostrar a transição de um estudante de programação para um profissional na área.</p>
             <p>A estruturação desta plataforma reflete a "Tríade do Frontend" — HTML, CSS e JavaScript — estabelecendo conexões profundas entre a estrutura, a apresentação e a lógica comportamental. O Diário aborda a tipologia de arquivos, a anatomia do documento HTML, o modelo de caixas e a arquitetura semântica, integrando esses conceitos a uma visão de longo prazo para a carreira de desenvolvedor.</p>
             <p>O propósito fundamental do Diário DEV é mitigar o fenômeno do "conhecimento raso". Ao transformar o aprendizado em uma narrativa, o autor do blog utiliza a técnica de aprendizado por explicação, o que garante que o conhecimento seja permanente. Além do benefício cognitivo, o blog atua como um portfólio vivo, demonstrando a capacidade analítica e a evolução técnica do desenvolvedor para potenciais recrutadores e para a comunidade.</p>
@@ -202,7 +202,7 @@
         </section>
         <!-- [SOBRE MIM] -->
         <section id="profile" class="detail">
-            <h2>A mente por trás do Diário: Biografia, trajetória e propósito</h2>
+            <h2>A Mente por trás do Diário: Biografia, trajetória e propósito</h2>
             <p>Me chamo Oderlândio, nasci em Teixeira de Freitas e atualmente moro em Caraíva com minha esposa, tenho 24 anos e estou estudando para ser um desenvolvedor WEB.</p>
             <p>Desde sempre gostei do mundo da informática e de alguns jogos. Um dia, um amigo me chamou para jogar <a href="https://pt.stardewvalleywiki.com/Stardew_Valley_Wiki" target="_blank">Stardew Valley</a> e, por um tempo, achei aquele "joguinho de fazenda pixelado" meio paia, até ele me convencer a jogar, mostrando a fazenda dele, modificações através programas, o que ele fez e iria fazer no jogo, foi então que eu comecei a jogar "aquilo".</p> 
             <picture class="jogo">
@@ -254,6 +254,7 @@
         const gatilhosNivel = document.querySelectorAll('.ref');
             gatilhosNivel.forEach(gatilho => {
                 gatilho.addEventListener('click', () => {
+                    if (window.innerWidth >= 1361) return;
                     const caixaNiveis = gatilho.nextElementSibling;
                     // Pega o card pai (.page ou .card) para fechar apenas as abas do mesmo bloco
                     const cardPai = gatilho.closest('.page');
