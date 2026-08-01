@@ -17,7 +17,7 @@
 html, body {
     width: 100%;
     height: 100%;
-    background-color: #21402D;
+    background-color: #14271B;
     /* background-image: linear-gradient(to bottom, #1A3424, #B6F23A); */
     overflow-x: hidden;
     scroll-behavior: smooth;
@@ -26,7 +26,7 @@ html, body {
 /* Configuração do cabeçalho */
     header {
         width: 100%;
-        min-height: 125px;
+        min-height: 130px;
         display: flex;
         flex-flow: column nowrap;
         justify-content: space-between;
@@ -34,7 +34,7 @@ html, body {
         top: 0;
         z-index: 1;
 
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent), url('../images/stardew-valley_header.png');
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent), url('../images/stardew-valley_header.png');
         background-size: cover;
         background-position: top;
         background-repeat: no-repeat;
@@ -51,8 +51,6 @@ html, body {
     } .title h1 {
         font-weight: 300;
     }
-    menu {
-    }
     menu ul {
         list-style-type: none;
         display: flex;
@@ -60,7 +58,7 @@ html, body {
         justify-content: flex-end;
         align-items: center;
     } menu li {
-        padding: 10px;
+        padding: 5px;
         position: relative;
     } menu a, menu span {
         cursor: pointer;
@@ -216,7 +214,7 @@ html, body {
         border: 6px solid transparent;
         outline: 2px solid #262626;
         border-radius: 6px;
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, .6) inset, 0px 0px 10px rgba(0, 0, 0, 0.5);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4) inset, 0px 0px 10px rgba(0, 0, 0, 0.5);
         background: linear-gradient(135deg, #D3C2A6 30%, #C8B393 70%) padding-box, linear-gradient(to right, #4C2C23, #734134) border-box;
     } .detail h2 {
         font: 500 16pt var(--font-title);

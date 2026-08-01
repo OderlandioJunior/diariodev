@@ -34,7 +34,7 @@
         <!-- [OBJETIVO] -->
         <section id="into" class="detail">
             <!-- [Objetivo do blog] -->
-            <h2>A Filosofia do Diário DEV: Documentação como Ativo Profissional</h2>
+            <h2>A filosofia do Diário DEV: Documentação como ativo profissional</h2>
             <p>O Diário DEV, vai além da simples prática de anotações; ele se configura como uma estratégia de engenharia cognitiva destinada a mostrar a transição de um estudante de programação para um profissional na área.</p>
             <p>A estruturação desta plataforma reflete a "Tríade do Frontend" — HTML, CSS e JavaScript — estabelecendo conexões profundas entre a estrutura, a apresentação e a lógica comportamental. O Diário aborda a tipologia de arquivos, a anatomia do documento HTML, o modelo de caixas e a arquitetura semântica, integrando esses conceitos a uma visão de longo prazo para a carreira de desenvolvedor.</p>
             <p>O propósito fundamental do Diário DEV é mitigar o fenômeno do "conhecimento raso". Ao transformar o aprendizado em uma narrativa, o autor do blog utiliza a técnica de aprendizado por explicação, o que garante que o conhecimento seja permanente. Além do benefício cognitivo, o blog atua como um portfólio vivo, demonstrando a capacidade analítica e a evolução técnica do desenvolvedor para potenciais recrutadores e para a comunidade.</p>
@@ -202,7 +202,7 @@
         </section>
         <!-- [SOBRE MIM] -->
         <section id="profile" class="detail">
-            <h2>A Mente por trás do Diário: Biografia, trajetória e propósito</h2>
+            <h2>A mente por trás do Diário: Biografia, trajetória e propósito</h2>
             <p>Me chamo Oderlândio, nasci em Teixeira de Freitas e atualmente moro em Caraíva com minha esposa, tenho 24 anos e estou estudando para ser um desenvolvedor WEB.</p>
             <p>Desde sempre gostei do mundo da informática e de alguns jogos. Um dia, um amigo me chamou para jogar <a href="https://pt.stardewvalleywiki.com/Stardew_Valley_Wiki" target="_blank">Stardew Valley</a> e, por um tempo, achei aquele "joguinho de fazenda pixelado" meio paia, até ele me convencer a jogar, mostrando a fazenda dele, modificações através programas, o que ele fez e iria fazer no jogo, foi então que eu comecei a jogar "aquilo".</p> 
             <picture class="jogo">
@@ -223,9 +223,9 @@
     <footer>
         <nav>
             <ul>
-                <li><a href="#" target="_blank">E-mail</a></li>
-                <li><a href="#" target="_blank">GitHub</a></li>
-                <li><a href="#" target="_blank">LinkedIn</a></li>
+                <li><a href="#" target="_blank"><i class="fa-solid fa-envelope"></i> E-mail</a></li>
+                <li><a href="#" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></li>
+                <li><a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
             </ul>
         </nav>
         <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web <em>possuindo caráter estritamente acadêmico e sem fins lucrativos</em>.</p>
@@ -250,22 +250,33 @@
                 if (icone) icone.classList.remove('fa-rotate-180');
             });
         }
-            // 2. Evento para as Opções do Main
+        // 2. Acordeão da Main (.niveis) - Modo Sanfona Exclusiva
         const gatilhosNivel = document.querySelectorAll('.ref');
             gatilhosNivel.forEach(gatilho => {
                 gatilho.addEventListener('click', () => {
-                    const niveis = gatilho.nextElementSibling;
-                    if (niveis && niveis.classList.contains('niveis')) {
-                        // Alterna a expansão
-                        niveis.classList.toggle('show');
-
-                        // Gira a seta da ref
+                    const caixaNiveis = gatilho.nextElementSibling;
+                    // Pega o card pai (.page ou .card) para fechar apenas as abas do mesmo bloco
+                    const cardPai = gatilho.closest('.page');
+                    if (caixaNiveis && caixaNiveis.classList.contains('niveis')) {
+                        // Verifica se este nível específico já está aberto
+                        const jaEstaAberto = caixaNiveis.classList.contains('show');
+                        // 1. Fecha TODOS os .niveis e reseta as setinhas dentro do mesmo card
+                        cardPai.querySelectorAll('.niveis').forEach(nivel => {
+                            nivel.classList.remove('show');
+                        });
+                        cardPai.querySelectorAll('.ref i').forEach(icone => {
+                            icone.classList.remove('fa-rotate-180');
+                        });
+                    // 2. Se o nível clicado NÃO estava aberto, abre ele
+                    if (!jaEstaAberto) {
+                        caixaNiveis.classList.add('show');
                         const icone = gatilho.querySelector('i');
-                        if (icone) icone.classList.toggle('fa-rotate-180');
+                        if (icone) icone.classList.add('fa-rotate-180');
                     }
-                });
+                }
             });
         });
+    });
     </script>
 </body>
 </html>
