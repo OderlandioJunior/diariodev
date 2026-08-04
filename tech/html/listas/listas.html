@@ -3,21 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../styles/style-pg.css">
+    <link rel="stylesheet" href="../../../assets/styles/stylePages.css">
+    <script src="https://kit.fontawesome.com/1cf26eb200.js" crossorigin="anonymous"></script>
     <title>Listas</title>
 </head>
 <body>
     <header>
-        <h1>Diário DEV</h1>
-        <p>Por Oderlândio Júnior</p>
-        <nav>
+        <div class="title">
+            <h1>Diário DEV</h1>
+            <p>Caderno online || Oderlândio Júnior</p>
+        </div>
+        <menu>
             <ul>
-                <li><a href="../../index.html" target="" rel="">Página principal</a></li>
-                <!-- i > bars -->
-                <li><a href="../links/links.html" target="" rel="">Artigo anterior</a></li>
-                <li><a href="../midia/midias.html" target="" rel="">Próximo artigo</a></li>
+                <li><a href="../../../index.html"><i class="fa-solid fa-house-chimney"></i>Principal</a></li>
+                <li>
+                    <nav>
+                        <ul>
+                            <li><a href="../tabelas/tabelas.html">Próximo<i class="fa-solid fa-caret-right"></i></a></li>
+                        </ul>
+                    </nav>
+                </li>
             </ul>
-        </nav>
+        </menu>
     </header>
     <main>
         <article class="header">
@@ -25,23 +32,19 @@
             <p>Na construção de interfaces, raramente apresentamos dados de forma isolada. As listas no HTML são elementos semânticos que informam ao navegador que um conjunto de itens possui uma relação lógica entre si. Elas são a base para menus de navegação, índices de conteúdo, passos de um tutorial ou simples enumerações de características.</p>
         </article>
         <article>
-            <h3>A Anatomia de uma Lista: O Container e o Conteúdo</h3>
+            <h2>A Anatomia de uma Lista: O Container e o Conteúdo</h2>
             <p>Diferente de um parágrafo (<code>&lt;p&gt;</code>), uma lista é uma estrutura composta. Ela exige dois níveis de marcação:</p>
             <ol>
                 <li><strong>O Container (Pai):</strong> Define o tipo da lista (se a ordem importa ou não). São as tags <code>&lt;ul&gt;</code> ou <code>&lt;ol&gt;</code>.</li>
                 <li><strong>O Item (Filho):</strong> A tag <code>&lt;li&gt;</code> (List Item), que delimita cada unidade de informação dentro da lista.</li>
             </ol>
-        </article>
-        <article>
-            <h3>Listas Desordenadas (<code>&lt;ul&gt;</code>)</h3>
+            <h2>Listas Desordenadas (<code>&lt;ul&gt;</code>)</h2>
             <p>A tag <code>&lt;ul&gt;</code> (<em>Unordered List</em>) é utilizada quando a ordem dos fatores não altera o sentido da informação. Por padrão, os navegadores exibem esses itens com uma "bala" (<em>bullet point</em>) ao lado.</p>
             <ul>
                 <li>Uso Semântico: Listas de compras, itens de um menu, ou uma coleção de links relacionados.</li>
                 <li>Atributos de Estrutura: Embora o visual seja controlado pelo CSS, o HTML entende que todos os itens ali têm o mesmo peso hierárquico.</li>
             </ul>
-        </article>
-        <article>
-            <h3>Listas Ordenadas (<code>&lt;ol&gt;</code>)</h3>
+            <h2>Listas Ordenadas (<code>&lt;ol&gt;</code>)</h2>
             <p>A tag <code>&lt;ol&gt;</code> (<em>Ordered List</em>) é empregada quando a sequência dos itens é vital para a compreensão do conteúdo. O navegador as renderiza automaticamente com números ou letras.</p>
             <ul>
                 <li>Uso Semântico: Tutoriais passo a passo, rankings, receitas ou cronogramas.</li>
@@ -52,9 +55,7 @@
                     <li><code>type</code>: Define o tipo de marcador (1 para números, 'A' para letras maiúsculas, 'i' para números romanos).</li>
                 </ul>
             </ul>
-        </article>
-        <article>
-            <h3>O Item de Lista (<code>&lt;li&gt;</code>)</h3>
+            <h2>O Item de Lista (<code>&lt;li&gt;</code>)</h2>
             <p>O elemento <code>&lt;li&gt;</code> é um dos mais versáteis do HTML. Por ser um elemento de bloco (<em>block-level</em>), ele pode conter quase qualquer outra tag dentro de si.</p>
             <ul>
                 <li><strong>Aninhamento Complexo:</strong> É perfeitamente válido colocar parágrafos, imagens ou até mesmo <strong>outras listas</strong> dentro de um <code>&lt;li&gt;</code>. Isso é o que chamamos de "Listas Aninhadas", essencial para criar submenus ou sumários detalhados.</li>
@@ -62,7 +63,7 @@
             </ul>
         </article>
         <article>
-            <h3>Listas de Descrição (<code>&lt;dt&gt;</code>)</h3>
+            <h2>Listas de Descrição (<code>&lt;dt&gt;</code>)</h2>
             <p>Enquanto as listas ordenadas (<code>&lt;ol&gt;</code>) e não ordenadas (<code>&lt;ul&gt;</code>) servem para agrupar itens simples, a Lista de Descrição (<code>&lt;dt&gt;</code> - <em>Description List</em>) é utilizada para conectar termos aos seus respectivos significados ou descrições. Ela funciona como um mini dicionário dentro do seu HTML, serve para criar pares de nome e valor. É perfeita para glossários, metadados ou listas de especificações técnicas.</p>
             <p>Para construir essa estrutura, utilizamos um trio de tags que trabalham juntas:</p>
             <ul>
@@ -78,11 +79,11 @@
             </ul>
         </article>
         <article>
-            <h3>Semântica e Acessibilidade</h3>
+            <h2>Semântica e Acessibilidade</h2>
             <p>Para leitores de tela, as listas <code>&lt;ol&gt;</code> e <code>&lt;ul&gt;</code> são "marcos" de navegação. Quando um usuário com deficiência visual chega em uma <code>&lt;ul&gt;</code>, o software anuncia: "<em>Lista com X itens</em>". Isso permite que o usuário saiba de antemão o tamanho do conteúdo e decida se quer ouvir item por item ou saltar para o próximo bloco. Já as <code>&lt;dt&gt;</code> informa ao navegador e aos motores de busca que existe uma relação direta de "Pergunta e Resposta" ou "Termo e Definição" entre os elementos. Leitores de tela conseguem anunciar para o usuário que aquele bloco de texto é uma lista de definições, facilitando a compreensão do conteúdo. Além disso, um único termo (<code>&lt;dt&gt;</code>) pode ter múltiplas descrições (<code>&lt;dd&gt;</code>), o que é ideal para palavras com mais de um significado.</p>
         </article>
         <section class="code">
-            <h3>Colocando a mão na massa</h3>
+            <h2>Colocando a mão na massa</h2>
             <p>Analisar o código "bruto" é fundamental para compreender como a sintaxe se transforma em estrutura e como as boas práticas de indentação e semântica facilitam a manutenção do projeto a longo prazo.</p>
 <pre><code>&lt;ol&gt;
     &lt;li&gt;
@@ -111,12 +112,12 @@
     <footer>
         <nav>
             <ul>
-                <li><a href="">GitHub</a></li>
-                <li><a href="">E-mail</a></li>
-                <li><a href="">LinkedIn</a></li>
+                <li><a href="#" target="_blank"><i class="fa-solid fa-envelope"></i> E-mail</a></li>
+                <li><a href="#" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></li>
+                <li><a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
             </ul>
         </nav>
-        <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.</p>
+        <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web <em>possuindo caráter estritamente acadêmico e sem fins lucrativos</em>.</p>
     </footer>
 </body>
 </html>
