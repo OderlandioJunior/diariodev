@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../styles/style-pg.css">
+    <link rel="stylesheet" href="../../../assets/styles/stylePages.css">
+    <script src="https://kit.fontawesome.com/1cf26eb200.js" crossorigin="anonymous"></script>
     <title>Estrutura HTML</title>
 </head>
 <body>
     <header>
-        <h1>Diário DEV</h1>
-        <p>Caderno online - Oderlândio Júnior</p>
-        <nav>
+        <div class="title">
+            <h1>Diário DEV</h1>
+            <p>Caderno online || Oderlândio Júnior</p>
+        </div>
+        <menu>
             <ul>
-                <li><a href="../../../index.html" target="" rel="">Página principal</a></li>
-                <!-- i > bars -->
-                <li><a href="../boxmodel/boxmodel.html" target="" rel="">Próximo artigo</a></li>
+                <li><a href="../../../index.html"><i class="fa-solid fa-house-chimney"></i>Principal</a></li>
+                <li>
+                    <nav>
+                        <ul>
+                            <li><a href="../boxmodel/boxmodel.html">Próximo<i class="fa-solid fa-caret-right"></i></a></li>
+                        </ul>
+                    </nav>
+                </li>
             </ul>
-        </nav>
+        </menu>
     </header>
     <main>
         <article class="header">
@@ -24,36 +32,31 @@
             <p>A construção de um site resiliente e acessível começa pela compreensão minuciosa do esqueleto HTML. Um documento HTML5 não é apenas uma sequência de tags; é uma hierarquia de objetos que formam o Document Object Model (DOM). A omissão ou o uso incorreto de tags fundamentais pode levar ao "Quirks Mode", onde o navegador renderiza a página de forma imprevisível para manter compatibilidade com tecnologias obsoletas da década de 90.</p>
         </article>
         <article>
-            <h3>O Preâmbulo Obrigatório:<br><code>!DOCTYPE html</code></h3>
+            <h2>O Preâmbulo Obrigatório: <code>!DOCTYPE html</code></h2>
             <p>A primeira linha de qualquer documento moderno deve ser obrigatoriamente <code>!DOCTYPE html</code>. Tecnicamente, esta instrução não é uma tag HTML, mas uma declaração de tipo de documento. Ela informa ao navegador que o arquivo segue os padrões vigentes do HTML5, garantindo que o motor de renderização utilize o "Standards Mode" para interpretar o layout e os estilos CSS com precisão.</p>
-        </article>
-        <article>
-            <h3>A Raiz e a Internacionalização: <br> <code>&lt;html&gt;</code> e <code>&lt;html lang=""&gt;</code></h3>
+            <h2>A Raiz e a nacionalização: <code>&lt;html&gt;</code> e <code>&lt;html lang=""&gt;</code></h2>
             <p>A tag <code>&lt;html&gt;</code> envolve todo o conteúdo do documento, exceto o <code>doctype</code>. Um dos atributos mais críticos desta tag é o lang (ex: <code>&lt;html lang="pt-br"&gt;</code>). Esta declaração de idioma é fundamental para a acessibilidade, pois informa aos leitores de tela qual sintetizador de voz e qual dicionário de pronúncia utilizar para usuários com deficiência visual. Além disso, motores de busca e ferramentas de tradução automática utilizam este atributo para indexar e processar o conteúdo de acordo com a região geográfica e a língua do usuário.</p>
         </article>
         <article>
-            <h3>O Cérebro da Página: <code>&lt;head&gt;</code> e os Metadados</h3>
+            <h2>O Cérebro da Página: <code>&lt;head&gt;</code> e os Metadados</h2>
             <p>O elemento <code>&lt;head&gt;</code> atua como o cabeçalho de metadados do documento. As informações contidas aqui não são visíveis diretamente para o visitante comum (exceto o título e o favicon), mas são vitais para o funcionamento e a otimização da página.</p>
-            <h4>Codificação de Caracteres:</h4>
+            <h3>Codificação de Caracteres:</h3>
             <p> A tag <code>&lt;meta charset="utf-8"&gt;</code> deve ser a primeira dentro do <code>&lt;head&gt;</code>. Ela garante que o navegador consiga exibir corretamente acentos, caracteres especiais de diversos idiomas e emojis. Sem ela, o texto pode ser corrompido, exibindo símbolos ilegíveis.</p>
-            <h4>Responsividade</h4>
+            <h3>Responsividade</h3>
             <p>A metatag de viewport, tipicamente escrita como <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> é o que torna o site "mobile-friendly". Ela instrui o navegador a ajustar a escala do conteúdo de acordo com a largura real da tela do dispositivo, evitando que o site apareça minúsculo em smartphones.</p>
-            <h4>Identidade e SEO:</h4>
+            <h3>Identidade e SEO:</h3>
             <p>A tag <code>&lt;title&gt;</code> define o nome que aparecerá na aba do navegador e no título principal dos resultados de busca do Google. É um dos fatores de SEO mais pesados para o ranqueamento orgânico.</p>
-        </article>
-        <article>
-            <h3>O Corpo e a Experiência do Usuário: <code>&lt;body&gt;</code></h3>
+            <h2>O Corpo e a Experiência do Usuário: <code>&lt;body&gt;</code></h2>
             <p>O elemento <code>&lt;body&gt;</code> contém toda a parte visível do site: textos, imagens, botões, formulários e links. Enquanto o <code>&lt;head&gt;</code> lida com as instruções para o navegador, o <code>&lt;body&gt;</code> é o palco onde o conteúdo é estruturado e apresentado ao usuário final. É dentro do corpo que o desenvolvedor aplica a semântica e organiza o layout através do modelo de caixas.</p>
         </article>
         <section class="code">
-            <h3>Colocando a mão na massa</h3>
+            <h2>Colocando a mão na massa</h2>
             <p>Analisar o código "bruto" é fundamental para compreender como a sintaxe se transforma em estrutura e como as boas práticas de indentação e semântica facilitam a manutenção do projeto a longo prazo.</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="pt-br"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" 
-    content="width=device-width, initial-scale=1.0"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
     &lt;title&gt;Document&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -65,12 +68,12 @@
     <footer>
         <nav>
             <ul>
-                <li><a href="">GitHub</a></li>
-                <li><a href="">E-mail</a></li>
-                <li><a href="">LinkedIn</a></li>
+                <li><a href="#" target="_blank"><i class="fa-solid fa-envelope"></i> E-mail</a></li>
+                <li><a href="#" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></li>
+                <li><a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
             </ul>
         </nav>
-        <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.</p>
+        <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web <em>possuindo caráter estritamente acadêmico e sem fins lucrativos</em>.</p>
     </footer>
 </body>
 </html>

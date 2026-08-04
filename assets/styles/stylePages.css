@@ -1,0 +1,307 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Configuração da página */
+:root {
+    --font-title: "Merriweather", serif;
+    --font-text: "Inter", sans-serif;
+    --cor-title: #F1F2EC;
+    --cor-text: #212025;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #14271B;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+/* Fim da configuração da página */ 
+/* Configuração do cabeçalho */
+    header {
+        width: 100%;
+        min-height: 130px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent), url('../images/stardew-valley_header.png');
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, .4);
+        border-bottom: 2px solid #F1F2EC;
+        outline: 2px solid black;
+    }
+    .title {
+        padding-top: 10px;
+        padding-left: 10px;
+        font: 200 10pt var(--font-title);
+        color: var(--cor-title);
+    } .title h1 {
+        font-weight: 300;
+    }
+    menu ul {
+        list-style-type: none;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+    } menu li {
+        padding: 5px;
+    } menu a {
+        cursor: pointer;
+        color: var(--cor-title);
+        text-decoration: none;
+        font-size: 12pt;
+    } menu a:hover {
+        text-decoration: underline;
+    }
+/* Fim da configuração do cabeçalho */
+/* Configuração do conteúdo */      
+    article, .code {
+        margin: 20px 12px; 
+        padding: 6px;
+        border: 6px solid transparent;
+        border-radius: 6px;
+        background: url(../images/fundo-texto.jpg) padding-box, linear-gradient(to right, #4C2C23, #734134) border-box;
+        outline: 2px solid #262626;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4) inset, 0px 0px 10px rgba(0, 0, 0, 0.5);
+    } article code {
+        background-color: rgb(175, 140, 80);
+        border-radius: 5px;
+    } article ul {
+        margin-left: 1em;
+    } article li {
+        padding-bottom: 6px;
+    }
+    h2 {
+        font: 500 16pt var(--font-title);
+        text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+    }
+    h3, h4 {
+        font-weight: 500;
+        padding: 4px;
+        border-left: 6px solid #4C2C23;
+        border-radius: 4px;
+    }
+    p {
+        padding: 4px 0px;
+        font: 400 12pt var(--font-text);
+        line-height: 1.4em;
+        text-align: justify;
+        hyphens: auto;
+    }
+    pre {
+        background-color: #3b413ef7;
+        padding: 5px;
+        border-radius: 5px;
+        outline: 2px solid black;
+    }
+    code {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 10pt;
+        padding: 5px;
+        color: var(--cor-title);
+    }
+    /* ===================================================
+ESTILIZAÇÃO DE TABELAS (Estilo Livro / RPG)
+=================================================== */
+
+    /* Container da Tabela: Garante Scroll no Mobile e caixa bonita */
+    .table {
+        margin: 20px 0;
+        background-color: #2b332f;
+        border-radius: 8px;
+        border: 2px solid #4C2C23;
+        outline: 2px solid #14271B;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5) inset, 0px 2px 5px rgba(0, 0, 0, 0.3);
+        
+        /* Garante que tabelas largas rolem suavemente no celular sem quebrar o layout */
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Estrutura da Tabela */
+    .table table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        font-family: var(--font-text);
+        font-size: 10.5pt;
+        color: var(--cor-title);
+        text-align: left;
+    }
+
+    /* Cabeçalho da Tabela */
+    .table thead th {
+        background-color: #4C2C23;
+        color: #F1F2EC;
+        font-family: var(--font-title);
+        font-weight: 600;
+        font-size: 11pt;
+        padding: 12px 10px;
+        border-bottom: 3px solid #734134;
+        text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Células do Corpo e Cabeçalho */
+    .table th, 
+    .table td {
+        padding: 10px 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        vertical-align: middle;
+    }
+
+    /* Linhas zebradas para facilitar a leitura */
+    .table tbody tr:nth-child(even) {
+        background-color: rgba(255, 255, 255, 0.03);
+    }
+
+    /* Efeito ao passar o mouse na linha */
+    .table tbody tr:hover {
+        background-color: rgba(115, 65, 52, 0.25);
+        transition: background-color 0.2s ease;
+    }
+
+    /* Destaque para a primeira coluna quando usada como cabeçalho de linha (<th>) */
+    .table tbody th {
+        background-color: transparent;
+        color: #e5b974; /* Tom dourado/pergaminho */
+        font-weight: 600;
+        font-family: var(--font-text);
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Ajuste fino nas bordas arredondadas do cabeçalho */
+    .table thead tr:first-child th:first-child {
+        border-top-left-radius: 4px;
+    }
+    .table thead tr:first-child th:last-child {
+        border-top-right-radius: 4px;
+    }
+
+/* Estilo do código dentro da tabela para não conflitar */
+.table code {
+    background-color: #1a191c;
+    color: #ffd885;
+    padding: 3px 6px;
+    border-radius: 4px;
+    border: 1px solid #4C2C23;
+    white-space: nowrap;
+}
+    footer {
+        min-height: 150px;
+        padding: 0 5px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3) inset;
+        outline: 1px solid black;
+        border-top: 4px solid #734134;
+        background-image: url(../images/stardew-valley_footer.jpg);
+        background-position: center;
+        background-repeat: repeat;
+    } footer p {
+        width: 70%;
+        padding: 8px 5px;
+        font: normal 10pt var(--font-text);
+        text-align: center;
+        hyphens: auto;
+        color: var(--cor-text);
+    } footer nav {
+        padding: 5px 0;
+    } footer ul {
+        list-style-type: none;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+    } footer a {
+        font: 500 12pt var(--font-text);
+        color: var(--cor-title);
+        text-shadow: 0px 2px 2px black;
+        text-decoration: none;
+    } footer a:hover {
+        text-decoration: underline;
+    }
+/* Configuração WideScreen*/
+/* ===================================================
+RESPONSIVIDADE: Tablets e Telas Médias (630px até 1360px)
+=================================================== */
+@media screen and (min-width: 630px) and (max-width: 1360px) {
+    header {
+        position: static;
+        height: 25%;
+        /* Repete a imagem na horizontal pra preencher a tela toda sem esticar */
+        /* 1. Faz o padrão repeti-lo na horizontal sem esticar a imagem desproporcionalmente */
+        background-repeat: repeat-x; 
+
+        /* 2. Mantém a altura da imagem cobrindo o header e ajusta a largura automaticamente */
+        background-size: contain; 
+
+        /* 3. A MÁGICA DO PIXEL ART: Proíbe o navegador de borrar os pixels! */
+        image-rendering: pixelated;
+    } .title {
+        padding-top: 30px;
+        padding-left: 50px;
+    }
+    footer {
+        /* Repete a imagem na horizontal pra preencher a tela toda sem esticar */
+    background-repeat: repeat-x; 
+    
+    /* Garante que o navegador mantenha os pixels nítidos e bem definidos! */
+    image-rendering: pixelated;
+    } footer p {
+        max-width: 600px; /* Em vez de 70%, limita em pixels pra não virar uma linha gigante e fina */
+        width: 100%;
+        font-size: 1em;
+        text-align: right;
+        margin: auto;
+        color: var(--cor-title);
+        text-shadow: 0px 2px 2px black;
+    }
+}
+/* ===================================================
+RESPONSIVIDADE: Viewports Maiores (Desktops / Laptops)
+=================================================== */
+@media screen and (min-width: 1361px) {
+    header {
+        position: static;
+        height: 45%;
+        /* Repete a imagem na horizontal pra preencher a tela toda sem esticar */
+        /* 1. Faz o padrão repeti-lo na horizontal sem esticar a imagem desproporcionalmente */
+        background-repeat: repeat-x; 
+
+        /* 2. Mantém a altura da imagem cobrindo o header e ajusta a largura automaticamente */
+        background-size: contain; 
+
+        /* 3. A MÁGICA DO PIXEL ART: Proíbe o navegador de borrar os pixels! */
+        image-rendering: pixelated;
+    } .title {
+        padding-top: 30px;
+        padding-left: 50px;
+        font: 200 20pt var(--font-title);
+        color: var(--cor-title);
+    }
+    footer {
+        /* Repete a imagem na horizontal pra preencher a tela toda sem esticar */
+    background-repeat: repeat-x; 
+    
+    /* Garante que o navegador mantenha os pixels nítidos e bem definidos! */
+    image-rendering: pixelated;
+    } footer p {
+        max-width: 700px; /* Em vez de 70%, limita em pixels pra não virar uma linha gigante e fina */
+        width: 100%;
+        font-size: 1.2em;
+        text-align: right;
+        margin: auto;
+        color: var(--cor-title);
+        text-shadow: 0px 2px 2px black;
+    }
+}

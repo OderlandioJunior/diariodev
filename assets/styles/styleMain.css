@@ -18,7 +18,6 @@ html, body {
     width: 100%;
     height: 100%;
     background-color: #14271B;
-    /* background-image: linear-gradient(to bottom, #1A3424, #B6F23A); */
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
@@ -102,25 +101,7 @@ html, body {
         margin: 12px;        
     }
     .chapter {
-        
         margin: 30px 0;
-    } .chapter h2{
-        /* padding: 0 10px;
-        font: 600 18pt var(--font-title);
-        text-align: center;
-        color: var(--cor-title);
-        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); */
-        max-width: fit-content;
-        padding: 8px 16px;
-
-        font: 600 15pt var(--font-title);
-        text-align: center;
-        color: var(--cor-title);
-
-        border: 3px solid #734134;
-        outline: 2px solid #262626;
-        border-radius: 6px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
     }
     .card {
         scroll-margin-top: 135px;

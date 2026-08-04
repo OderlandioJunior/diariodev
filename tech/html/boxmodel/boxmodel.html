@@ -3,21 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../styles/style-pg.css">
+    <link rel="stylesheet" href="../../../assets/styles/stylePages.css">
+    <script src="https://kit.fontawesome.com/1cf26eb200.js" crossorigin="anonymous"></script>
     <title>Modelos de caixa</title>
 </head>
 <body>
     <header>
-        <h1>Diário DEV</h1>
-        <p>Caderno online - Oderlândio Júnior</p>
-        <nav>
+        <div class="title">
+            <h1>Diário DEV</h1>
+            <p>Caderno online || Oderlândio Júnior</p>
+        </div>
+        <menu>
             <ul>
-                <li><a href="../../../index.html" target="" rel="">Página principal</a></li>
-                <!-- i > bars -->
-                <li><a href="../doctype/doctype.html" target="" rel="">Artigo anterior</a></li>
-                <li><a href="../textos/textos.html" target="" rel="">Próximo artigo</a></li>
+                <li><a href="../../../index.html"><i class="fa-solid fa-house-chimney"></i>Principal</a></li>
+                <li>
+                    <nav>
+                        <ul>
+                            <li><a href="../doctype/doctype.html"><i class="fa-solid fa-caret-left"></i>Anterior</a></li>
+                            <li><a href="../textos/textos.html">Próximo<i class="fa-solid fa-caret-right"></i></a></li>
+                        </ul>
+                    </nav>
+                </li>
             </ul>
-        </nav>
+        </menu>
     </header>
     <main>
         <article class="header">
@@ -25,7 +33,7 @@
             <p>No desenvolvimento frontend, entender que "tudo é uma caixa" é a chave para o domínio do layout. Mesmo que um elemento pareça circular no navegador, ele reside dentro de uma fronteira retangular definida pelo CSS Box Model. No entanto, antes de aplicar estilos complexos, é preciso compreender como o HTML organiza essas caixas por padrão através do "Normal Flow" (Fluxo Normal).</p>
         </article>
         <article>
-            <h3>Comportamento de Bloco vs. Em Linha</h3>
+            <h2>Comportamento de Bloco vs. Em Linha</h2>
             <p>O HTML categoriza os elementos com base em como eles se comportam no fluxo da página:</p>
             <ul>
                 <li><strong>Block-level (Nível de Bloco)</strong>: Elementos como <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code> e <code>&lt;header&gt;</code> ocupam toda a largura disponível de seu container pai. Eles sempre começam em uma nova linha, criando uma estrutura de empilhamento vertical. Caixas de bloco respeitam todas as dimensões de largura, altura e margens verticais/horizontais.</li>
@@ -34,7 +42,7 @@
             </ul>
         </article>
         <article>
-            <h3>Arquitetura Semântica e Regras de Aninhamento</h3>
+            <h2>Arquitetura Semântica e Regras de Aninhamento</h2>
             <p>A semântica no HTML5 representa a evolução da web de um conjunto de documentos visuais para uma teia de dados compreensíveis por máquinas. Utilizar tags semânticas não é uma questão estética, mas funcional: elas permitem que tecnologias assistivas (leitores de tela) e algoritmos de busca (Googlebot) entendam a hierarquia e a importância de cada parte do conteúdo.</p>
             <p>O HTML moderno define "Marcos" (Landmarks) que facilitam a navegação rápida. O uso correto desses marcos substitui a antiga prática de usar <code>&lt;div&gt;</code> para tudo (o chamado "Divitis").</p>
             <ul>
@@ -46,7 +54,7 @@
             </ul>
         </article>
         <article>
-            <h3>Regras de Ouro para o Aninhamento</h3>
+            <h2>Regras de Ouro para o Aninhamento</h2>
             <p>O aninhamento de elementos segue regras de gramática estrutural que, se violadas, podem invalidar o código e prejudicar o SEO:</p>
             <ol>
                 <li>Parágrafos e Blocos: A tag <code>&lt;p&gt;</code> é destinada apenas a "phrasing content" (conteúdo de frase). É semanticamente incorreto e tecnicamente problemático aninhar elementos de bloco (como uma div, um ul ou outro p) dentro de um parágrafo. Se o navegador detectar um elemento de bloco dentro de um parágrafo aberto, ele forçará o fechamento automático da tag <code>&lt;p&gt;</code>, quebrando seu layout.</li>
@@ -55,7 +63,7 @@
             </ol>
         </article>
         <section class="code">
-            <h3>Colocando a mão na massa</h3>
+            <h2>Colocando a mão na massa</h2>
             <p>Analisar o código "bruto" é fundamental para compreender como a sintaxe se transforma em estrutura e como as boas práticas de indentação e semântica facilitam a manutenção do projeto a longo prazo.</p>
 <pre><code>&lt;main&gt;
     &lt;header&gt;
@@ -79,12 +87,12 @@
     <footer>
         <nav>
             <ul>
-                <li><a href="">GitHub</a></li>
-                <li><a href="">E-mail</a></li>
-                <li><a href="">LinkedIn</a></li>
+                <li><a href="#" target="_blank"><i class="fa-solid fa-envelope"></i> E-mail</a></li>
+                <li><a href="#" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></li>
+                <li><a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
             </ul>
         </nav>
-        <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.</p>
+        <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web <em>possuindo caráter estritamente acadêmico e sem fins lucrativos</em>.</p>
     </footer>
 </body>
 </html>

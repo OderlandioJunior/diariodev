@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../styles/style-pg.css">
+    <link rel="stylesheet" href="../../../assets/styles/stylePages.css">
+    <script src="https://kit.fontawesome.com/1cf26eb200.js" crossorigin="anonymous"></script>
     <title>Textos</title>
 </head>
 <body>
     <header>
-        <h1>Diário DEV</h1>
-        <p>Por Oderlândio Júnior</p>
-        <nav>
+        <div class="title">
+            <h1>Diário DEV</h1>
+            <p>Caderno online || Oderlândio Júnior</p>
+        </div>
+        <menu>
             <ul>
-                <li><a href="../../index.html" target="" rel="">Página principal</a></li>
-                <!-- i > bars -->
-                <li><a href="../boxmodel/boxmodel.html" target="" rel="">Artigo anterior</a>
+                <li><a href="../../../index.html"><i class="fa-solid fa-house-chimney"></i>Principal</a></li>
+                <li>
+                    <nav>
+                        <ul>
+                            <li><a href="../boxmodel/boxmodel.html"><i class="fa-solid fa-caret-left"></i>Anterior</a></li>
+                        </ul>
+                    </nav>
+                </li>
             </ul>
-        </nav>
+        </menu>
     </header>
     <main>
         <article class="header">
@@ -25,31 +33,33 @@
             <p>Nesta seção, exploramos como os <strong>títulos e subtítulos</strong> definem o esqueleto do nosso conteúdo, enquanto as <strong>marcações semânticas</strong> dão o tom e a importância correta para cada termo. É aqui que transformamos um amontoado de frases em um documento profissional, acessível e otimizado para motores de busca.</p>
         </article>
         <article>
-            <h3>A Hierarquia: Títulos e a Lógica de Relevância</h3>
+            <h2>A Hierarquia: Títulos e a Lógica de Relevância</h2>
             <p>No desenvolvimento moderno, os títulos não servem para definir o tamanho da letra ou deixar o texto em negrito. No HTML, as tags de <code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code> servem para criar a árvore de relevância do seu conteúdo.</p>
             <ul>
-                <li><strong>Organização em Níveis</strong>: Pense nos títulos como o sumário de um livro. O <code>&lt;h1&gt;</code> é o título da obra (deve ser único por página), enquanto o <code>&lt;h2&gt;</code> define os capítulos principais e o <code>&lt;h3&gt;</code> os subtopicos.</li>
-                <li><strong>Navegação e SEO</strong>: Essa estrutura é o que permite que ferramentas de busca, como o Google, entendam sobre o que você está escrevendo. Além disso, tecnologias assistivas (leitores de tela) usam os títulos para permitir que usuários saltem entre as seções do seu site.</li>
-                <li><strong>Regra Semântica</strong>: Nunca escolha um título baseado na aparência. Escolha-o baseado no lugar que aquela informação ocupa na hierarquia do seu texto.</li>
+                <li>Organização em Níveis: Pense nos títulos como o sumário de um livro. O <code>&lt;h1&gt;</code> é o título da obra (deve ser único por página), enquanto o <code>&lt;h2&gt;</code> define os capítulos principais e o <code>&lt;h2&gt;</code> os subtopicos.</li>
+                <li>Navegação e SEO: Essa estrutura é o que permite que ferramentas de busca, como o Google, entendam sobre o que você está escrevendo. Além disso, tecnologias assistivas (leitores de tela) usam os títulos para permitir que usuários saltem entre as seções do seu site.</li>
+                <li>Regra Semântica: Nunca escolha um título baseado na aparência. Escolha-o baseado no lugar que aquela informação ocupa na hierarquia do seu texto.</li>
             </ul>
         </article>
         <article>
-            <h3>Fluxo de Conteúdo: Formatações de textos</h3>
+            <h2>Fluxo de Conteúdo: Formatações de textos</h2>
             <p>Se as seções e títulos formam o esqueleto do site, as tags de formatação de texto são os nervos que dão sensibilidade ao conteúdo. No HTML5, formatar um texto não é apenas sobre "estética", mas sobre informar ao navegador e aos motores de busca o valor real de cada palavra ou frase.</p>
-            <h4>1. O Fluxo de Texto e a Quebra de Linha</h4>
+            <h3>1. O Fluxo de Texto e a Quebra de Linha</h3>
             <p>Diferente de um editor de texto comum, o HTML ignora múltiplos espaços ou <code>ENTER</code> dados diretamente no código-fonte.</p>
             <ul>
-                <li><strong>Seguimento Contínuo:</strong> Um parágrafo (<code>&lt;p&gt;</code>) mantém o fluxo do texto constante para se adaptar ao tamanho da tela do usuário.</li>
-                <li><strong>Quebra Manual:</strong> Quando precisamos forçar uma descida de linha sem criar um novo parágrafo, utilizamos a tag <code>&lt;br&gt;</code>. Ela é uma tag "vazia" (não possui fechamento) e deve ser usada com moderação para não prejudicar a responsividade.</li>
+                <li>Seguimento Contínuo: Um parágrafo (<code>&lt;p&gt;</code>) mantém o fluxo do texto constante para se adaptar ao tamanho da tela do usuário.</li>
+                <li>Quebra Manual: Quando precisamos forçar uma descida de linha sem criar um novo parágrafo, utilizamos a tag <code>&lt;br&gt;</code>. Ela é uma tag "vazia" (não possui fechamento) e deve ser usada com moderação para não prejudicar a responsividade.</li>
             </ul>
-            <h4>2. Semântica Visual: Significado vs. Aparência</h4>
+            <h3>2. Semântica Visual: Significado vs. Aparência</h3>
             <p>A grande mudança do HTML5 foi a separação entre tags que apenas mudam o visual e tags que dão significado real:</p>
             <div class="table">
                 <table>
                     <thead>
-                        <th>Função</th>
-                        <th>Tag Não Semântica (Aparência)</th>
-                        <th>Tag Semântica (Significado)</th>
+                        <tr>
+                            <th>Função</th>
+                            <th>Tag Não Semântica (Aparência)</th>
+                            <th>Tag Semântica (Significado)</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr>
@@ -70,20 +80,20 @@
                     </tbody>
                 </table>
             </div>
-            <h4>3. Marcações Especiais e Notações Técnicas</h4>
+            <h3>3. Marcações Especiais e Notações Técnicas</h3>
             <p>Para conteúdos que fogem do texto comum, o HTML oferece ferramentas de precisão:</p>
             <ul>
                 <li>Texto Marcado (<code>&lt;mark&gt;</code>): Funciona como um "marca-texto" amarelo, ideal para destacar termos de busca ou passagens relevantes.</li>
                 <li>Escrita Científica: Utilizamos <code>&lt;sup&gt;</code> para sobrescrito (ex: x<sup>2</sup>) e <code>&lt;sub&gt;</code> para subescrito (ex: H<sub>2</sub>O).</li>
                 <li>Abreviações (<code>&lt;abbr&gt;</code>): Permite que, ao passar o mouse sobre uma sigla, o navegador exiba seu significado completo através do atributo title.</li>
             </ul>
-            <h4>4. Citações e Referências Externas</h4>
+            <h3>4. Citações e Referências Externas</h3>
             <p>Trabalhar com textos acadêmicos ou blogs exige dar crédito às fontes. O HTML possui duas formas principais:</p>
             <ul>
-                <li><strong>Citações Curtas (<code>&lt;q&gt;</code>):</strong> Usada para frases inseridas dentro de um parágrafo. O navegador geralmente adiciona as aspas automaticamente.</li>
-                <li><strong>Citações Longas (<code>&lt;blockquote&gt;</code>):</strong> Cria um bloco isolado para citações extensas. O atributo <code>cite</code> dentro dessa tag é usado para indicar a URL original da fonte, ajudando no SEO e na credibilidade do conteúdo</li>
+                <li>Citações Curtas (<code>&lt;q&gt;</code>): Usada para frases inseridas dentro de um parágrafo. O navegador geralmente adiciona as aspas automaticamente.</li>
+                <li>Citações Longas (<code>&lt;blockquote&gt;</code>): Cria um bloco isolado para citações extensas. O atributo <code>cite</code> dentro dessa tag é usado para indicar a URL original da fonte, ajudando no SEO e na credibilidade do conteúdo</li>
             </ul>
-            <h4>5. O Universo do Código: <code>&lt;code&gt;</code> e <code>&lt;pre&gt;</code></h4>
+            <h3>5. O Universo do Código: <code>&lt;code&gt;</code> e <code>&lt;pre&gt;</code></h3>
             <p>Para exibir textos onde a indentação e os caracteres especiais devem ser preservados:</p>
             <ul>
                 <li><code>&lt;code&gt;</code>: Formata um pequeno trecho de código com fonte monoespaçada (onde todas as letras têm a mesma largura), facilitando a leitura técnica.</li>
@@ -96,12 +106,12 @@
     <footer>
         <nav>
             <ul>
-                <li><a href="">GitHub</a></li>
-                <li><a href="">E-mail</a></li>
-                <li><a href="">LinkedIn</a></li>
+                <li><a href="#" target="_blank"><i class="fa-solid fa-envelope"></i> E-mail</a></li>
+                <li><a href="#" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></li>
+                <li><a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
             </ul>
         </nav>
-        <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web, <strong>possuindo caráter</strong> estritamente <strong>acadêmico</strong> e <strong>sem fins lucrativos</strong>.</p>
+        <p>Este blog tem como objetivo principal demonstrar minhas competências em desenvolvimento web <em>possuindo caráter estritamente acadêmico e sem fins lucrativos</em>.</p>
     </footer>
 </body>
 </html>
