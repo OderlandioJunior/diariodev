@@ -8,39 +8,19 @@
 </head>
 <body>
     <header>
-        <h1>Vamos contar</h1>
+        <h1>Título</h1>
     </header>
     <section>
         <div>
-            <p><label for="inputInicio">Início: <input type="number" name="inputInicio" id="inputInicio"></label></p>
-            <p><label for="inputFim">Fim: <input type="number" name="inputFim" id="inputFim"></label></p>
-            <p><label for="inputPasso">Passo: <input type="number" name="inputPasso" id="inputPasso"></label></p>
-
-            <input type="button" value="Contar" onclick="contar()">
+            Testando
         </div>
-        <div id="resultado">
-            <p>Preparando a contagem...</p>
+        <div>
+
         </div>
     </section>
     <footer>
         <p>&copy; CursoemVídeo</p>
     </footer>
-    <script>
-        function contar() {
-            var inputStart = document.querySelector('#inputInicio')
-            var inputEnd = document.querySelector('#inputFim')
-            var inputStep = document.querySelector('#inputPasso')
-            var mostrar = document.querySelector('#resultado')
-            var start = Number(inputStart.value)
-            var step = Number(inputStep.value)
-            var end = Number(inputEnd.value)
-            
-            while (start <= end) {
-                start += step
-                var contando = start
-                mostrar.innerHTML = `${contando}`
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
