@@ -8,19 +8,35 @@
 </head>
 <body>
     <header>
-        <h1>Título</h1>
+        <h1>Tabuada</h1>
     </header>
     <section>
         <div>
-            Testando
+            <p><label for="fator">Número: <input type="number" name="fator" id="fator"></label> <input type="button" value="Gerar tabuada" onclick="tabuada()"></p>
         </div>
-        <div>
-
-        </div>
+        <select id="tabuadaSelect">
+        </select>
     </section>
     <footer>
         <p>&copy; CursoemVídeo</p>
     </footer>
-    <script src="script.js"></script>
+    <script>
+        var inputNumero = document.querySelector('#fator')
+        var mostrarTabuada = document.querySelector('#tabuadaSelect')
+
+        function tabuada() {
+            var numeroMultiplicando = Number(inputNumero.value)
+
+            if (inputNumero.value == '') {
+            window.alert('Preencha os campos corretamente e tente novamente.')
+            } else {
+                mostrarTabuada.innerHTML = ''
+                for (var i = 0; i <= 10; i++) {
+                    var resultado = numeroMultiplicando * i
+                    mostrarTabuada.innerHTML += `<option>${numeroMultiplicando}x${i} = ${resultado}</option> `
+                }
+            }
+        }
+    </script>
 </body>
 </html>
