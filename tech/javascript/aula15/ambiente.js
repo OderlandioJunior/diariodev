@@ -1,6 +1,6 @@
 let frutas = ['maçã', 'banana', 'manga', 'melão', 'melância']
 console.log(frutas)
-/* let frutas = ['maçã', 'banana', 'manga', 'melão', 'melância']
+let frutas = ['maçã', 'banana', 'manga', 'melão', 'melância']
 console.log(frutas)
 // Diz como é exibida o array
 frutas[3] = 'morango'
@@ -12,7 +12,7 @@ console.log(frutas)
 for (let pos = 0; pos < frutas.length; pos++){
     console.log(`A posição ${pos} tem o valor ${frutas[pos]}`)
 }
-// let pos serve como apontar o dedo pra uma posição numa prateleira e perguntar "o que tem aqui?" — o dedo não vira um item da prateleira (um item de um vetor), ele só indica onde olhar. */
+// Let pos serve como apontar o dedo pra uma posição numa prateleira e perguntar "o que tem aqui?" — o dedo não vira um item da prateleira (um item de um vetor), ele só indica onde olhar.
 
 
 let numeros = [5, 8, 4, 6, 7]
