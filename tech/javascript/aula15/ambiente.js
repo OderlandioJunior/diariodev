@@ -1,7 +1,5 @@
 let frutas = ['maçã', 'banana', 'manga', 'melão', 'melância']
 console.log(frutas)
-let frutas = ['maçã', 'banana', 'manga', 'melão', 'melância']
-console.log(frutas)
 // Diz como é exibida o array
 frutas[3] = 'morango'
 console.log(frutas)

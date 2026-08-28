@@ -4,23 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo.css">
-    <title>Document</title>
+    <title>Analisador de Números</title>
 </head>
 <body>
     <header>
-        <h1>Título</h1>
+        <h1>Analisador de Números</h1>
     </header>
     <section>
         <div>
-            Testando
+            <p><label for="txtnum">Digite um número de 1 a 100:</label> <input type="number" name="txtnum" id="txtnum"><input type="button" value="Adicionar" onclick="adicionar()"></p>
         </div>
-        <div>
+        <select id="numeroSelect"></select> <input type="button" value="Finalizar" onclick="finalizar()">
+        <div id="resultado">
 
         </div>
     </section>
     <footer>
         <p>&copy; CursoemVídeo</p>
     </footer>
-    <script src="script.js"></script>
+    <script>
+        const inputNumero = document.querySelector('#txtnum');
+        const selecionarNumero = document.querySelector('#numeroSelect')
+        const mostrarTela = document.querySelector('#resultado')
+        let guardarNumero = []
+
+        function adicionar() {
+            if (inputNumero == '' || inputNumero.value > 100 || inputNumero.value < 1) {
+                window.alert('Preencha os campos corretamente e tente novamente.') 
+            } else if (guardarNumero.indexOf(inputNumero.value) != -1) {
+                window.alert('Número já encontrado, tente novamente.')
+                } else {
+                guardarNumero.push(inputNumero.value)
+                
+                selecionarNumero.innerHTML += `<option>Valor ${inputNumero.value} adicionado.</option>`
+                inputNumero.value = ''
+            }
+        }
+        function finalizar() {
+
+        }
+    </script>
 </body>
 </html>
