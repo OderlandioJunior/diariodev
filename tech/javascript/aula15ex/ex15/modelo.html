@@ -41,9 +41,8 @@
         }
         function finalizar() {
             const mostrarTela = document.querySelector('#resultado')
-            for (let pos = 0; pos <= guardarNumero.length; pos++) {
-                mostrarTela.innerHTML = `<p>Ao todo, temos ${pos} números cadastrados.</p> `
-            }
+            mostrarTela.innerHTML += `<p>Ao todo, temos ${guardarNumero.length} números cadastrados.</p>`
+            
             /* let maiorNumero
             let menorNumero
             let soma
