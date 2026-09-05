@@ -14,7 +14,7 @@
         <div>
             <p><label for="txtnum">Digite um número de 1 a 100:</label> <input type="number" name="txtnum" id="txtnum"><input type="button" value="Adicionar" onclick="adicionar()"></p>
         </div>
-        <select id="numeroSelect"></select> <input type="button" value="Finalizar" onclick="finalizar()">
+        <select id="numeroSelect" size="5" style="width: 150px;"></select> <input type="button" value="Finalizar" onclick="finalizar()">
         <div id="resultado">
 
         </div>
@@ -24,8 +24,8 @@
     </footer>
     <script>
         const inputNumero = document.querySelector('#txtnum');
+        let converterNumero = Number(inputNumero.value)
         const selecionarNumero = document.querySelector('#numeroSelect')
-        const mostrarTela = document.querySelector('#resultado')
         let guardarNumero = []
 
         function adicionar() {
@@ -35,13 +35,20 @@
                 window.alert('Número já encontrado, tente novamente.')
                 } else {
                 guardarNumero.push(inputNumero.value)
-                
                 selecionarNumero.innerHTML += `<option>Valor ${inputNumero.value} adicionado.</option>`
                 inputNumero.value = ''
             }
         }
         function finalizar() {
-
+            const mostrarTela = document.querySelector('#resultado')
+            for (let pos = 0; pos <= guardarNumero.length; pos++) {
+                mostrarTela.innerHTML = `<p>Ao todo, temos ${pos} números cadastrados.</p> `
+            }
+            /* let maiorNumero
+            let menorNumero
+            let soma
+            let media */
+            //<p>O maior número informado foi ${guardarNumero[pos]}.</p> <p>O menor número informado foi ${menorNumero}.</p> <p>Somando todos os valores, temos ${soma}.</p> <p>A média dos valores digitados é ${media}.</p>`
         }
     </script>
 </body>
