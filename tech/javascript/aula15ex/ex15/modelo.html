@@ -23,31 +23,49 @@
         <p>&copy; CursoemVídeo</p>
     </footer>
     <script>
+        const mostrarTela = document.querySelector('#resultado');
         const inputNumero = document.querySelector('#txtnum');
-        let converterNumero = Number(inputNumero.value)
-        const selecionarNumero = document.querySelector('#numeroSelect')
+        const selecionarNumero = document.querySelector('#numeroSelect');
         let guardarNumero = []
 
         function adicionar() {
-            if (inputNumero == '' || inputNumero.value > 100 || inputNumero.value < 1) {
+            const converterNumero = Number(inputNumero.value);
+
+            if (inputNumero.value == '' || converterNumero > 100 || converterNumero < 1) {
                 window.alert('Preencha os campos corretamente e tente novamente.') 
-            } else if (guardarNumero.indexOf(inputNumero.value) != -1) {
-                window.alert('Número já encontrado, tente novamente.')
+            } else if (guardarNumero.indexOf(converterNumero) != -1) {
+                    window.alert('Número já encontrado, tente novamente.')
                 } else {
-                guardarNumero.push(inputNumero.value)
-                selecionarNumero.innerHTML += `<option>Valor ${inputNumero.value} adicionado.</option>`
-                inputNumero.value = ''
-            }
+                    guardarNumero.push(converterNumero)
+                    selecionarNumero.innerHTML += `<option>Valor ${converterNumero} adicionado.</option>`
+                    inputNumero.value = ''
+                }
         }
         function finalizar() {
-            const mostrarTela = document.querySelector('#resultado')
-            mostrarTela.innerHTML += `<p>Ao todo, temos ${guardarNumero.length} números cadastrados.</p>`
-            
-            /* let maiorNumero
-            let menorNumero
-            let soma
-            let media */
-            //<p>O maior número informado foi ${guardarNumero[pos]}.</p> <p>O menor número informado foi ${menorNumero}.</p> <p>Somando todos os valores, temos ${soma}.</p> <p>A média dos valores digitados é ${media}.</p>`
+            if (guardarNumero.length == 0) {
+                window.alert('Adicione valores antes de finalizar!')
+                return
+            }
+            let maiorNumero = guardarNumero[0];
+            let menorNumero = guardarNumero[0];
+            let soma = guardarNumero[0];
+            for (let i = 1; i < guardarNumero.length; i++) {
+                if (guardarNumero[i] > maiorNumero) {
+                    maiorNumero = guardarNumero[i];
+                }
+                if (guardarNumero[i] < menorNumero) {
+                    menorNumero = guardarNumero[i];
+                }
+                soma += guardarNumero[i];
+            }
+            let media = soma / guardarNumero.length;
+
+            mostrarTela.innerHTML = `
+            <p>Ao todo, temos ${guardarNumero.length} números cadastrados.</p> 
+            <p>O maior numero cadastrado foi ${maiorNumero}</p> 
+            <p>O menor número cadastrado foi ${menorNumero}</p>
+            <p>Somando todos os valores, temos ${soma}.</p> 
+            <p>A média dos valores digitados é ${media.toFixed(1)}.</p`
         }
     </script>
 </body>
