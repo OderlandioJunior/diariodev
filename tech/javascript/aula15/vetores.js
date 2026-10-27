@@ -24,6 +24,7 @@ console.log(numeros)
 // Adiciona o número 1 como ultimo elemento dentro do array
 for (pos in numeros) {
     console.log(`A posição ${pos} tem o valor ${numeros[pos]}`)
+    /* O for...in é a forma simplificada do laço for completo, ele sempre começa comparando o valor 0 (primeiro valor) dentro de um array */
 }
 let procurar = numeros.indexOf(0)
     console.log(`O valor 0 está na posicação ${procurar}`)
